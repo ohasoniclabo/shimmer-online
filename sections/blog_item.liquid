@@ -1,0 +1,48 @@
+<div class="mainbox">
+  {%- liquid
+    assign is_featured_product = true
+    assign product = all_products[section.settings.product]
+  -%}
+    <div class="mainimage">
+        <div><h1>{{ product.title }}</h1></div>
+        <div><img src="{{ product.featured_image | product_img_url }}"></div>
+    </div>
+
+    <div class="maininfo">
+      <div class="mainbland">
+      </div>
+      <div class="maintitle">
+      </div>
+      <div class="mainmoney">
+      </div>
+    </div>
+  </div>
+
+
+
+{% schema %}
+  {
+    "name": "blogItem",
+    "class": "section-featured-product",
+    "templates": ["404", "article", "blog", "collection", "cart", "index", "list-collections", "page", "product", "search"],
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "Bunner list"
+      },
+      {
+          "type": "product",
+          "id": "productitem",
+          "label": "Product"
+      }
+    ],
+    "presets": [
+      {
+        "name": "ブログアイテム",
+        "settings": {}
+      }
+    ]
+  }
+{% endschema %}

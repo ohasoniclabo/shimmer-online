@@ -1,0 +1,126 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "vendor_and_type": {
+          "type": "vendor_and_type",
+          "settings": {
+            "show_vendor": true,
+            "show_type": true
+          }
+        },
+        "5cd09193-c83a-4421-9f0d-352856ff4dff": {
+          "type": "text",
+          "settings": {
+            "text": "{{ product.metafields.custom._productintro.value }}",
+            "text_style": "subtitle"
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {
+            "heading_h1": true
+          }
+        },
+        "0a186d17-5e3d-4d7e-a029-2015710ea1f8": {
+          "type": "text",
+          "settings": {
+            "text": "容量:{{ product.metafields.custom._capacity.value }}",
+            "text_style": "uppercase"
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "2a842c2c-cc6d-4658-b1a3-4f2b8d09efa2": {
+          "type": "description",
+          "settings": {
+            "display": "standard",
+            "icon": "none"
+          }
+        },
+        "8ef3316c-3e3c-4098-98a8-1e364f73c81e": {
+          "type": "text",
+          "settings": {
+            "text": "【配送について】当店では資源の再利用を目的に梱包用資材を２次利用する場合がございます。贈答用などのご利用で新品の資材をご希望の場合は、ご注文後に別途ご連絡下さい。",
+            "text_style": "uppercase"
+          }
+        },
+        "text_AejLU8": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "夏季期間の配送遅延について",
+            "text_style": "bold"
+          }
+        },
+        "richtext_tNiyFL": {
+          "type": "richtext",
+          "disabled": true,
+          "settings": {
+            "text": "<p>2024\/8\/9(金)～2024\/8\/16までのご注文について配送遅延が生じる場合がございます。詳しくはこちら↓<a href=\"https:\/\/shimmer.okinawa\/blogs\/pr\/summer2024_information\" target=\"_blank\" title=\"https:\/\/shimmer.okinawa\/blogs\/pr\/summer2024_information\">「夏季期間の配送遅延について」<\/a><\/p>"
+          }
+        },
+        "fuji3_wishlist_add_btn_cUWYqw": {
+          "type": "shopify:\/\/apps\/mf-wishlist\/blocks\/add-btn\/d1baf985-85f5-4ef5-b595-4e973811d187",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_tax_and_shipping": false,
+            "show_quantity_selector": true,
+            "enable_payment_button": true,
+            "show_pickup_availability": true,
+            "enable_mobile_sticky_cart": true
+          }
+        }
+      },
+      "block_order": [
+        "vendor_and_type",
+        "5cd09193-c83a-4421-9f0d-352856ff4dff",
+        "title",
+        "0a186d17-5e3d-4d7e-a029-2015710ea1f8",
+        "price",
+        "2a842c2c-cc6d-4658-b1a3-4f2b8d09efa2",
+        "8ef3316c-3e3c-4098-98a8-1e364f73c81e",
+        "text_AejLU8",
+        "richtext_tNiyFL",
+        "fuji3_wishlist_add_btn_cUWYqw",
+        "buy_buttons"
+      ],
+      "settings": {
+        "media_style": "one-column",
+        "sticky_behaviour": "top",
+        "full_width": false,
+        "show_backorder_text": true,
+        "slide_nav_style": "arrows",
+        "media_crop": "center",
+        "enable_zoom": true,
+        "zoom_cursor": "plus-light",
+        "show_thumbnails": true,
+        "enable_video_looping": false,
+        "scroll_to_variant_media": true,
+        "highlight_selected_media": true,
+        "variant_media_grouping": false,
+        "variant_media_grouping_option": "Color,Colour,Couleur,Farbe"
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "show_product_recommendations": true,
+        "title": "recommend",
+        "hide_swatches": false,
+        "show_vendor": true,
+        "grid": 4
+      }
+    }
+  },
+  "order": [
+    "main",
+    "product-recommendations"
+  ]
+}

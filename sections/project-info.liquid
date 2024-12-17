@@ -1,0 +1,233 @@
+{%- assign blog = blogs[section.settings.news_list] -%}
+
+<div id="section-news-list">
+  <div class="container2">
+    <div class="infoheading">
+      <span class="prod">PROJECT</span>
+    </div>
+    <div class="infotext">
+      <div class="maininfo">
+          製造者・研究者・販売者が三位一体となり試験的な泡盛を開発、 <br class="desktopbr">
+          数量限定で製造・販売するshimmerプロジェクトが始動しました。<br class="desktopbr">
+          誰も出会ったこと無い泡盛を企画、製造、分析し新たな泡盛の可能性を開拓します。<br class="desktopbr">
+      </div>
+      <div class="subinfo">
+           <span class="catch">ー『実験的な泡盛を造る』</span><br>
+           言葉では簡単に言うことが出来ますが、<br class="desktopbr">
+           様々な課題・リスクが内在しています。<br class="desktopbr">
+           泡盛市場は2004年のピークから右肩下がりを続けており、<br class="desktopbr">
+           多くの泡盛酒造所にとって単体でこうしたチャレンジを行うことは<br class="desktopbr">
+           人的リソース不足、生産工程にかかるコストなど<br class="desktopbr">
+           非常にハードルが高いという現実があります。<br class="desktopbr">
+           そこで私たち南島酒販株式会社は2022年、<br class="desktopbr">
+           「shimmerプロジェクト」を立ち上げ<br class="desktopbr">
+           酒造所と一緒に新たなチャレンジを行います。<br class="desktopbr">
+           <br><br>
+           <span class="catch">ー『泡盛の可能性を拡げ、今までにない泡盛を世に送り出したい』</span><br>
+          当社では各酒造所を横断し、実験的な泡盛を酒造所と一緒に企画、製造委託を行い、<br class="desktopbr">
+          出来上がった泡盛を全量買い取りをすることでハードルを下げ、<br class="desktopbr">
+           ”今までに造られたことがない・飲んだことの無い風味の泡盛”や<br class="desktopbr">
+           ”メーカー技術者の跳躍的アイデアを実現した泡盛”などを製品化し、<br class="desktopbr">
+           泡盛の可能性を世に問いたいと思います。<br class="desktopbr">
+           <br><br>
+           <span class="catch">ー『目の前の利益を追うのではなく、長期的な視野で取り組み、業界へ貢献』</span><br>
+           今回のプロジェクトは当社にとってすぐに利益を生むものではありません。<br class="desktopbr">
+            将来的に泡盛の価値を高めるための、長期的な取り組みです。<br class="desktopbr">
+            ただ造って販売するのではなく、研究機関と協力し、様々な分析結果を記録することで<br class="desktopbr">
+            学術的資産として泡盛業界に還元していきたいと考えています。<br class="desktopbr">
+            泡盛の歴史にはこれまでも、低温濾過・減圧蒸留・新酵母など<br class="desktopbr">
+            各社の技術者・研究者たちの熱意が生んだ革新的イノベーションが存在し、<br class="desktopbr">
+            品質向上や酒質の多様化を実現してきました。<br class="desktopbr">
+            私たちはshimmerのチャレンジの中から、<br class="desktopbr">
+            次世代の泡盛の隆盛につながる<br class="desktopbr">
+            新たな一手が誕生することを目指しています。<br class="desktopbr">
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "プロジェクト紹介",
+  "settings": [
+    {
+      "id": "maininfo",
+      "type": "textarea",
+      "label": "メインの文章",
+      "default": "テスト"
+    },
+    {
+      "id": "subinfo",
+      "type": "textarea",
+      "label": "サブの文章",
+      "default": "テストテスト"
+    }
+  ],
+  "presets": [
+    {
+      "name": "プロジェクト紹介",
+      "category": "プロジェクト紹介"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+
+  @media (min-width: 850px) {
+
+    .infoheading {
+      margin-left:83px;
+      padding-right:102px;
+      border-right: solid 1px black;
+    }
+
+    .prod {
+      font-size:36px;
+      padding-top:72.5px;
+    }
+
+    .maininfo {
+      margin-left:83px;
+      font-size:20px;
+      padding: 54.5px 0 36px 0;
+      line-height: 50px;
+      font-weight: bold;
+    }
+
+    .catch {
+      font-size:20px;
+      padding: 54.5px 0 36px 0;
+      line-height: 50px;
+      font-weight: bold;
+    }
+
+    .subinfo {
+      margin-left:83px;
+      font-size:16px;
+      line-height: 40px;
+      padding-bottom:55.5px;
+    }
+
+    .infotext {
+      max-width:903px;
+    }
+
+  }
+
+  @media (max-width: 849px) {
+
+    .infoheading {
+      margin-left:43px;
+      padding-right:102px;
+      margin-top:20px;
+    }
+
+    .prod {
+      font-size:20px;
+      font-weight: bold;
+    }
+
+    .maininfo {
+      margin-left:43px;
+      font-size:16px;
+      padding: 54.5px 0 36px 0;
+      line-height: 30px;
+      font-weight: bold;
+    }
+
+    .catch {
+      font-size:16px;
+      padding: 54.5px 0 36px 0;
+      line-height: 30px;
+      font-weight: bold;
+    }
+
+    .subinfo {
+      margin-left:43px;
+      font-size:14px;
+      line-height: 30px;
+      padding-bottom:55.5px;
+    }
+
+    .infotext {
+      max-width:95%;
+    }
+
+  }
+
+  @media (max-width: 510px) {
+    
+    .desktopbr {
+      display:none;
+    }
+  }
+
+   @media (min-width: 511px) {
+
+     .desktopbr {
+      display:block;
+    }
+
+  }
+
+  
+
+
+  
+  .container2 {
+    display:flex;
+    border-bottom: solid 1px black;
+  }
+
+  
+
+  
+
+ 
+  #section-news-list .infoheading{
+    display: flex;
+    justify-content: space-between;
+    
+  }
+
+  #section-news-list .news-list-item>a{
+    display: flex;
+    margin: 30px 0;
+  }
+  #section-news-list .news-list-item:last-child{
+    border-bottom: none;
+  }
+ 
+  #section-news-list .news-list-category{
+    font-size: 10px;
+    color: #fff;
+    background: #000;
+    padding: 15px;
+    margin-right: 15px;
+  }
+  #section-news-list .news-list-info{
+    padding-right:15px;
+    border-bottom: solid 1px black;
+  }
+ 
+  @media screen and (max-width: 768px){
+    #section-news-list .container{
+      padding: 35px 20px;
+    }
+    #section-news-list .news-list-item>a{
+      /* display: block;
+      padding: 15px; */
+    }
+
+  }
+
+  .news-list-item a:hover {
+    text-decoration:none;
+    border-bottom:none;
+  }
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

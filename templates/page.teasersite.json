@@ -1,0 +1,225 @@
+{
+  "sections": {
+    "4e455542-e505-45a1-9d8a-255ee3ad5ff5": {
+      "type": "slideshow",
+      "blocks": {
+        "image_gqzfqA": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/1200_628_d78bde7c-6605-4bf9-90ce-c1e05e2727d3.png",
+            "mobile_image": "shopify:\/\/shop_images\/1080_1080.png",
+            "desktop_image_position": "center center",
+            "mobile_image_position": "center center",
+            "slide_link": "shopify:\/\/blogs\/pr\/shimmer_competition2024",
+            "subheading": "",
+            "title": "shimmerシリーズ",
+            "title_size": 60,
+            "heading_h1": false,
+            "text": "<p>国内外酒類品評会 受賞歴一覧<\/p>",
+            "enlarge_text": true,
+            "button_label": "詳しくはこちら",
+            "overlay_position": "position--hcenter position--vcenter"
+          }
+        },
+        "image_PxaPRa": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/shimmer21_1040_585.png",
+            "mobile_image": "shopify:\/\/shop_images\/shimmer21_SNS_square.png",
+            "desktop_image_position": "center center",
+            "mobile_image_position": "center center",
+            "slide_link": "shopify:\/\/pages\/shimmerpj-21",
+            "subheading": "shimmer#21",
+            "title": "粟盛",
+            "title_size": 60,
+            "heading_h1": false,
+            "text": "<p>羽地産ひとめぼれ37.5%・岩手県産粟31.7%・仲村渠産羽地赤穂30.8%<\/p>",
+            "enlarge_text": true,
+            "button_label": "詳しくはこちら",
+            "overlay_position": "position--hcenter position--vcenter"
+          }
+        },
+        "image_cjzUez": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/shimmer20-1200-628-sns2_449240bc-2654-4110-ae4b-3e813aa8c27d.png",
+            "mobile_image": "shopify:\/\/shop_images\/shimmer20-square-2.png",
+            "desktop_image_position": "center center",
+            "mobile_image_position": "center center",
+            "slide_link": "shopify:\/\/pages\/shimmerpj-20",
+            "subheading": "shimmer#20",
+            "title": "八重泉原酒6年樽熟成",
+            "title_size": 60,
+            "heading_h1": false,
+            "text": "<p>Islay Cask Finish<\/p>",
+            "enlarge_text": true,
+            "button_label": "詳しくはこちら",
+            "overlay_position": "position--hcenter position--vcenter"
+          }
+        },
+        "image_74LeEx": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/shimmer19_wide_1.png",
+            "mobile_image": "shopify:\/\/shop_images\/shimmer19_square_be735749-d1fe-45f7-9838-1b37f92f2c75.png",
+            "desktop_image_position": "center center",
+            "mobile_image_position": "center center",
+            "slide_link": "shopify:\/\/pages\/shimmerpj-19",
+            "subheading": "shimmer#19",
+            "title": "萬座原酒",
+            "title_size": 60,
+            "heading_h1": false,
+            "text": "<p>南島1号酵母保安濾過仕上<\/p>",
+            "enlarge_text": true,
+            "button_label": "詳しくはこちら",
+            "overlay_position": "position--hcenter position--vcenter"
+          }
+        },
+        "image_Y6nfYJ": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/shimmer18_1200_628_SNS_2.png",
+            "mobile_image": "shopify:\/\/shop_images\/shimmer18_SNS_square.png",
+            "desktop_image_position": "center center",
+            "mobile_image_position": "center center",
+            "slide_link": "shopify:\/\/pages\/shimmerpj-18",
+            "subheading": "shimmer#18",
+            "title": "松藤",
+            "title_size": 60,
+            "heading_h1": false,
+            "text": "<p>黒麹菌イヌイ株泡盛1号酵母仕込原酒<\/p>",
+            "enlarge_text": true,
+            "button_label": "詳しくはこちら",
+            "overlay_position": "position--hcenter position--vcenter"
+          }
+        },
+        "image_pnrarB": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/shimmer_17wide.png",
+            "mobile_image": "shopify:\/\/shop_images\/shimmer_17_square.png",
+            "desktop_image_position": "center center",
+            "mobile_image_position": "center center",
+            "slide_link": "shopify:\/\/pages\/shimmerpj-17",
+            "subheading": "shimmer#17",
+            "title": "暖流3年貯蔵",
+            "title_size": 60,
+            "heading_h1": false,
+            "text": "<p>Mead Cask Finish<\/p>",
+            "enlarge_text": true,
+            "button_label": "",
+            "overlay_position": "position--hcenter position--vcenter"
+          }
+        }
+      },
+      "block_order": [
+        "image_gqzfqA",
+        "image_PxaPRa",
+        "image_cjzUez",
+        "image_74LeEx",
+        "image_Y6nfYJ",
+        "image_pnrarB"
+      ],
+      "settings": {
+        "height": "adapt",
+        "height_desktop": 600,
+        "height_mobile": 500,
+        "full_width": true,
+        "mobile_overlay_under": false,
+        "overlay_style_tint": true,
+        "slide_transition": "slide",
+        "slide_navigation": "dots",
+        "autoplay": true,
+        "autoplay_speed": 7
+      }
+    },
+    "main": {
+      "type": "TeaserSite-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "ac0d073c-4014-4802-8670-84b7b4d18f57": {
+      "type": "newsletter-regist",
+      "settings": {
+        "subheading": "",
+        "title": "",
+        "text": "",
+        "color_scheme": "custom",
+        "color_bg": "#000000",
+        "color_text": "#ffffff"
+      }
+    },
+    "b20ada9f-f3de-4443-8216-ee49c6c8e7c6": {
+      "type": "news-list",
+      "settings": {
+        "title": "",
+        "news_list": "pr",
+        "post_limit": 3,
+        "news_list_date": true,
+        "news_list_category": false
+      }
+    },
+    "a7418a8c-26b4-4058-9455-66db0c9cecd6": {
+      "type": "project-info",
+      "settings": {
+        "maininfo": "製造者・研究者・販売者が三位一体となり、\n 試験的な泡盛を数量限定で製造・販売するプロジェクト。 誰も出会ったこと無い泡盛を企画、製造、分析し新たな泡盛の可能性を開拓する。",
+        "subinfo": "テストテスト"
+      }
+    },
+    "bd261c44-2339-4130-a195-3b302f9bfb3e": {
+      "type": "LPCollection",
+      "settings": {
+        "title": "PRODUCTS",
+        "collection": "shimmer",
+        "layout": "columns",
+        "show_vendor": false,
+        "grid": 3,
+        "rows": 3,
+        "grid_mobile": "1",
+        "hide_swatches": false,
+        "alternate_bg_color": false,
+        "show_view_all": false
+      }
+    },
+    "c79301e5-a532-4184-ab10-17098b1fc162": {
+      "type": "project-product",
+      "disabled": true,
+      "settings": {
+        "maininfo": "テスト",
+        "subinfo": "テストテスト"
+      }
+    },
+    "6fd51233-54bb-4b9e-9058-a3e56a82af10": {
+      "type": "video_LP",
+      "disabled": true,
+      "settings": {
+        "video": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+        "video_title": "MOVIEの説明が入ります。MOVIEの説明が入ります。MOVIEの説明が入ります。MOVIEの説明が入ります。MOVIEの説明が入ります。MOVIEの説明が入ります。MOVIEの説明が入ります。",
+        "image": "shopify:\/\/shop_images\/1433_20220928163635.png"
+      }
+    },
+    "8fd54435-10f9-410e-b9a6-4eb8d9b112db": {
+      "type": "newsletter-regist",
+      "settings": {
+        "subheading": "",
+        "title": "",
+        "text": "",
+        "color_scheme": "custom",
+        "color_bg": "#000000",
+        "color_text": "#ffffff"
+      }
+    }
+  },
+  "order": [
+    "4e455542-e505-45a1-9d8a-255ee3ad5ff5",
+    "main",
+    "ac0d073c-4014-4802-8670-84b7b4d18f57",
+    "b20ada9f-f3de-4443-8216-ee49c6c8e7c6",
+    "a7418a8c-26b4-4058-9455-66db0c9cecd6",
+    "bd261c44-2339-4130-a195-3b302f9bfb3e",
+    "c79301e5-a532-4184-ab10-17098b1fc162",
+    "6fd51233-54bb-4b9e-9058-a3e56a82af10",
+    "8fd54435-10f9-410e-b9a6-4eb8d9b112db"
+  ]
+}

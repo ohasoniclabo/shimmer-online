@@ -1,0 +1,36 @@
+<div class="pagecontena">
+<h1 class="seacretpagetitle">このページは事前予約のお客さま専用のページです</h1>
+<p class="nonmemberdo">
+  {% unless customer %}
+    <a href="/account/login">ログインする</a> |
+  {% endunless %}
+    <a href="/pages/contact">お問い合わせ</a>
+</p>
+
+</div>
+
+<style>
+  .pagecontena {
+    width:100%;
+    height:800px;
+  }
+
+  .seacretpagetitle {
+    margin-top:60px !important;
+  }
+
+  .nonmemberdo {
+    margin: auto;
+    text-align: center;
+    margin-top: 60px;
+    font-size: 15px;
+  }
+
+  @media(max-width:430px) {
+    .seacretpagetitle {
+      font-size:15px !important;
+    }
+  }
+
+  
+</style>

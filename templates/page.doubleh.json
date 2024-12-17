@@ -1,0 +1,504 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page-doubleh",
+      "custom_css": [],
+      "settings": {}
+    },
+    "swiper_slideshow_yTh4hV": {
+      "type": "swiper-slideshow",
+      "blocks": {
+        "swiper_liquid_CMJqpU": {
+          "type": "swiper_liquid",
+          "settings": {
+            "no_margins": true,
+            "title": "スライド１",
+            "liquid_html": "<div class=\"relative base_size_medium\">\n  <div class=\"absolute base_size_medium translate object-fit_cover\">\n    <img class=\"base_size_medium object-fit_cover pc\" src=\"{{ 'img_01.png' | asset_img_url: '2048x2048', crop: 'center' }}\" alt=\"img_01.png\">\n    <img class=\"base_size_medium object-fit_cover sp\" src=\"{{ 'img_01.png' | asset_img_url: '640x694', crop: 'center' }}\" alt=\"img_01.png_sp\">\n  <\/div>\n  <div class=\"absolute slide_01_img_rogo_01_size slide_01_img_rogo_01_position\">\n    <img class=\"slide_01_img_rogo_01_size object-fit_cover\" src=\"{{ 'img_rogo_01.png' | asset_img_url: '400x', crop: 'center' }}\" alt=\"img_rogo_01.png\">\n  <\/div>\n  <div class=\"absolute slide_01_img_word_01_size slide_01_img_word_01_position\">\n    <img class=\"slide_01_img_word_01_size object-fit_cover\" src=\"{{ 'img_word_01.png' | asset_img_url: '400x', crop: 'center' }}\" alt=\"img_word_01.png\">\n  <\/div>\n<\/div>"
+          }
+        },
+        "swiper_liquid_VynMfG": {
+          "type": "swiper_liquid",
+          "settings": {
+            "no_margins": true,
+            "title": "スライド２",
+            "liquid_html": "<div class=\"relative base_size_medium\">\n  <div class=\"absolute base_size_medium translate object-fit_cover\">\n    <img class=\"base_size_medium object-fit_cover pc\" src=\"{{ 'img_02.png' | asset_img_url: '2048x2048', crop: 'center' }}\" alt=\"img_02.png\">\n    <img class=\"base_size_medium object-fit_cover sp\" src=\"{{ 'img_02.png' | asset_img_url: '640x694', crop: 'center' }}\" alt=\"img_02_sp.png\">\n  <\/div>\n  <div class=\"absolute slide_02_img_rogo_01_size slide_02_img_rogo_01_position\">\n    <img class=\"slide_02_img_rogo_01_size object-fit_cover\" src=\"{{ 'img_rogo_01.png' | asset_img_url: '400x', crop: 'center' }}\" alt=\"img_rogo_01.png\">\n  <\/div>\n  <div class=\"absolute slide_02_img_word_01_size slide_02_img_word_01_position\">\n    <img class=\"slide_02_img_word_01_size object-fit_cover\" src=\"{{ 'img_word_01.png' | asset_img_url: '400x', crop: 'center' }}\" alt=\"img_word_01.png\">\n  <\/div>\n<\/div>"
+          }
+        },
+        "swiper_liquid_yyFHtP": {
+          "type": "swiper_liquid",
+          "settings": {
+            "no_margins": true,
+            "title": "スライド３",
+            "liquid_html": "<div class=\"relative base_size_medium\">\n  <div class=\"absolute base_size_medium translate object-fit_cover\">\n    <img class=\"base_size_medium object-fit_cover pc\" src=\"{{ 'img_03.png' | asset_img_url: '2048x2048', crop: 'center' }}\" alt=\"img_03.png\">\n    <img class=\"base_size_medium object-fit_cover sp\" src=\"{{ 'img_03.png' | asset_img_url: '640x694', crop: 'center' }}\" alt=\"img_03_sp.png\">\n  <\/div>\n  <div class=\"absolute slide_03_img_rogo_01_size slide_03_img_rogo_01_position\">\n    <img class=\"slide_03_img_rogo_01_size object-fit_cover\" src=\"{{ 'img_rogo_01.png' | asset_img_url: '400x', crop: 'center' }}\" alt=\"img_rogo_01.png\">\n  <\/div>\n  <div class=\"absolute slide_03_img_word_01_size slide_03_img_word_01_position\">\n    <img class=\"slide_03_img_word_01_size object-fit_cover\" src=\"{{ 'img_word_01.png' | asset_img_url: '400x', crop: 'center' }}\" alt=\"img_word_01.png\">\n  <\/div>\n<\/div>"
+          }
+        }
+      },
+      "block_order": [
+        "swiper_liquid_CMJqpU",
+        "swiper_liquid_VynMfG",
+        "swiper_liquid_yyFHtP"
+      ],
+      "custom_css": [],
+      "settings": {
+        "swiper_liquid": "",
+        "swiper-wrapper_liquid": "",
+        "swiper-slide_liquid": "",
+        "swiper-pagination_liquid": "",
+        "swiper-button-prev_liquid": "",
+        "swiper-button-next_liquid": "",
+        "swiper-scrollbar_liquid": "",
+        "allowSlideNext": "true",
+        "allowSlidePrev": "true",
+        "autoHeight": "false",
+        "centeredSlides": "true",
+        "createElements": "false",
+        "direction": "'horizontal'",
+        "loop": "true",
+        "loopAdditionalSlides": 1,
+        "loopFillGroupWithBlank": "false",
+        "loopedSlides_enabled": "true",
+        "loopedSlides": 1,
+        "loopedSlidesLimit": "true",
+        "maxBackfaceHiddenSlides": 10,
+        "rewind": "false",
+        "slidesOffsetAfter": 0,
+        "slidesOffsetBefore": 0,
+        "slidesPerGroup": 1,
+        "slidesPerGroupAuto": "false",
+        "slidesPerGroupSkip": 0,
+        "slidesPerView_enabled": "true",
+        "slidesPerView": 1,
+        "spaceBetween": 0,
+        "speed": 2000,
+        "pagination_enabled": "true",
+        "pagination_type": "'bullets'",
+        "pagination_clickable": "true",
+        "pagination_dynamicBullets": "true",
+        "pagination_dynamicMainBullets": 1,
+        "pagination_hideOnClick": "true",
+        "pagination_progressbarOpposite": "false",
+        "navigation_enabled": "true",
+        "scrollbar_enabled": "true",
+        "scrollbar_draggable": "true",
+        "scrollbar_dragSize": "auto",
+        "scrollbar_hide": "true",
+        "scrollbar_snapOnRelease": "false",
+        "autoplay_enabled": "true",
+        "autoplay_delay": 2000,
+        "autoplay_disableOnInteraction": "true",
+        "autoplay_pauseOnMouseEnter": "false",
+        "autoplay_reverseDirection": "false",
+        "autoplay_stopOnLastSlide": "false",
+        "autoplay_waitForTransition": "true",
+        "grid_enabled": "false",
+        "grid_fill": "'column'",
+        "grid_rows": 1,
+        "effect": "'fade'",
+        "fadeEffect_crossFade": "true",
+        "cubeEffect_shadow": "true",
+        "cubeEffect_shadowOffset": 20,
+        "cubeEffect_shadowScale": 94,
+        "cubeEffect_slideShadows": "true",
+        "coverflowEffect_depth": 100,
+        "coverflowEffect_modifier": 1,
+        "coverflowEffect_rotate": 50,
+        "coverflowEffect_scale": 1,
+        "coverflowEffect_slideShadows": "true",
+        "coverflowEffect_stretch": 0,
+        "flipEffect_limitRotation": "true",
+        "flipEffect_slideShadows": "true",
+        "creativeEffect_limitProgress": 1,
+        "creativeEffect_prev": "",
+        "creativeEffect_next": "",
+        "creativeEffect_perspective": "true",
+        "creativeEffect_progressMultiplier": 1,
+        "creativeEffect_shadowPerProgress": "false",
+        "cardsEffect_perSlideOffset": 8,
+        "cardsEffect_perSlideRotate": 2,
+        "cardsEffect_rotate": "true",
+        "cardsEffect_slideShadows": "true"
+      }
+    },
+    "custom_liquid_HkyEmU": {
+      "type": "custom-liquid",
+      "custom_css": [],
+      "settings": {
+        "no_margins": true,
+        "custom_liquid": "<div id=\"section01\" class=\"relative base_size_large\">\n  <div class=\"absolute section_02_img_04_size section_02_img_04_position translate_50_0\">\n    <img class=\"scale_flip_upside_down section_02_img_04_size\" src=\"{{ 'img_04.png' | asset_img_url: '600x', crop: 'center' }}\" alt=\"img_04.png\">\n  <\/div>\n  <div class=\"absolute img_word_02_size img_word_02_position translate_50_0\">\n    <img class=\"img_word_02_size object-fit_cover\" src=\"{{ 'img_word_02.png' | asset_img_url: '400x', crop: 'center' }}\" alt=\"img_word_02.png\">\n  <\/div>\n  <div class=\"absolute img_word_03_size img_word_03_position translate_50_0\">\n    <img class=\"img_word_03_size object-fit_cover\" src=\"{{ 'img_word_03.png' | asset_img_url: '400x', crop: 'center' }}\" alt=\"img_word_03.png\">\n  <\/div>\n  <div class=\"absolute section_02_word_01_size section_02_word_01_position translate_50_0\">\n    <div class=\"section_02_word_01_size object-fit_cover\">\n      <p class=\"font_gothic section_02_word_01_font_size\" style=\"font-weight: bold;\">仕事、家事、人間関係、繰り返される日常のルーティンに疲れを感じている…<\/p>\n      <p class=\"font_gothic section_02_word_01_font_size\" style=\"font-weight: bold;\">日々のストレスの中で飲む酒もまた、ルーティンの一部になっている<\/p>\n      <p class=\"font_gothic section_02_word_01_font_size\" style=\"font-weight: bold;\">繰り返される毎日を、うっ積したその疲労、窮屈な思いを打ち破る、あなたのまだ知らないあなたが覚醒する<\/p>\n      <p class=\"font_gothic section_02_word_01_font_size\" style=\"font-style: italic; font-weight: bold;\">Double H<\/p>\n      <p class=\"font_gothic section_02_word_01_font_size\" style=\"font-weight: bold;\">その命が躍動する、あなたの知らない野生の誘惑<\/p>\n    <\/div>\n  <\/div>\n  <div class=\"absolute img_05_size img_05_position translate_50_0\">\n    <img class=\"img_05_size object-fit_cover\" src=\"{{ 'img_05.png' | asset_img_url: '400x', crop: 'center' }}\" alt=\"img_05.png\">\n  <\/div>\n  <div class=\"absolute img_06_size img_06_position translate_50_0\">\n    <img class=\"img_06_size object-fit_cover\" src=\"{{ 'img_06.png' | asset_img_url: '400x', crop: 'center' }}\" alt=\"img_06.png\">\n  <\/div>\n<\/div>"
+      }
+    },
+    "custom_liquid_g4n8iy": {
+      "type": "custom-liquid",
+      "custom_css": [],
+      "settings": {
+        "no_margins": true,
+        "custom_liquid": "<div id=\"section02\" class=\"video-wrapper\">\n  <video src=\"https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/8270f8e928ef4b8fa4e297fd1116f2f9.mp4\" muted loop playsinline autoplay><\/video>\n<\/div>"
+      }
+    },
+    "custom_liquid_9EymXD": {
+      "type": "custom-liquid",
+      "settings": {
+        "no_margins": true,
+        "custom_liquid": "<div id=\"section03\" class=\"relative base_size_large\">\n  <div class=\"absolute base_size_large translate object-fit_cover\">\n    <img class=\"base_size_large object-fit_cover\" src=\"{{ 'img_background_02.png' | asset_img_url: '2048x2048', crop: 'center' }}\" alt=\"img_background_02.png\">\n  <\/div>\n  <div class=\"absolute img_word_04_size img_word_04_position translate_50_0\">\n    <img class=\"img_word_04_size object-fit_cover\" src=\"{{ 'img_word_04.png' | asset_img_url: '400x', crop: 'center' }}\" alt=\"img_word_04.png\">\n  <\/div>\n  <div class=\"absolute img_word_05_size img_word_05_position translate_50_0\">\n    <img class=\"img_word_05_size object-fit_cover\" src=\"{{ 'img_word_05.png' | asset_img_url: '400x', crop: 'center' }}\" alt=\"img_word_05.png\">\n  <\/div>\n  <div class=\"absolute section_04_word_01_size section_04_word_01_position translate_50_0\">\n    <div class=\"section_04_word_01_size object-fit_cover\">\n      <p class=\"font_gothic section_04_word_01_font_size\" style=\"font-weight: bold;\">あなたが想像する以上に疲れは心身に蓄積されています、Double H があなたを解放します<\/p>\n      <p class=\"font_gothic section_04_word_01_font_size\" style=\"font-weight: bold;\">　<\/p>\n      <p class=\"font_gothic section_04_word_01_font_size\" style=\"font-weight: bold;\">DoubleHは、ハーブ系リキュールの新境地<\/p>\n      <p class=\"font_gothic section_04_word_01_font_size\" style=\"font-weight: bold;\">最大の特徴は、水だけで100日以上生きるといわれるハブ、不思議な生命力を持ち<\/p>\n      <p class=\"font_gothic section_04_word_01_font_size\" style=\"font-weight: bold;\">生きながらえるハブを、特殊な製法で処理を施し<\/p>\n      <p class=\"font_gothic section_04_word_01_font_size\" style=\"font-weight: bold;\">サトウキビからつくった59度のアルコールに浸けそのチカラを抽出<\/p>\n      <p class=\"font_gothic section_04_word_01_font_size\" style=\"font-weight: bold;\">さらに、香り高い13種類のハーブを泡盛につけ込みそれぞれのエキスや香りをじっくりと抽出し<\/p>\n      <p class=\"font_gothic section_04_word_01_font_size\" style=\"font-weight: bold;\">果実系ハーブとハブの旨味を独自の調合比率でブレンドし生まれたハーブリキュールそれが DoubleH<\/p>\n    <\/div>\n  <\/div>\n  <div class=\"absolute img_07_size img_07_position translate_50_0\">\n    <img class=\"img_07_size object-fit_cover\" src=\"{{ 'img_07.png' | asset_img_url: '400x', crop: 'center' }}\" alt=\"img_07.png\">\n  <\/div>\n  <div class=\"absolute img_08_size img_08_position translate_50_0\">\n    <img class=\"img_08_size object-fit_cover\" src=\"{{ 'img_08.png' | asset_img_url: '400x', crop: 'center' }}\" alt=\"img_08.png\">\n  <\/div>\n  <div class=\"absolute img_09_size img_09_position translate_50_0\">\n    <img class=\"img_09_size object-fit_cover\" src=\"{{ 'img_09.png' | asset_img_url: '400x', crop: 'center' }}\" alt=\"img_09.png\">\n  <\/div>\n  <div class=\"absolute img_10_size img_10_position translate_50_0\">\n    <img class=\"img_10_size object-fit_cover\" src=\"{{ 'img_10.png' | asset_img_url: '400x', crop: 'center' }}\" alt=\"img_10.png\">\n  <\/div>\n<\/div>"
+      }
+    },
+    "custom_liquid_kMTrF6": {
+      "type": "custom-liquid",
+      "settings": {
+        "no_margins": true,
+        "custom_liquid": "<div id=\"section04\" class=\"relative base_size_large\">\n  <div class=\"absolute img_word_09_size img_word_09_position translate_50_0\">\n    <img class=\"img_word_09_size object-fit_cover\" src=\"{{ 'img_word_09.png' | asset_img_url: '400x', crop: 'center' }}\" alt=\"img_word_09.png\">\n  <\/div>\n  <div class=\"absolute img_word_08_size img_word_08_position translate_50_0\">\n    <img class=\"img_word_08_size object-fit_cover\" src=\"{{ 'img_word_08.png' | asset_img_url: '400x', crop: 'center' }}\" alt=\"img_word_08.png\">\n  <\/div>\n  <div class=\"absolute section_05_word_01_size section_05_word_01_position translate_50_0\">\n    <div class=\"section_05_word_01_size object-fit_cover\">\n      <p class=\"font_gothic section_04_word_01_font_size textBlock\" style=\"font-weight: bold;\">野生的な Double H をより深く楽しむ<\/p>\n      <p class=\"font_gothic section_04_word_01_font_size textBlock\" style=\"font-weight: bold;\">これまでの定番のカクテル、そして、Double H をベースに開発した<\/p>\n      <p class=\"font_gothic section_04_word_01_font_size textBlock\" style=\"font-weight: bold;\">オリジナルカクテルレシピ<\/p>\n      <p class=\"font_gothic section_04_word_01_font_size textBlock\" style=\"font-weight: bold;\">ご自身で定番レシピからオリジナルレシピまで、Double H の深みある味を<\/p>\n      <p class=\"font_gothic section_04_word_01_font_size textBlock\" style=\"font-weight: bold;\">ご堪能ください。<\/p>\n    <\/div>\n  <\/div>\n\n  <div class=\"flex\">\n    <div class=\"absolute img_background_04_size img_background_04_position translate_50_0\">\n      <img class=\"img_background_04_size object-fit_cover\" src=\"{{ 'img_background_04.png' | asset_img_url: '400x', crop: 'center' }}\" alt=\"img_background_04.png\">\n    <\/div>\n    <div class=\"absolute img_11_size img_11_position translate_50_0 columnCont\">\n      <a href=\"\" class=\"\" data-modal=\"modal001\">\n        <p class=\"absolute font_gothic section_05_word_02_font_size translate_50_0 label_click\">Click<\/p>\n        <img class=\"img_11_size object-fit_cover\" src=\"{{ 'img_11.png' | asset_img_url: '400x', crop: 'center' }}\" alt=\"img_11.png\">\n      <\/a>\n    <\/div>\n    <div class=\"absolute section_05_word_02_size section_05_word_02_position translate_50_0 textCont\">\n      <p class=\"font_gothic section_05_word_02_font_size textBlock\" style=\"font-weight: bold;\"># ハイボール<\/p>\n    <\/div>\n    <div class=\"absolute img_12_size img_12_position translate_50_0 columnCont\">\n      <a href=\"\" class=\"\" data-modal=\"modal002\">\n        <p class=\"absolute font_gothic section_05_word_03_font_size translate_50_0 label_click\">Click<\/p>\n        <img class=\"img_12_size object-fit_cover\" src=\"{{ 'img_12.png' | asset_img_url: '400x', crop: 'center' }}\" alt=\"img_12.png\">\n      <\/a>\n    <\/div>\n    <div class=\"absolute section_05_word_03_size section_05_word_03_position translate_50_0 textCont\">\n      <p class=\"font_gothic section_05_word_03_font_size textBlock\" style=\"font-weight: bold;\"># ニコラシカ・ショット<\/p>\n    <\/div>\n    <div class=\"absolute img_13_size img_13_position translate_50_0 columnCont\">\n      <a href=\"\" class=\"\" data-modal=\"modal003\">\n        <p class=\"absolute font_gothic section_05_word_04_font_size translate_50_0 label_click\">Click<\/p>\n        <img class=\"img_13_size object-fit_cover\" src=\"{{ 'img_13.png' | asset_img_url: '400x', crop: 'center' }}\" alt=\"img_13.png\">\n      <\/a>\n    <\/div>\n    <div class=\"absolute section_05_word_04_size section_05_word_04_position translate_50_0 textCont\">\n      <p class=\"font_gothic section_05_word_04_font_size textBlock\" style=\"font-weight: bold;\"># シトラススパーク<\/p>\n    <\/div>\n    <div class=\"absolute img_14_size img_14_position translate_50_0 columnCont\">\n      <a href=\"\" class=\"\" data-modal=\"modal004\">\n        <p class=\"absolute font_gothic section_05_word_05_font_size translate_50_0 label_click\">Click<\/p>\n        <img class=\"img_14_size object-fit_cover\" src=\"{{ 'img_14.png' | asset_img_url: '400x', crop: 'center' }}\" alt=\"img_14.png\">\n      <\/a>\n    <\/div>\n    <div class=\"absolute section_05_word_05_size section_05_word_05_position translate_50_0 textCont\">\n      <p class=\"font_gothic section_05_word_05_font_size textBlock\" style=\"font-weight: bold;\"># エナジーブレイク<\/p>\n    <\/div>\n    <div class=\"absolute img_15_size img_15_position translate_50_0 columnCont\">\n      <a href=\"\" class=\"\" data-modal=\"modal005\">\n        <p class=\"absolute font_gothic section_05_word_06_font_size translate_50_0 label_click\">Click<\/p>\n        <img class=\"img_15_size object-fit_cover\" src=\"{{ 'img_15.png' | asset_img_url: '400x', crop: 'center' }}\" alt=\"img_15.png\">\n      <\/a>\n    <\/div>\n    <div class=\"absolute section_05_word_06_size section_05_word_06_position translate_50_0 textCont\">\n      <p class=\"font_gothic section_05_word_06_font_size textBlock\" style=\"font-weight: bold;\"># レモンドライブ<\/p>\n    <\/div>\n    <div class=\"absolute section_05_img_04_size section_05_img_04_position translate_50_0\">\n      <img class=\"section_05_img_04_size\" src=\"{{ 'img_04.png' | asset_img_url: '600x', crop: 'center' }}\" alt=\"img_04.png\">\n    <\/div>\n  <\/div>\n<\/div>\n\n<!-- modal start -->\n<div class=\"modal\">\n  <div class=\"modal__background\" data-modal=\"background\">\n    <img class=\"object-fit_cover\" src=\"{{ 'img_recipe_background_01.jpg' | asset_img_url: '2048x2048', crop: 'center' }}\" alt=\"img_recipe_background_01.jpg\">\n  <\/div>\n  <div class=\"modal__inner\" data-modal=\"inner\">\n    <!-- modal001 start -->\n    <div class=\"modal-card\" data-modal=\"modal-card_modal001\">\n      <div class=\"recipe_title\">Recipe.01<\/div>\n      <div class=\"recipe_name\">\n        <div class=\"relative flex\">\n          <div class=\"recipe_basic_size\" style=\"top: 0px; left: 0px;\">\n            <img class=\"recipe_basic_size object-fit_cover\" src=\"{{ 'img_recipe_highball_01.png' | asset_img_url: '490x286', crop: 'center' }}\" alt=\"img_recipe_highball_01.png\">\n          <\/div>\n          <div class=\"absolute recipe_basic_size\" style=\"\">\n            <div class=\"\" style=\"top: 0px; right: 0px;\">\n              <div class=\"spHide\" style=\"background-color:#000;\">\n                <img src=\"{{ 'img_recipe_background_02.png' | asset_img_url: '250x125', crop: 'center' }}\" alt=\"img_recipe_background_02.png\">\n              <\/div>\n              <div class=\"titleTxt\">\n                <p class=\"font_mincho\" style=\"font-size: 18px; line-height: 0.5em; font-weight: bold;\">ハイボール<\/p>\n                <p class=\"font_gothic\" style=\"font-size: 11px; line-height: 0em; font-weight: bold; transform: scale(1, 1.2);\">Double H Arrange<\/p>\n             <\/div>\n            <\/div>\n          <\/div>\n        <\/div>\n      <\/div>\n      <div class=\"recipe_material\">\n        <div class=\"relative flex\">\n          <div class=\"recipe_basic_size\" style=\"top: 0px; left: 0px;\">\n            <img class=\"object-fit_cover\" src=\"{{ 'img_recipe_highball_02.png' | asset_img_url: '500x306', crop: 'center' }}\" alt=\"img_recipe_highball_02.png\">\n          <\/div>\n          <div class=\"recipe_basic_size\" style=\"top: 0px; right: 0px;  \">\n            <div class=\"\" style=\"top: 0px; right: 0px;\">\n              <div class=\"\" style=\"text-align: left;\">\n                <p class=\"font_gothic\" style=\"font-size: 12px; line-height: 1em; font-weight: bold;\">材料<\/p>\n                <p class=\"font_gothic\" style=\"font-size: 12px; line-height: 1em; font-weight: bold;\">・Double H - 45ml<\/p>\n                <p class=\"font_gothic\" style=\"font-size: 12px; line-height: 1em; font-weight: bold;\">・コーレーグース - 小さじ2杯<\/p>\n                <p class=\"font_gothic\" style=\"font-size: 12px; line-height: 1em; font-weight: bold;\">・ソーダ - お好み<\/p>\n                <p class=\"font_gothic\" style=\"font-size: 12px; line-height: 1em; font-weight: bold;\">・飾り(縁に塩と島とうがらし)<\/p>\n             <\/div>\n            <\/div>\n          <\/div>\n        <\/div>\n      <\/div>\n      <div class=\"recipe_procedure_01\">\n        <div class=\"relative flex\">\n          <div class=\"absolute recipe_basic_size\" style=\"top: 0px; left: 0px;\">\n            <img class=\"\" style=\"padding: 10px;\" src=\"{{ 'img_recipe_highball_03.png' | asset_img_url: '350x204', crop: 'center' }}\" alt=\"img_recipe_highball_03.png\">\n          <\/div>\n          <div class=\"absolute recipe_basic_size\" style=\"\">\n            <div class=\"\" style=\"top: 0px; right: 0px; padding: 10px;\">\n              <div class=\"\" style=\"text-align: left;\">\n                <p class=\"font_gothic\" style=\"font-size: 12px; line-height: 1em; font-weight: bold;\">① Double H を45ml、グラスに注ぐ<\/p>\n             <\/div>\n            <\/div>\n          <\/div>\n        <\/div>\n        <div class=\"relative flex\">\n          <div class=\"absolute recipe_basic_size\" style=\"top: 300px; left: 0px;\">\n            <img class=\"\" style=\"padding: 10px;\" src=\"{{ 'img_recipe_highball_04.png' | asset_img_url: '350x204', crop: 'center' }}\" alt=\"img_recipe_highball_04.png\">\n          <\/div>\n          <div class=\"absolute recipe_basic_size\" style=\"top: 300px; right: 0px; \">\n            <div class=\"\" style=\"top: 0px; right: 0px; padding: 10px;\">\n              <div class=\"\" style=\"text-align: left;\">\n                <p class=\"font_gothic\" style=\"font-size: 12px; line-height: 1em; font-weight: bold;\">② グラスに、ソーダをお好みの量注ぐ<\/p>\n             <\/div>\n            <\/div>\n          <\/div>\n        <\/div>\n        <div class=\"relative flex\">\n          <div class=\"absolute recipe_basic_size\" style=\"top: 600px; left: 0px;\">\n            <img class=\"\" style=\"padding: 10px;\" src=\"{{ 'img_recipe_highball_05.png' | asset_img_url: '350x204', crop: 'center' }}\" alt=\"img_recipe_highball_05.png\">\n          <\/div>\n          <div class=\"absolute recipe_basic_size\" style=\"top: 600px; right: 0px; \">\n            <div class=\"\" style=\"top: 0px; right: 0px; padding: 10px;\">\n              <div class=\"\" style=\"text-align: left;\">\n                <p class=\"font_gothic\" style=\"font-size: 12px; line-height: 1em; font-weight: bold;\">③ コーレーグースを小さじ2杯を注ぎ入れる<\/p>\n             <\/div>\n            <\/div>\n          <\/div>\n        <\/div>\n        <div class=\"relative flex\">\n          <div class=\"absolute recipe_basic_size\" style=\"top: 900px; left: 0px;\">\n            <img class=\"\" style=\"padding: 10px;\" src=\"{{ 'img_recipe_highball_06.png' | asset_img_url: '350x204', crop: 'center' }}\" alt=\"img_recipe_highball_06.png\">\n          <\/div>\n          <div class=\"absolute recipe_basic_size\" style=\"top: 900px; right: 0px; \">\n            <div class=\"\" style=\"top: 0px; right: 0px; padding: 10px;\">\n              <div class=\"\" style=\"text-align: left;\">\n                <p class=\"font_gothic\" style=\"font-size: 12px; line-height: 1em; font-weight: bold;\">④ お好みで、島とうがらしや塩を飾り付けて完成<\/p>\n             <\/div>\n            <\/div>\n          <\/div>\n        <\/div>\n      <\/div>\n      <div class=\"recipe_rogo_01\">\n        <div class=\"relative\">\n          <div class=\"recipe_rogo_size\">\n            <img class=\"recipe_rogo_size\" src=\"{{ 'img_rogo_01.png' | asset_img_url: '190x70', crop: 'center' }}\" alt=\"img_rogo_01.png\">\n          <\/div>\n        <\/div>\n      <\/div>\n      <div class=\"modal-card__close\" data-modal=\"close\">\n        <div class=\"modal-card__closeButton\"><\/div>\n      <\/div>\n    <\/div>\n    <!-- modal001 end -->\n    <!-- modal002 start -->\n    <div class=\"modal-card\" data-modal=\"modal-card_modal002\">\n      <div class=\"recipe_title\">Recipe.02<\/div>\n      <div class=\"recipe_name\">\n        <div class=\"relative flex\">\n          <div class=\"recipe_basic_size\" style=\"top: 0px; left: 0px;\">\n            <img class=\"recipe_basic_size object-fit_cover\" src=\"{{ 'img_recipe_particalshot_01.png' | asset_img_url: '490x286', crop: 'center' }}\" alt=\"img_recipe_particalshot_01.png\">\n          <\/div>\n          <div class=\"absolute recipe_basic_size\" style=\"\">\n            <div class=\"\" style=\"top: 0px; right: 0px;\">\n              <div class=\"spHide\" style=\"background-color:#000;\">\n                <img src=\"{{ 'img_recipe_background_02.png' | asset_img_url: '250x125', crop: 'center' }}\" alt=\"img_recipe_background_02.png\">\n              <\/div>\n              <div class=\"titleTxt\">\n                <p class=\"font_mincho\" style=\"font-size: 18px; line-height: 0.5em; font-weight: bold;\">ニコラシカ風・氷冷ショット<\/p>\n                <p class=\"font_gothic\" style=\"font-size: 11px; line-height: 0em; font-weight: bold; transform: scale(1, 1.2);\">Double H Arrange<\/p>\n             <\/div>\n            <\/div>\n          <\/div>\n        <\/div>\n      <\/div>\n      <div class=\"recipe_material\">\n        <div class=\"relative flex\">\n          <div class=\"recipe_basic_size\" style=\"top: 0px; left: 0px;\">\n            <img class=\"object-fit_cover\" src=\"{{ 'img_recipe_particalshot_02.png' | asset_img_url: '500x306', crop: 'center' }}\" alt=\"img_recipe_particalshot_02.png\">\n          <\/div>\n          <div class=\"recipe_basic_size\" style=\"top: 0px; right: 0px;  \">\n            <div class=\"\" style=\"top: 0px; right: 0px;\">\n              <div class=\"\">\n                <p class=\"font_gothic\" style=\"font-size: 12px; line-height: 1em; font-weight: bold;\">材料<\/p>\n                <p class=\"font_gothic\" style=\"font-size: 12px; line-height: 1em; font-weight: bold;\">・Double H - 30ml<\/p>\n                <p class=\"font_gothic\" style=\"font-size: 12px; line-height: 1em; font-weight: bold;\">・オレンジスライス - 1枚<\/p>\n                <p class=\"font_gothic\" style=\"font-size: 12px; line-height: 1em; font-weight: bold;\">・黒糖 - 小さじ大盛り1杯<\/p>\n             <\/div>\n            <\/div>\n          <\/div>\n        <\/div>\n      <\/div>\n      <div class=\"recipe_procedure_02\">\n        <div class=\"relative flex\">\n          <div class=\"absolute recipe_basic_size\" style=\"top: 0px; left: 0px;\">\n            <img class=\"\" style=\"padding: 10px;\" src=\"{{ 'img_recipe_particalshot_03.png' | asset_img_url: '350x204', crop: 'center' }}\" alt=\"img_recipe_particalshot_03.png\">\n          <\/div>\n          <div class=\"absolute recipe_basic_size\" style=\"\">\n            <div class=\"\" style=\"top: 0px; right: 0px; padding: 10px;\">\n              <div class=\"\">\n                <p class=\"font_gothic\" style=\"font-size: 12px; line-height: 1em; font-weight: bold;\">① ショットグラスにDouble H を注ぐ<\/p>\n             <\/div>\n            <\/div>\n          <\/div>\n        <\/div>\n        <div class=\"relative flex\">\n          <div class=\"absolute recipe_basic_size\" style=\"top: 300px; left: 0px;\">\n            <img class=\"\" style=\"padding: 10px;\" src=\"{{ 'img_recipe_particalshot_04.png' | asset_img_url: '350x204', crop: 'center' }}\" alt=\"img_recipe_particalshot_04.png\">\n          <\/div>\n          <div class=\"absolute recipe_basic_size\" style=\"top: 300px; right: 0px; \">\n            <div class=\"\" style=\"top: 0px; right: 0px; padding: 10px;\">\n              <div class=\"\">\n                <p class=\"font_gothic\" style=\"font-size: 12px; line-height: 1em; font-weight: bold;\">② オレンジをお好みの薄さにスライスグラスの上に置く<\/p>\n             <\/div>\n            <\/div>\n          <\/div>\n        <\/div>\n        <div class=\"relative flex\">\n          <div class=\"absolute recipe_basic_size\" style=\"top: 600px; left: 0px;\">\n            <img class=\"\" style=\"padding: 10px;\" src=\"{{ 'img_recipe_particalshot_05.png' | asset_img_url: '350x204', crop: 'center' }}\" alt=\"img_recipe_particalshot_05.png\">\n          <\/div>\n          <div class=\"absolute recipe_basic_size\" style=\"top: 600px; right: 0px; \">\n            <div class=\"\" style=\"top: 0px; right: 0px; padding: 10px;\">\n              <div class=\"\">\n                <p class=\"font_gothic\" style=\"font-size: 12px; line-height: 1em; font-weight: bold;\">③ オレンジスライスの上に黒糖を小さじ大盛り1杯を盛り、完成<\/p>\n                <p class=\"font_gothic\" style=\"font-size: 12px; line-height: 1em; font-weight: bold;\">　<\/p>\n                <p class=\"font_gothic\" style=\"font-size: 12px; line-height: 1em; font-weight: bold;\">瓶ごと冷凍庫で凍らすだけの簡単さ、キレッキレに冷えて体の芯までクる！<\/p>\n                <p class=\"font_gothic\" style=\"font-size: 12px; line-height: 1em; font-weight: bold;\">度数によってとろとろ＆シャリシャリで、新定番としてうってつけのパーシャルショットもおすすめ。<\/p>\n             <\/div>\n            <\/div>\n          <\/div>\n        <\/div>\n      <\/div>\n      <div class=\"recipe_rogo_02\">\n        <div class=\"relative\">\n          <div class=\"recipe_rogo_size\">\n            <img class=\"recipe_rogo_size\" src=\"{{ 'img_rogo_01.png' | asset_img_url: '190x70', crop: 'center' }}\" alt=\"img_rogo_01.png\">\n          <\/div>\n        <\/div>\n      <\/div>\n      <div class=\"modal-card__close\" data-modal=\"close\">\n        <div class=\"modal-card__closeButton\"><\/div>\n      <\/div>\n    <\/div>\n    <!-- modal002 end -->\n    <!-- modal003 start -->\n    <div class=\"modal-card\" data-modal=\"modal-card_modal003\">\n      <div class=\"recipe_title\">Recipe.03<\/div>\n      <div class=\"recipe_name\">\n        <div class=\"relative flex\">\n          <div class=\"recipe_basic_size\" style=\"top: 0px; left: 0px;\">\n            <img class=\"recipe_basic_size object-fit_cover\" src=\"{{ 'img_recipe_citrusspark_01.png' | asset_img_url: '490x286', crop: 'center' }}\" alt=\"img_recipe_citrusspark_01.png\">\n          <\/div>\n          <div class=\"absolute recipe_basic_size\" style=\"\">\n            <div class=\"\" style=\"top: 0px; right: 0px;\">\n              <div class=\"spHide\" style=\"background-color:#000;\">\n                <img src=\"{{ 'img_recipe_background_02.png' | asset_img_url: '250x125', crop: 'center' }}\" alt=\"img_recipe_background_02.png\">\n              <\/div>\n              <div class=\"titleTxt\">\n                <p class=\"font_mincho\" style=\"font-size: 18px; line-height: 0.5em; font-weight: bold;\">シトラススパーク<\/p>\n                <p class=\"font_gothic\" style=\"font-size: 11px; line-height: 0em; font-weight: bold; transform: scale(1, 1.2);\">Double H × Grapefruit<\/p>\n             <\/div>\n            <\/div>\n          <\/div>\n        <\/div>\n      <\/div>\n      <div class=\"recipe_material\">\n        <div class=\"relative flex\">\n          <div class=\"recipe_basic_size\" style=\"top: 0px; left: 0px;\">\n            <img class=\"object-fit_cover\" src=\"{{ 'img_recipe_citrusspark_02.png' | asset_img_url: '500x306', crop: 'center' }}\" alt=\"img_recipe_citrusspark_02.png\">\n          <\/div>\n          <div class=\"recipe_basic_size\" style=\"\">\n            <div class=\"\" style=\"top: 0px; right: 0px;\">\n              <div class=\"\" style=\"text-align: left;\">\n                <p class=\"font_gothic\" style=\"font-size: 12px; line-height: 1em; font-weight: bold;\">材料<\/p>\n                <p class=\"font_gothic\" style=\"font-size: 12px; line-height: 1em; font-weight: bold;\">・double H - 35ml<\/p>\n                <p class=\"font_gothic\" style=\"font-size: 12px; line-height: 1em; font-weight: bold;\">・グレープフルーツ味 氷アイス - 適量<\/p>\n                <p class=\"font_gothic\" style=\"font-size: 12px; line-height: 1em; font-weight: bold;\">・炭酸系ジュース(色はお好み) - 適量<\/p>\n                <p class=\"font_gothic\" style=\"font-size: 12px; line-height: 1em; font-weight: bold;\">・ミント - 飾り<\/p>\n              <\/div>\n            <\/div>\n          <\/div>\n        <\/div>\n      <\/div>\n      <div class=\"recipe_procedure_03\">\n        <div class=\"relative flex\">\n          <div class=\"absolute recipe_basic_size\" style=\"top: 0px; left: 0px;\">\n            <img class=\"\" style=\"padding: 10px;\" src=\"{{ 'img_recipe_citrusspark_03.png' | asset_img_url: '350x204', crop: 'center' }}\" alt=\"img_recipe_citrusspark_03.png\">\n          <\/div>\n          <div class=\"absolute recipe_basic_size\" style=\"\">\n            <div class=\"\" style=\"top: 0px; right: 0px; padding: 10px;\">\n              <div class=\"\">\n                <p class=\"font_gothic\" style=\"font-size: 12px; line-height: 1em; font-weight: bold;\">① 氷系アイスをグラスに入れる<\/p>\n             <\/div>\n            <\/div>\n          <\/div>\n        <\/div>\n        <div class=\"relative flex\">\n          <div class=\"absolute recipe_basic_size\" style=\"top: 300px; left: 0px;\">\n            <img class=\"\" style=\"padding: 10px;\" src=\"{{ 'img_recipe_citrusspark_04.png' | asset_img_url: '350x204', crop: 'center' }}\" alt=\"img_recipe_citrusspark_04.png\">\n          <\/div>\n          <div class=\"absolute recipe_basic_size\" style=\"top: 300px; right: 0px; \">\n            <div class=\"\" style=\"top: 0px; right: 0px; padding: 10px;\">\n              <div class=\"\">\n                <p class=\"font_gothic\" style=\"font-size: 12px; line-height: 1em; font-weight: bold;\">② Double H を35ml、グラスに注ぐ<\/p>\n             <\/div>\n            <\/div>\n          <\/div>\n        <\/div>\n        <div class=\"relative flex\">\n          <div class=\"absolute recipe_basic_size\" style=\"top: 600px; left: 0px;\">\n            <img class=\"\" style=\"padding: 10px;\" src=\"{{ 'img_recipe_citrusspark_05.png' | asset_img_url: '350x204', crop: 'center' }}\" alt=\"img_recipe_citrusspark_05.png\">\n          <\/div>\n          <div class=\"absolute recipe_basic_size\" style=\"top: 600px; right: 0px; \">\n            <div class=\"\" style=\"top: 0px; right: 0px; padding: 10px;\">\n              <div class=\"\">\n                <p class=\"font_gothic\" style=\"font-size: 12px; line-height: 1em; font-weight: bold;\">③ お好みの炭酸飲料を注ぐ<\/p>\n             <\/div>\n            <\/div>\n          <\/div>\n        <\/div>\n        <div class=\"relative flex\">\n          <div class=\"absolute recipe_basic_size\" style=\"top: 900px; left: 0px;\">\n            <img class=\"\" style=\"padding: 10px;\" src=\"{{ 'img_recipe_citrusspark_06.png' | asset_img_url: '350x204', crop: 'center' }}\" alt=\"img_recipe_citrusspark_06.png\">\n          <\/div>\n          <div class=\"absolute recipe_basic_size\" style=\"top: 900px; right: 0px; \">\n            <div class=\"\" style=\"top: 0px; right: 0px; padding: 10px;\">\n              <div class=\"\">\n                <p class=\"font_gothic\" style=\"font-size: 12px; line-height: 1em; font-weight: bold;\">④ お好みで、ミントなどを飾り付けて完成<\/p>\n             <\/div>\n            <\/div>\n          <\/div>\n        <\/div>\n      <\/div>\n      <div class=\"recipe_rogo_03\">\n        <div class=\"relative\">\n          <div class=\"recipe_rogo_size\">\n            <img class=\"recipe_rogo_size\" src=\"{{ 'img_rogo_01.png' | asset_img_url: '190x70', crop: 'center' }}\" alt=\"img_rogo_01.png\">\n          <\/div>\n        <\/div>\n      <\/div>\n      <div class=\"modal-card__close\" data-modal=\"close\">\n        <div class=\"modal-card__closeButton\"><\/div>\n      <\/div>\n    <\/div>\n    <!-- modal003 end -->\n    <!-- modal004 start -->\n    <div class=\"modal-card\" data-modal=\"modal-card_modal004\">\n      <div class=\"recipe_title\">Recipe.04<\/div>\n      <div class=\"recipe_name\">\n        <div class=\"relative flex\">\n          <div class=\"recipe_basic_size\" style=\"top: 0px; left: 0px;\">\n            <img class=\"recipe_basic_size object-fit_cover\" src=\"{{ 'img_recipe_energybreak_01.png' | asset_img_url: '490x286', crop: 'center' }}\" alt=\"img_recipe_energybreak_01.png\">\n          <\/div>\n          <div class=\"absolute recipe_basic_size\" style=\"\">\n            <div class=\"\" style=\"top: 0px; right: 0px;\">\n              <div class=\"spHide\" style=\"background-color:#000;\">\n                <img src=\"{{ 'img_recipe_background_02.png' | asset_img_url: '250x125', crop: 'center' }}\" alt=\"img_recipe_background_02.png\">\n              <\/div>\n              <div class=\"titleTxt\">\n                <p class=\"font_mincho\" style=\"font-size: 18px; line-height: 0.5em; font-weight: bold;\">エナジーブレイク<\/p>\n                <p class=\"font_gothic\" style=\"font-size: 11px; line-height: 0em; font-weight: bold; transform: scale(1, 1.2);\">Double H × Energy drink<\/p>\n             <\/div>\n            <\/div>\n          <\/div>\n        <\/div>\n      <\/div>\n      <div class=\"recipe_material\">\n        <div class=\"relative flex\">\n          <div class=\"recipe_basic_size\" style=\"top: 0px; left: 0px;\">\n            <img class=\"object-fit_cover\" src=\"{{ 'img_recipe_energybreak_02.png' | asset_img_url: '500x306', crop: 'center' }}\" alt=\"img_recipe_energybreak_02.png\">\n          <\/div>\n          <div class=\"recipe_basic_size\" style=\"\">\n            <div class=\"\" style=\"top: 0px; right: 0px;\">\n              <div class=\"\" style=\"text-align: left;\">\n                <p class=\"font_gothic\" style=\"font-size: 12px; line-height: 1em; font-weight: bold;\">材料<\/p>\n                <p class=\"font_gothic\" style=\"font-size: 12px; line-height: 1em; font-weight: bold;\">・Double H - 45ml<\/p>\n                <p class=\"font_gothic\" style=\"font-size: 12px; line-height: 1em; font-weight: bold;\">・ライム - 4分の１<\/p>\n                <p class=\"font_gothic\" style=\"font-size: 12px; line-height: 1em; font-weight: bold;\">・ミント - 7〜8枚<\/p>\n                <p class=\"font_gothic\" style=\"font-size: 12px; line-height: 1em; font-weight: bold;\">・シロップ - 10ml<\/p>\n                <p class=\"font_gothic\" style=\"font-size: 12px; line-height: 1em; font-weight: bold;\">・ソーダ&レッドブル - 半々<\/p>\n              <\/div>\n            <\/div>\n          <\/div>\n        <\/div>\n      <\/div>\n      <div class=\"recipe_procedure_04\">\n        <div class=\"relative flex\">\n          <div class=\"absolute recipe_basic_size\" style=\"top: 0px; left: 0px;\">\n            <img class=\"\" style=\"padding: 10px;\" src=\"{{ 'img_recipe_energybreak_03.png' | asset_img_url: '350x204', crop: 'center' }}\" alt=\"img_recipe_energybreak_03.png\">\n          <\/div>\n          <div class=\"absolute recipe_basic_size\" style=\"\">\n            <div class=\"\" style=\"top: 0px; right: 0px; padding: 10px;\">\n              <div class=\"\">\n                <p class=\"font_gothic\" style=\"font-size: 12px; line-height: 1em; font-weight: bold;\">① お好みの量のミントをグラスに入れる<\/p>\n             <\/div>\n            <\/div>\n          <\/div>\n        <\/div>\n        <div class=\"relative flex\">\n          <div class=\"absolute recipe_basic_size\" style=\"top: 300px; left: 0px;\">\n            <img class=\"\" style=\"padding: 10px;\" src=\"{{ 'img_recipe_energybreak_04.png' | asset_img_url: '350x204', crop: 'center' }}\" alt=\"img_recipe_energybreak_04.png\">\n          <\/div>\n          <div class=\"absolute recipe_basic_size\" style=\"top: 300px; right: 0px; \">\n            <div class=\"\" style=\"top: 0px; right: 0px; padding: 10px;\">\n              <div class=\"\">\n                <p class=\"font_gothic\" style=\"font-size: 12px; line-height: 1em; font-weight: bold;\">② ライムを搾り、皮ごとグラスに入れる<\/p>\n             <\/div>\n            <\/div>\n          <\/div>\n        <\/div>\n        <div class=\"relative flex\">\n          <div class=\"absolute recipe_basic_size\" style=\"top: 600px; left: 0px;\">\n            <img class=\"\" style=\"padding: 10px;\" src=\"{{ 'img_recipe_energybreak_05.png' | asset_img_url: '350x204', crop: 'center' }}\" alt=\"img_recipe_energybreak_05.png\">\n          <\/div>\n          <div class=\"absolute recipe_basic_size\" style=\"top: 600px; right: 0px; \">\n            <div class=\"\" style=\"top: 0px; right: 0px; padding: 10px;\">\n              <div class=\"\">\n                <p class=\"font_gothic\" style=\"font-size: 12px; line-height: 1em; font-weight: bold;\">③ それらを軽く潰す<\/p>\n             <\/div>\n            <\/div>\n          <\/div>\n        <\/div>\n        <div class=\"relative flex\">\n          <div class=\"absolute recipe_basic_size\" style=\"top: 900px; left: 0px;\">\n            <img class=\"\" style=\"padding: 10px;\" src=\"{{ 'img_recipe_energybreak_06.png' | asset_img_url: '350x204', crop: 'center' }}\" alt=\"img_recipe_energybreak_06.png\">\n          <\/div>\n          <div class=\"absolute recipe_basic_size\" style=\"top: 900px; right: 0px; \">\n            <div class=\"\" style=\"top: 0px; right: 0px; padding: 10px;\">\n              <div class=\"\">\n                <p class=\"font_gothic\" style=\"font-size: 12px; line-height: 1em; font-weight: bold;\">④ Double H を45ml、グラスに注ぐ<\/p>\n             <\/div>\n            <\/div>\n          <\/div>\n        <\/div>\n        <div class=\"relative flex\">\n          <div class=\"absolute recipe_basic_size\" style=\"top: 1200px; left: 0px;\">\n            <img class=\"\" style=\"padding: 10px;\" src=\"{{ 'img_recipe_energybreak_07.png' | asset_img_url: '350x204', crop: 'center' }}\" alt=\"img_recipe_energybreak_07.png\">\n          <\/div>\n          <div class=\"absolute recipe_basic_size\" style=\"top: 1200px; right: 0px; \">\n            <div class=\"\" style=\"top: 0px; right: 0px; padding: 10px;\">\n              <div class=\"\">\n                <p class=\"font_gothic\" style=\"font-size: 12px; line-height: 1em; font-weight: bold;\">⑤ シロップ10mlを加える<\/p>\n             <\/div>\n            <\/div>\n          <\/div>\n        <\/div>\n        <div class=\"relative flex\">\n          <div class=\"absolute recipe_basic_size\" style=\"top: 1500px; left: 0px;\">\n            <img class=\"\" style=\"padding: 10px;\" src=\"{{ 'img_recipe_energybreak_08.png' | asset_img_url: '350x204', crop: 'center' }}\" alt=\"img_recipe_energybreak_08.png\">\n          <\/div>\n          <div class=\"absolute recipe_basic_size\" style=\"top: 1500px; right: 0px; \">\n            <div class=\"\" style=\"top: 0px; right: 0px; padding: 10px;\">\n              <div class=\"\">\n                <p class=\"font_gothic\" style=\"font-size: 12px; line-height: 1em; font-weight: bold;\">⑥ エナジードリンクとソーダを同じ量入れる<\/p>\n             <\/div>\n            <\/div>\n          <\/div>\n        <\/div>\n        <div class=\"relative flex\">\n          <div class=\"absolute recipe_basic_size\" style=\"top: 1800px; left: 0px;\">\n            <img class=\"\" style=\"padding: 10px;\" src=\"{{ 'img_recipe_energybreak_09.png' | asset_img_url: '350x204', crop: 'center' }}\" alt=\"img_recipe_energybreak_09.png\">\n          <\/div>\n          <div class=\"absolute recipe_basic_size\" style=\"top: 1800px; right: 0px; \">\n            <div class=\"\" style=\"top: 0px; right: 0px; padding: 10px;\">\n              <div class=\"\">\n             <\/div>\n            <\/div>\n          <\/div>\n        <\/div>\n        <div class=\"relative flex\">\n          <div class=\"absolute recipe_basic_size\" style=\"top: 2100px; left: 0px;\">\n            <img class=\"\" style=\"padding: 10px;\" src=\"{{ 'img_recipe_energybreak_10.png' | asset_img_url: '350x204', crop: 'center' }}\" alt=\"img_recipe_energybreak_10.png\">\n          <\/div>\n          <div class=\"absolute recipe_basic_size\" style=\"top: 2100px; right: 0px; \">\n            <div class=\"\" style=\"top: 0px; right: 0px; padding: 10px;\">\n              <div class=\"\">\n                <p class=\"font_gothic\" style=\"font-size: 12px; line-height: 1em; font-weight: bold;\">⑦ 軽くかき混ぜて完成<\/p>\n             <\/div>\n            <\/div>\n          <\/div>\n        <\/div>\n      <\/div>\n      <div class=\"recipe_rogo_04\">\n        <div class=\"relative\">\n          <div class=\"recipe_rogo_size\">\n            <img class=\"recipe_rogo_size\" src=\"{{ 'img_rogo_01.png' | asset_img_url: '190x70', crop: 'center' }}\" alt=\"img_rogo_01.png\">\n          <\/div>\n        <\/div>\n      <\/div>\n      <div class=\"modal-card__close\" data-modal=\"close\">\n        <div class=\"modal-card__closeButton\"><\/div>\n      <\/div>\n    <\/div>\n    <!-- modal004 end -->\n    <!-- modal005 start -->\n    <div class=\"modal-card\" data-modal=\"modal-card_modal005\">\n      <div class=\"recipe_title\">Recipe.05<\/div>\n      <div class=\"recipe_name\">\n        <div class=\"relative flex\">\n          <div class=\"recipe_basic_size\" style=\"top: 0px; left: 0px;\">\n            <img class=\"recipe_basic_size object-fit_cover\" src=\"{{ 'img_recipe_lemondrive_01.png' | asset_img_url: '490x286', crop: 'center' }}\" alt=\"img_recipe_lemondrive_01.png\">\n          <\/div>\n          <div class=\"absolute recipe_basic_size\" style=\"\">\n            <div class=\"\" style=\"top: 0px; right: 0px;\">\n              <div class=\"spHide\" style=\"background-color:#000;\">\n                <img src=\"{{ 'img_recipe_background_02.png' | asset_img_url: '250x125', crop: 'center' }}\" alt=\"img_recipe_background_02.png\">\n              <\/div>\n              <div class=\"titleTxt\">\n                <p class=\"font_mincho\" style=\"font-size: 18px; line-height: 0.5em; font-weight: bold;\">レモンドライブ<\/p>\n                <p class=\"font_gothic\" style=\"font-size: 11px; line-height: 0em; font-weight: bold; transform: scale(1, 1.2);\">Double H × Lemon<\/p>\n             <\/div>\n            <\/div>\n          <\/div>\n        <\/div>\n      <\/div>\n      <div class=\"recipe_material\">\n        <div class=\"relative flex\">\n          <div class=\"recipe_basic_size\" style=\"top: 0px; left: 0px;\">\n            <img class=\"object-fit_cover\" src=\"{{ 'img_recipe_lemondrive_02.png' | asset_img_url: '500x306', crop: 'center' }}\" alt=\"img_recipe_lemondrive_02.png\">\n          <\/div>\n          <div class=\"recipe_basic_size\" style=\"\">\n            <div class=\"\" style=\"top: 0px; right: 0px;\">\n              <div class=\"\" style=\"text-align: left;\">\n                <p class=\"font_gothic\" style=\"font-size: 12px; line-height: 1em; font-weight: bold;\">材料<\/p>\n                <p class=\"font_gothic\" style=\"font-size: 12px; line-height: 1em; font-weight: bold;\">・double H - 45ml<\/p>\n                <p class=\"font_gothic\" style=\"font-size: 12px; line-height: 1em; font-weight: bold;\">・レモネード - 90ml<\/p>\n                <p class=\"font_gothic\" style=\"font-size: 12px; line-height: 1em; font-weight: bold;\">・レモン果汁 - 適量<\/p>\n                <p class=\"font_gothic\" style=\"font-size: 12px; line-height: 1em; font-weight: bold;\">・スライスレモン - 飾り<\/p>\n              <\/div>\n            <\/div>\n          <\/div>\n        <\/div>\n      <\/div>\n      <div class=\"recipe_procedure_05\">\n        <div class=\"relative flex\">\n          <div class=\"absolute recipe_basic_size\" style=\"top: 0px; left: 0px;\">\n            <img class=\"\" style=\"padding: 10px;\" src=\"{{ 'img_recipe_lemondrive_03.png' | asset_img_url: '350x204', crop: 'center' }}\" alt=\"img_recipe_lemondrive_03.png\">\n          <\/div>\n          <div class=\"absolute recipe_basic_size\" style=\"\">\n            <div class=\"\" style=\"top: 0px; right: 0px; padding: 10px;\">\n              <div class=\"\">\n                <p class=\"font_gothic\" style=\"font-size: 12px; line-height: 1em; font-weight: bold;\">① Double H を45ml、グラスに注ぐ<\/p>\n             <\/div>\n            <\/div>\n          <\/div>\n        <\/div>\n        <div class=\"relative flex\">\n          <div class=\"absolute recipe_basic_size\" style=\"top: 300px; left: 0px;\">\n            <img class=\"\" style=\"padding: 10px;\" src=\"{{ 'img_recipe_lemondrive_04.png' | asset_img_url: '350x204', crop: 'center' }}\" alt=\"img_recipe_lemondrive_04.png\">\n          <\/div>\n          <div class=\"absolute recipe_basic_size\" style=\"top: 300px; right: 0px; \">\n            <div class=\"\" style=\"top: 0px; right: 0px; padding: 10px;\">\n              <div class=\"\">\n                <p class=\"font_gothic\" style=\"font-size: 12px; line-height: 1em; font-weight: bold;\">② グラスにレモネード90mlを注ぐ<\/p>\n             <\/div>\n            <\/div>\n          <\/div>\n        <\/div>\n        <div class=\"relative flex\">\n          <div class=\"absolute recipe_basic_size\" style=\"top: 600px; left: 0px;\">\n            <img class=\"\" style=\"padding: 10px;\" src=\"{{ 'img_recipe_lemondrive_05.png' | asset_img_url: '350x204', crop: 'center' }}\" alt=\"img_recipe_lemondrive_05.png\">\n          <\/div>\n          <div class=\"absolute recipe_basic_size\" style=\"top: 600px; right: 0px; \">\n            <div class=\"\" style=\"top: 0px; right: 0px; padding: 10px;\">\n              <div class=\"\">\n                <p class=\"font_gothic\" style=\"font-size: 12px; line-height: 1em; font-weight: bold;\">③ レモン果汁をお好みの量注ぐ<\/p>\n             <\/div>\n            <\/div>\n          <\/div>\n        <\/div>\n        <div class=\"relative flex\">\n          <div class=\"absolute recipe_basic_size\" style=\"top: 900px; left: 0px;\">\n            <img class=\"\" style=\"padding: 10px;\" src=\"{{ 'img_recipe_lemondrive_06.png' | asset_img_url: '350x204', crop: 'center' }}\" alt=\"img_recipe_lemondrive_06.png\">\n          <\/div>\n          <div class=\"absolute recipe_basic_size\" style=\"top: 900px; right: 0px; \">\n            <div class=\"\" style=\"top: 0px; right: 0px; padding: 10px;\">\n              <div class=\"\">\n                <p class=\"font_gothic\" style=\"font-size: 12px; line-height: 1em; font-weight: bold;\">④ スライスしたレモンを飾り付けて完成<\/p>\n             <\/div>\n            <\/div>\n          <\/div>\n        <\/div>\n      <\/div>\n      <div class=\"recipe_rogo_05\">\n        <div class=\"relative\">\n          <div class=\"recipe_rogo_size\">\n            <img class=\"recipe_rogo_size\" src=\"{{ 'img_rogo_01.png' | asset_img_url: '190x70', crop: 'center' }}\" alt=\"img_rogo_01.png\">\n          <\/div>\n        <\/div>\n      <\/div>\n      <div class=\"modal-card__close\" data-modal=\"close\">\n        <div class=\"modal-card__closeButton\"><\/div>\n      <\/div>\n    <\/div>\n    <!-- modal005 end -->\n  <\/div>\n<\/div>\n<!-- modal end -->"
+      }
+    },
+    "custom_liquid_KtiymE": {
+      "type": "custom-liquid",
+      "custom_css": [],
+      "settings": {
+        "no_margins": true,
+        "custom_liquid": "<div id=\"section05\" class=\"relative base_size_medium\">\n  <div class=\"absolute base_size_medium img_16_padding translate\">\n    <img class=\"img_16_size object-fit_cover\" src=\"{{ 'img_16.png' | asset_img_url: '900x', crop: 'center' }}\" alt=\"img_16.png\">\n  <\/div>\n  <div class=\"absolute img_word_10_size img_word_10_position translate_50_0\">\n    <img class=\"img_word_10_size object-fit_cover\" src=\"{{ 'img_word_10.png' | asset_img_url: '400x', crop: 'center' }}\" alt=\"img_word_10.png\">\n  <\/div>\n  <div class=\"absolute section_06_word_01_size section_06_word_01_position translate_50_0\">\n    <div class=\"section_06_word_01_size object-fit_cover\">\n      <p class=\"font_mincho section_06_word_01_font_size\" style=\"font-weight: bold;\">DoubleH カクテル監修<\/p>\n    <\/div>\n  <\/div>\n  <div class=\"absolute section_06_word_02_size section_06_word_02_position translate_50_0\">\n    <div class=\"section_06_word_02_size object-fit_cover\">\n      <p class=\"font_gothic section_06_word_02_font_size\" style=\"font-weight: bold;\">バーテンダー歴１９年、クラシックやフレアのカクテルコンペに参加し、<\/p>\n      <p class=\"font_gothic section_06_word_02_font_size\" style=\"font-weight: bold;\">ORION WATTA コンペ優勝や泡盛カクテルコンペ総合優勝など６年間で１８の賞を受賞。<\/p>\n      <p class=\"font_gothic section_06_word_02_font_size\" style=\"font-weight: bold;\">那覇市に、ミクソロジースタイルのバーを２店舗経営。<\/p>\n      <p class=\"font_gothic section_06_word_02_font_size\" style=\"font-weight: bold;\">オリオンビール様や県内泡盛酒造メーカー様などと共同で商品開発、<\/p>\n      <p class=\"font_gothic section_06_word_02_font_size\" style=\"font-weight: bold;\">カクテルレシピ提供など企業とのコラボを多数手がける。<\/p>\n    <\/div>\n  <\/div>\n  <div class=\"absolute section_06_word_03_size section_06_word_03_position translate_50_0\">\n    <div class=\"section_06_word_03_size object-fit_cover\">\n      <p class=\"font_gothic section_06_word_03_font_size\" style=\"font-weight: bold;\">２０１７年  全国フレアバーテンダー競技大会 準優勝<\/p>\n      <p class=\"font_gothic section_06_word_03_font_size\" style=\"font-weight: bold;\">２０１８年  横浜カクテルコンペティション 銀賞一位<\/p>\n      <p class=\"font_gothic section_06_word_03_font_size\" style=\"font-weight: bold;\">２０１８年  世界大会ゴールデンカップ シルバー賞&ベストテイスト賞 Ｗ受賞<\/p>\n      <p class=\"font_gothic section_06_word_03_font_size\" style=\"font-weight: bold;\">２０２０年  ORION WATTA カクテルコンペ 優勝<\/p>\n    <\/div>\n  <\/div>\n<\/div>"
+      }
+    },
+    "custom_liquid_xV6Bpk": {
+      "type": "custom-liquid",
+      "settings": {
+        "no_margins": true,
+        "custom_liquid": "<div id=\"section06\" class=\"relative base_size_large\">\n  <div class=\"absolute base_size_large translate object-fit_cover\">\n    <img class=\"base_size_large object-fit_cover\" src=\"{{ 'img_background_05.png' | asset_img_url: '2048x2048', crop: 'center' }}\" alt=\"img_background_05.png\">\n  <\/div>\n  <div class=\"absolute img_word_11_size img_word_11_position translate_50_0\">\n    <img class=\"img_word_11_size object-fit_cover\" src=\"{{ 'img_word_11.png' | asset_img_url: '400x', crop: 'center' }}\" alt=\"img_word_11.png\">\n  <\/div>\n  <div class=\"absolute section_07_word_01_size section_07_word_01_position translate_50_0\">\n    <div class=\"section_07_word_01_size object-fit_cover\">\n      <p class=\"font_gothic section_07_word_01_font_size\" style=\"font-weight: bold;\">棗（なつめ）・枸杞子（くこし）・竜眼（りゅうがん）<\/p>\n      <p class=\"font_gothic section_07_word_01_font_size\" style=\"font-weight: bold;\">陳皮（ちんぴ）・ウイキョウ・花椒（かしょう）・丁字（ちょうじ）・クミスクチン・桂皮（けいひ）<\/p>\n      <p class=\"font_gothic section_07_word_01_font_size\" style=\"font-weight: bold;\">五加皮（ごかひ）・秋ウコン・おたね人参・甘草（かんぞう）<\/p>\n      <p class=\"font_gothic section_07_word_01_font_size\" style=\"font-weight: bold;\">先人たちの見出した知識がもたらす１３の力<\/p>\n      <p class=\"font_gothic section_07_word_01_font_size\" style=\"font-weight: bold;\">ハブエキスとの融合によりDoubleHは誕生する<\/p>\n    <\/div>\n  <\/div>\n  <div class=\"absolute img_17_size img_17_position translate_50_0\">\n    <img class=\"img_17_size object-fit_cover\" src=\"{{ 'img_17.png' | asset_img_url: '400x', crop: 'center' }}\" alt=\"img_17.png\">\n  <\/div>\n  <div class=\"absolute img_word_12_size img_word_12_position translate_50_0\">\n    <img class=\"img_word_12_size object-fit_cover\" src=\"{{ 'img_word_12.png' | asset_img_url: '400x', crop: 'center' }}\" alt=\"img_word_12.png\">\n  <\/div>\n  <div class=\"absolute section_07_img_04_size section_07_img_04_position translate_50_0\">\n    <img class=\"section_07_img_04_size\" src=\"{{ 'img_04.png' | asset_img_url: '600x', crop: 'center' }}\" alt=\"img_04.png\">\n  <\/div>\n<\/div>"
+      }
+    },
+    "custom_liquid_DdHbF3": {
+      "type": "custom-liquid",
+      "settings": {
+        "no_margins": true,
+        "custom_liquid": "<div class=\"relative base_size_title\">\n  <div class=\"absolute img_word_13_size img_word_13_position translate_50_0\">\n    <img class=\"img_word_13_size object-fit_cover\" src=\"{{ 'img_word_13.png' | asset_img_url: '400x', crop: 'center' }}\" alt=\"img_word_13.png\">\n  <\/div>\n<\/div>"
+      }
+    },
+    "swiper_slideshow_R6TGJh": {
+      "type": "swiper-slideshow",
+      "blocks": {
+        "swiper_liquid_fefmj6": {
+          "type": "swiper_liquid",
+          "settings": {
+            "no_margins": true,
+            "title": "スライド１",
+            "liquid_html": "<div class=\"relative base_size_small\">\n  <div class=\"absolute base_size_small translate object-fit_cover\">\n    <img class=\"base_size_small object-fit_cover\" src=\"{{ 'img_18.jpg' | asset_img_url: '2048x2048', crop: 'center' }}\" alt=\"img_18.jpg\">\n  <\/div>\n<\/div>"
+          }
+        },
+        "swiper_liquid_DwwNfm": {
+          "type": "swiper_liquid",
+          "settings": {
+            "no_margins": true,
+            "title": "スライド２",
+            "liquid_html": "<div class=\"relative base_size_small\">\n  <div class=\"absolute base_size_small translate object-fit_cover\">\n    <img class=\"base_size_small object-fit_cover\" src=\"{{ 'img_19.png' | asset_img_url: '2048x2048', crop: 'center' }}\" alt=\"img_19.png\">\n  <\/div>\n<\/div>"
+          }
+        },
+        "swiper_liquid_WFdpgG": {
+          "type": "swiper_liquid",
+          "settings": {
+            "no_margins": true,
+            "title": "スライド３",
+            "liquid_html": "<div class=\"relative base_size_small\">\n  <div class=\"absolute base_size_small translate object-fit_cover\">\n    <img class=\"base_size_small object-fit_cover\" src=\"{{ 'img_20.png' | asset_img_url: '2048x2048', crop: 'center' }}\" alt=\"img_20.png\">\n  <\/div>\n<\/div>"
+          }
+        }
+      },
+      "block_order": [
+        "swiper_liquid_fefmj6",
+        "swiper_liquid_DwwNfm",
+        "swiper_liquid_WFdpgG"
+      ],
+      "settings": {
+        "swiper_liquid": "",
+        "swiper-wrapper_liquid": "",
+        "swiper-slide_liquid": "",
+        "swiper-pagination_liquid": "",
+        "swiper-button-prev_liquid": "",
+        "swiper-button-next_liquid": "",
+        "swiper-scrollbar_liquid": "",
+        "allowSlideNext": "true",
+        "allowSlidePrev": "true",
+        "autoHeight": "false",
+        "centeredSlides": "true",
+        "createElements": "false",
+        "direction": "'horizontal'",
+        "loop": "true",
+        "loopAdditionalSlides": 1,
+        "loopFillGroupWithBlank": "false",
+        "loopedSlides_enabled": "true",
+        "loopedSlides": 1,
+        "loopedSlidesLimit": "true",
+        "maxBackfaceHiddenSlides": 10,
+        "rewind": "false",
+        "slidesOffsetAfter": 0,
+        "slidesOffsetBefore": 0,
+        "slidesPerGroup": 1,
+        "slidesPerGroupAuto": "false",
+        "slidesPerGroupSkip": 0,
+        "slidesPerView_enabled": "true",
+        "slidesPerView": 1,
+        "spaceBetween": 0,
+        "speed": 2000,
+        "pagination_enabled": "true",
+        "pagination_type": "'bullets'",
+        "pagination_clickable": "true",
+        "pagination_dynamicBullets": "true",
+        "pagination_dynamicMainBullets": 1,
+        "pagination_hideOnClick": "true",
+        "pagination_progressbarOpposite": "false",
+        "navigation_enabled": "true",
+        "scrollbar_enabled": "true",
+        "scrollbar_draggable": "true",
+        "scrollbar_dragSize": "auto",
+        "scrollbar_hide": "true",
+        "scrollbar_snapOnRelease": "false",
+        "autoplay_enabled": "true",
+        "autoplay_delay": 3000,
+        "autoplay_disableOnInteraction": "true",
+        "autoplay_pauseOnMouseEnter": "false",
+        "autoplay_reverseDirection": "false",
+        "autoplay_stopOnLastSlide": "false",
+        "autoplay_waitForTransition": "true",
+        "grid_enabled": "false",
+        "grid_fill": "'column'",
+        "grid_rows": 1,
+        "effect": "'fade'",
+        "fadeEffect_crossFade": "true",
+        "cubeEffect_shadow": "true",
+        "cubeEffect_shadowOffset": 20,
+        "cubeEffect_shadowScale": 94,
+        "cubeEffect_slideShadows": "true",
+        "coverflowEffect_depth": 100,
+        "coverflowEffect_modifier": 1,
+        "coverflowEffect_rotate": 50,
+        "coverflowEffect_scale": 1,
+        "coverflowEffect_slideShadows": "true",
+        "coverflowEffect_stretch": 0,
+        "flipEffect_limitRotation": "true",
+        "flipEffect_slideShadows": "true",
+        "creativeEffect_limitProgress": 1,
+        "creativeEffect_prev": "",
+        "creativeEffect_next": "",
+        "creativeEffect_perspective": "true",
+        "creativeEffect_progressMultiplier": 1,
+        "creativeEffect_shadowPerProgress": "false",
+        "cardsEffect_perSlideOffset": 8,
+        "cardsEffect_perSlideRotate": 2,
+        "cardsEffect_rotate": "true",
+        "cardsEffect_slideShadows": "true"
+      }
+    },
+    "custom_liquid_wDdUfP": {
+      "type": "custom-liquid",
+      "settings": {
+        "no_margins": true,
+        "custom_liquid": "<div id=\"section07\" class=\"relative base_size_large\">\n  <div class=\"absolute img_word_14_size img_word_14_position translate_50_0\">\n    <img class=\"img_word_14_size object-fit_cover\" src=\"{{ 'img_word_14.png' | asset_img_url: '400x', crop: 'center' }}\" alt=\"img_word_14.png\">\n  <\/div>\n  <div class=\"absolute img_word_15_size img_word_15_position translate_50_0\">\n    <img class=\"img_word_15_size object-fit_cover\" src=\"{{ 'img_word_15.png' | asset_img_url: '400x', crop: 'center' }}\" alt=\"img_word_15.png\">\n  <\/div>\n  <div class=\"absolute section_10_word_01_size section_10_word_01_position translate_50_0\">\n    <div class=\"section_10_word_01_size object-fit_cover\">\n      <p class=\"font_mincho section_10_word_01_font_size\" style=\"font-weight: bold;\">最も早い記録では中国の西周朝（紀元前1046–771）の時代に存在していた記録があるとされる。<\/p>\n      <p class=\"font_mincho section_10_word_01_font_size\" style=\"font-weight: bold;\">当時蛇酒は重要な医薬品のひとつであり、中国医学では、滋養に良いとされていた。<\/p>\n      <p class=\"font_mincho section_10_word_01_font_size\" style=\"font-weight: bold;\">この文化は中国をはじめ、ベトナムや東南アジア全土に見ることができる。<\/p>\n      <p class=\"font_mincho section_10_word_01_font_size\" style=\"font-weight: bold;\">　<\/p>\n      <p class=\"font_mincho section_10_word_01_font_size\" style=\"font-weight: bold;\">　<\/p>\n      <p class=\"font_mincho section_10_word_01_font_size\" style=\"font-weight: bold;\">紀元前300年から紀元200年頃にまとめられたとされる医学書にも蛇の薬効に関する記述が残され<\/p>\n      <p class=\"font_mincho section_10_word_01_font_size\" style=\"font-weight: bold;\">明朝時代にまとめられた書物には調合、製剤の仕方などがまとめられ<\/p>\n      <p class=\"font_mincho section_10_word_01_font_size\" style=\"font-weight: bold;\">琉球王朝時代、薬のような扱いをされていたとされる。<\/p>\n    <\/div>\n  <\/div>\n  <div class=\"absolute img_word_16_size img_word_16_position translate_50_0\">\n    <img class=\"img_word_16_size object-fit_cover\" src=\"{{ 'img_word_16.png' | asset_img_url: '400x', crop: 'center' }}\" alt=\"img_word_16.png\">\n  <\/div>\n  <div class=\"absolute section_10_word_02_size section_10_word_02_position translate_50_0\">\n    <div class=\"section_10_word_02_size object-fit_cover\">\n      <p class=\"font_gothic section_10_word_02_font_size\" style=\"font-weight: bold;\">DoubleHは生きたハブを鮮度が良い状態で特殊処理（放血法、臭腺除去、腸管摘出）<\/p>\n      <p class=\"font_gothic section_10_word_02_font_size\" style=\"font-weight: bold;\">骨肉皮のみを59度のサトウキビ由来アルコールに浸漬し、無毒化後に旨味成分のエキスを抽出。<\/p>\n      <p class=\"font_gothic section_10_word_02_font_size\" style=\"font-weight: bold;\">　<\/p>\n      <p class=\"font_gothic section_10_word_02_font_size\" style=\"font-weight: bold;\">およそ10年、長期貯蔵熟成し、味にまるみが出たハブエキス原酒をベースとして使用。<\/p>\n      <p class=\"font_gothic section_10_word_02_font_size\" style=\"font-weight: bold;\">　<\/p>\n      <p class=\"font_gothic section_10_word_02_font_size\" style=\"font-weight: bold;\">仕込タンクに体に良いとされるハーブ13種類を浸漬袋に入れて漬ける。<\/p>\n      <p class=\"font_gothic section_10_word_02_font_size\" style=\"font-weight: bold;\">ハーブエキスは果実系ハーブも含まれブランデーのような深みと甘みが特徴となる。<\/p>\n      <p class=\"font_gothic section_10_word_02_font_size\" style=\"font-weight: bold;\">ハブエキスとハーブエキスをブレンド、調合し熟成。いよいよDoubleHは完成する<\/p>\n    <\/div>\n  <\/div>\n  <div class=\"absolute section_10_img_04_size section_10_img_04_position translate_50_0\">\n    <img class=\"section_10_img_04_size\" src=\"{{ 'img_04.png' | asset_img_url: '600x', crop: 'center' }}\" alt=\"img_04.png\">\n  <\/div>\n<\/div>"
+      }
+    },
+    "product_collection_zabjje": {
+      "type": "product-collection",
+      "blocks": {
+        "item_8WUpVa": {
+          "type": "item",
+          "settings": {
+            "item_product": "doubleh-750",
+            "item_button": "true"
+          }
+        },
+        "item_dVqVJ3": {
+          "type": "item",
+          "settings": {
+            "item_product": "doubleh-200-30",
+            "item_button": "true"
+          }
+        },
+        "item_Et4Fpw": {
+          "type": "item",
+          "settings": {
+            "item_product": "doubleh-15lpet-30",
+            "item_button": "true"
+          }
+        },
+        "item_wPV6Dq": {
+          "type": "item",
+          "settings": {
+            "item_product": "doubleh-easyshot-30",
+            "item_button": "true"
+          }
+        },
+        "item_qYBP6g": {
+          "type": "item",
+          "settings": {
+            "item_product": "double-h-original-shotgrass-5",
+            "item_button": "true"
+          }
+        }
+      },
+      "block_order": [
+        "item_8WUpVa",
+        "item_dVqVJ3",
+        "item_Et4Fpw",
+        "item_wPV6Dq",
+        "item_qYBP6g"
+      ],
+      "settings": {
+        "main_swiper_slide_quantity": 4,
+        "main_swiper_slide_pagination_enabled": "false",
+        "main_swiper_slide_navigation_enabled": "true",
+        "main_swiper_slide_scrollbar_enabled": "false",
+        "section_background-color": "#000000",
+        "section_background-size": "cover",
+        "section_background-position": "center",
+        "section_background-repeat": "no-repeat",
+        "section_wrapper_width": "min(100%, 1080px)",
+        "header_enabled": "true",
+        "header_height": "80px",
+        "header_background-color": "rgba(0,0,0,0)",
+        "header_background-size": "cover",
+        "header_background-position": "center",
+        "header_background-repeat": "no-repeat",
+        "header_image_enabled": "true",
+        "header_image_border_enabled": "false",
+        "header_image_width": "200px",
+        "header_image_height": "50px",
+        "header_image_border-width": "2px",
+        "header_image_border-style": "solid",
+        "header_image_border-color": "rgba(255, 255, 255, 1)",
+        "header_image_margin_horizontal-position": "center",
+        "header_image_margin_vertical-position": "middle",
+        "header_image_margin": "0",
+        "header_image_padding": "0",
+        "header_text_enabled": "true",
+        "header_text_border_enabled": "true",
+        "header_text": "商品はこちら",
+        "header_text_width": "200px",
+        "header_text_height": "50px",
+        "header_text_color": "#ffffff",
+        "header_text_background": "rgba(0,0,0,0)",
+        "header_text_font-family": "tsukushioldmincho, ms mincho, ヒラギノ明朝 pro w3, hiragino mincho pro, serif;",
+        "header_text_font-size": "25px",
+        "header_text_font-weight": "bold",
+        "header_text_border-width": "0 0 2px 0",
+        "header_text_border-style": "solid",
+        "header_text_border-color": "rgba(255, 255, 255, 1)",
+        "header_text_margin_horizontal-position": "left",
+        "header_text_margin_vertical-position": "middle",
+        "header_text_padding_horizontal-position": "center",
+        "header_text_padding_vertical-position": "center",
+        "header_text_margin": "0",
+        "header_text_padding": "0",
+        "main_enabled": "true",
+        "main_height": "400px",
+        "main_background-color": "rgba(0,0,0,0)",
+        "main_background-size": "cover",
+        "main_background-position": "center",
+        "main_background-repeat": "no-repeat",
+        "main_item_width": "250px",
+        "main_item_image_border_enabled": "true",
+        "main_item_image_height": "250px",
+        "main_item_image_border-width": "1px",
+        "main_item_image_border-style": "solid",
+        "main_item_image_border-color": "rgba(255, 255, 255, 1)",
+        "main_item_title_border_enabled": "true",
+        "main_item_title_height": "50px",
+        "main_item_title_text_color": "#ffffff",
+        "main_item_title_text_font-family": "tsukushioldmincho, ms mincho, ヒラギノ明朝 pro w3, hiragino mincho pro, serif;",
+        "main_item_title_text_font-size": "15px",
+        "main_item_title_text_font-weight": "bold",
+        "main_item_title_border-width": "1px 1px 0 1px",
+        "main_item_title_border-style": "solid",
+        "main_item_title_border-color": "rgba(255, 255, 255, 1)",
+        "main_item_title_horizontal-position": "flex-start",
+        "main_item_title_vertical-position": "flex-start",
+        "main_item_price_border_enabled": "true",
+        "main_item_price_height": "20px",
+        "main_item_price_text_color": "#ffffff",
+        "main_item_price_text_font-family": "tsukushioldmincho, ms mincho, ヒラギノ明朝 pro w3, hiragino mincho pro, serif;",
+        "main_item_price_text_font-size": "15px",
+        "main_item_price_text_font-weight": "bold",
+        "main_item_price_border-width": "0 1px 1px 1px",
+        "main_item_price_border-style": "solid",
+        "main_item_price_border-color": "rgba(255, 255, 255, 1)",
+        "main_item_price_horizontal-position": "flex-end",
+        "main_item_price_vertical-position": "center",
+        "main_item_button_enabled": "true",
+        "main_item_button_border_enabled": "false",
+        "main_item_button_height": "60px",
+        "main_item_button_border-width": "1px",
+        "main_item_button_border-style": "solid",
+        "main_item_button_border-color": "rgba(255, 255, 255, 1)",
+        "main_item_button_horizontal-position": "center",
+        "main_item_button_vertical-position": "center",
+        "main_item_input_button_border_enabled": "true",
+        "main_item_input_button_text": "カートに入れる",
+        "main_item_input_button_text_width": "180px",
+        "main_item_input_button_text_height": "35px",
+        "main_item_input_button_text_font-family": "tsukushioldmincho, ms mincho, ヒラギノ明朝 pro w3, hiragino mincho pro, serif;",
+        "main_item_input_button_text_font-size": "16px",
+        "main_item_input_button_text_font-weight": "bold",
+        "main_item_input_button_before_color": "#ffd814",
+        "main_item_input_button_text_before_color": "#000000",
+        "main_item_input_button_after_color": "#f7ca00",
+        "main_item_input_button_text_after_color": "#ffffff",
+        "footer_enabled": "true",
+        "footer_height": "10px",
+        "footer_background-color": "rgba(0,0,0,0)",
+        "footer_background-size": "cover",
+        "footer_background-position": "center",
+        "footer_background-repeat": "no-repeat",
+        "footer_image_enabled": "false",
+        "footer_image_border_enabled": "false",
+        "footer_image_width": "200px",
+        "footer_image_height": "50px",
+        "footer_image_border-width": "1px",
+        "footer_image_border-style": "solid",
+        "footer_image_border-color": "rgba(255, 255, 255, 1)",
+        "footer_image_margin_horizontal-position": "center",
+        "footer_image_margin_vertical-position": "middle",
+        "footer_image_margin": "0",
+        "footer_image_padding": "0",
+        "footer_text_enabled": "false",
+        "footer_text_border_enabled": "true",
+        "footer_text": "テキスト",
+        "footer_text_width": "200px",
+        "footer_text_height": "50px",
+        "footer_text_color": "#ffffff",
+        "footer_text_background": "rgba(0,0,0,0)",
+        "footer_text_font-family": "tsukushioldmincho, ms mincho, ヒラギノ明朝 pro w3, hiragino mincho pro, serif;",
+        "footer_text_font-size": "14px",
+        "footer_text_font-weight": "bold",
+        "footer_text_border-width": "2px",
+        "footer_text_border-style": "solid",
+        "footer_text_border-color": "rgba(255, 255, 255, 1)",
+        "footer_text_margin_horizontal-position": "center",
+        "footer_text_margin_vertical-position": "middle",
+        "footer_text_padding_horizontal-position": "center",
+        "footer_text_padding_vertical-position": "center",
+        "footer_text_margin": "0",
+        "footer_text_padding": "0"
+      }
+    },
+    "custom_liquid_J6crnq": {
+      "type": "custom-liquid",
+      "custom_css": [
+        "input[type=\"submit\"] {margin: -16px 0; padding: 10px 15px; font-weight: bold; color: #000000; background-color: #fdd000; border-radius: 6px; transition: background-color 0.1s, color 0.1s;}",
+        "input[type=\"submit\"]:hover {color: #ffffff; background-color: #f7ca00;}"
+      ],
+      "settings": {
+        "no_margins": true,
+        "custom_liquid": "<div id=\"section08\" class=\"relative base_size_title\">\n  <div class=\"absolute base_size_title section_12_word_01_position translate_50_0\">\n    <a class=\"section_12_word_01_size section_12_word_01_font_size object-fit_cover\" href=\"https:\/\/shimmer-online.myshopify.com\/pages\/contact\">\n      <input type=\"submit\" value=\"お取引に関するお問い合わせはこちら\"\/>\n    <\/a>\n  <\/div>\n<\/div>"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "swiper_slideshow_yTh4hV",
+    "custom_liquid_HkyEmU",
+    "custom_liquid_g4n8iy",
+    "custom_liquid_9EymXD",
+    "custom_liquid_kMTrF6",
+    "custom_liquid_KtiymE",
+    "custom_liquid_xV6Bpk",
+    "custom_liquid_DdHbF3",
+    "swiper_slideshow_R6TGJh",
+    "custom_liquid_wDdUfP",
+    "product_collection_zabjje",
+    "custom_liquid_J6crnq"
+  ]
+}

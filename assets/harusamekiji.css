@@ -1,0 +1,322 @@
+/****
+*
+* HARUSAME KIJIPAGE 2023/07/9 hyuga kawazoe
+*
+****/
+
+h2 {
+    color: black;
+}
+
+@media (min-width: 1201px) {
+    .toparea {
+        width: 100%;
+        height: 700px;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+  　.topareapc {
+     display: block;
+   }
+
+   .topareasp {
+     display: none;
+   }
+
+    .kijitopcontena {
+        opacity: 0.8;
+        background-color: white;
+        width: 700px;
+        height: 400px;
+        position: relative;
+        top: 140px;
+        left: 50px;
+    }
+
+    .contentname {
+        font-size: 61px;
+        color: #bf9e74;
+        text-align: left;
+        line-height: 1.2;
+        padding: 40px 0px 20px 90px;
+    }
+
+    .kijiNO {
+        padding: 0px 0px 15px 90px;
+        font-size: 20px;
+    }
+
+    .kijiprof {
+        padding: 0px 0px 15px 90px;
+        font-size: 26px;
+    }
+
+    .kijihunbunarea {
+        width: 40%;
+        margin: auto;
+        text-align: left;
+        margin-top: 120px;
+        margin-bottom: 120px;
+        max-width: 650px;
+    }
+
+    .kijihonbuntitle {
+        margin-bottom: 40px;
+        font-size: 24px;
+    }
+
+    .kijihonbun {
+        margin-bottom: 20px;
+        font-size: 16px;
+    }
+
+    .kijihonbuncatchcopy {
+        margin: 50px 0px;
+        font-size: 24px;
+    }
+
+    .kijiseniarea {
+        width: 40%;
+        margin: 40px auto;
+        text-align: left;
+        max-width: 650px;
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+@media (max-width: 1200px) {
+
+    .topareapc {
+     display: block;
+   }
+
+   .topareasp {
+     display: none;
+   }
+  
+    .toparea {
+        width: 100%;
+        height: 700px;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .kijitopcontena {
+        opacity: 0.8;
+        background-color: white;
+        width: 700px;
+        height: 400px;
+        position: relative;
+        top: 140px;
+        left: 50px;
+    }
+
+    .contentname {
+        font-size: 61px;
+        color: #bf9e74;
+        text-align: left;
+        line-height: 1.2;
+        padding: 40px 0px 20px 90px;
+    }
+
+    .kijiNO {
+        padding: 0px 0px 15px 90px;
+        font-size: 20px;
+    }
+
+    .kijiprof {
+        padding: 0px 0px 15px 90px;
+        font-size: 26px;
+    }
+
+    .kijihunbunarea {
+        width: 40%;
+        margin: auto;
+        text-align: left;
+        margin-top: 120px;
+        margin-bottom: 120px;
+        max-width: 650px;
+    }
+
+    .kijihonbuntitle {
+        margin-bottom: 40px;
+        font-size: 24px;
+    }
+
+    .kijihonbun {
+        margin-bottom: 20px;
+        font-size: 16px;
+    }
+
+    .kijihonbuncatchcopy {
+        margin: 50px 0px;
+        font-size: 24px;
+    }
+
+    .kijiseniarea {
+        width: 40%;
+        margin: 40px auto;
+        text-align: left;
+        max-width: 650px;
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+@media (max-width: 800px) {
+
+    .topareapc {
+     display: block;
+   }
+
+   .topareasp {
+     display: none;
+   }
+  
+    .toparea {
+        width: 100%;
+        height: 700px;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .kijitopcontena {
+        opacity: .8;
+        background-color: #fff;
+        width: 500px;
+        height: 300px;
+        position: relative;
+        top: 240px;
+        left: 50px;
+    }
+
+    .contentname {
+        font-size: 40px;
+        color: #bf9e74;
+        text-align: left;
+        line-height: 1.2;
+        padding: 40px 0 20px 90px;
+    }
+
+    .kijiNO {
+        padding: 0px 0px 15px 90px;
+        font-size: 20px;
+    }
+
+    .kijiprof {
+        padding: 0px 0px 15px 90px;
+        font-size: 24px;
+    }
+
+    .kijihunbunarea {
+        width: 60%;
+        margin: auto;
+        text-align: left;
+        margin-top: 120px;
+        margin-bottom: 120px;
+        max-width: 650px;
+    }
+
+    .kijihonbuntitle {
+        margin-bottom: 40px;
+        font-size: 24px;
+    }
+
+    .kijihonbun {
+        margin-bottom: 20px;
+        font-size: 16px;
+    }
+
+    .kijihonbuncatchcopy {
+        margin: 50px 0px;
+        font-size: 24px;
+    }
+
+    .kijiseniarea {
+        width: 60%;
+        margin: 40px auto;
+        text-align: left;
+        max-width: 650px;
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .topareapc {
+     display: none;
+   }
+
+   .topareasp {
+     display: block;
+   }
+  
+    .toparea {
+        width: 100%;
+        height: 400px;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .kijitopcontena {
+        opacity: .8;
+        background-color: #fff;
+        width: 350px;
+        height: 200px;
+        position: relative;
+        top: 160px;
+        left: 40px;
+    }
+
+    .contentname {
+        font-size: 35px;
+        color: #bf9e74;
+        text-align: left;
+        line-height: 1.2;
+        padding: 25px 0 20px 25px;
+    }
+
+    .kijiNO {
+        padding: 0px 0 5px 25px;
+        font-size: 16px;
+    }
+
+    .kijiprof {
+        padding: 0 0 15px 25px;
+        font-size: 18px;
+    }
+
+    .kijihunbunarea {
+        width: 75%;
+        margin: 70px auto;
+        text-align: left;
+        max-width: 650px;
+    }
+
+    .kijihonbuntitle {
+        margin-bottom: 40px;
+        font-size: 18px;
+    }
+
+    .kijihonbun {
+        margin-bottom: 20px;
+        font-size: 14px;
+    }
+
+    .kijihonbuncatchcopy {
+        margin: 50px 0px;
+        font-size: 18px;
+    }
+
+    .kijiseniarea {
+        width: 75%;
+        margin: 20px auto;
+        text-align: left;
+        max-width: 650px;
+        display: flex;
+        justify-content: space-between;
+    }
+}

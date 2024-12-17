@@ -1,0 +1,99 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "vendor_and_type": {
+          "type": "vendor_and_type",
+          "settings": {
+            "show_vendor": false,
+            "show_type": false
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {
+            "heading_h1": true
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "5070dc7e-8196-4ec8-80f1-207454a42b52": {
+          "type": "text",
+          "settings": {
+            "text": "【送料無料】",
+            "text_style": "bold"
+          }
+        },
+        "4ec8a1fb-25ae-4e04-9c85-dd6758132e69": {
+          "type": "variant_picker",
+          "settings": {
+            "variant_style": "dropdown",
+            "show_realtime_availability": true,
+            "show_size_chart": false,
+            "size_chart_variant": "Size",
+            "size_chart_page": ""
+          }
+        },
+        "2a842c2c-cc6d-4658-b1a3-4f2b8d09efa2": {
+          "type": "description",
+          "settings": {
+            "display": "standard",
+            "icon": "none"
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_tax_and_shipping": false,
+            "show_quantity_selector": true,
+            "enable_payment_button": true,
+            "show_pickup_availability": true,
+            "enable_mobile_sticky_cart": true
+          }
+        }
+      },
+      "block_order": [
+        "vendor_and_type",
+        "title",
+        "price",
+        "5070dc7e-8196-4ec8-80f1-207454a42b52",
+        "4ec8a1fb-25ae-4e04-9c85-dd6758132e69",
+        "2a842c2c-cc6d-4658-b1a3-4f2b8d09efa2",
+        "buy_buttons"
+      ],
+      "settings": {
+        "media_style": "one-column",
+        "sticky_behaviour": "top",
+        "full_width": true,
+        "show_backorder_text": true,
+        "slide_nav_style": "arrows",
+        "media_crop": "center",
+        "enable_zoom": true,
+        "zoom_cursor": "plus-light",
+        "show_thumbnails": true,
+        "enable_video_looping": false,
+        "scroll_to_variant_media": true,
+        "highlight_selected_media": true,
+        "variant_media_grouping": false,
+        "variant_media_grouping_option": "Color,Colour,Couleur,Farbe"
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "show_product_recommendations": true,
+        "title": "recommend",
+        "hide_swatches": false,
+        "show_vendor": true,
+        "grid": 4
+      }
+    }
+  },
+  "order": [
+    "main",
+    "product-recommendations"
+  ]
+}

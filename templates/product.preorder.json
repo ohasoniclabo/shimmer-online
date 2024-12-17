@@ -1,0 +1,100 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "vendor_and_type": {
+          "type": "vendor_and_type",
+          "settings": {
+            "show_vendor": true,
+            "show_type": true
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {
+            "heading_h1": true
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "variant_style": "underlined",
+            "show_realtime_availability": true,
+            "show_size_chart": false,
+            "size_chart_variant": "Size",
+            "size_chart_page": ""
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "disabled": true,
+          "settings": {
+            "show_tax_and_shipping": false,
+            "show_quantity_selector": true,
+            "enable_payment_button": false,
+            "show_pickup_availability": false,
+            "enable_mobile_sticky_cart": false
+          }
+        },
+        "60152375-d767-4355-b45d-54531dee8afb": {
+          "type": "description",
+          "settings": {
+            "display": "standard",
+            "icon": "none"
+          }
+        },
+        "text_aneT8P": {
+          "type": "text",
+          "settings": {
+            "text": "【配送について】当店では資源の再利用を目的に梱包用資材を２次利用する場合がございます。贈答用などのご利用で新品の資材をご希望の場合は、ご注文後に別途ご連絡下さい。",
+            "text_style": "uppercase"
+          }
+        }
+      },
+      "block_order": [
+        "vendor_and_type",
+        "title",
+        "price",
+        "variant_picker",
+        "buy_buttons",
+        "60152375-d767-4355-b45d-54531dee8afb",
+        "text_aneT8P"
+      ],
+      "settings": {
+        "media_style": "one-column",
+        "sticky_behaviour": "top",
+        "full_width": false,
+        "show_backorder_text": true,
+        "slide_nav_style": "dots",
+        "media_crop": "center",
+        "enable_zoom": true,
+        "zoom_cursor": "plus-light",
+        "show_thumbnails": true,
+        "enable_video_looping": false,
+        "scroll_to_variant_media": true,
+        "highlight_selected_media": true,
+        "variant_media_grouping": false,
+        "variant_media_grouping_option": "Color,Colour,Couleur,Farbe"
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "show_product_recommendations": true,
+        "title": "You may also like",
+        "hide_swatches": false,
+        "show_vendor": false,
+        "grid": 3
+      }
+    }
+  },
+  "order": [
+    "main",
+    "product-recommendations"
+  ]
+}

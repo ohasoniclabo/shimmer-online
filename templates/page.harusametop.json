@@ -1,0 +1,27 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page-harusametop",
+      "settings": {}
+    },
+    "131a7067-8ec4-4735-b367-6c4ab53f57de": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Featured collection",
+        "collection": "all",
+        "layout": "carousel",
+        "show_vendor": false,
+        "grid": 4,
+        "rows": 1,
+        "grid_mobile": "2",
+        "hide_swatches": false,
+        "alternate_bg_color": false,
+        "show_view_all": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "131a7067-8ec4-4735-b367-6c4ab53f57de"
+  ]
+}

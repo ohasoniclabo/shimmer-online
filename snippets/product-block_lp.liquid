@@ -1,0 +1,474 @@
+{%- liquid
+  assign cheapest_variant = product.variants | sort: 'price' | first
+
+  assign on_sale = false
+  if cheapest_variant.compare_at_price > cheapest_variant.price
+    assign on_sale = true
+  endif
+
+  assign product_url = product.url | within: collection
+
+  if animation_type == blank
+    assign animation_type = "cc-fade-in-up"
+  endif
+
+  assign product_has_swatches = false
+  if settings.swatch_enabled and settings.prod_block_swatches and hide_swatches != true
+    for product_option in product.options_with_values
+      if settings.swatch_option_name == product_option.name
+        assign product_has_swatches = true
+        break
+      endif
+    endfor
+  endif
+
+  assign primary_image = product.featured_media.preview_image
+  assign product_images = product.media | where: 'media_type', 'image'
+
+  if settings.prod_hover == "second_image"
+    assign secondary_image = product.media[1].preview_image
+
+    for media in product_images offset: 1
+      if media.id == product.featured_media.id
+        assign active_media_found = true
+      else
+        if active_media_found
+          assign secondary_image = media.preview_image
+          break
+        endif
+      endif
+    endfor
+  endif
+
+  if settings.prod_hover == "all_images" or product_has_swatches
+    assign active_media_found = false
+    assign images_before_featured = ""
+    assign images_after_featured = ""
+
+    for media in product_images
+      if media.id == product.featured_media.id
+        assign active_media_found = true
+      endif
+
+      assign image_placeholder = media | img_url: '1x1' | replace: '_1x1.', '_{width}x.'
+      if active_media_found
+        assign images_after_featured = images_after_featured | append: "," | append: image_placeholder
+      else
+        assign images_before_featured = images_before_featured | append: "," | append: image_placeholder
+      endif
+    endfor
+
+    assign card_images = images_after_featured | append: images_before_featured | replace: ",,", "," | remove_first: ","
+  endif
+
+  if settings.prod_show_videos
+    assign videos = product.media | where: "media_type", "video"
+    unless videos == blank
+      for source in videos[0].sources
+        if source != blank and source.format == "mp4"
+          assign video_source = source
+          break
+        endif
+      endfor
+
+      assign mp4_url = video_source.url
+    endunless
+  endif
+
+  assign param_symbol = "?"
+  if product.url contains "?"
+    assign param_symbol = "&"
+  endif
+-%}
+
+<div style="position:relative;">
+    <div class="totalbrand">
+      <div class="cardbrand">
+        <a href="https://shimmer.okinawa/pages/shimmerpj-{{ number }}"></a>
+        <div class="brand1">
+          <a style="display: block;
+                    height: 88px;" href="https://shimmer.okinawa/pages/shimmerpj-{{ number }}">
+          <span class="renban">#{{ number }}</span>
+          </a>
+        </div>
+        <div class="brand2">
+          <a style="display: block;
+                    width: 256px;
+                    height: 97px;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    padding-right: 25px;
+                    " href="https://shimmer.okinawa/pages/shimmerpj-{{ number }}"> <span class="brandname">{{product.metafields.custom._brand}}</span></a>
+        </div>
+      </div>
+      
+    </div>
+    <div class="cardname">
+        <div class="names">
+          <a style="display: block;
+                    padding-top: 20px;
+                    padding-bottom: 20px;" href="https://shimmer.okinawa/pages/shimmerpj-{{ number }}">{{product.metafields.custom.shimmerpj_customobject}}</a>
+        </div>
+        <div class="arrow">
+          <a style="display: block;
+                  padding-left: 20px;
+                  padding-right: 20px;
+                  padding-top: 26px;
+                  padding-bottom: 26px;" href="https://shimmer.okinawa/pages/shimmerpj-{{ number }}"><div class="arrows"></div><div class="arrows2"></div></a>
+        </div>
+    </div>
+</div>
+   
+
+<style>
+
+
+      .arrows {
+        width: 16px;
+        height: 7px;
+        padding-left: -6px;
+        border-top: 2px solid #ffffff;
+        /* border-right: 2px solid #000000; */
+        /* border-bottom: 2px solid #ffffff; */
+        transform: rotate(45deg);
+        margin-left: 14px;
+      }
+
+      .arrows2 {
+        width: 30px;
+        height: 0px;
+        border-top: 2px solid #ffffff;
+        /* border-right: 2px solid #000000; */
+        /* border-bottom: 2px solid #ffffff; */
+        transform: rotate(0deg);
+        
+      }
+  
+      .totalbrand {
+        height:109px;
+        border:solid 1px black;
+        margin-right:86.76px;
+        margin-bottom: 100.5px;
+        padding-top: 16px;
+        padding-left: 16.7px;
+      }
+       
+      .cardbrand {
+        display:flex;
+        align-items: center;
+        text-align: left;
+      }
+
+      .cardname {
+        position: absolute;
+        top: 70px;
+        left: 50px;
+        width: 310px;
+        height: 59px;
+        border: solid 1px black;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        color:white;
+        background-color:black;
+        text-align: left;
+        
+      }
+
+      .is-animated {
+        animation: SlideIn 3s;
+      }
+
+      .names {
+        width:65%;
+      }
+
+      .info {
+        margin-left:80px;
+        align-items: flex-start;
+      }
+
+      .renban {
+        font-size:30px;
+        margin-right:27.68px;
+      }
+
+      .brandname {
+        font-size:18px;
+        
+      }
+
+      @keyframes SlideIn {
+        0% {
+          opacity: 0;
+          transform: translateY(64px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    
+    @media(max-width:1300px){
+       .info2 {
+          display:none;
+        }
+
+      .info3{
+        max-width: 720px;
+        font-size: 13px;
+        /*display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+        overflow: hidden;*/
+        text-align:left;
+        padding-left:10px;
+      }
+
+        .info {
+        margin-left:80px;
+        align-items: flex-start;
+      }
+    }
+
+     @media(max-width:1300px){
+       .info1 {
+           flex-direction: column;
+           align-items: flex-start;
+           text-align: left;
+           padding-right: 10px;
+        }
+
+      .name,.brand,.price {
+          margin:10px 0;
+          font-size:16px;
+        }
+
+       .theme-filter-container .cc-product-filter {
+        flex-basis: 14.6%;
+        }
+     }
+
+    @media(max-width:869px){
+
+    .info3{
+        display:none;
+      }
+  }
+    @media(max-width:767px){
+
+      .table {
+        justify-content: center;
+      }
+
+      .info {
+        width:200px;
+      }
+
+
+    }
+
+    @media(min-width:768px){
+
+      .table {
+        justify-content: flex-start;
+      }
+
+
+    }
+
+    @media(max-width:425px){
+
+      .table {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .brand,.price {
+          margin:5px 0;
+          font-size:14px;
+      }
+
+      .name {
+          margin-top:10px;
+          margin-bottom:5px;
+          font-size:14px;
+      }
+
+      .info {
+        margin-left:0px;
+        align-items: center;
+      }
+    }
+
+    .table {
+      display:flex;
+      margin-top: 20px;
+      margin-bottom: 20px;
+ 
+     }
+
+    .card {
+      background:#E8E4DF;
+      padding: 30px 10px 10px 10px;
+      margin-bottom:20px;
+    }
+
+    .info {
+      
+      display:flex;
+      flex-direction: column;
+      
+     }
+
+    .info1 {
+      display:flex;
+      
+    }
+
+    .name,.brand,.price {
+      color: #c0b283;
+    }
+
+
+  
+</style>
+
+
+<script>
+const mediaQuery = window.matchMedia('(max-width:1300px)')
+const mediaQuery2 = window.matchMedia('(min-width:1299px)')
+var flag = true
+var flag2 = true
+
+window.onload =function textTrim() {
+
+  if (mediaQuery.matches){
+    // テキストをトリミングする要素
+    var selector = document.querySelectorAll('.info3');
+  } else {
+    // テキストをトリミングする要素
+    var selector = document.querySelectorAll('.info2');
+  }
+ 
+  // 表示したい行数
+  var row = 3;
+ 
+  // 文末に追加したい文字
+  var clamp = '...続く>>';
+ 
+  for (i = 0; i < selector.length; i++) {
+    //CSSプロパティを取得
+    var style = window.getComputedStyle(selector[i]);
+    var fontsize = parseFloat(style.fontSize); //font-sizeを取得
+    var width = parseFloat(style.width); //widthを取得
+    var letterSpacing = parseFloat(style.letterSpacing); //letter-spacingを取得
+ 
+    // 収まる文字数を計算
+    var wordCount = Math.floor(width / fontsize) * row;
+ 
+    // letter-spacingも含めて計算する場合
+     //var wordCount = Math.floor(width / (fontsize + letterSpacing)) * row;
+ 
+    // 文字数を超えたら
+    if (selector[i].innerText.length > wordCount) {
+      var str = selector[i].innerText; //文字数を取得
+      str = str.substr(0, (wordCount - 5)); //5文字削る
+      selector[i].innerText = str + clamp; //文末にテキストを足す
+    }
+  }
+}
+
+
+
+
+function handleTabletChange(e) {
+  // メディアクエリがtrueかどうかを確認
+  if (e.matches && flag) {
+    // 次に、メッセージをコンソールに記録
+
+  // テキストをトリミングする要素
+  var selector = document.querySelectorAll('.info3');
+ 
+  // 表示したい行数
+  var row = 3;
+ 
+  // 文末に追加したい文字
+  var clamp = '...続く>>';
+ 
+  for (i = 0; i < selector.length; i++) {
+    //CSSプロパティを取得
+    var style = window.getComputedStyle(selector[i]);
+    var fontsize = parseFloat(style.fontSize); //font-sizeを取得
+    var width = parseFloat(style.width); //widthを取得
+    var letterSpacing = parseFloat(style.letterSpacing); //letter-spacingを取得
+ 
+    // 収まる文字数を計算
+    var wordCount = Math.floor(width / fontsize) * row;
+ 
+    // letter-spacingも含めて計算する場合
+     //var wordCount = Math.floor(width / (fontsize + letterSpacing)) * row;
+ 
+    // 文字数を超えたら
+    if (selector[i].innerText.length > wordCount) {
+      var str = selector[i].innerText; //文字数を取得
+      str = str.substr(0, (wordCount - 5)); //5文字削る
+      selector[i].innerText = str + clamp; //文末にテキストを足す
+    }
+  }
+
+    flag = false
+
+  }
+}
+
+function handleTabletChange2(e) {
+  // メディアクエリがtrueかどうかを確認
+  if (e.matches && flag2) {
+    // 次に、メッセージをコンソールに記録
+
+  // テキストをトリミングする要素
+  var selector = document.querySelectorAll('.info2');
+ 
+  // 表示したい行数
+  var row = 3;
+ 
+  // 文末に追加したい文字
+  var clamp = '...続く>>';
+ 
+  for (i = 0; i < selector.length; i++) {
+    //CSSプロパティを取得
+    var style = window.getComputedStyle(selector[i]);
+    var fontsize = parseFloat(style.fontSize); //font-sizeを取得
+    var width = parseFloat(style.width); //widthを取得
+    var letterSpacing = parseFloat(style.letterSpacing); //letter-spacingを取得
+ 
+    // 収まる文字数を計算
+    var wordCount = Math.floor(width / fontsize) * row;
+ 
+    // letter-spacingも含めて計算する場合
+     //var wordCount = Math.floor(width / (fontsize + letterSpacing)) * row;
+ 
+    // 文字数を超えたら
+    if (selector[i].innerText.length > wordCount) {
+      var str = selector[i].innerText; //文字数を取得
+      str = str.substr(0, (wordCount - 5)); //5文字削る
+      selector[i].innerText = str + clamp; //文末にテキストを足す
+    }
+  }
+
+    flag2 = false
+
+  }
+}
+
+// イベントリスナーを登録
+mediaQuery.addListener(handleTabletChange)
+mediaQuery2.addListener(handleTabletChange2)
+ 
+// 初期チェック
+handleTabletChange(mediaQuery)
+handleTabletChange2(mediaQuery2)
+
+</script>

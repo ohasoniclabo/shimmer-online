@@ -1,0 +1,76 @@
+<script>
+  $(function(){
+  if($('.card').length == 0){
+    return;
+  }
+
+  $('.card').each(function(){
+
+    const card = $(this);
+
+    const url = $(this).data('url');
+    const data_url = url.replace('https://shimmer.okinawa/',''); //一応、replace
+    let html = '';
+
+    $.ajax({
+      type: 'GET',
+      url: window.Shopify.routes.root + data_url ,
+      dataType: 'json'
+    }).done(function (json, status, xhr) {
+
+      let target = json.product;
+      let description = target.body_html;
+
+      let price = target.variants[0].price;
+      let variantId = target.variants[0].id;
+      let addurl = 'https://shimmer.okinawa/cart/add?id=' + variantId + '&quantity=1';
+
+      html = `
+                <div class="harusamekijititlesp">
+                    <!--HARUSAME NEW LINE UP 商品エリア 表示SP-->
+                    <div class="kijiNoSP">${target.title}</div>
+                    <div class="priceareaSP">&yen;${price}<span class="taxsiplay">(税込)</span></div>
+                </div>
+                <div class="harusamekijititle">
+                    <!--HARUSAME NEW LINE UP 商品エリア-->
+                    <div class="itemname">${target.title}</div>
+                    <div class="pricearea">&yen;${price}<span class="taxsiplay">(税込)</span></div>
+                    <div class="kijicontent">
+                        ${description}
+                    </div>
+                    <div class="kijilink">
+                        <!--購入ボタン-->
+                        <button class="hrusamebybutton"
+                            onclick="location.href='${addurl}'">
+                            <span class="catchcopybuttontext">カートに入れる</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="kijiimage">
+                    <img src="${target.image.src}">
+                </div>
+     
+`;
+      $(card).append(html);
+
+    }).fail(function (json) {
+      // console.error('失敗しました。')
+    });
+
+
+  });
+});
+  
+</script>
+
+    {{ page.content }}
+
+
+{% schema %}
+{
+  "name": "Page"
+}
+{% endschema %}
+
+<link rel="stylesheet" href="{{ 'harusametop.css' | asset_url }}">
+ 

@@ -1,0 +1,28 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-article-product-teasersite",
+      "settings": {
+        "featured_image": "nomal",
+        "blog_show_author": false,
+        "blog_show_date": false,
+        "blog_show_social": true
+      }
+    },
+    "a06e88f9-e0a8-4fa6-ad63-8d96eb830348": {
+      "type": "newsletter-regist",
+      "settings": {
+        "subheading": "",
+        "title": "",
+        "text": "",
+        "color_scheme": "custom",
+        "color_bg": "#000000",
+        "color_text": "#ffffff"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "a06e88f9-e0a8-4fa6-ad63-8d96eb830348"
+  ]
+}

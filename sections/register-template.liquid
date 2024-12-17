@@ -1,0 +1,175 @@
+{% style %}
+  
+    .section-id-{{ section.id }} {
+      background: black;
+      color: white;
+    }
+
+
+  @media (min-width: 807px) {
+    #section-id-{{ section.id }} .overlay-type {
+      padding: 10px;
+    }
+
+    .submitbox {
+      display:flex;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .submitbutton {
+      font-size:20px;
+      padding:5px 0;
+      margin-left:20px;
+    }
+
+    .submitinfo {
+      font-size:18px;
+      margin-right:44.5px;
+      text-align:left;
+    }
+  }
+
+  @media (max-width: 806px) {
+    .submitbox {
+      display: flex;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      flex-direction: column;
+      text-align: left;
+    }
+
+    .submitbutton {
+      font-size:14px;
+      padding:5px 0;
+      margin-left:0px;
+    }
+
+    .submitinfo {
+      font-size:14px;
+      margin-right:44.5px;
+      text-align:left;
+    }
+
+    .section-id-{{ section.id }} {
+      padding:20px 0;
+    }
+  }
+
+
+{% endstyle %}
+
+<div id="section-id-{{ section.id }}"
+     class="section-id-{{ section.id }}
+  wide-container align-center use-{{ section.settings.color_scheme }}-bg
+  {% if section.settings.image and section.settings.color_scheme == "standard" %} image-overlay image-overlay--bg-full{% endif %}
+" data-cc-animate>
+
+  {% if section.settings.image and section.settings.color_scheme == "standard" %}
+    <div class="rimage-outer-wrapper rimage-background lazyload fade-in"
+      data-cc-animate="cc-zoom-out"
+      data-bgset="{% render 'bgset', image: section.settings.image %}"
+      data-sizes="auto"
+      data-parent-fit="cover">
+      <noscript>
+        <div class="rimage-wrapper" style="padding-top:{{ 1 | divided_by: section.settings.image.aspect_ratio | times: 100 }}%">
+          <img src="{{ section.settings.image | img_url: '1024x1024' }}" alt="{{ section.settings.image.alt | escape }}" class="rimage__image">
+        </div>
+      </noscript>
+    </div>
+  {% endif %}
+
+  <div class="overlay-type overlay {{ section.settings.overlay_position }}">
+    <div class="inner">
+      <div>
+        <div class="overlay__content">
+          {% assign form_id = section.id | prepend: "newsletter-signup-" %}
+          {% form 'customer', id: form_id %}
+            {% if section.settings.subheading != blank %}
+              <div class="feature-subheader" data-cc-animate>{{ section.settings.subheading | escape }}</div>
+            {% endif %}
+
+            <h4 class="h2 line-1" data-cc-animate>{{ section.settings.title | escape }}</h4>
+
+            <div class="signup-form">
+              {% if form.posted_successfully? %}
+                <div class="signup-form__response">
+                  <p>ご登録ありがとうございます！</p>
+                </div>
+              {% else %}
+                <input type="hidden" name="newsletter" value="true"/>
+                
+                <div class="submitbox">
+                  <div class="submitinfo">{{ section.settings.maintext }}</div>
+                  <div>
+                    <input type="hidden" id="contact_tags{{ section.id }}" name="contact[tags]" value="shimmerPJ"/>
+                    <div class="inline-mini-form inline-mini-form--arrow" data-cc-animate data-cc-animate-delay="0.4s">
+                      <input type="email" aria-label="{{ 'general.signup.email_label' | t | escape }}"
+                           placeholder="メールアドレス" class="required" value="" id="mailinglist_email{{ section.id }}" name="contact[email]" name="customer[note][生年月日]" />
+                    </div>
+                  </div>
+                  <div class="submitbutton">
+                    <button class="compact no-hover" type="submit" aria-label="{{ 'general.signup.subscribe' | t | escape }}">
+                        {{ section.settings.send }}
+                    </button>
+                  </div>
+                </div>
+
+                {% if form.errors %}
+                  <div class="signup-form__response">
+                    {% for field in form.errors %}
+                      <script>alert('メールアドレスを正しく入力してください')</script>
+                    {% endfor %}
+                  </div>
+                {% endif %}
+              {% endif %}
+            </div>
+          {% endform %}
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+{% schema %}
+  {
+    "name": "会員登録テンプレート",
+    "class": "section-newsletter",
+    "settings": [
+      {
+        "type": "text",
+        "id": "maintext",
+        "label": "案内文",
+        "default": "本商品は数量限定商品につきメールアドレスを登録頂いたお客様にのみ、ご購入のご案内をお送りいたします。"
+      },
+      {
+        "type": "text",
+        "id": "send",
+        "label": "登録文",
+        "default": "登録→"
+      },
+      {
+        "type": "paragraph",
+        "content": "Customers who subscribe will have their email address added to the 'accepts marketing' [customer list](/admin/customers?query=&accepts_marketing=1)"
+      },
+      {
+        "type": "header",
+        "content": "Background"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image",
+        "info": "2048 x 1024px recommended"
+      }
+	  ],
+	  "presets": [
+      {
+        "name": "会員登録テンプレート",
+        "settings": {}
+      }
+	  ]
+  }
+{% endschema %}

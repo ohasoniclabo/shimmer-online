@@ -1,0 +1,96 @@
+{
+  "sections": {
+    "main": {
+      "type": "members-main-product",
+      "blocks": {
+        "vendor_and_type": {
+          "type": "vendor_and_type",
+          "settings": {
+            "show_vendor": true,
+            "show_type": true
+          }
+        },
+        "5cd09193-c83a-4421-9f0d-352856ff4dff": {
+          "type": "text",
+          "settings": {
+            "text": "{{ product.metafields.custom._productintro.value }}",
+            "text_style": "subtitle"
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {
+            "heading_h1": true
+          }
+        },
+        "0a186d17-5e3d-4d7e-a029-2015710ea1f8": {
+          "type": "text",
+          "settings": {
+            "text": "容量:{{ product.metafields.custom._capacity.value }}",
+            "text_style": "uppercase"
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "2a842c2c-cc6d-4658-b1a3-4f2b8d09efa2": {
+          "type": "description",
+          "settings": {
+            "display": "standard",
+            "icon": "none"
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_tax_and_shipping": false,
+            "show_quantity_selector": true,
+            "enable_payment_button": true,
+            "show_pickup_availability": true,
+            "enable_mobile_sticky_cart": true
+          }
+        }
+      },
+      "block_order": [
+        "vendor_and_type",
+        "5cd09193-c83a-4421-9f0d-352856ff4dff",
+        "title",
+        "0a186d17-5e3d-4d7e-a029-2015710ea1f8",
+        "price",
+        "2a842c2c-cc6d-4658-b1a3-4f2b8d09efa2",
+        "buy_buttons"
+      ],
+      "settings": {
+        "media_style": "one-column",
+        "sticky_behaviour": "top",
+        "full_width": false,
+        "show_backorder_text": true,
+        "slide_nav_style": "arrows",
+        "media_crop": "center",
+        "enable_zoom": true,
+        "zoom_cursor": "plus-light",
+        "show_thumbnails": true,
+        "enable_video_looping": false,
+        "scroll_to_variant_media": true,
+        "highlight_selected_media": true,
+        "variant_media_grouping": false,
+        "variant_media_grouping_option": "Color,Colour,Couleur,Farbe"
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "show_product_recommendations": true,
+        "title": "recommend",
+        "hide_swatches": false,
+        "show_vendor": true,
+        "grid": 4
+      }
+    }
+  },
+  "order": [
+    "main",
+    "product-recommendations"
+  ]
+}

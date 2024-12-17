@@ -1,0 +1,46 @@
+{
+  "sections": {
+    "1662704605a5f58635": {
+      "type": "blog_title",
+      "settings": {
+        "title": "おすすめのお酒について",
+        "title_size": 36,
+        "image": "shopify:\/\/shop_images\/com_G1.jpg",
+        "image_width": 270,
+        "color_scheme": "standard",
+        "color_bg": "",
+        "color_text": ""
+      }
+    },
+    "16630432603b7c3559": {
+      "type": "blog-text",
+      "settings": {
+        "my_textarea_name": "テキストエリアの初期値\nテキストエリアの初期値\nテキストエリアの初期値\nテキストエリアの初期値\nテキストエリアの初期値テキストエリアの初期値テキストエリアの初期値テキストエリアの初期値テキストエリアの初期値テキストエリアの初期値テキストエリアの初期値テキストエリアの初期値テキストエリアの初期値"
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "16630419611dac3756": {
+      "type": "blog-product",
+      "settings": {
+        "product": "2001-30-1800"
+      }
+    },
+    "16630425546040f51f": {
+      "type": "blog-text",
+      "settings": {
+        "my_textarea_name": "テキストエリアの初期値\nvfsadvsveaeafefeafeafafaf\nwafwafaafwwatheeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeegrgr"
+      }
+    }
+  },
+  "order": [
+    "1662704605a5f58635",
+    "16630432603b7c3559",
+    "main",
+    "16630419611dac3756",
+    "16630425546040f51f"
+  ]
+}

@@ -1,0 +1,477 @@
+{%- liquid
+  assign cheapest_variant = product.variants | sort: 'price' | first
+
+  assign on_sale = false
+  if cheapest_variant.compare_at_price > cheapest_variant.price
+    assign on_sale = true
+  endif
+
+  assign product_url = product.url | within: collection
+
+  if animation_type == blank
+    assign animation_type = "cc-fade-in-up"
+  endif
+
+  assign product_has_swatches = false
+  if settings.swatch_enabled and settings.prod_block_swatches and hide_swatches != true
+    for product_option in product.options_with_values
+      if settings.swatch_option_name == product_option.name
+        assign product_has_swatches = true
+        break
+      endif
+    endfor
+  endif
+
+  assign primary_image = product.featured_media.preview_image
+  assign product_images = product.media | where: 'media_type', 'image'
+
+  if settings.prod_hover == "second_image"
+    assign secondary_image = product.media[1].preview_image
+
+    for media in product_images offset: 1
+      if media.id == product.featured_media.id
+        assign active_media_found = true
+      else
+        if active_media_found
+          assign secondary_image = media.preview_image
+          break
+        endif
+      endif
+    endfor
+  endif
+
+  if settings.prod_hover == "all_images" or product_has_swatches
+    assign active_media_found = false
+    assign images_before_featured = ""
+    assign images_after_featured = ""
+
+    for media in product_images
+      if media.id == product.featured_media.id
+        assign active_media_found = true
+      endif
+
+      assign image_placeholder = media | img_url: '1x1' | replace: '_1x1.', '_{width}x.'
+      if active_media_found
+        assign images_after_featured = images_after_featured | append: "," | append: image_placeholder
+      else
+        assign images_before_featured = images_before_featured | append: "," | append: image_placeholder
+      endif
+    endfor
+
+    assign card_images = images_after_featured | append: images_before_featured | replace: ",,", "," | remove_first: ","
+  endif
+
+  if settings.prod_show_videos
+    assign videos = product.media | where: "media_type", "video"
+    unless videos == blank
+      for source in videos[0].sources
+        if source != blank and source.format == "mp4"
+          assign video_source = source
+          break
+        endif
+      endfor
+
+      assign mp4_url = video_source.url
+    endunless
+  endif
+
+  assign param_symbol = "?"
+  if product.url contains "?"
+    assign param_symbol = "&"
+  endif
+-%}
+
+ <div class="table">
+  <div class="prductimage">
+    <a href="{{ product.url }}"><img class="prductimage2" src="{{ product.featured_image | product_img_url:'large'}}"</a>
+  </div>
+  <div class="info">
+    <div class="info1">
+    <div class="name">
+      <a style="margin-top: 5px; text-align: left;"  href="{{ product.url }}">{{product.title}}</a>
+    </div>
+    <div class="brand">
+      <a style="margin-top: 5px; text-align: center;"  href="{{ product.url }}">{{product.vendor}}</a>
+    </div>
+    <div class="price">
+      <a style="margin-top: 5px; text-align: center;"  href="{{ product.url }}">{%- render "price", price: cheapest_variant.price -%}</a>
+    </div>
+    </div>
+    <div class="info2">
+      {{ product.description}}
+    </div>
+  </div>
+  </div>
+  <div class="info3">
+      {{ product.description}}
+  </div>
+
+<style>
+  .prductimage {
+    flex-shrink: 0; /* 追加 */
+  }
+
+  .prductimage2 {
+    width:200px;
+    height:200px;
+  }
+
+  .info2,.info3 {
+      font-size:14px;
+      width: 100%;
+    }
+  }
+  
+    .topheader {
+      display:flex;
+      align-items: flex-end;
+    }
+
+    .blogtitle {
+      margin-left: 40px;
+      font-size:30px;
+      color: #c0b283;
+      font-weight: 500;
+    }
+
+    .blogname {
+      
+    }
+
+    .topimage {
+      height:270px;
+      width:270px;
+    }
+
+
+
+    @media(max-width:1304px){
+      .topheader {
+        align-items: center;
+        flex-direction: column;
+      }
+    }
+
+
+
+    @media(max-width:1462px){
+      tr, td {
+        display: block;
+      }
+    }
+
+
+    @media(max-width:1304px){
+     .info {
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+     }
+     .blogtitle {
+      margin-left: 0px;
+      margin-top:20px;
+    }
+
+      
+      .blogname {
+      margin-top: 30px;
+      }
+    }
+
+    @media(min-width:1305px){
+     .info {
+    align-items: center;
+      
+     }
+    }
+
+    @media(min-width:1299px){
+       .info2 {
+        max-width: 700px;
+        font-size: 13px;
+        margin-top:20px;
+        /*display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 4;
+        overflow: hidden;*/
+        text-align:left;
+        padding-right:5px;
+      }
+
+       .info3{
+        display:none;
+      }
+
+      .brand,.name,.price {
+        margin-top:5px;
+        margin-bottom:5px;
+        margin-right: 100px;
+        font-size:18px;
+      }
+
+      .info {
+        margin-left:80px;
+        align-items: flex-start;
+      }
+    }
+    
+    @media(max-width:1300px){
+       .info2 {
+          display:none;
+        }
+
+      .info3{
+        max-width: 720px;
+        font-size: 13px;
+        /*display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+        overflow: hidden;*/
+        text-align:left;
+        padding-left:10px;
+      }
+
+        .info {
+        margin-left:80px;
+        align-items: flex-start;
+      }
+    }
+
+     @media(max-width:1300px){
+       .info1 {
+           flex-direction: column;
+           align-items: flex-start;
+           text-align: left;
+           padding-right: 10px;
+        }
+
+      .name,.brand,.price {
+          margin:10px 0;
+          font-size:16px;
+        }
+
+       .theme-filter-container .cc-product-filter {
+        flex-basis: 14.6%;
+        }
+     }
+
+    @media(max-width:869px){
+
+    .info3{
+        display:none;
+      }
+  }
+    @media(max-width:767px){
+
+      .table {
+        justify-content: center;
+      }
+
+      .info {
+        width:200px;
+      }
+
+
+    }
+
+    @media(min-width:768px){
+
+      .table {
+        justify-content: flex-start;
+      }
+
+
+    }
+
+    @media(max-width:425px){
+
+      .table {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .brand,.price {
+          margin:5px 0;
+          font-size:14px;
+      }
+
+      .name {
+          margin-top:10px;
+          margin-bottom:5px;
+          font-size:14px;
+      }
+
+      .info {
+        margin-left:0px;
+        align-items: center;
+      }
+    }
+
+    .table {
+      display:flex;
+      margin-top: 20px;
+      margin-bottom: 20px;
+ 
+     }
+
+    .card {
+      background:#E8E4DF;
+      padding: 30px 10px 10px 10px;
+      margin-bottom:20px;
+    }
+
+    .info {
+      
+      display:flex;
+      flex-direction: column;
+      
+     }
+
+    .info1 {
+      display:flex;
+      
+    }
+
+    .name,.brand,.price {
+      color: #c0b283;
+    }
+
+
+  
+</style>
+<script>
+const mediaQuery = window.matchMedia('(max-width:1300px)')
+const mediaQuery2 = window.matchMedia('(min-width:1299px)')
+var flag = true
+var flag2 = true
+
+window.onload =function textTrim() {
+
+  if (mediaQuery.matches){
+    // テキストをトリミングする要素
+    var selector = document.querySelectorAll('.info3');
+  } else {
+    // テキストをトリミングする要素
+    var selector = document.querySelectorAll('.info2');
+  }
+ 
+  // 表示したい行数
+  var row = 3;
+ 
+  // 文末に追加したい文字
+  var clamp = '...続く>>';
+ 
+  for (i = 0; i < selector.length; i++) {
+    //CSSプロパティを取得
+    var style = window.getComputedStyle(selector[i]);
+    var fontsize = parseFloat(style.fontSize); //font-sizeを取得
+    var width = parseFloat(style.width); //widthを取得
+    var letterSpacing = parseFloat(style.letterSpacing); //letter-spacingを取得
+ 
+    // 収まる文字数を計算
+    var wordCount = Math.floor(width / fontsize) * row;
+ 
+    // letter-spacingも含めて計算する場合
+     //var wordCount = Math.floor(width / (fontsize + letterSpacing)) * row;
+ 
+    // 文字数を超えたら
+    if (selector[i].innerText.length > wordCount) {
+      var str = selector[i].innerText; //文字数を取得
+      str = str.substr(0, (wordCount - 5)); //5文字削る
+      selector[i].innerText = str + clamp; //文末にテキストを足す
+    }
+  }
+}
+
+
+
+
+function handleTabletChange(e) {
+  // メディアクエリがtrueかどうかを確認
+  if (e.matches && flag) {
+    // 次に、メッセージをコンソールに記録
+
+  // テキストをトリミングする要素
+  var selector = document.querySelectorAll('.info3');
+ 
+  // 表示したい行数
+  var row = 3;
+ 
+  // 文末に追加したい文字
+  var clamp = '...続く>>';
+ 
+  for (i = 0; i < selector.length; i++) {
+    //CSSプロパティを取得
+    var style = window.getComputedStyle(selector[i]);
+    var fontsize = parseFloat(style.fontSize); //font-sizeを取得
+    var width = parseFloat(style.width); //widthを取得
+    var letterSpacing = parseFloat(style.letterSpacing); //letter-spacingを取得
+ 
+    // 収まる文字数を計算
+    var wordCount = Math.floor(width / fontsize) * row;
+ 
+    // letter-spacingも含めて計算する場合
+     //var wordCount = Math.floor(width / (fontsize + letterSpacing)) * row;
+ 
+    // 文字数を超えたら
+    if (selector[i].innerText.length > wordCount) {
+      var str = selector[i].innerText; //文字数を取得
+      str = str.substr(0, (wordCount - 5)); //5文字削る
+      selector[i].innerText = str + clamp; //文末にテキストを足す
+    }
+  }
+
+    flag = false
+
+  }
+}
+
+function handleTabletChange2(e) {
+  // メディアクエリがtrueかどうかを確認
+  if (e.matches && flag2) {
+    // 次に、メッセージをコンソールに記録
+
+  // テキストをトリミングする要素
+  var selector = document.querySelectorAll('.info2');
+ 
+  // 表示したい行数
+  var row = 3;
+ 
+  // 文末に追加したい文字
+  var clamp = '...続く>>';
+ 
+  for (i = 0; i < selector.length; i++) {
+    //CSSプロパティを取得
+    var style = window.getComputedStyle(selector[i]);
+    var fontsize = parseFloat(style.fontSize); //font-sizeを取得
+    var width = parseFloat(style.width); //widthを取得
+    var letterSpacing = parseFloat(style.letterSpacing); //letter-spacingを取得
+ 
+    // 収まる文字数を計算
+    var wordCount = Math.floor(width / fontsize) * row;
+ 
+    // letter-spacingも含めて計算する場合
+     //var wordCount = Math.floor(width / (fontsize + letterSpacing)) * row;
+ 
+    // 文字数を超えたら
+    if (selector[i].innerText.length > wordCount) {
+      var str = selector[i].innerText; //文字数を取得
+      str = str.substr(0, (wordCount - 5)); //5文字削る
+      selector[i].innerText = str + clamp; //文末にテキストを足す
+    }
+  }
+
+    flag2 = false
+
+  }
+}
+
+// イベントリスナーを登録
+mediaQuery.addListener(handleTabletChange)
+mediaQuery2.addListener(handleTabletChange2)
+ 
+// 初期チェック
+handleTabletChange(mediaQuery)
+handleTabletChange2(mediaQuery2)
+
+</script>

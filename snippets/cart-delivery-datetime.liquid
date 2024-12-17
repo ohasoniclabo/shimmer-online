@@ -1,0 +1,94 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ja.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.js"></script>
+  
+<div class="date-picker-container">
+    <label>配送希望日時を指定する※</label>
+    <div class="date-picker-inner">
+      <input id="DeliveryDate" type="text" class="delivery-date" name="attributes[配送希望日]" value="{{ cart.attributes["配送希望日"] }}" placeholder="日付を指定してください"　/>
+      <select id="DeliveryTime" class="delivery-time" name="attributes[配送希望時間]"　>
+        <option value="">時間を指定しない</option>
+        <option value="午前中">午前中</option>
+        <option value="14-16時" {% if cart.attributes["配送希望時間"] == "14-16時" %}selected{% endif %}>14-16時</option>
+        <option value="16-18時" {% if cart.attributes["配送希望時間"] == "16-18時" %}selected{% endif %}>16-18時</option>
+        <option value="18-20時" {% if cart.attributes["配送希望時間"] == "18-20時" %}selected{% endif %}>18-20時</option>
+        <option value="19-21時" {% if cart.attributes["配送希望時間"] == "19-21時" %}selected{% endif %}>19-21時</option>
+      </select>
+    </div>
+    <p class="date-picker-description">※金曜午後及び土日祝日の注文は発送作業を行っておりません。<br>日付指定をしてもご希望の日付/時間通りに配達されない場合がございます、予めご了承ください。<br>配送作業は翌営業日に実施いたします。</p>
+  
+</div>
+
+
+<style>
+  .date-picker-container {
+    margin-top: 40px;
+  }
+  .date-picker-description{
+    font-size: 13px;
+  }
+  .date-picker-inner {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  .date-picker-container label{
+    text-align: center;
+    font-size: 15px;
+  }
+  .date-picker-container .pretty-select{
+    width: 100%;
+    max-width: 230px;
+  }
+  .date-picker-container .delivery-date{
+    width: 100%;
+    max-width: 230px;
+  }
+  .date-picker-container .text {
+      padding: 10px 50px 10px 0;
+  }
+  .date-picker-container .text .label{
+    display: none;
+  }
+  .date-picker-container .text .value{
+    padding-left: 10px;
+  }
+  .flatpickr-day.selected, .flatpickr-day.startRange, .flatpickr-day.endRange, .flatpickr-day.selected.inRange, .flatpickr-day.startRange.inRange, .flatpickr-day.endRange.inRange, .flatpickr-day.selected:focus, .flatpickr-day.startRange:focus, .flatpickr-day.endRange:focus, .flatpickr-day.selected:hover, .flatpickr-day.startRange:hover, .flatpickr-day.endRange:hover, .flatpickr-day.selected.prevMonthDay, .flatpickr-day.startRange.prevMonthDay, .flatpickr-day.endRange.prevMonthDay, .flatpickr-day.selected.nextMonthDay, .flatpickr-day.startRange.nextMonthDay, .flatpickr-day.endRange.nextMonthDay{
+    background-color: #212121;
+    border-color: #212121;
+  }
+  @media screen and (max-width:480px){
+    .date-picker-inner {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+</style>
+
+<script>
+  window.onload = function() {
+  const dateFrom = moment(new Date()).startOf('days').add(2, 'day').format('YYYY-MM-DD');
+  const dateTo = moment(new Date()).startOf('days').add(5, 'day').format('YYYY-MM-DD');
+
+  flatpickr('#DeliveryDate', {
+      locale     : 'ja',
+      dateFormat : 'Y/m/d', 
+      defaultDate: null,
+      minDate: dateFrom,
+      maxDate: dateTo,
+      disableMobile: "true"
+  });
+
+  const target = document.querySelectorAll('#DeliveryTime option');
+  for(let i in target){
+	if (target.hasOwnProperty(i)) {
+		if(target[i].value == '{{ cart.attributes["配送希望時間"] }}'){
+          document.getElementById('DeliveryTime').options[i].selected = true;
+          console.log(document.getElementById('DeliveryTime').options[i]);
+        }
+	}
+  }
+    console.log(document.getElementById('DeliveryTime').value);
+}
+</script>

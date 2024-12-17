@@ -1,0 +1,711 @@
+<link href="{{ 'swiper-bundle.min.css' | asset_url }}" rel="stylesheet" type="text/css" media="all">
+<script src="{{ 'swiper-bundle.min.js' | asset_url }}"></script>
+
+<!-- Slider main container -->
+<div id="{{ section.id }}" class="swiper swiper_{{ section.id }} swiper_custom">
+  <!-- Additional required wrapper -->
+  <div class="swiper-wrapper swiper-wrapper_custom">
+    <!-- Slides -->
+    {% for block in section.blocks %}
+      <div class="swiper-slide swiper-slide_custom">
+        <div class="{% unless block.settings.no_margins %}swiper-section-spacing{% endunless %}">
+          {{ block.settings.liquid_html }}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+  {% if section.settings.pagination_enabled == 'true' %}
+    <!-- If we need pagination -->
+    <div class="swiper-pagination swiper-pagination_custom"></div>
+  {% endif %}
+  {% if section.settings.navigation_enabled == 'true' %}
+    <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev swiper-button-prev_custom"></div>
+    <div class="swiper-button-next swiper-button-next_custom"></div>
+  {% endif %}
+  {% if section.settings.scrollbar_enabled == 'true' %}
+    <!-- If we need scrollbar -->
+    <div class="swiper-scrollbar swiper-scrollbar_custom"></div>
+  {% endif %}
+</div>
+
+{% schema %}
+{
+  "name": "Swiper Slideshow",
+  "tag": "section",
+  "class": "swiper-slideshow",
+  "settings": [
+    { "type": "header", "content": "Swiper", "info": "Swiper の各設定を行うことができます。" },
+    {
+      "type": "header", "content": "CSSの設定",
+      "info": "Swiperの基本構造に則った class に対して、任意の CSS の設定を行うことができます。"
+    },
+    {
+      "type": "liquid", "id": "swiper_liquid", "label": "swiper Liquid/CSS", "default": "width: 100vw; height: 100vh;",
+      "info": "全体(表示部分)を囲む要素"
+    },
+    {
+      "type": "liquid", "id": "swiper-wrapper_liquid", "label": "swiper-wrapper Liquid/CSS",
+      "info": "スライダー全体(非表示部分を含む)を囲む要素"
+    },
+    {
+      "type": "liquid", "id": "swiper-slide_liquid", "label": "swiper-slide Liquid/CSS",
+      "info": "各スライダーの要素"
+    },
+    {
+      "type": "liquid", "id": "swiper-pagination_liquid", "label": "swiper-pagination Liquid/CSS",
+      "info": "ページネーションの要素"
+    },
+    {
+      "type": "liquid", "id": "swiper-button-prev_liquid", "label": "swiper-button-prev Liquid/CSS",
+      "info": "前へボタンの要素"
+    },
+    {
+      "type": "liquid", "id": "swiper-button-next_liquid", "label": "swiper-button-next Liquid/CSS",
+      "info": "次へボタンの要素"
+    },
+    {
+      "type": "liquid", "id": "swiper-scrollbar_liquid", "label": "swiper-scrollbar Liquid/CSS",
+      "info": "スクロールバーの要素"
+    },
+    { "type": "paragraph", "content": "───────────────────" },
+
+    {
+      "type": "select", "id": "allowSlideNext", "label": "スライド次へ", "default": "true",
+      "info": "false に設定すると、次のスライド方向（右または下）へのスワイプが無効になります。",
+      "options": [
+        { "value": "true", "label": "有効" },
+        { "value": "false", "label": "無効" }
+      ]
+    },
+    {
+      "type": "select", "id": "allowSlidePrev", "label": "スライド前へ", "default": "true",
+      "info": "false に設定すると、前のスライド方向（左または上）へのスワイプが無効になります。",
+      "options": [
+        { "value": "true","label": "有効" },
+        { "value": "false", "label": "無効" }
+      ]
+    },
+    {
+      "type": "select", "id": "autoHeight", "label": "自動高さ", "default": "false",
+      "info": "true に設定すると、スライダーラッパーの高さは現在アクティブなスライドの高さに合わせて調整されます。",
+      "options": [
+        { "value": "true","label": "有効" },
+        { "value": "false", "label": "無効" }
+      ]
+    },
+    {
+      "type": "select", "id": "centeredSlides", "label": "中央のスライド", "default": "false",
+      "info": "true に設定すると、アクティブなスライドは常に左側ではなく中央に配置されます。",
+      "options": [
+        { "value": "true","label": "有効" },
+        { "value": "false", "label": "無効" }
+      ]
+    },
+    {
+      "type": "select", "id": "createElements", "label": "要素を作成する", "default": "false",
+      "info": "true に設定すると、swiper はスライドを swiper-wrapper 要素で自動的にラップし、ナビゲーション、ページネーション、スクロールバーに必要な要素を作成します (それぞれの params オブジェクトまたはブール値を使用true))",
+      "options": [
+        { "value": "true","label": "有効" },
+        { "value": "false", "label": "無効" }
+      ]
+    },
+    {
+      "type": "select", "id": "direction", "label": "方向", "default": "'horizontal'",
+      "info": "horizontal'(水平) または 'vertical'(垂直) を指定できます。",
+      "options": [
+        { "value": "'horizontal'", "label": "水平" },
+        { "value": "'vertical'", "label": "垂直" }
+      ]
+    },
+    {
+      "type": "select", "id": "loop", "label": "ループ", "default": "false",
+      "info": "true に設定すると、連続ループモードがを有効になります。",
+      "options": [
+        { "value": "true","label": "有効" },
+        { "value": "false", "label": "無効" }
+      ]
+    },
+    {
+      "type": "number", "id": "loopAdditionalSlides", "label": "ループ追加スライド", "default": 0,
+      "info": "ループ作成後に複製されるスライドの追加数を指定します。"
+    },
+    { "type": "select", "id": "loopFillGroupWithBlank", "label": "ループフィルグループブランク", "default": "false",
+     "info": "true に設定すると、ループモード有効時、スライド数が足りないグループに空白のスライドが挿入されます。slidespergroupパラメータと一緒に使用すると便利です。",
+      "options": [
+        { "value": "true","label": "有効" },
+        { "value": "false", "label": "無効" }
+      ]
+    },
+    { "type": "select", "id": "loopedSlides_enabled", "label": "ループスライド有効/無効", "default": "false",
+     "info": "true に設定すると、ループスライドの設定値が有効になります。",
+      "options": [
+        { "value": "true","label": "有効" },
+        { "value": "false", "label": "無効" }
+      ]
+    },
+    {
+      "type": "number", "id": "loopedSlides", "label": "ループスライド", "default": 0,
+      "info": "ループモードで使用する場合は、slidesperview:'auto'このパラメータを使用して、swiperにループ（複製）するスライドの数を伝える必要があります。"
+    },
+
+    {
+      "type": "select", "id": "loopedSlidesLimit", "label": "ループスライド制限", "default": "true",
+      "info": "true に設定すると、複製されたスライドの量は元のスライドの量を超えなくなります。ビューあたりのスライドが多く、元のスライドの量が足りない場合に、loopedslides を無効にして増やすと便利です",
+      "options": [
+        { "value": "true","label": "有効" },
+        { "value": "false", "label": "無効" }
+      ]
+    },
+
+    {
+      "type": "number", "id": "maxBackfaceHiddenSlides", "label": "最大背面隠しスライド", "default": 10,
+     "info": "スライドの合計数がここで指定した値より少ない場合、backface-visibility: hiddenスライド要素で swiper が有効になり、safari での視覚的な「ちらつき」が軽減されます。"
+    },
+    {
+      "type": "select", "id": "rewind", "label": "巻き戻す", "default": "false",
+      "info": "true に設定すると、「巻き戻し」モードが有効になります。有効にすると、.slidenext()最後のスライドで「次へ」ナビゲーション ボタンをクリックする (または を呼び出す) と、最初のスライドに戻ります。最初のスライドで「前へ」ナビゲーション ボタンをクリックする (または を呼び出す.slideprev()) と、最後のスライドに進みます。",
+      "options": [
+        { "value": "true","label": "有効" },
+        { "value": "false", "label": "無効" }
+      ]
+    },
+    {
+      "type": "number", "id": "slidesOffsetAfter", "label": "スライドオフセット後", "default": 0,
+      "info": "コンテナの最後（すべてのスライドの後）に追加のスライド オフセット（px 単位）を追加します。"
+    },
+    {
+      "type": "number", "id": "slidesOffsetBefore", "label": "スライドオフセット前", "default": 0,
+      "info": "コンテナの先頭（すべてのスライドの前）に追加のスライド オフセット（px 単位）を追加します。"
+    },
+    {
+      "type": "number", "id": "slidesPerGroup", "label": "グループごとのスライド数", "default": 1,
+      "info": "スライドの数を設定してグループスライドを定義し、有効にします。 slidesperview > 1 で使用すると便利です。"
+    },
+    {
+      "type": "select", "id": "slidesPerGroupAuto", "label": "スライドPerGroup自動", "default": "false",
+      "info": "このパラメータは、slidesperview: 'auto' および slidespergroup: 1 でのみ使用することを目的としています。true に設定すると、.slidenext() および .slideprev() メソッドの呼び出し時、ナビゲーションの「ボタン」クリック時、自動再生時に、ビュー内のすべてのスライドがスキップされます。 。",
+      "options": [
+        { "value": "true","label": "有効" },
+        { "value": "false", "label": "無効" }
+      ]
+    },
+    {
+      "type": "number", "id": "slidesPerGroupSkip", "label": "スライドPerGroupSkip", "default": 0,
+      "info": "このパラメータは次のように機能します。slidespergroupskip が 0（デフォルト）の場合、グループ化から除外されるスライドはなく、結果の動作はこの変更がない場合と同じになります。"
+    },
+    {
+      "type": "select", "id": "slidesPerView_enabled", "label": "スライド数/ビューAutoの有効/無効", "default": "true",
+      "info": "true に設定すると、ビューあたりのスライドの数の設定が'auto'となり、ビューあたりのスライドの数の設定値はが無効になります。",
+      "options": [
+        { "value": "true","label": "有効" },
+        { "value": "false", "label": "無効" }
+      ]
+    },
+    {
+      "type": "number", "id": "slidesPerView", "label": "スライド数/ビュー", "default": 1,
+      "info": "ビューあたりのスライドの数 (スライダーのコンテナーに同時に表示されるスライドの数)を設定します。"
+    },
+    {
+      "type": "number", "id": "spaceBetween", "label": "スペース間", "default": 0,
+      "info": "スライド間の距離（px）を設定します。"
+    },
+    {
+      "type": "number", "id": "speed", "label": "スピード", "default": 300,
+      "info": "スライド間の遷移時間（ミリ秒）を設定します。"
+    },
+    { "type": "paragraph", "content": "───────────────────" },
+
+    { "type": "header", "content": "ページネーション", "info": "ページネーションに関する設定を行うことができます。" },
+    { "type": "paragraph", "content": "【注意】ページネーションの有効/無効で「無効」を設定した場合、関連する設定は適用されません。" },
+    {
+      "type": "select", "id": "pagination_enabled", "label": "ページネーションの有効/無効", "default": "true",
+      "options": [
+        { "value": "true","label": "有効" },
+        { "value": "false", "label": "無効" }
+      ]
+    },
+    {
+      "type": "select", "id": "pagination_type", "label": "ページネーションのページ区切りタイプ", "default": "'bullets'",
+      "options": [
+        { "value": "'bullets'", "label": "箇条書き" },
+        { "value": "'fraction'", "label": "分数" },
+        { "value": "'progressbar'", "label": "プログレスバー" },
+        { "value": "'custom'", "label": "カスタム" }
+      ]
+    },
+    {
+      "type": "select", "id": "pagination_clickable", "label": "クリックによるページネーションの有効/無効", "default": "false",
+      "info": "この設定はページネーションの type が「bullets」の場合にのみ有効です。",
+      "options": [
+        { "value": "true","label": "有効" },
+        { "value": "false", "label": "無効" }
+      ]
+    },
+    {
+      "type": "select", "id": "pagination_dynamicBullets", "label": "ページネーションの数の設定の有効/無効", "default": "false",
+      "info": "この設定はページネーションの type が「bullets」の場合にのみ有効です。",
+      "options": [
+        { "value": "true","label": "有効" },
+        { "value": "false", "label": "無効" }
+      ]
+    },
+    {
+      "type": "number", "id": "pagination_dynamicMainBullets", "label": "ページネーションの数の設定", "default": 1,
+      "info": "この設定はページネーションの type が「bullets」かつ ページネーションの数の設定が「有効」の場合にのみ有効です。"
+    },
+    {
+      "type": "select", "id": "pagination_hideOnClick", "label": "クリック時ページネーションコンテナの表示切替の有効/無効", "default": "true",
+      "options": [
+        { "value": "true","label": "有効" },
+        { "value": "false", "label": "無効" }
+      ]
+    },
+    {
+      "type": "select", "id": "pagination_progressbarOpposite", "label": "プログレスバーの向き切替の有効/無効", "default": "false",
+      "info": "この設定を有効にした場合、水平スワイパー方向には垂直プログレスバー、垂直スワイパー方向には水平プログレスバーになります。",
+      "options": [
+        { "value": "true","label": "有効" },
+        { "value": "false", "label": "無効" }
+      ]
+    },
+    { "type": "paragraph", "content": "───────────────────" },
+
+    { "type": "header", "content": "ナビゲーション", "info": "ナビゲーションに関する設定を行うことができます。" },
+    { "type": "paragraph", "content": "【注意】ナビゲーションの有効/無効で「無効」を設定した場合、関連する設定は適用されません。" },
+    {
+      "type": "select", "id": "navigation_enabled", "label": "ナビゲーションの有効/無効", "default": "true",
+      "options": [
+        { "value": "true","label": "有効" },
+        { "value": "false", "label": "無効" }
+      ]
+    },
+    { "type": "paragraph", "content": "───────────────────" },
+
+    { "type": "header", "content": "スクロールバー", "info": "スクロールバーに関する設定を行うことができます。" },
+    { "type": "paragraph", "content": "【注意】スクロールバーの有効/無効で「無効」を設定した場合、関連する設定は適用されません。" },
+    {
+      "type": "select", "id": "scrollbar_enabled", "label": "スクロールバーの有効/無効", "default": "true",
+      "options": [
+        { "value": "true","label": "有効" },
+        { "value": "false", "label": "無効" }
+      ]
+    },
+    {
+      "type": "radio", "id": "scrollbar_draggable", "label": "スクロ－ルバーのドラッグの有効/無効", "default": "true",
+      "options": [
+        { "value": "true","label": "有効" },
+        { "value": "false", "label": "無効" }
+      ]
+    },
+    {
+      "type": "text", "id": "scrollbar_dragSize", "label": "スクロ－ルバーのドラッグの要素のサイズ", "default": "auto",
+      "info": "'auto' or 数値(px)で指定してください。"
+    },
+    {
+      "type": "select", "id": "scrollbar_hide", "label": "ユーザーの操作後にスクロ－ルバーを自動的に非表示するか有効/無効", "default": "true",
+      "options": [
+        { "value": "true","label": "有効" },
+        { "value": "false", "label": "無効" }
+      ]
+    },
+    {
+      "type": "select", "id": "scrollbar_snapOnRelease", "label": "スナップオンリリースの有効/無効", "default": "false",
+      "info": "trueに設定するとスクロールバーを離したときにスライダーの位置をスライドにスナップします。",
+      "options": [
+        { "value": "true","label": "有効" },
+        { "value": "false", "label": "無効" }
+      ]
+    },
+    { "type": "paragraph", "content": "───────────────────" },
+
+    { "type": "header", "content": "自動再生", "info": "自動再生に関する設定を行うことができます。" },
+    { "type": "paragraph", "content": "【注意】自動再生の有効/無効で「無効」を設定した場合、関連する設定は適用されません。" },
+    {
+      "type": "select", "id": "autoplay_enabled", "label": "自動再生の有効/無効", "default": "true",
+      "options": [
+        { "value": "true","label": "有効" },
+        { "value": "false", "label": "無効" }
+      ]
+    },
+    {
+      "type": "number", "id": "autoplay_delay", "label": "自動再生で遷移間の遅延(ミリ秒単位)値。", "default": 3000
+    },
+    {
+      "type": "select", "id": "autoplay_disableOnInteraction", "label": "インタラクションを無効にするかの有効/無効", "default": "true",
+      "info": "「無効」に設定すると、ユーザー操作（スワイプ）後に自動再生が無効にならず、操作のたびに再起動されます。",
+      "options": [
+        { "value": "true","label": "有効" },
+        { "value": "false", "label": "無効" }
+      ]
+    },
+    {
+      "type": "select", "id": "autoplay_pauseOnMouseEnter", "label": "逆方向に自動再生するかの有効/無効", "default": "false",
+      "options": [
+        { "value": "true","label": "有効" },
+        { "value": "false", "label": "無効" }
+      ]
+    },
+    {
+      "type": "select", "id": "autoplay_reverseDirection", "label": "最後のスライダーで停止するかの有効/無効", "default": "false",
+      "info": "「有効」に設定すると、最後のスライドに達すると自動再生が停止します (ループ モードでは効果がありません)。",
+      "options": [
+        { "value": "true","label": "有効" },
+        { "value": "false", "label": "無効" }
+      ]
+    },
+    {
+      "type": "select", "id": "autoplay_stopOnLastSlide", "label": "インタラクションを無効にするかの有効/無効", "default": "false",
+      "info": "「無効」に設定すると、ユーザー操作（スワイプ）後に自動再生が無効にならず、操作のたびに再起動されます。",
+      "options": [
+        { "value": "true","label": "有効" },
+        { "value": "false", "label": "無効" }
+      ]
+    },
+    {
+      "type": "select", "id": "autoplay_waitForTransition", "label": "遷移を待つかの有効/無効", "default": "true",
+      "info": "「有効」に設定にすると、自動再生はラッパーの遷移が継続するまで待機します。スライダーにトランジションがない場合に仮想翻訳を使用する場合は無効にすることができます。",
+      "options": [
+        { "value": "true","label": "有効" },
+        { "value": "false", "label": "無効" }
+      ]
+    },
+    { "type": "paragraph", "content": "───────────────────" },
+
+    { "type": "header", "content": "グリッド", "info": "グリッドに関する設定を行うことができます。" },
+    { "type": "paragraph", "content": "【注意】グリッドの有効/無効で「無効」を設定した場合、関連する設定は適用されません。" },
+    {
+      "type": "select", "id": "grid_enabled", "label": "グリッドの有効/無効", "default": "false",
+      "options": [
+        { "value": "true","label": "有効" },
+        { "value": "false", "label": "無効" }
+      ]
+    },
+    {
+      "type": "select", "id": "grid_fill", "label": "フィル", "default": "'column'",
+      "info": "「列」または「行」を指定できます。スライドが列または行ごとにどのように行を埋めるかを定義します。",
+      "options": [
+        { "value": "'row'","label": "行" },
+        { "value": "'column'", "label": "列" }
+      ]
+    },
+    {
+      "type": "number", "id": "grid_rows", "label": "行", "default": 1,
+      "info": "スライドの行数 (複数行レイアウトの場合)"
+    },
+    { "type": "paragraph", "content": "───────────────────" },
+
+    { "type": "header", "content": "効果", "info": "効果に関する設定を行うことができます。" },
+    {
+      "type": "select", "id": "effect", "label": "効果(エフェクト)", "default": "'slide'",
+      "options": [
+        { "value": "'slide'", "label": "スライド" },
+        { "value": "'fade'", "label": "フェード" },
+        { "value": "'cube'", "label": "キューブ" },
+        { "value": "'coverflow'", "label": "カバーフロー" },
+        { "value": "'flip'", "label": "フリップ" },
+        { "value": "'creative'", "label": "クリエイティブ" },
+        { "value": "'cards'", "label": "カード" }
+      ]
+    },
+    { "type": "paragraph", "content": "───────────────────" },
+
+    { "type": "header", "content": "フェード効果", "info": "効果で「フェード」を選択している場合に有効になる設定です。" },
+    {
+      "type": "select", "id": "fadeEffect_crossFade", "label": "フェード効果のクロスフェードの有効/無効", "default": "false",
+      "options": [
+        { "value": "true","label": "有効" },
+        { "value": "false", "label": "無効" }
+      ]
+    },
+    { "type": "paragraph", "content": "───────────────────" },
+
+    { "type": "header", "content": "キューブ効果", "info": "効果で「キューブ」を選択している場合に有効になる設定です。" },
+    {
+      "type": "select", "id": "cubeEffect_shadow", "label": "キューブ効果のメインスライダーの影の有効/無効", "default": "true",
+      "options": [
+        { "value": "true","label": "有効" },
+        { "value": "false", "label": "無効" }
+      ]
+    },
+    { "type": "number", "id": "cubeEffect_shadowOffset", "label": "キューブ効果のメインシャドウのオフセット (px)", "default": 20 },
+    { "type": "number", "id": "cubeEffect_shadowScale", "label": "キューブ効果のメインシャドウスケール比率 (%)", "default": 94 },
+    {
+      "type": "select", "id": "cubeEffect_slideShadows", "label": "キューブ効果のスライドシャドウの有効/無効", "default": "true",
+      "options": [
+        { "value": "true","label": "有効" },
+        { "value": "false", "label": "無効" }
+      ]
+    },
+    { "type": "paragraph", "content": "───────────────────" },
+
+    { "type": "header", "content": "カバーフロー効果", "info": "効果で「カバーフロー」を選択している場合に有効になる設定です。" },
+    { "type": "number", "id": "coverflowEffect_depth", "label": "カバーフロー効果の深さオフセット (px) (スライドは Z 軸に平行移動します)", "default": 100 },
+    { "type": "number", "id": "coverflowEffect_modifier", "label": "カバーフロー効果の効果乗数", "default": 1 },
+    { "type": "number", "id": "coverflowEffect_rotate", "label": "カバーフロー効果のスライドを度単位で回転します", "default": 50 },
+    { "type": "number", "id": "coverflowEffect_scale", "label": "カバーフロー効果のスライドスケール効果", "default": 1 },
+    {
+      "type": "select", "id": "coverflowEffect_slideShadows", "label": "カバーフロー効果のスライドシャドウの有効/無効", "default": "true",
+      "options": [
+        { "value": "true","label": "有効" },
+        { "value": "false", "label": "無効" }
+      ]
+    },
+    { "type": "number", "id": "coverflowEffect_stretch", "label": "カバーフロー効果のスライド間のスペースを拡張します (px)", "default": 0 },
+    {
+      "type": "select", "id": "flipEffect_limitRotation", "label": "フリップ効果のエッジスライドの回転を制限するかの有効/無効", "default": "true",
+      "options": [
+        { "value": "true","label": "有効" },
+        { "value": "false", "label": "無効" }
+      ]
+    },
+    {
+      "type": "select", "id": "flipEffect_slideShadows", "label": "フリップ効果のスライドシャドウの有効/無効", "default": "true",
+      "options": [
+        { "value": "true","label": "有効" },
+        { "value": "false", "label": "無効" }
+      ]
+    },
+    { "type": "paragraph", "content": "───────────────────" },
+
+    { "type": "header", "content": "クリエイティブ効果", "info": "効果で「クリエイティブ」を選択している場合に有効になる設定です。" },
+    {
+      "type": "number", "id": "creativeEffect_limitProgress", "label": "クリエイティブ効果の進行状況/オフセットのサイドスライドの量を制限します。", "default": 1,
+      "info": "1 を設定した場合、前/次以降のすべてのスライドが同じ状態になります。 2 を設定した場合、アクティブの前後 2 番目以降のすべてのスライドは同じ状態になります。"
+    },
+    { "type": "liquid", "id": "creativeEffect_prev", "label": "クリエイティブ効果の前のスライドの変換。" },
+    { "type": "liquid", "id": "creativeEffect_next", "label": "クリエイティブ効果の次のスライドの変換。" },
+    {
+      "type": "select", "id": "creativeEffect_perspective", "label": "クリエイティブ効果の視点の有効/無効", "default": "true",
+      "options": [
+        { "value": "true","label": "有効" },
+        { "value": "false", "label": "無効" }
+      ]
+    },
+    { "type": "number", "id": "creativeEffect_progressMultiplier", "label": "スライドの変形と不透明度を乗算します。", "default": 1 },
+    {
+      "type": "select", "id": "creativeEffect_shadowPerProgress", "label": "クリエイティブ効果の進捗ごとのシャドウの有効/無効", "default": "false",
+      "info": "シャドウの「不透明度」を、limitProgress に基づいてスライドごとに分割します (変換シャドウが有効な場合のみ)。例えば。 limitProgress: 2 を設定し、shadowPerProgress を有効にすると、アクティブの隣にある 2 つのスライドの影の不透明度が 0.5 と 1 に設定されます。このパラメータを無効にすると、アクティブ以外のすべてのスライドに不透明度 1 の影が付きます。",
+      "options": [
+        { "value": "true","label": "有効" },
+        { "value": "false", "label": "無効" }
+      ]
+    },
+    { "type": "paragraph", "content": "───────────────────" },
+
+    { "type": "header", "content": "カード効果", "info": "効果で「カード」を選択している場合に有効になる設定です。" },
+    { "type": "number", "id": "cardsEffect_perSlideOffset", "label": "カード効果のスライドごとのオフセット距離 (px)", "default": 8 },
+    { "type": "number", "id": "cardsEffect_perSlideRotate", "label": "カード効果のスライドごとの回転角度 (度)", "default": 2, },
+    {
+      "type": "select", "id": "cardsEffect_rotate", "label": "カード効果のカードのローテーションの有効/無効", "default": "true",
+      "options": [
+        { "value": "true","label": "有効" },
+        { "value": "false", "label": "無効" }
+      ]
+    },
+    {
+      "type": "select", "id": "cardsEffect_slideShadows", "label": "カード効果のスライドシャドウの有効/無効", "default": "true",
+      "options": [
+        { "value": "true","label": "有効" },
+        { "value": "false", "label": "無効" }
+      ]
+    },
+    { "type": "paragraph", "content": "───────────────────" }
+
+  ],
+  "blocks": [
+    {
+      "type": "swiper_liquid",
+      "name": "Swiper Liquid",
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "no_margins",
+          "label": "No swiper section spacing",
+          "default": false
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "default": "Swiper Liquid",
+          "label": "Title"
+        },
+        {
+          "type": "liquid",
+          "id": "liquid_html",
+          "label": "Liquid/HTML"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Swiper Slideshow",
+      "blocks": [
+        {
+          "type": "swiper_liquid"
+        },
+        {
+          "type": "swiper_liquid"
+        },
+        {
+          "type": "swiper_liquid"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+<style>
+  .swiper_custom {
+    {{ section.settings.swiper_liquid }};
+  }
+  .swiper-wrapper_custom {
+    {{ section.settings.swiper-wrapper_liquid }};
+  }
+  .swiper-slide_custom {
+    {{ section.settings.swiper-slide_liquid }};
+  }
+  .swiper-pagination_custom {
+    {{ section.settings.swiper-pagination_liquid }};
+  }
+  .swiper-button-prev_custom {
+    background-color: transparent;
+    {{ section.settings.swiper-button-prev_liquid }};
+  }
+  .swiper-button-next_custom {
+    background-color: transparent;
+    {{ section.settings.swiper-button-next_liquid }};
+  }
+  .swiper-scrollbar_custom {
+    {{ section.settings.swiper-scrollbar_liquid }};
+  }
+  .swiper-section-spacing {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+</style>
+
+<script>
+  (function () {
+    const option = {
+      allowSlideNext: {{ section.settings.allowSlideNext }},                   // スライド次へ
+      allowSlidePrev: {{ section.settings.allowSlidePrev }},                   // スライド前へ
+      autoHeight: {{ section.settings.autoHeight }},                           // 自動高さ
+      centeredSlides: {{ section.settings.centeredSlides }},                   // 中央のスライド
+      createElements: {{ section.settings.createElements }},                   // 要素を作成する
+      direction: {{ section.settings.direction }},                             // 方向
+      loop: {{ section.settings.loop }},                                       // ループ
+      loopAdditionalSlides: {{ section.settings.loopAdditionalSlides }},       // ループ追加スライド
+      loopFillGroupWithBlank: {{ section.settings.loopFillGroupWithBlank }},   // ループフィルグループブランク
+      {% if section.settings.loopedSlides_enabled == 'true' %}
+      loopedSlides: {{ section.settings.loopedSlides }},                       // ループスライド
+      {% endif %}
+      loopedSlidesLimit: {{ section.settings.loopedSlidesLimit }},             // ループスライド制限
+      maxBackfaceHiddenSlides: {{ section.settings.maxBackfaceHiddenSlides }}, // 最大背面隠しスライド
+      rewind: {{ section.settings.rewind }},                                   // 巻き戻す
+      slidesOffsetAfter: {{ section.settings.slidesOffsetAfter }},             // スライドオフセット後
+      slidesOffsetBefore: {{ section.settings.slidesOffsetBefore }},           // スライドオフセット前
+      slidesPerGroup: {{ section.settings.slidesPerGroup }},                   // グループごとのスライド数
+      slidesPerGroupAuto: {{ section.settings.slidesPerGroupAuto }},           // スライドPerGroup自動
+      slidesPerGroupSkip: {{ section.settings.slidesPerGroupSkip }},           // スライドPerGroupSkip
+      {% if section.settings.slidesPerView_enabled == 'true' %}
+      slidesPerView: 'auto',                                                   // スライド数/ビュー('auto')
+      {% else %}
+      slidesPerView: {{ section.settings.slidesPerView }},                     // スライド数/ビュー(number)
+      {% endif %}
+      spaceBetween: {{ section.settings.spaceBetween }},                       // スペース間
+      speed: {{ section.settings.speed }},                                     // スピード
+      // 効果(エフェクト)
+      effect: {{ section.settings.effect }},                                   // トランジション効果の設定(slide:スライド fade:フェード cube:キューブ coverflow:カバーフロー flip:フリップ creative:クリエイティブ cards:カード)
+      {% if section.settings.effect == "'fade'" %}
+      // フェード
+      fadeEffect: {
+        crossFade: {{ section.settings.fadeEffect_crossFade }}
+      },
+      {% endif %}
+      {% if section.settings.effect == "'cube'" %}
+      // キューブ
+      cubeEffect: {
+        shadow: {{ section.settings.cubeEffect_shadow }},
+        shadowOffset: {{ section.settings.cubeEffect_shadowOffset }},
+        shadowScale: {{ section.settings.cubeEffect_shadowScale }} / 100,
+        slideShadows: {{ section.settings.cubeEffect_slideShadows }}
+      },
+      {% endif %}
+      {% if section.settings.effect == "'coverflow'" %}
+      // カバーフロー
+      coverflowEffect: {
+        depth: {{ section.settings.coverflowEffect_depth }},
+        modifier: {{ section.settings.coverflowEffect_modifier }},
+        rotate: {{ section.settings.coverflowEffect_rotate }},
+        scale: {{ section.settings.coverflowEffect_scale }},
+        slideShadows: {{ section.settings.coverflowEffect_slideShadows }},
+        stretch: {{ section.settings.coverflowEffect_stretch }}
+      },
+      {% endif %}
+      {% if section.settings.effect == "'flip'" %}
+      // フリップ
+      flipEffect: {
+        limitRotation: {{ section.settings.flipEffect_limitRotation }},
+        slideShadows: {{ section.settings.flipEffect_slideShadows }}
+      },
+      {% endif %}
+      {% if section.settings.effect == "'creative'" %}
+      // クリエイティブ
+      creativeEffect: {
+        limitProgress: {{ section.settings.creativeEffect_limitProgress }},
+        prev: {{ section.settings.creativeEffect_prev }},
+        next: {{ section.settings.creativeEffect_next }},
+        perspective: {{ section.settings.creativeEffect_perspective }},
+        progressMultiplier: {{ section.settings.creativeEffect_progressMultiplier }},
+        shadowPerProgress: {{ section.settings.creativeEffect_shadowPerProgress }}
+      },
+      {% endif %}
+      {% if section.settings.effect == "'cards'" %}
+      // カード
+      cardsEffect: {
+        perSlideOffset: {{ section.settings.cardsEffect_perSlideOffset }},
+        perSlideRotate: {{ section.settings.cardsEffect_perSlideRotate }},
+        rotate: {{ section.settings.cardsEffect_rotate }},
+        slideShadows: {{ section.settings.cardsEffect_slideShadows }}
+      },
+      {% endif %}
+      {% if section.settings.navigation_enabled == 'true' %}
+      // ナビゲーション
+      navigation: {
+        nextEl: '.swiper-button-next',                                    // ナビゲーション「次へ」のElementのCSSセレクター文字列
+        prevEl: '.swiper-button-prev'                                     // ナビゲーション「前へ」のElementのCSSセレクター文字列
+      },
+      {% endif %}
+      {% if section.settings.pagination_enabled == 'true' %}
+      // ページネーション
+      pagination: {
+        el: '.swiper-pagination',                                         // ページネーションのElementのCSSセレクター文字列
+        type: {{ section.settings.pagination_type }},                     // ページネーションのページ区切りタイプ(bullets:箇条書き fraction:分数 progressbar:プログレスバー custom:カスタム)
+        clickable: true                                                   // ページネーションボタンをクリックするとtrue、適切なスライドに切り替わります。bulletsのページネーションタイプのみ
+      },
+      {% endif %}
+      {% if section.settings.scrollbar_enabled == 'true' %}
+      // スクロールバー
+      scrollbar: {
+        el: '.swiper-scrollbar',                                          // スクロールバーのElementのCSSセレクター文字列
+        draggable: {{ section.settings.scrollbar_draggable }}             // スクロ－ルバーをドラッグ可能にするかどうか(true:有効 false:無効)
+      },
+      {% endif %}
+      {% if section.settings.autoplay_enabled == 'true' %}
+      // 自動再生
+      autoplay: {
+        delay: {{ section.settings.autoplay_delay }},                     // 遷移間の遅延(ミリ秒単位)。このパラメータが指定されていない場合、自動再生は無効。
+        disableOnInteraction: false                                       // 自動再生を無効にするかどうか(true:無効 false:有効)falseに設定すると、ユーザー操作（スワイプ）後に自動再生が無効にならず、操作のたびに再起動。
+      }
+      {% endif %}
+    };
+
+    // swiper生成
+    const swiper = new Swiper(".swiper_{{ section.id }}", option);
+  })();
+</script>

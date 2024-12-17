@@ -1,0 +1,7 @@
+{
+  "parent": "article.blog_template.json",
+  "context": {
+    "market": "jp"
+  },
+  "sections": {}
+}

@@ -1,0 +1,189 @@
+{%- liquid
+  assign heading_tag = "h2"
+-%}
+
+<div style="max-width: 1100px;
+    margin: auto;" id="section-id-{{ section.id }}" class="section-id-{{ section.id }} cf use-{{ section.settings.color_scheme }}-bg" data-cc-animate>
+  {% style %}
+    {% if section.settings.color_scheme == "custom" %}
+      .section-id-{{ section.id }} {
+        background: {{ section.settings.color_bg }};
+        --cust-text-color: {{ section.settings.color_text }};
+      }
+
+      {% if section.settings.button_style == 'auto' %}
+        #section-id-{{ section.id }} .button:hover {
+          background-color: {{ section.settings.color_text }};
+          color: {{ section.settings.color_bg }};
+          border-color: {{ section.settings.color_bg }};
+        }
+      {% endif %}
+    {% endif %}
+
+    #section-id-{{ section.id }} .section-rich-text__image .rimage-outer-wrapper {
+      width: {{ section.settings.image_width }}px;
+    }
+
+    @media (min-width: 768px) {
+      #section-id-{{ section.id }} .feature-header {
+        {%- assign title_size_medium = section.settings.title_size | times: 0.7 -%}
+        font-size: {{ title_size_medium }}px;
+      }
+    }
+
+    @media (min-width: 992px) {
+      #section-id-{{ section.id }} .feature-header {
+        font-size: {{ section.settings.title_size }}px;
+      }
+    }
+  {% endstyle %}
+
+  <div class="section-spacing wide-container {% if section.settings.no_padding_bottom %}section-spacing--sm-b{% endif %}">
+    <div class="content transparent align-{{ section.settings.text_alignment }} {% if section.settings.full_width == false %}reading-width{% endif %}">
+
+      <div class="bigBox">
+        
+       <div class="box1">
+          {% if section.settings.image != blank %}
+            <div class="section-rich-text__image" data-cc-animate="cc-fade-in-up">
+              {%- render 'responsive-image', image: section.settings.image -%}
+            </div>
+          {% endif %}
+       </div>
+
+       <div class="box2">
+          {% if section.settings.title != blank %}
+            <{{ heading_tag }} class="feature-header align-{{ section.settings.text_alignment }}
+              {% if section.settings.title_size >= 86 %}feature-header--large{% endif %}
+              {% if section.settings.text == blank and section.settings.button_label == blank %}feature-header__no-line feature-header__no-gap{% endif %}" data-cc-animate="cc-fade-in-up" data-cc-animate-delay="0.2s">
+              {{ section.settings.title | newline_to_br }}
+            </{{ heading_tag }}>
+          {% endif %}
+       </div>
+      
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+ <style>
+
+   .bigBox {
+     
+     display:flex;
+     align-items: flex-end;
+     
+   }
+
+   .box2 {
+      margin-bottom: 15px;
+      margin-left: 30px;
+   }
+
+   @media(max-width:1304px) {
+
+     .bigBox {
+        flex-direction: column;
+        align-items: center;
+     }
+   }
+
+    @media(max-width:991px) {
+
+     .box2 {
+        margin-bottom: 0px;
+      margin-left: 0px;
+     }
+   }
+
+     @media(max-width:483px) {
+
+     h2 {
+        font-size:23px;
+     }
+   }
+
+
+
+
+   
+ </style>
+
+
+{% schema %}
+  {
+    "name": "productheader",
+    "class": "section-rich-text",
+    "settings": [
+      {
+        "type": "textarea",
+        "id": "title",
+        "label": "Heading",
+        "default": "Rich text"
+      },
+      {
+        "type": "range",
+        "id": "title_size",
+        "min": 20,
+        "max": 150,
+        "step": 2,
+        "unit": "px",
+        "label": "Heading text size",
+        "default": 48
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+      {
+        "type": "range",
+        "id": "image_width",
+        "min": 60,
+        "max": 700,
+        "step": 10,
+        "label": "Image width",
+        "unit": "px",
+        "default": 120
+      },
+      {
+        "type": "radio",
+        "id": "color_scheme",
+        "label": "Color scheme",
+        "default": "standard",
+        "options": [
+          {
+            "value": "standard",
+            "label": "Standard"
+          },
+          {
+            "value": "alt",
+            "label": "Alternate colors"
+          },
+          {
+            "value": "custom",
+            "label": "Custom colors"
+          }
+        ]
+      },
+      {
+        "type": "color",
+        "id": "color_bg",
+        "label": "Custom background color"
+      },
+      {
+        "type": "color",
+        "id": "color_text",
+        "label": "Custom text color"
+      }
+    ],
+    "presets": [
+      {
+        "name": "商品紹介ヘッダー",
+        "settings": {}
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,149 @@
+
+
+<div style="max-width:990px;" class="wide-container half-gutter section-spacing">
+  {%- liquid
+    assign is_featured_product = true
+    assign product = all_products[section.settings.product]
+  -%}
+
+  {%- liquid
+  assign current_variant = product.selected_or_first_available_variant
+  assign featured_media = current_variant.featured_media | default: product.featured_media
+  assign media_columns_to_show = 1
+  assign swatch_option_name_lowercase = settings.swatch_option_name | downcase
+  assign product_form_id = 'product-form-' | append: section.id | append: '-' | append: product.id
+  assign show_app_blocks_in_quickbuy = false
+  assign inventory_indicator_scale = 20
+
+  if product.template_suffix contains 'preorder'
+    assign is_preorder_product = true
+  else
+    assign is_preorder_product = false
+  endif
+
+  if section.settings.media_style != 'one-column' and product.media.size > 1
+    if section.settings.media_style == 'two-column' or  section.settings.media_style == 'collage'
+      assign media_columns_to_show = 2
+    endif
+  endif
+
+  assign has_buy_buttons = false
+  for block in section.blocks
+    if block.type == 'buy_buttons'
+      assign has_buy_buttons = true
+      assign enable_mobile_sticky_cart = block.settings.enable_mobile_sticky_cart
+    endif
+  endfor
+-%}
+{% style %}
+  @media(max-width: 767px){
+    .product-area__media .swiper-container:not(.swiper-container-horizontal) {
+      padding-bottom: {{ 1 | divided_by: product.media.first.aspect_ratio | times: 100 }}%;
+    }
+  }
+{% endstyle %}
+
+<div class="table">
+  <div class="prductimage">
+    <img class="mainimage" src="{{ product.featured_image | product_img_url:'medium'}}"> 
+  </div>
+  <div class="info">
+    <div class="name">
+      <p style="margin-bottom: 0px; color: gray; text-align: left;">商品名</p>
+      <a style="margin-top: 5px; text-align: center;"  href="{{ product.url }}">{{ product.title }}</a>
+    </div>
+    <div class="brand">
+      <p style="margin-bottom: 0px; color: gray; text-align: left;white-space: nowrap;">ブランド</p>
+      <a style="margin-top: 5px; text-align: center;"  href="{{ product_url }}">{{ product.vendor}}</a>
+    </div>
+    <div class="price">
+      <p style="margin-bottom: 0px; color: gray; text-align: left;">値段</p>
+      <a style="margin-top: 5px; text-align: center;"  href="{{ product_url }}">{{ product.price | money }}</a>
+    </div>
+  </div>
+</div>
+
+
+
+  <style>
+
+    @media(max-width:1462px){
+      tr, td {
+        display: block;
+      }
+    }
+
+
+    @media(max-width:1304px){
+     .info {
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+     }
+    }
+
+    @media(min-width:1305px){
+     .info {
+    align-items: center;
+     }
+    }
+
+    @media(max-width:608px){
+     .table {
+        flex-direction: column;
+        align-items: center;
+    }
+  }
+
+    .table {
+      display:flex;
+      justify-content: center;
+      margin-bottom: 20px;
+     }
+
+    .info {
+      display:flex;
+     }
+
+      .name,.brand,.price {
+        margin-right:100px;
+        margin-left:100px;
+      }
+
+</style>
+
+
+</div>
+
+<script type="application/json" id="cc-product-json-{{ product.id }}">
+  {{ product | json }}
+</script>
+
+{% render 'structured-data-product', product: product, current_variant: current_variant %}
+
+</div>
+
+{% schema %}
+  {
+    "name": "BlogItem",
+    "class": "section-featured-product",
+    "templates": ["404", "article", "blog", "collection", "cart", "index", "list-collections", "page", "product", "search"],
+    "blocks": [
+    ],
+    "settings": [
+      {
+        "type": "product",
+        "id": "product",
+        "label": "Product"
+      }
+    ],
+    "presets": [
+      {
+        "name": "blogitem",
+        "settings": {
+        }
+        
+      }
+    ]
+  }
+{% endschema %}

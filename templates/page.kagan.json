@@ -1,0 +1,18 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page-kagan",
+      "custom_css": [],
+      "settings": {
+        "picup_block": true,
+        "picup_block_img": "shopify:\/\/shop_images\/kagan-kv-picup-01.webp",
+        "picup_block_text": "第一弾は沖縄産たんかんを利用したクラフトスピリッツ2025年春頃リリース予定",
+        "products-list_block": false,
+        "products-list_block_collection": "all"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

@@ -1,0 +1,207 @@
+{%- liquid
+  assign heading_tag = "h2"
+  if section.settings.heading_h1
+    assign heading_tag = "h1"
+  endif
+-%}
+<div class="contents2">
+<div id="lpvideos" class="totalcontair">
+<div class="videotitle">
+  <span class="videomaintitle">MOVIE</span>
+</div>
+
+<div id="section-id-{{ section.id }}" class="header-overlap-section needs-alt-logo videobox" data-section-type="video">
+  {% style %}
+    #section-id-{{ section.id }} .rimage-outer-wrapper {
+      background-position: {{ section.settings.mobile_image_position }}
+    }
+
+    @media (min-width: 768px) {
+      #section-id-{{ section.id }} .line-1 {
+        {%- assign title_size_medium = section.settings.title_size | times: 0.7 -%}
+        font-size: {{ title_size_medium }}px;
+      }
+
+      #section-id-{{ section.id }} .rimage-outer-wrapper {
+        background-position: {{ section.settings.desktop_image_position }}
+      }
+    }
+
+    @media (min-width: 992px) {
+      #section-id-{{ section.id }} .line-1 {
+        font-size: {{ section.settings.title_size }}px;
+      }
+    }
+  {% endstyle %}
+
+  {% if section.settings.video != blank %}
+    <div class="video-container video-container--image video-container--modal-mobile image-overlay  {% if section.settings.overlay_style_tint %}image-overlay--bg-full{% endif %}"
+         data-cc-animate
+         data-video-url="{{ section.settings.video }}"
+         data-video-id="{{ section.settings.video.id }}"
+         data-video-type="{{ section.settings.video.type }}"
+         data-video-autoplay="false"
+         data-video-loop="false">
+      <a class="video-container__stop" href="#">{% render 'svg-x' %}</a>
+      <div class="video-container__video"></div>
+
+      {%- assign show_overlay_text = true -%}
+
+      <div class="video-container__cover">
+        {%- if section.settings.image == blank -%}
+          <div class="placeholder-image placeholder--banner {% if show_overlay_text %}dark{% endif %}">
+            {{- 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' -}}
+          </div>
+        {%- else -%}
+          <div class="rimage-outer-wrapper lazyload fade-in"
+              data-bgset="{% render 'bgset', image: section.settings.image %}"
+              data-sizes="auto"
+              data-parent-fit="cover">
+            <noscript>
+              <div class="rimage-wrapper" style="padding-top:{{ 1 | divided_by: section.settings.image.aspect_ratio | times: 100 }}%">
+                <img src="{{ section.settings.image | img_url: '1024x1024' }}" alt="{{ section.settings.image.alt | escape }}" class="rimage__image">
+              </div>
+            </noscript>
+          </div>
+        {%- endif -%}
+      </div>
+
+      {%- if show_overlay_text -%}
+        <div class="overlay-type overlay {{ section.settings.overlay_position }}">
+          <div class="inner">
+            <div>
+              <div class="overlay__content" {% if section.settings.overlay_position == 'position--hcenter position--vcenter' %}data-cc-animate="cc-fade-in-zoom-out"{% endif %}>
+                {%- if section.settings.subheading != blank -%}
+                  <div class="feature-subheader">
+                    {{ section.settings.subheading | escape }}
+                  </div>
+                {%- endif -%}
+
+                <div class="line-3">
+                  <a href="#" class="video-container__play"
+                     aria-label="{{ 'general.accessibility_labels.video_play' | t | escape }}">
+                    {% render 'svg-play-without-circle' %}
+                    
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      {%- endif -%}
+    </div>
+  {% endif %}
+  <div class="videotextbox">
+    {{ section.settings.video_title | newline_to_br }}
+  </div>
+</div>
+
+</div>
+</div>
+<style>
+
+   
+
+  @media(min-width:850px) {
+    .videotitle {
+      font-size: 36px;
+      margin-left: 83px;
+      padding-top: 42.5px;
+      padding-right: 154px;
+      border-right: solid 1px black;
+    }
+
+    .totalcontair {
+      display:flex;
+    }
+
+    .videobox {
+      width: 65%;
+      margin: auto;
+      margin-top: 56.5px;
+    }
+  }
+  
+  @media(max-width:849px) {
+    
+    .videotitle {
+      font-size: 20px;
+      margin-left: 43px;
+      padding-top: 42.5px;
+      padding-right: 154px;
+      font-weight:bold;
+    }
+
+    .videobox {
+      width: 90%;
+      margin: auto;
+      margin-top: 56.5px;
+    }
+    
+  }
+
+   @media(max-width:550px) {
+     
+      .videotitle {
+      font-size: 20px;
+      margin-left: 26.5px;
+      padding-top: 42.5px;
+      padding-right: 154px;
+      font-weight:bold;
+    }
+
+    .videobox {
+      width: 90%;
+      margin: auto;
+      margin-top: 56.5px;
+    }
+
+
+
+  }
+  
+
+  .videotextbox {
+    margin-top: 66.45px;
+    margin-bottom:54.5px;
+    font-size:18px;
+  }
+</style>
+
+
+{% schema %}
+  {
+    "name": "Video_LP",
+    "class": "section-video",
+    "settings": [
+      {
+        "id": "video",
+        "type": "video_url",
+        "label": "Video link",
+        "accept": ["youtube", "vimeo"],
+        "info": "Supports YouTube and Vimeo",
+        "default": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc"
+      },
+      {
+        "type": "textarea",
+        "id": "video_title",
+        "label": "Heading",
+        "default": "Video"
+      },
+      {
+        "id": "image",
+        "type": "image_picker",
+        "label": "Cover image",
+        "info": "Required. Shows over the video before it's played."
+      }
+    ],
+    "presets": [
+      {
+        "name": "Video_LP",
+        "settings": {
+          "video": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc"
+        }
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,628 @@
+{%- if section.settings.layout == 'rows' -%}
+  {%- if section.settings.grid == 2 -%}
+    {%- assign product_class = 'column half' -%}
+    {%- elsif section.settings.grid == 3 -%}
+    {%- assign product_class = 'column third' -%}
+  {%- else -%}
+    {%- assign product_class = 'column quarter' -%}
+  {%- endif -%}
+{%- endif -%}
+
+{%- assign max_products = section.settings.grid | times: section.settings.rows -%}
+
+{% assign animation_type = "cc-fade-in-up" %}
+{%- if section.settings.layout == "columns" -%}
+  {% assign animation_type = "cc-fade-in" %}
+{%- endif -%}
+
+{% if section.settings.layout == 'carousel' %}<div class="product-slider">{% endif %}
+<div class="contents">
+<div id="lpmains" class="con half-gutter section-spacing {% if section.settings.alternate_bg_color %}use-alt-bg {% endif %}" data-section-type="featured-collection" data-components="product-block" data-cc-animate>
+  {% if section.settings.title != blank or section.settings.show_view_all %}
+    <div id="mains" class="section-heading" data-cc-animate>
+      
+
+      {% if section.settings.show_view_all %}
+        <a data-cc-animate-click class="view-all-link" href="{{ collections[section.settings.collection].url }}">
+          {{ 'collections.general.view_all' | t }}
+        </a>
+      {% endif %}
+    </div>
+  {% endif %}
+
+  {% if section.settings.layout == 'carousel' %}
+    <div class="swiper-container product-list product-list--{{ section.settings.layout }}"
+         data-products-in-view="{{ section.settings.grid }}">
+
+      <div class="swiper-wrapper" data-normheights=".image" data-normheights-inner="img">
+        {% if section.settings.collection != blank %}
+          {% assign collection = collections[section.settings.collection] %}
+          {% for product in collection.products limit: 12 %}
+            <div class="swiper-slide">
+              {% assign animate_delay = forloop.index | times: 0.4 %}
+              {% render 'product-block', product: product, product_class: product_class, i: forloop.index, animate: animate_delay, show_vendor: section.settings.show_vendor, hide_swatches: section.settings.hide_swatches %}
+            </div>
+          {% endfor %}
+
+        {% else %}
+          {% for i in (1..max_products) %}
+            <div class="swiper-slide">
+              {% assign animate_delay = forloop.index | times: 0.4 %}
+              {% render 'onboarding-product-block', i: forloop.index, product_class: product_class, animate: animate_delay %}
+            </div>
+          {% endfor %}
+        {% endif %}
+      </div>
+
+      <div class="swiper-scrollbar"></div>
+      <a href="#" class="swiper-button-prev" aria-label="{{ 'general.accessibility_labels.previous' | t | escape }}">{% render 'svg-chevron-left' %}</a>
+      <a href="#" class="swiper-button-next" aria-label="{{ 'general.accessibility_labels.next' | t | escape }}">{% render 'svg-chevron-right' %}</a>
+    </div>
+  {% else %}
+    
+      {% if section.settings.collection != blank %}
+
+        {% assign collection = collections[section.settings.collection] %}
+        {% assign parts = paginate.current_page %}
+      　{% paginate collection.products by 9 %}
+        {% assign count = 1 %}
+
+         <div class="titlecards" >
+           <div class = "title">
+                <span class="products">PRODUCTS</span>
+           </div>
+           <div class= "pages">
+           {%- if paginate.pages > 1 -%}
+    <nav role="navigation">
+      <ul class="pagination">
+        
+        {%- for part in paginate.parts -%}
+          {% assign count = count | plus : 1 %}
+          
+          {%- if part.is_link -%}
+            {% if part.title == "1"  %}
+              {% assign end = 9 %}
+              {% assign start = 1 %}
+            {% else %}
+              {% assign end = part.title | times : 9 %}
+              {% assign start = end | minus : 8 %}
+            {% endif %}
+              <li class="numbers">
+                <a onclick="location.href='{{ part.url }}#lpmains'">
+                  <span class=""># </span>{{ start }}<span class="">～</span>{{ end }}
+                </a>
+              </li>
+          {%- else -%}
+            {%- if part.title == paginate.current_page -%}
+              {% if part.title == "1"  %}
+              {% assign end = 9 %}
+              {% assign start = 1 %}
+            {% else %}
+              {% assign end = part.title | times : 9 %}
+              {% assign start = end | minus : 8 %}
+            {% endif %}
+              <li class="active numbers" aria-current="page">
+               <span class=""># </span>{{ start }}<span class="">～</span>{{ end }}
+              </li>
+            {%- else -%}
+              <li class="numbers">
+                <span class="visuallyhidden">page</span> {{ part.title }}
+              </li>
+            {%- endif -%}
+          {%- endif -%}
+            {% assign start =  start  | plus : 9 %}
+            {% assign end =  end  | plus : 9 %}
+        {%- endfor -%}
+
+      </ul>
+    </nav>
+  {%- endif -%}
+           </div>
+         </div>
+        <br>
+      </div>
+      <div class="product-list
+      product-list--{{ section.settings.layout }}
+      {% if section.settings.grid_mobile == '2' %}mob-two-col{% endif %}
+      mob-show-{{ section.settings.rows | times: section.settings.grid_mobile }}
+      {% if section.settings.layout == 'columns' %}jiggly-split dynamic-col-{{ section.settings.grid }}{% else %}grid--uniform{% endif %}
+      contenabox">
+        {% if paginate.current_page == 1  %}
+          {% assign itemnumber = 1  %}
+        {% else %}
+          {% assign kake = paginate.current_page | minus : 1   %}
+          {% assign itemnumber = 9 | times: kake | plus : 1 %}
+        {% endif %}
+        
+        <div class="cardlist">
+          {% for product in collection.products %}
+            {% render 'product-block_lp', 
+              product: product, product_class: product_class, animation_type: animation_type, i: forloop.index, show_vendor: section.settings.show_vendor,
+              animate: forloop.index, hide_swatches: section.settings.hide_swatches, number: itemnumber %}
+            {% assign itemnumber = itemnumber | plus : 1 %}
+          {% endfor %}
+        </div>
+        {% endpaginate %}
+
+      {% else %}
+        {% for i in (1..max_products) %}
+          {% assign animate_delay = forloop.index | times: 0.4 %}
+          {% render 'onboarding-product-block', i: forloop.index, product_class: product_class, animate: animate_delay, animation_type: animation_type %}
+        {% endfor %}
+      {% endif %}
+    
+  {% endif %}
+</div>
+</div>
+<div class="borders"></div>
+
+{% if section.settings.layout == 'carousel' %}</div>{% endif %}
+
+<script>
+  let targets = document.querySelectorAll('.cardname'); //アニメーションさせたい要素
+//スクロールイベント
+window.addEventListener('scroll', function () {
+  var scroll = window.scrollY; //スクロール量を取得
+  var windowHeight = window.innerHeight; //画面の高さを取得
+  for (let target of targets) { //ターゲット要素がある分、アニメーション用のクラスをつける処理を繰り返す
+    var targetPos = target.getBoundingClientRect().top + scroll; //ターゲット要素の位置を取得
+    if (scroll > targetPos - windowHeight) { //スクロール量 > ターゲット要素の位置
+      target.classList.add('is-animated'); //is-animatedクラスを加える
+    }
+  }
+});
+</script>
+
+  <style>
+    .borders {
+      width:100wv;
+      height:0px;
+      border-bottom:solid 1px black;
+    }
+
+    .numbers.active {
+      padding: 3px 26px;
+    border: 1px solid black;
+    margin-right: 16px;
+    font-size: 18px;
+    color: black;
+    background-color: white;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    }
+
+    @media(min-width:1631px) {
+
+      .contents {
+
+      width:77%;
+      margin:0 auto;
+
+      }
+
+    }
+
+    @media(max-width:1630px) {
+      .contents {
+
+        width:85%;
+        margin:0 auto;
+
+      }
+      
+
+    }
+
+    @media(max-width:1530px) {
+      .contents {
+      width:90%;
+      margin:0 auto;
+        }
+
+    }
+
+     @media(max-width:1445px) {
+       .contents{
+
+      width:95%;
+      margin:0 auto;
+       }
+
+    }
+
+    @media(max-width:1370px) {
+      .contents{
+
+      width:100%;
+      margin:0 auto;
+      }
+
+    }
+
+    @media(max-width:1299px) {
+      .contents{
+
+      width:80%;
+      margin:0 auto;
+      }
+
+    }
+
+    @media(max-width:1099px) {
+      .contents{
+
+      width:90%;
+      margin:0 auto;
+      }
+
+    }
+
+    @media(max-width:980px) {
+      .contents{
+
+      width:95%;
+      margin:0 auto;
+      }
+
+    }
+
+    @media(max-width:940px) {
+      .contents{
+
+      width:100%;
+      margin:0 auto;
+      }
+
+    }
+
+    @media(max-width:885px) {
+      .contents{
+
+      width:60%;
+      margin:0 auto;
+      }
+
+    }
+
+    @media(max-width:700px) {
+      .contents{
+
+      width:70%;
+      margin:0 auto;
+      }
+
+    }
+
+    @media(max-width:600px) {
+      .contents{
+
+      width:80%;
+      margin:0 auto;
+      }
+
+    }
+
+    @media(max-width:530px) {
+      .contents{
+
+      width:90%;
+      margin:0 auto;
+      }
+
+    }
+
+    @media(max-width:430px) {
+      .contents{
+
+      width:100%;
+      margin:0 auto;
+      }
+
+    }
+
+    .contents {
+     padding-top: 87px;
+    }
+
+    .con {
+      padding-top: 87px;
+      margin-top:-87px;
+    }
+   
+
+    .pagination {
+      list-style:none;
+    }
+
+    
+
+    @media(min-width:1300px) {
+
+      .titlecards {
+          display:flex;
+          align-items: center;
+      }
+
+      .cardlist {
+        margin-left:83px;
+        margin-bottom: 100.5px;
+        display:grid;
+        grid-template-columns: 418px 418px 418px;
+      }
+
+      .products {
+        font-size:36px;
+        padding: 53px 0;
+        margin-left:83px;
+      }
+
+      .numbers {
+        padding:3px 26px;
+        border:1px solid black;
+        margin-right:16px;
+        font-size:18px;
+        color: white;
+        background-color: black;
+        margin-bottom:10px;
+        margin-top:10px;
+      }
+    }
+
+    @media(max-width:1299px) {
+
+      .titlecards {
+          display:flex;
+          align-items: center;
+      }
+
+      .cardlist {
+        margin-left:83px;
+        margin-bottom: 100.5px;
+        display:grid;
+        grid-template-columns: 418px 418px;
+      }
+
+      .products {
+        font-size:36px;
+        padding: 53px 0;
+        margin-left:83px;
+      }
+
+      .numbers {
+        padding:3px 26px;
+        border:1px solid black;
+        margin-right:16px;
+        font-size:18px;
+        color: white;
+        background-color: black;
+        margin-bottom:10px;
+        margin-top:10px;
+      }
+
+    }
+
+    @media(max-width:885px) {
+
+      .titlecards {
+          display:flex;
+          align-items: center;
+      }
+
+      .cardlist {
+        margin-left:83px;
+        margin-bottom: 100.5px;
+        display:grid;
+        grid-template-columns: 418px;
+      }
+
+      .products {
+        font-size:36px;
+        padding: 53px 0;
+        margin-left:83px;
+      }
+
+      .numbers {
+        padding:3px 26px;
+        border:1px solid black;
+        margin-right:16px;
+        font-size:18px;
+        color: white;
+        background-color: black;
+        margin-bottom:10px;
+        margin-top:10px;
+      }
+
+    }
+
+     @media(max-width:849px) {
+
+       .titlecards {
+          display:flex;
+          align-items: center;
+      }
+
+       .products {
+        font-size:20px;
+        font-weight:bold;
+        padding: 53px 0;
+        margin-left:43px;
+      }
+
+      .cardlist {
+        margin-left:43px;
+        margin-bottom: 100.5px;
+        display:grid;
+        grid-template-columns: 418px;
+      }
+
+       .numbers {
+        padding:3px 26px;
+        border:1px solid black;
+        margin-right:16px;
+        font-size:14px;
+        color: white;
+        background-color: black;
+        margin-bottom:10px;
+        margin-top:10px;
+      }
+     }
+
+    @media(max-width:450px) {
+
+      .titlecards {
+          display:flex;  
+          align-items: flex-start;
+          flex-direction: column;
+          margin-left: -25px;
+      }
+      
+       .products {
+        font-size:20px;
+        font-weight:bold;
+        padding: 53px 0;
+        margin-left:43px;
+      }
+
+      .cardlist {
+        margin-left:10px;
+        margin-bottom: 100.5px;
+        display:grid;
+        grid-template-columns: 418px;
+      }
+
+       .numbers {
+        padding:3px 26px;
+        border:1px solid black;
+        margin-right:16px;
+        font-size:14px;
+        color: white;
+        background-color: black;
+        margin-bottom:10px;
+        margin-top:10px;
+      }
+
+
+    }
+
+    
+  </style>
+
+
+{% schema %}
+  {
+    "name": "LP collection",
+    "class": "section-featured-collection",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "Featured collection"
+      },
+      {
+        "type": "collection",
+        "id": "collection",
+        "label": "Collection"
+      },
+      {
+        "type": "select",
+        "id": "layout",
+        "label": "Layout",
+        "options": [
+          {
+            "value": "columns",
+            "label": "Collage"
+          },
+          {
+            "value": "rows",
+            "label": "Grid"
+          },
+          {
+            "value": "carousel",
+            "label": "Carousel"
+          }
+        ],
+        "default": "rows",
+        "info": "Collage will only work when the 'Image shape' is set to Natural - in Products / Image shape"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_vendor",
+        "label": "Show product vendor",
+        "default": false
+      },
+      {
+        "type": "range",
+        "id": "grid",
+        "label": "Desktop products per row",
+        "min": 2,
+        "max": 5,
+        "default": 3
+      },
+      {
+        "type": "range",
+        "id": "rows",
+        "label": "Rows",
+        "min": 1,
+        "max": 4,
+        "default": 2,
+        "info": "Does not apply to carousel layout"
+      },
+      {
+        "type": "select",
+        "id": "grid_mobile",
+        "label": "Mobile products per row",
+        "options": [
+          {
+            "value": "1",
+            "label": "1"
+          },
+          {
+            "value": "2",
+            "label": "2"
+          }
+        ],
+        "default": "2"
+      },
+      {
+        "type": "checkbox",
+        "id": "hide_swatches",
+        "label": "Hide color swatches",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "alternate_bg_color",
+        "label": "Use alternate section color",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "show_view_all",
+        "label": "Show 'View all' link",
+        "default": true
+      }
+    ],
+    "presets": [
+      {
+        "name": "LP collection",
+        "settings": {}
+      }
+    ],
+    "templates": ["article", "index", "page", "product", "collection", "blog", "list-collections", "search", "404", "cart"]
+  }
+{% endschema %}
+
+<style>
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap;
+}
+</style>

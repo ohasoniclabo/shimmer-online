@@ -1,0 +1,538 @@
+<script>
+  $(function(){
+  if($('.card').length == 0){
+    return;
+  }
+
+  $('.card').each(function(){
+
+    const card = $(this);
+
+    const url = $(this).data('url');
+    const data_url = url.replace('https://shimmer.okinawa/',''); //一応、replace
+    let html = '';
+
+    $.ajax({
+      type: 'GET',
+      url: window.Shopify.routes.root + data_url ,
+      dataType: 'json'
+    }).done(function (json, status, xhr) {
+
+      let target = json.product;
+      let description = target.body_html;
+
+      let price = target.variants[0].price;
+
+      html = `
+      <div class="table">
+  <div class="prductimage">
+    <a href="${url}"><img class="mainimage" src="${target.image.src}"> </a>
+  </div>
+  <div class="info">
+    <div class="info1">
+    <div class="name">
+      <p style="margin-bottom: 0px; color: gray; text-align: left;">商品名</p>
+      <a style="margin-top: 5px; text-align: center;"  href="${url}">${target.title}</a>
+    </div>
+    <div class="brand">
+      <p style="margin-bottom: 0px; color: gray; text-align: left;white-space: nowrap;">ブランド</p>
+      <a style="margin-top: 5px; text-align: center;"  href="${url}">${target.vendor}</a>
+    </div>
+    <div class="price">
+      <p style="margin-bottom: 0px; color: gray; text-align: left;">値段</p>
+      <a style="margin-top: 5px; text-align: center;"  href="${url}">¥${price}</a>
+    </div>
+    </div>
+    <div class="info2">
+      <p>${description}</p>
+    </div>
+  </div>
+  </div>
+  <div class="info3">
+      <p>${description}</p>
+  </div>
+`;
+      $(card).append(html);
+
+    }).fail(function (json) {
+      // console.error('失敗しました。')
+    });
+
+
+  });
+});
+  
+</script>
+<div class="boxes">
+<div class="sidePR">
+  <span class="sidemoji">PR</span>
+</div>
+<div class="article-container {% unless article.image and section.settings.featured_image == "wide" %}central content{% else %}header-overlap-section{% endunless %}
+  {% if article.image and section.settings.featured_image == "narrow" %}with-featured-image{% endif %}" data-section-type="article-template"
+   style="">
+  {% paginate article.comments by 50 %}
+
+  {% if article.image and section.settings.featured_image == "nomal" %}
+    <div class="topheader">
+      <div class="topimage">
+        <div class="blogdate">
+          {{ article.published_at | date: "%Y &frasl; %m &frasl; %d" }}
+        </div>
+      </div>
+      <div class="blogname">
+        <span class="blogtitle">
+          {{ article.title }}
+        </span>
+      </div>
+    </div>
+  {% endif %}
+
+
+  <style>
+
+    @media (min-width: 1350px) {
+
+      .boxes {
+        display:flex;
+      }
+    
+      .sidemoji{
+        font-size:36px;
+        font-weight:bold;
+      }
+
+      .sidePR {
+        padding-top: 46px;
+        padding-left: 86.5px;
+        border-right:solid 1px black;
+        width:25%;
+      }
+
+      .blogdate {
+        font-size:16px;
+      }
+
+      .blogtitle {
+        font-size:20px;
+        
+      }
+
+      .blogname {
+        border-bottom:solid 1px black;
+        padding: 14px 0;
+      }
+
+      .topheader {
+        padding-bottom: 50.38px;
+        width: 80%;
+        margin: auto;
+        padding-top:46px;
+      }
+
+      #page-content .central {
+        margin:none;
+        width:1500px;
+      }
+
+      #page-content .content{
+        padding:0px;
+      }
+
+      #page-content .central{
+        padding:0px;
+      }
+
+      .article {
+        width:80%;
+        margin:auto;
+      }
+
+      .mainimage {
+        height:150px;
+        max-width:140%;
+      }
+
+      .info2 {
+        width: 650px;
+      }
+
+       .info3{
+        display:none;
+      }
+    }
+
+    @media (max-width: 1349px) {
+
+      .mainimage {
+        height:150px;
+        max-width:140%;
+      }
+
+      .info2 {
+          display:none;
+      }
+
+      .topheader {
+        padding-bottom: 50.38px;
+        padding-top:46px;
+      }
+
+      .blogname {
+        border-bottom:solid 1px black;
+        padding: 14px 0;
+      }
+
+      .blogdate {
+        font-size:16px;
+      }
+
+      .blogtitle {
+        font-size:20px;
+        
+      }
+
+      .sidemoji{
+        display:none;
+      }
+
+      .other-products {
+        margin: 0px calc(50% - 50vw);
+        margin-top: 50px;
+      }
+
+    }
+    
+
+    .template-article .rte, .template-article #template, .template-article #address_tables, .template-article #comments {
+      margin-top:0px;
+    }
+    
+    .topheader {
+      display:flex;
+     flex-direction: column;
+    }
+
+    
+
+    .blogname {
+      
+    }
+
+
+    @media(max-width:1462px){
+      tr, td {
+        display: block;
+      }
+    }
+    @media(max-width:899px){
+      
+      .other-products__products {
+        display:flex;
+        align-items: center;
+      }
+    }
+
+
+    @media(max-width:1304px){
+     .info {
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+     }
+     .blogtitle {
+      margin-left: 0px;
+      margin-top:20px;
+    }
+
+    }
+
+    @media(min-width:1305px){
+     .info {
+    align-items: center;
+     }
+    }
+
+    @media(min-width:990px){
+       
+    }
+    
+    @media(max-width:989px){
+       
+    }
+
+     @media(max-width:900px){
+       .info1 {
+          flex-direction: column;
+        }
+      }
+
+    @media(max-width:608px){
+     .table {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .info3{
+        display:none;
+      }
+    
+  }
+
+    .table {
+      display:flex;
+      justify-content: flex-start;
+      margin-bottom: 20px;
+ 
+     }
+
+    .card {
+      background:#E8E4DF;
+      padding: 30px 10px 10px 10px;
+      margin-bottom:20px;
+    }
+
+    .info {
+      margin-left:80px;
+      display:flex;
+      flex-direction: column;
+      align-items: flex-start;
+     }
+
+      .name,.brand,.price {
+        margin-top:10px;
+        margin-bottom:10px;
+        margin-right: 100px;
+      }
+
+    .info1 {
+      display:flex;
+      
+    }
+
+    .info2,.info3 {
+      font-size: 13px;
+    }
+
+    .other-products {
+      border-top:solid 1px black;
+    }
+
+    .article-container h2,p {
+      
+    }
+
+    
+
+    
+
+
+</style>
+    
+
+  {% comment %}
+  When a comment has just been submitted, it's not shown right away.
+  Shopify needs to wait until it knows for sure that it is not spam to publish it.
+  We can still show right away *to its author* the comment he just submitted
+  — although that comment may not have been published yet.
+  When a comment is submitted, the browser is redirected to a page that
+  includes the new comment id in its URL. Example:
+  http://shopname.myshopify.com/blogs/news/2022072-my-post?comment=3721372
+  When a comment ID is specified in an article URL, that comment is accessible in the
+  template through a Liquid object called comment.
+  That comment is a full-fledged comment variable that has all the regular comment properties:
+  http://docs.shopify.com/themes/liquid-variables/comment.
+  Note that comment.created_at will only be defined if the comment did not have any blank field
+  — was posted without error.
+  {% endcomment %}
+
+  {% assign number_of_comments = article.comments_count %}
+
+  {% comment %}If a comment was just submitted, and it has no blank fields.{% endcomment %}
+  {% if comment and comment.created_at %}
+  {% assign number_of_comments = article.comments_count | plus: 1 %}
+  {% endif %}
+
+  <div class="article">
+    {% if article.image and section.settings.featured_image == "narrow" %}
+      <div class="article-image">
+        {% render 'responsive-image', image: article.image, animateZoom: true %}
+      </div>
+    {% endif %}
+
+    {% unless article.image and section.settings.featured_image == "wide" %}
+
+      {% if section.settings.blog_show_date or section.settings.blog_show_author %}
+        
+      {% endif %}
+    {% endunless %}
+
+    <div class="rte rte--allow-full-width-images {% if article.image and section.settings.featured_image == "wide" %}wide-image{% endif %}"
+         data-cc-animate {% if article.image and section.settings.featured_image == "wide" %}data-cc-animate-delay="0.8s"{% else %}data-cc-animate-delay="0.2s"{% endif %}>
+      {{ article.content }}
+    </div>
+
+    
+  </div>
+
+  {% if blog.comments_enabled? %}
+    {% if article.comments != blank %}
+      <div id="comments" class="content-row" data-cc-animate data-cc-animate-delay=".5s">
+        <h2 class="align-left">{{ 'blogs.comments.title' | t }}</h2>
+
+        {% comment %} Show a comment that was *just* submitted {% endcomment %}
+        {% if comment and comment.status != 'published' %}
+          <p class="success feedback">
+            {% if blog.moderated? %}
+              {{ 'blogs.comments.success_moderated' | t }}
+            {% else %}
+              {{ 'blogs.comments.success' | t }}
+            {% endif %}
+          </p>
+        {% endif %}
+
+        {% comment %} Loop through approved comments: {% endcomment %}
+        {% if number_of_comments > 0 %}
+          <ul>
+            {% for comment in article.comments %}
+              <li id="{{ comment.id }}" class="comment{% unless number_of_comments > article.comments_count %}{% if forloop.first %} first{% endif %}{% endunless %}{% if forloop.last %} last {% endif %}">
+                <h4 class="comment-author">{{ 'blogs.comments.author_meta_said' | t: author: comment.author }}</h4>
+                <div class="comment-content">
+                  {{ comment.content }}
+                </div>
+                <p class="comment-date">
+                  {% assign comment_date = comment.created_at | date: format: 'month_date_year' %}
+                  {{ 'blogs.comments.date_meta' | t: comment_date: comment_date }}
+                </p>
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+
+        {% comment %}Comments are paginated.{% endcomment %}
+        {% if paginate.pages > 1 %}
+          <div id="pagination">
+            {{ paginate | default_pagination }}
+          </div>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    {% comment %}Comment submission form.{% endcomment %}
+
+    <div data-cc-animate data-cc-animate-delay=".5s">
+      {% form article %}
+        <hr>
+        <h3 id="add-comment-title">{{ 'blogs.comments.form_title' | t }}</h3>
+
+        {% if form.errors %}
+          <div class="feedback error">
+            {{ form.errors | default_errors }}
+          </div>
+        {% endif %}
+
+        <div class="form">
+          <div class="input-row">
+            <input aria-label="{{ 'blogs.comments.name' | t }}" placeholder="{{ 'blogs.comments.name' | t }}" required{% if form.errors contains "author" %} class="error"{% endif %} type="text" name="comment[author]" id="comment-author" value="{{ form.author }}" />
+          </div>
+
+          <div class="input-row">
+            <input aria-label="{{ 'blogs.comments.email' | t }}" placeholder="{{ 'blogs.comments.email' | t }}" required{% if form.errors contains "email" %} class="error"{% endif %} type="email" name="comment[email]" id="comment-email" value="{{ form.email }}" />
+          </div>
+
+          <div class="input-row">
+            <textarea aria-label="{{ 'blogs.comments.message' | t }}" placeholder="{{ 'blogs.comments.message' | t }}" required{% if form.errors contains "body" %} class="error"{% endif %} name="comment[body]" id="comment-body">{{ form.body }}</textarea>
+          </div>
+
+          <div class="wide-action">
+            <input type="submit" value="{{ 'blogs.comments.post' | t }}" />
+          </div>
+        </div>
+      {% endform %}
+    </div>
+  {% endif %}
+
+
+  {% if blog.next_article or blog.previous_article %}
+    <div class="other-products other-products--articles" data-cc-animate data-cc-animate-delay=".5s">
+      
+      <div class="other-products__products">
+        {% if blog.previous_article %}
+        <span class="other-products__product previous">
+          <a data-cc-animate-click href="{{ blog.previous_article }}">
+            <div class="other-products__product__arrow"><span class="arr">{% render 'svg-chevron-left' %}</span></div>
+            <div class="other-products__product__title h5">prev</div>
+          </a>
+        </span>
+
+        <div class="other-products__label">
+          <a data-cc-animate-click href="{{ blog.url }}">archives</a>
+        </div>
+        {% endif %}
+        {% if blog.next_article %}
+        <span class="other-products__product next">
+          <a data-cc-animate-click href="{{ blog.next_article }}" >
+            <div class="other-products__product__title h5">next</div>
+            <div class="other-products__product__arrow"><span class="arr">{% render 'svg-chevron-right' %}</span></div>
+          </a>
+        </span>
+        {% endif %}
+      </div>
+    </div>
+  {% endif %}
+
+  {% if article.image and section.settings.featured_image == "wide" %}
+    </div>
+  {% endif %}
+
+  {% endpaginate %}
+</div>
+</div>
+
+{% render 'structured-data-article', article: article %}
+
+
+{% schema %}
+  {
+    "name": "Article pages",
+    "settings": [
+      {
+        "type": "select",
+        "id": "featured_image",
+        "label": "Featured image",
+        "default": "nomal",
+        "options": [
+          {
+            "value": "none",
+            "label": "None"
+          },
+          {
+            "value": "narrow",
+            "label": "Narrow"
+          },
+          {
+            "value": "nomal",
+            "label": "nomal"
+          }
+        ]
+      },
+      {
+        "type": "checkbox",
+        "id": "blog_show_author",
+        "label": "Show author",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "blog_show_date",
+        "label": "Show date",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "blog_show_social",
+        "label": "Show social icons",
+        "default": true
+      }
+	  ]
+  }
+{% endschema %}

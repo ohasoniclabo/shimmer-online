@@ -1,0 +1,43 @@
+{
+  "sections": {
+    "04b323b4-9725-427c-b33f-38fd93840389": {
+      "type": "register-template",
+      "settings": {
+        "maintext": "本商品は数量限定商品につきメールアドレスを登録頂いたお客様にのみ、ご購入のご案内をお送りいたします。",
+        "send": "登録→"
+      }
+    },
+    "main": {
+      "type": "main-page-custom-ploduct-lp",
+      "settings": {}
+    },
+    "665ba399-53d9-4c92-bef3-28636ca7da9f": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "shimmer collection",
+        "collection": "shimmer",
+        "layout": "carousel",
+        "show_vendor": false,
+        "grid": 4,
+        "rows": 2,
+        "grid_mobile": "2",
+        "hide_swatches": false,
+        "alternate_bg_color": false,
+        "show_view_all": false
+      }
+    },
+    "51c53349-d6a6-4fe9-9692-fdb8c436ac3e": {
+      "type": "register-template",
+      "settings": {
+        "maintext": "本商品は数量限定商品につきメールアドレスを登録頂いたお客様にのみ、ご購入のご案内をお送りいたします。",
+        "send": "登録→"
+      }
+    }
+  },
+  "order": [
+    "04b323b4-9725-427c-b33f-38fd93840389",
+    "main",
+    "665ba399-53d9-4c92-bef3-28636ca7da9f",
+    "51c53349-d6a6-4fe9-9692-fdb8c436ac3e"
+  ]
+}

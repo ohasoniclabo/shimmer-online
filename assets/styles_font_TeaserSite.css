@@ -1,0 +1,138 @@
+html {
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+}
+
+code, kbd, pre, samp {
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+}
+
+#cc-veil.cc-veil--animate .cc-veil-loader {
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+}
+
+body {
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+  font-weight: {{ base_font.weight }};
+}
+
+h1:not(.logo-h1), h2, h3, h4, .under-cart .subtotal, blockquote, h5, h6 {
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+input[type=submit].textbutton,
+button.textbutton {
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+}
+
+.pretty-select .text .label, .disclosure .disclosure__toggle .text .label {
+  font-weight: 600;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+}
+
+.theme-modal.theme-modal--fullscreen .modal-close {
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+}
+
+.logo {
+  position: relative;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.site-control .site-control__inner .nav-account {
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+  font-weight: 400;
+  font-style: nomal;
+}
+
+.site-control .cart div {
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.site-control .nav-right-side .localization .disclosure__toggle {
+  transition-duration: 0.15s;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.site-control.nav-inline-desktop .site-control__inline-links {
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.site-control.nav-inline-desktop .site-control__inner .nav-ctas__cta {
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+}
+
+#page-menu .main-nav {
+
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+#page-menu .nav-footer-links .nav-footer-links__link, #page-menu .nav-footer-links .selectors-form__item {
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.marquee--heading-font .marquee-text {
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+ .collection-block.hover-info .caption.upper .title {
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  }
+
+.disclosure .disclosure-list .disclosure-list__item a {
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+  font-style: normal;
+}
+
+.quantity-wrapper a {
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.product-area .product-area__details__title {
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.section-footer .section-footer__title {
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+  font-weight: bold;
+}
+
+.cart-list .quantity .plus span,
+.cart-list .quantity .minus span {
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+  font-weight: 500;
+}
+
+.article-block .article-block__title {
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.search-result .search-result__title {
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+

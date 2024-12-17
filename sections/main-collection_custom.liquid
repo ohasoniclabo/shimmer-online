@@ -1,0 +1,382 @@
+{%- liquid
+  if collection.url.size == 0
+    assign results_url = routes.all_products_collection_url
+  else
+    assign results_url = collection.url
+  endif
+
+  if results_url contains "?"
+    assign results_url = results_url | split: "?" | first
+  endif
+
+  assign current_sort_by = collection.sort_by | default: collection.default_sort_by
+-%}
+
+
+<div data-section-type="collection-template"
+     data-ajax-filtering="{{ section.settings.ajax_products }}"
+     data-components="tabs,product-block,price-range,accordion,sticky-scroll-direction"
+     class="pb-medium {% if section.settings.show_collection_image and collection.featured_image %}header-overlap-section{% elsif section.settings.show_collection_content %}pt-medium{% else %}sm:pt-medium{% endif %}" data-cc-animate>
+
+  {% paginate collection.products by section.settings.products_per_page %}
+    {% if section.settings.show_collection_image and collection.featured_image %}
+      <div class="collection-header image-overlay image-overlay--bg-full needs-alt-logo">
+        <div class="rimage-outer-wrapper rimage-background lazyload fade-in"
+             data-cc-animate="cc-fade-in-zoom-out"
+             data-bgset="{% render 'bgset', image: collection.featured_image %}"
+             data-sizes="auto"
+             data-parent-fit="cover">
+          <noscript>
+            <div class="rimage-wrapper" style="padding-top:{{ 1 | divided_by: collection.featured_image.aspect_ratio | times: 100 }}%">
+              <img src="{{ collection.featured_image | img_url: '1024x1024' }}" alt="{{ collection.featured_image.alt | escape }}" class="rimage__image">
+            </div>
+          </noscript>
+        </div>
+
+        <div class="overlay-type overlay" data-cc-animate="cc-fade-in-zoom-out">
+          <div class="overlay__content">
+    {% endif %}
+
+      
+        <div class="content transparent">
+
+            <div class="block">
+              <div class="block1">
+                {% if collection.image %}<img class="blockimg" src="{{ collection.image | img_url: 'medium' }}"></img>{% endif %}
+              </div>
+              <div class="block2">
+                <p class="produce1" style="">{{ collection.title }}</p>
+                <p class="produce2" style="word-break:break-word;">{{ collection.description }}</p>
+              </div>
+            </div>
+           
+
+        </div>
+      
+
+    {% if section.settings.show_collection_image and collection.featured_image %}
+          </div>
+        </div>
+      </div>
+    {% endif %}
+
+    {% render "search-filter_custom",
+      mode: "collection",
+      results: collection,
+      section: section,
+      results_url: results_url,
+      paginate: paginate,
+      current_sort_by: current_sort_by
+    %}
+
+    {% if collection.description != blank and section.settings.description_position == "bottom" and section.settings.show_collection_content == true %}
+      <div class="central footer">
+        <div class="content transparent">
+          <div class="rte">
+            {{ collection.description }}
+          </div>
+        </div>
+      </div>
+    {% endif %}
+  {% endpaginate %}
+</div>
+
+<style>
+  .block {
+    display: flex;
+    align-items: center;
+    width: 59%;
+    margin:auto;
+  }
+
+  .blockimg {
+    max-width:none;
+    width:270px;
+    height:270px;
+    border-radius: 6px; /* ちょっとだけ角丸 */
+  }
+
+  .block2 {
+    max-width: 660px;
+    margin-left:30px;
+  }
+
+  .produce1,.produce2 {
+      text-align:left;
+      color: #c0b283;
+  }
+
+  .produce1 {
+    font-size:30px;
+    line-height: 35px;
+  }
+
+  .produce2 {
+    font-size:24px;
+  }
+
+
+
+  .columns{
+    justify-content: space-around;
+    display:flex;
+    width:50%;
+    margin-left: 535px;
+  }
+
+  .productbrandname{
+    margin-left:145px;
+  }
+
+  .productprice {
+    margin-left: 120px;
+    margin-right: 10px;
+  }
+
+  @media screen and (max-width:860px) { 
+    .block {
+      flex-direction: column;
+    }
+
+    .produce1,.produce2 {
+      text-align:center;
+    }
+
+  }
+
+  @media screen and (max-width:429px) {
+    .block {
+      margin-bottom:20px;
+    }
+    
+    .block2 {
+      margin-left:0;
+    }
+
+    .produce1 {
+      font-size:20px;
+      line-height: 25px;
+    }
+
+    .produce1,.produce2 {
+      width:270px;
+    }
+    
+  }
+
+  
+</style>
+{% schema %}
+  {
+    "name": "Collection pages",
+    "class": "theme-filter-container",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Header"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_collection_content",
+        "label": "Show collection title/description",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "show_collection_image",
+        "label": "Show collection image",
+        "default": true
+      },
+      {
+        "type": "select",
+        "id": "description_position",
+        "label": "Description position",
+        "options": [
+          {
+            "value": "top",
+            "label": "Top"
+          },
+          {
+            "value": "bottom",
+            "label": "Bottom"
+          }
+        ]
+      },
+      {
+        "type": "header",
+        "content": "GRID"
+      },
+      {
+        "type": "select",
+        "id": "layout",
+        "label": "Layout",
+        "options": [
+          {
+            "value": "columns",
+            "label": "Collage"
+          },
+          {
+            "value": "rows",
+            "label": "Grid"
+          }
+        ],
+        "default": "rows",
+        "info": "Collage will only work when the 'Image shape' is set to Natural - in Products / Image shape"
+      },
+      {
+        "type": "range",
+        "id": "grid",
+        "label": "Desktop products per row",
+        "min": 2,
+        "max": 4,
+        "default": 3
+      },
+      {
+        "type": "select",
+        "id": "grid_mobile",
+        "label": "Mobile products per row",
+        "options": [
+          {
+            "value": "1",
+            "label": "1"
+          },
+          {
+            "value": "2",
+            "label": "2"
+          }
+        ],
+        "default": "2"
+      },
+      {
+        "type": "range",
+        "id": "products_per_page",
+        "label": "Products per page",
+        "min": 12,
+        "max": 48,
+        "step": 6,
+        "default": 18
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_infinite_scroll",
+        "label": "Enable infinite-scroll",
+        "default": true,
+        "info": "As visitors scroll down, more products are loaded in automatically."
+      },
+      {
+        "type": "checkbox",
+        "id": "show_vendor",
+        "label": "Show product vendor",
+        "default": false
+      },
+      {
+        "type": "header",
+        "content": "FILTERS"
+      },
+      {
+        "type": "paragraph",
+        "content": "To create the collection filters, go to your [navigation](\/admin\/menus) page."
+      },
+      {
+        "type": "checkbox",
+        "id": "show_filter_counts",
+        "label": "Show filter counts",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "show_filter_deadends",
+        "label": "Show filters with zero results",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "ajax_products",
+        "label": "Filter and sort without reloading the page",
+        "default": true,
+        "info": "Some apps require this to be disabled"
+      },
+      {
+        "type": "radio",
+        "id": "filter_mode",
+        "label": "Filter mode",
+        "default": "sidebar",
+        "options": [
+          {
+            "value": "none",
+            "label": "None"
+          },
+          {
+            "value": "simple",
+            "label": "Simple"
+          },
+          {
+            "value": "sidebar",
+            "label": "Sidebar"
+          }
+        ],
+        "info": "'Simple' is only recommended if you have a small number of filters. Note, it doesn't allow for multiple options within a filter to be selected and it won't show the price range filter."
+      },
+      {
+        "type": "header",
+        "content": "Sidebar Settings"
+      },
+      {
+        "type": "checkbox",
+        "id": "sticky_sidebar",
+        "label": "Stick the sidebar on scroll",
+        "default": true
+      },
+      {
+        "type": "select",
+        "id": "collapse_filters_method",
+        "label": "Filter group collapse",
+        "default": "none",
+        "options": [
+          {
+            "value": "none",
+            "label": "None"
+          },
+          {
+            "value": "over-6",
+            "label": "Over 6 items"
+          },
+          {
+            "value": "over-12",
+            "label": "Over 12 items"
+          },
+          {
+            "value": "over-18",
+            "label": "Over 18 items"
+          },
+          {
+            "value": "all",
+            "label": "All"
+          }
+        ]
+      },
+      {
+        "type": "checkbox",
+        "id": "collapse_sort_by",
+        "label": "Collapse 'Sort by' filter group",
+        "default": false
+      },
+      {
+        "type": "header",
+        "content": "Sorting"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_sorting",
+        "label": "Enable sorting",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "show_featured_in_sort",
+        "label": "Show 'Featured' option in sorting dropdown",
+        "default": false
+      }
+    ]
+  }
+{% endschema %}

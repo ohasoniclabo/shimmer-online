@@ -1,0 +1,184 @@
+<link href="{{ 'kagan.css' | asset_url }}" rel="stylesheet" type="text/css" media="all">
+
+
+
+<div id="lp-kagan">
+
+  <div class="l-kv">
+    <div class="l-kv__in">
+      <h1 class="e-logo"><img src="{{ 'kagan-kv-logo-01.svg' | asset_url }}" alt="kagan Reflects the local"></h1>
+      <img class="e-img-text" src="{{ 'kagan-kv-text-01.svg' | asset_url }}" alt="">
+
+      {% if section.settings.picup_block == true %}
+      <dl class="e-picup">
+        <dt><img src="{{ section.settings.picup_block_img | img_url: 'master' }}" alt=""></dt>
+        <dd>
+          {{ section.settings.picup_block_text }}
+        </dd>
+      </dl>
+      {% endif %}
+    </div>
+  </div>
+
+
+  <div class="l-mailmaga">
+    <div class="l-mailmaga__in">
+      <p class="e-text">発売開始情報や新商品の情報など、<br>kaganの最新情報をお届けします。</p>
+      <div class="e-form">
+        {% form 'customer' %}
+          {{ form.errors | default_errors }}
+          {% if form.posted_successfully? %}
+            <p class="m-thanks">ご登録ありがとうございます。</p>
+          {% else %}
+            <input type="hidden" name="contact[tags]" value="kagan">
+            <input type="email" name="contact[email]" id="email" placeholder="メールアドレスを入力" class="m-input">
+            <input type="submit" value="送信" class="m-submit">
+          {% endif %}
+        {% endform %}
+      </div>
+    </div>
+  </div>
+
+
+  <section class="section-01">
+    <div class="section-01__in">
+      <div class="e-heading">
+        <h2>About Us</h2>
+        <div>Kaganの特徴・哲学</div>
+      </div>
+
+      <p  class="e-text">
+        私たちは、沖縄産素材を活用した酒類ブランドとして、<br>
+        「鏡」を意味する島  ではの素材を活かし、泡盛の姉妹ブランド「shimmer」とは異なる視点や手法で新たな可能性を追求し、その魅力を現代へと映し出していきます。<br>
+        これまで沖縄県産の酒類は多くの製品が市場に流通してきましたが、観光向けにデフォルメされた商品が目立ち、<br>
+        県外のバーシーンで目にする機会は限られていました。<br>
+        kagan は、地元の蒸留所との共創を通じて、沖縄産素材が持つ多様な可能性を引き出し、プロフェッショナルな用途にも応える本格的な酒類として展開していきます。
+      </p>
+
+      <div class="e-img">
+        <picture>
+          <source srcset="{{ 'kagan-section-01-img-01-sp.webp' | asset_url }}" media="(max-width: 767px)">
+          <img src="{{ 'kagan-section-01-img-01.webp' | asset_url }}" alt="">
+        </picture>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section-02">
+    <div class="section-02__in">
+      <div class="e-heading">
+        <h2>Item</h2>
+        <div>商品情報</div>
+      </div>
+
+      {% if section.settings.products-list_block == true %}
+      <div class="section-02__products-list">
+        {% assign collection_handle = section.settings.products-list_block_collection %}
+        {% assign collection_url = collections[collection_handle].url %}
+        {% assign collection_handle_only = collection_url | split: '/' | last %}
+        {% assign collection_handle = collection_handle_only %} <!-- コレクションのハンドルを指定 -->
+        {% assign collection = collections[collection_handle] %}
+        {% if collection and collection.products.size > 0 %}
+        <ul>
+            {% for product in collection.products limit: 3 %}
+              <li>
+                <div>
+                  <!-- 商品画像 -->
+                  {% if product.featured_image %}
+                    <img class="e-img" src="{{ product.featured_image | img_url: '340x340' }}" alt="{{ product.title }}">
+                  {% else %}
+                    <img class="e-img" src="https://placehold.jp/340x340.png" alt="No Image Available">
+                  {% endif %}
+
+                  <!-- 商品名 -->
+                  <h3 class="e-name">{{ product.title }}</h3>
+
+                  <!-- 価格 -->
+                  <div class="e-price">
+                    {{ product.price | money_without_trailing_zeros | remove: "（税込）" }} <span>(税込)</span>
+                  </div>
+
+                  <!-- 商品説明 -->
+                  <p class="e-text">
+                    {{ product.description | strip_html | truncate: 100 }} <!-- 説明を100文字に切り詰め -->
+                  </p>
+                </div>
+                <div>
+                  <!-- 商品ページへのリンク -->
+                  <div class="e-link-product">
+                    <a href="{{ product.url }}">商品ページを見る</a>
+                  </div>
+                  <!-- カートに追加ボタン -->
+                  <div class="e-link-cart">
+                    <a href="/cart/add?id={{ product.variants.first.id }}">カートに入れる</a>
+                  </div>
+                </div>
+              </li>
+            {% endfor %}
+        </ul>
+        <div class="section-02__link"><a href="">コレクション一覧を見る</a></div>
+        {% else %}
+          <p class="section-02__products-list__preparation">商品が見つかりませんでした。</p>
+        {% endif %}
+      </div>
+      {% else %}
+      <p class="section-02__products-list__preparation">商品準備中です</p>
+      {% endif %}
+    </div>
+  </section>
+
+
+  <section class="section-03">
+    <div class="section-03__in">
+      <p class="e-text">
+        この製品に関する詳細情報やお取り扱いについてのご相談をご希望の場合は、<br>
+        お気軽にお問い合わせください。<br>
+        専門スタッフが丁寧に対応いたします。
+      </p>
+      <div class="e-link"><a href="">この製品についてのお問い合わせ</a></div>
+    </div>
+  <section>
+
+</div>
+
+
+
+
+
+
+
+{% schema %}
+{
+  "name": "kagan",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "picup_block",
+      "label": "Picup 表示",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "picup_block_img",
+      "label": "Picup 画像"
+    },
+    {
+      "type": "text",
+      "id": "picup_block_text",
+      "label": "Picup テキスト"
+    },
+    {
+      "type": "checkbox",
+      "id": "products-list_block",
+      "label": "商品一覧 表示",
+      "default": true
+    },
+    {
+      "type": "collection",
+      "id": "products-list_block_collection",
+      "label": "コレクションを選択"
+    }
+  ],
+}
+{% endschema %}

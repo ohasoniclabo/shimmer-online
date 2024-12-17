@@ -1,0 +1,382 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "1662532987f894e87e": {
+      "type": "BunnerList",
+      "blocks": {
+        "16625329871a192df4-0": {
+          "type": "BunnerListRectangle",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/93954962883256dbae30b1ccda08f7b6_45c4ee23-5fe0-4ee6-b8ba-81c835301827.jpg",
+            "link": "shopify:\/\/collections\/諸君-私は泡盛が好きだ-maruta",
+            "toptitle": "諸君、私は泡盛が好きだ",
+            "subtitle": "やんばるの泡盛でちむどんどん編①",
+            "undertitle": "千葉社員による泡盛紹介コラム。初回はヘリオス酒造、津嘉山酒造所を中心に山原の泡盛をご紹介。"
+          }
+        }
+      },
+      "block_order": [
+        "16625329871a192df4-0"
+      ],
+      "settings": {
+        "title": "【特集】諸君、私は泡盛が好きだ",
+        "layout": "carousel",
+        "grid": 3,
+        "grid_mobile": "2",
+        "titlechange": false,
+        "linecheck": false,
+        "alternate_bg_color": true
+      }
+    },
+    "1662533407cd083187": {
+      "type": "BunnerList",
+      "disabled": true,
+      "blocks": {
+        "1662533406615a7920-0": {
+          "type": "BunnerListRectangle",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/7e8766260e2a297904b80a24f5ea6129.jpg",
+            "link": "",
+            "toptitle": "沖縄の、感じ",
+            "subtitle": "オリオンの南国チューハイ",
+            "undertitle": "WATTAの魅力をお届け"
+          }
+        },
+        "1662533406615a7920-1": {
+          "type": "BunnerListRectangle",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/kokonara_yokonaga_mojinashi_resize.jpg",
+            "link": "",
+            "toptitle": "泡盛もお湯割りできるんですよ",
+            "subtitle": "これ、、知ってた？",
+            "undertitle": "寒い冬にどうでしょう"
+          }
+        },
+        "1662533406615a7920-2": {
+          "type": "BunnerListRectangle",
+          "settings": {
+            "link": "",
+            "toptitle": "テストテスト",
+            "subtitle": "テストテスト",
+            "undertitle": "テストテスト"
+          }
+        },
+        "349d9cd3-abf4-43fb-b157-e17e291b5b15": {
+          "type": "BunnerListRectangle",
+          "settings": {
+            "link": "",
+            "toptitle": "テストテスト",
+            "subtitle": "テストテスト",
+            "undertitle": "テストテスト"
+          }
+        },
+        "f65dc570-eab9-4e5f-8b43-292b9e633425": {
+          "type": "BunnerListRectangle",
+          "settings": {
+            "link": "",
+            "toptitle": "テストテスト",
+            "subtitle": "テストテスト",
+            "undertitle": "テストテスト"
+          }
+        },
+        "62faff61-9b06-4cfb-97c6-022d2ea1b7ef": {
+          "type": "BunnerListRectangle",
+          "settings": {
+            "link": "",
+            "toptitle": "テストテスト",
+            "subtitle": "テストテスト",
+            "undertitle": "テストテスト"
+          }
+        }
+      },
+      "block_order": [
+        "1662533406615a7920-0",
+        "1662533406615a7920-1",
+        "1662533406615a7920-2",
+        "349d9cd3-abf4-43fb-b157-e17e291b5b15",
+        "f65dc570-eab9-4e5f-8b43-292b9e633425",
+        "62faff61-9b06-4cfb-97c6-022d2ea1b7ef"
+      ],
+      "settings": {
+        "title": "過去の特集",
+        "layout": "carousel",
+        "grid": 4,
+        "grid_mobile": "2",
+        "titlechange": false,
+        "linecheck": false,
+        "alternate_bg_color": true
+      }
+    },
+    "1662533315cbc89376": {
+      "type": "BunnerList_Square",
+      "blocks": {
+        "1662533315b98a96c4-0": {
+          "type": "BunnerList",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/FIRST_STEP.png",
+            "link": "",
+            "toptitle": "はじめての恩納酒造所",
+            "subtitle": "県内有数のリゾート地の酒造所"
+          }
+        },
+        "1662533315b98a96c4-1": {
+          "type": "BunnerList",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/FIRST_STEP_0a1a1f8c-035a-4e19-8fec-9658bb77cca5.png",
+            "link": "",
+            "toptitle": "はじめての金武酒造",
+            "subtitle": "金武大川水系の名水による泡盛"
+          }
+        },
+        "1662533315b98a96c4-2": {
+          "type": "BunnerList",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/1407_20220908091727.png",
+            "link": "",
+            "toptitle": "はじめてのまさひろ酒造",
+            "subtitle": "ギャラリーすごいよ"
+          }
+        },
+        "1c514d41-bc99-4819-bf19-7a486d78b0e2": {
+          "type": "BunnerList",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/2.jpg",
+            "link": "shopify:\/\/collections\/はじめての池間酒造",
+            "toptitle": "はじめての池間酒造",
+            "subtitle": "瑞光・太郎おいしいよ"
+          }
+        },
+        "7338ae83-d0ed-4d66-ab4c-66fc5e8f124f": {
+          "type": "BunnerList",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/FIRST_STEP.jpg",
+            "link": "",
+            "toptitle": "はじめての久米島の久米仙",
+            "subtitle": "通称クメクメ"
+          }
+        },
+        "7580ed27-e1ac-412b-b5ee-224c9079cf80": {
+          "type": "BunnerList",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/IMG_7254.png",
+            "link": "",
+            "toptitle": "はじめての伊是名酒造",
+            "subtitle": "尚巴志ゆかりの島で造る泡盛"
+          }
+        },
+        "0572679f-bb70-4120-acb2-ba7cb5de18db": {
+          "type": "BunnerList",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/kobundo_d0e208df-e8e2-49ec-9078-4a117aa99042.png",
+            "link": "",
+            "toptitle": "はじめての米島酒造",
+            "subtitle": "久米島の銘酒"
+          }
+        },
+        "884391fc-a385-4cc2-b84b-e87cc60e10c4": {
+          "type": "BunnerList",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/091401.png",
+            "link": "",
+            "toptitle": "はじめての崎元酒造所",
+            "subtitle": "与那国島といえばコレ"
+          }
+        }
+      },
+      "block_order": [
+        "1662533315b98a96c4-0",
+        "1662533315b98a96c4-1",
+        "1662533315b98a96c4-2",
+        "1c514d41-bc99-4819-bf19-7a486d78b0e2",
+        "7338ae83-d0ed-4d66-ab4c-66fc5e8f124f",
+        "7580ed27-e1ac-412b-b5ee-224c9079cf80",
+        "0572679f-bb70-4120-acb2-ba7cb5de18db",
+        "884391fc-a385-4cc2-b84b-e87cc60e10c4"
+      ],
+      "settings": {
+        "title": "はじめての泡盛",
+        "layout": "carousel",
+        "grid": 6,
+        "grid_mobile": "2",
+        "titlechange": false,
+        "linecheck": false,
+        "alternate_bg_color": false
+      }
+    },
+    "16625338390d02e73e": {
+      "type": "BunnerList_Square",
+      "blocks": {
+        "166253383915c33f36-0": {
+          "type": "BunnerList",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/kobundo_9d3f206f-b7ac-49f3-b549-478b947fa602.png",
+            "link": "",
+            "toptitle": "宮之鶴って知ってる？",
+            "subtitle": "石垣島で手造りされる銘酒"
+          }
+        },
+        "166253383915c33f36-1": {
+          "type": "BunnerList",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/banner-beige-s.jpg",
+            "link": "",
+            "toptitle": "甕貯蔵泡盛",
+            "subtitle": "貯蔵の仕方で味って変わるんですよ"
+          }
+        },
+        "166253383915c33f36-2": {
+          "type": "BunnerList",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/770a45a4b49c3a357c365b6da547ad46.jpg",
+            "link": "",
+            "toptitle": "仕次ぎのススメ",
+            "subtitle": "自宅でも仕次ぎ、やってみません？"
+          }
+        },
+        "0c40e0f8-aa4a-4ce5-8316-ed3dddc3cb02": {
+          "type": "BunnerList",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/2_e914320f-0a71-4dfc-a878-f50980bc5190.png",
+            "link": "shopify:\/\/blogs\/playlist\/reccomend-bar-tasting-club",
+            "toptitle": "RECOMMEND：Bar Tasting Club",
+            "subtitle": "Bar Tasting Clubのおすすめする泡盛５選"
+          }
+        },
+        "8474d690-346d-4a85-b9ff-ea238790ff67": {
+          "type": "BunnerList",
+          "settings": {
+            "link": "",
+            "toptitle": "",
+            "subtitle": ""
+          }
+        },
+        "2421404b-9e7a-4edc-b801-d9b84b24718f": {
+          "type": "BunnerList",
+          "settings": {
+            "link": "",
+            "toptitle": "",
+            "subtitle": ""
+          }
+        },
+        "ef09f1c3-9665-4363-af62-fc8ccf4aa49f": {
+          "type": "BunnerList",
+          "settings": {
+            "link": "",
+            "toptitle": "",
+            "subtitle": ""
+          }
+        }
+      },
+      "block_order": [
+        "166253383915c33f36-0",
+        "166253383915c33f36-1",
+        "166253383915c33f36-2",
+        "0c40e0f8-aa4a-4ce5-8316-ed3dddc3cb02",
+        "8474d690-346d-4a85-b9ff-ea238790ff67",
+        "2421404b-9e7a-4edc-b801-d9b84b24718f",
+        "ef09f1c3-9665-4363-af62-fc8ccf4aa49f"
+      ],
+      "settings": {
+        "title": "泡盛の特集",
+        "layout": "carousel",
+        "grid": 6,
+        "grid_mobile": "2",
+        "titlechange": false,
+        "linecheck": false,
+        "alternate_bg_color": true
+      }
+    },
+    "1662534251547982e6": {
+      "type": "BunnerList_Square",
+      "blocks": {
+        "1662534250510bbe6b-0": {
+          "type": "BunnerList",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/imuge_square.jpg",
+            "link": "",
+            "toptitle": "IMUGE.って、、、何？",
+            "subtitle": "IMUGE.の魅力を徹底解説"
+          }
+        },
+        "1662534250510bbe6b-1": {
+          "type": "BunnerList",
+          "settings": {
+            "link": "",
+            "toptitle": "",
+            "subtitle": ""
+          }
+        },
+        "1662534250510bbe6b-2": {
+          "type": "BunnerList",
+          "settings": {
+            "link": "",
+            "toptitle": "",
+            "subtitle": ""
+          }
+        },
+        "187e6744-6b97-4906-8538-096850691c0f": {
+          "type": "BunnerList",
+          "settings": {
+            "link": "",
+            "toptitle": "",
+            "subtitle": ""
+          }
+        },
+        "b4467310-678b-406f-8e71-bd4e8d00dc00": {
+          "type": "BunnerList",
+          "settings": {
+            "link": "",
+            "toptitle": "",
+            "subtitle": ""
+          }
+        },
+        "9744bb72-015d-44ca-a2a8-f71509e5d1cb": {
+          "type": "BunnerList",
+          "settings": {
+            "link": "",
+            "toptitle": "",
+            "subtitle": ""
+          }
+        },
+        "761f1fca-5778-4ed2-987a-724ed2ddcf81": {
+          "type": "BunnerList",
+          "settings": {
+            "link": "",
+            "toptitle": "",
+            "subtitle": ""
+          }
+        }
+      },
+      "block_order": [
+        "1662534250510bbe6b-0",
+        "1662534250510bbe6b-1",
+        "1662534250510bbe6b-2",
+        "187e6744-6b97-4906-8538-096850691c0f",
+        "b4467310-678b-406f-8e71-bd4e8d00dc00",
+        "9744bb72-015d-44ca-a2a8-f71509e5d1cb",
+        "761f1fca-5778-4ed2-987a-724ed2ddcf81"
+      ],
+      "settings": {
+        "title": "スピリッツの特集",
+        "layout": "carousel",
+        "grid": 6,
+        "grid_mobile": "2",
+        "titlechange": false,
+        "linecheck": false,
+        "alternate_bg_color": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "1662532987f894e87e",
+    "1662533407cd083187",
+    "1662533315cbc89376",
+    "16625338390d02e73e",
+    "1662534251547982e6"
+  ]
+}

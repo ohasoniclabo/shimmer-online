@@ -1,0 +1,214 @@
+ <div class="lpdistillerycontena">
+      <div class="lpdistilleryheading">
+        <span class="lpdistillerytitle">DRINK</span>
+      </div>
+      <div class="distillerycontent">
+        <div class="subtitle">shimmer取り扱い店舗<br></div>
+        <div class="subtext">※在庫状況によって取扱いがない場合や、店舗により取扱商品が異なる場合がございます。</div>
+      </div>
+  </div>
+
+  
+<style>
+  .subtitle:before {
+    border-top: 1px solid black;
+    content: "";
+    width: 20px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    display: inline-block;
+  }
+
+  .subtext {
+    margin-left: 24px;
+    margin-right:12px;
+  }
+
+  
+  @media(min-width:1300px){
+
+    .lpdistillerycontena {
+      display:flex;
+    }
+
+    .lpdistilleryheading {
+      padding-left:90.75px;
+      padding-top:42.5px;
+      border-right:solid 1px black;
+      width: 322px;
+    }
+
+    .lpdistillerytitle {
+      font-size:36px;
+    }
+
+    .distillerycontent {
+      display:flex;
+      flex-direction: column;
+      width: calc( 100vw - 322px );
+      padding-top: 40px;
+      padding-bottom: 40px;
+      padding-left:82px;
+    }
+
+    .subtitle {
+      font-size:18px;
+    }
+
+    .subtext {
+      font-size:14px;
+    }
+
+  }
+
+  @media(max-width:1299px){
+
+    .lpdistillerycontena {
+      display:flex;
+    }
+    
+    .lpdistilleryheading {
+      padding-left:40.75px;
+      padding-top:42.5px;
+      width:215px;
+      border-right:solid 1px black; 
+    }
+
+    .lpdistillerytitle {
+      font-size:24px;
+    }
+
+    .distillerycontent {
+      display:flex;
+      flex-direction: column;
+      width: calc( 100vw - 215px );
+      padding-top: 40px;
+      padding-bottom: 40px;
+      padding-left:82px;
+    }
+
+    .subtitle {
+      font-size:18px;
+    }
+
+    .subtext {
+      font-size:14px;
+    }
+
+  }
+
+  @media(max-width:1099px){
+
+    .lpdistilleryheading {
+      padding-left:40.75px;
+      padding-top:42.5px;
+      border-right:solid 1px black; 
+    }
+
+    .lpdistillerytitle {
+      font-size:24px;
+    }
+
+    .distillerycontent {
+      display:flex;
+      flex-direction: column;
+      width: calc( 100vw - 215px );
+      padding-top: 40px;
+      padding-bottom: 40px;
+      padding-left:82px;
+    }
+
+    .subtitle {
+      font-size:18px;
+    }
+
+    .subtext {
+      font-size:14px;
+    }
+
+  }
+
+  @media(max-width:799px){
+
+    .lpdistilleryheading {
+      padding-left:50px;
+      padding-top:42.5px;
+      border-right:none; 
+    }
+
+    .lpdistillerytitle {
+      font-size:24px;
+    }
+
+    .lpdistillerycontena {
+      display:flex;
+      border-bottom:solid 1px black;
+      flex-direction: column;
+    }
+
+    .distillerycontent {
+      display:flex;
+      flex-direction: column;
+      width: 100%;
+      margin: 0;
+      padding-top: 15px;
+      padding-bottom: 15px;
+      padding-left:50px;
+    }
+
+    .subtitle {
+      font-size:18px;
+    }
+
+    .subtext {
+      font-size:14px;
+    }
+
+    
+  }
+
+  @media(max-width:500px){
+
+    .lpdistilleryheading {
+      padding-left:20px;
+      padding-top:20px;
+      border-right:none; 
+    }
+
+    .lpdistillerytitle {
+      font-size:20px;
+    }
+
+    .lpdistillerycontena {
+      display:flex;
+      border-bottom:solid 1px black;
+      flex-direction: column;
+    }
+
+    .distillerycontent {
+      display:flex;
+      flex-direction: column;
+      width: 100%;
+      padding-top: 15px;
+      padding-bottom: 15px;
+      padding-left:20px;
+    }
+
+    .subtitle {
+      font-size:16px;
+    }
+
+    .subtext {
+      font-size:12px;
+    }
+
+  }
+
+
+</style>
+
+{% schema %}
+{
+  "name": "Page"
+}
+{% endschema %}

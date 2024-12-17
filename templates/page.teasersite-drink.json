@@ -1,0 +1,176 @@
+{
+  "sections": {
+    "main": {
+      "type": "TeaserSite-drink",
+      "settings": {}
+    },
+    "ecb7b988-588f-4f14-9e1a-8b85c468c016": {
+      "type": "AreaShop-list",
+      "blocks": {
+        "d3d09bf4-5bd5-404b-9253-3c8ac1f3dd9f": {
+          "type": "Areashop",
+          "settings": {
+            "shopname": "Bar stir laboratory",
+            "rocalArea": "〒900-0015 沖縄県那覇市久茂地2丁目24-18",
+            "phonenumber": "098-963-9492",
+            "arealink": "https:\/\/www.instagram.com\/bar.stirlaboratory\/"
+          }
+        },
+        "template--16681995370747__ecb7b988-588f-4f14-9e1a-8b85c468c016-1674205167627bf15f-0": {
+          "type": "Areashop",
+          "settings": {
+            "shopname": "Bar Tasting Club",
+            "rocalArea": "〒900-0021 沖縄県那覇市泉崎1-12-4 マラカイト泉崎ビル 4-A",
+            "phonenumber": "070-6599-5691",
+            "arealink": "https:\/\/www.instagram.com\/bartastingclub\/"
+          }
+        },
+        "db2352e6-4e5f-4d4b-82da-439ec3094925": {
+          "type": "Areashop",
+          "settings": {
+            "shopname": "泡盛倉庫",
+            "rocalArea": "〒900-0033 沖縄県那覇市久米2-8-14 久米8番館4階",
+            "phonenumber": "098-869-0808",
+            "arealink": "https:\/\/www.instagram.com\/awamorisouko_official\/"
+          }
+        },
+        "256df20f-9b7f-464d-ae2d-306f1a03f1b3": {
+          "type": "Areashop",
+          "settings": {
+            "shopname": "島バル AWAMORI+",
+            "rocalArea": "〒900-0016 沖縄県那覇市前島那覇市前島1-1-18 1F",
+            "phonenumber": "098-861-1444",
+            "arealink": "https:\/\/www.instagram.com\/awamori_plus\/"
+          }
+        },
+        "dad16f8e-99cc-433c-ad27-faeae2e5c153": {
+          "type": "Areashop",
+          "settings": {
+            "shopname": "ハイサイ酒店那覇空港店",
+            "rocalArea": "〒901-0142 沖縄県那覇市鏡水150番地 国内線エリア3階北側ANAチェックインカウンター裏",
+            "phonenumber": "090-1945-0114",
+            "arealink": "https:\/\/www.instagram.com\/8131saketen\/"
+          }
+        }
+      },
+      "block_order": [
+        "d3d09bf4-5bd5-404b-9253-3c8ac1f3dd9f",
+        "template--16681995370747__ecb7b988-588f-4f14-9e1a-8b85c468c016-1674205167627bf15f-0",
+        "db2352e6-4e5f-4d4b-82da-439ec3094925",
+        "256df20f-9b7f-464d-ae2d-306f1a03f1b3",
+        "dad16f8e-99cc-433c-ad27-faeae2e5c153"
+      ],
+      "settings": {
+        "Area": "沖縄県"
+      }
+    },
+    "6a1d16bb-ac65-4e8f-b8f9-af65000b120f": {
+      "type": "AreaShop-list",
+      "blocks": {
+        "template--16681995370747__6a1d16bb-ac65-4e8f-b8f9-af65000b120f-1675662172bb5deaf1-2": {
+          "type": "Areashop",
+          "settings": {
+            "shopname": "紫波んちゅ",
+            "rocalArea": "〒020-0024 岩手県盛岡市菜園2-5-20メルヘンハウス",
+            "phonenumber": "019-656-8808",
+            "arealink": "https:\/\/www.instagram.com\/shiwanchu20181010\/"
+          }
+        }
+      },
+      "block_order": [
+        "template--16681995370747__6a1d16bb-ac65-4e8f-b8f9-af65000b120f-1675662172bb5deaf1-2"
+      ],
+      "settings": {
+        "Area": "岩手県"
+      }
+    },
+    "29bcef8a-073d-499e-9283-0836df0f7e17": {
+      "type": "AreaShop-list",
+      "blocks": {
+        "21cdba3d-69c2-4337-9c4a-cf50f2c878e7": {
+          "type": "Areashop",
+          "settings": {
+            "shopname": "BAR 玉箒",
+            "rocalArea": "〒105-0004 東京都港区新橋3丁目18-3 三青ビルB1F",
+            "phonenumber": "03-3436-5502",
+            "arealink": "https:\/\/shushi-tamahahaki.com\/"
+          }
+        },
+        "template--16681995370747__29bcef8a-073d-499e-9283-0836df0f7e17-167564923490b8360e-0": {
+          "type": "Areashop",
+          "settings": {
+            "shopname": "Cafe & Bar SKOOB",
+            "rocalArea": "〒156-0054 東京都世田谷区桜丘2-15-14",
+            "phonenumber": "03-6413-7288",
+            "arealink": "https:\/\/www.instagram.com\/cafe_and_bar_skoob\/"
+          }
+        },
+        "b93a93ce-f2ad-41f5-ae7c-9cfd5b1e44fc": {
+          "type": "Areashop",
+          "settings": {
+            "shopname": "沖縄スージグァ酒場 香の帆",
+            "rocalArea": "〒150-0042 東京都渋谷区宇田川町10-1 パークビル5F",
+            "phonenumber": "03-6273-9243",
+            "arealink": "https:\/\/www.instagram.com\/kanoho_asaka\/"
+          }
+        }
+      },
+      "block_order": [
+        "21cdba3d-69c2-4337-9c4a-cf50f2c878e7",
+        "template--16681995370747__29bcef8a-073d-499e-9283-0836df0f7e17-167564923490b8360e-0",
+        "b93a93ce-f2ad-41f5-ae7c-9cfd5b1e44fc"
+      ],
+      "settings": {
+        "Area": "東京都"
+      }
+    },
+    "f5475053-ed7b-46f7-b9f8-4f4d127c0d88": {
+      "type": "AreaShop-list",
+      "blocks": {
+        "template--16681995370747__f5475053-ed7b-46f7-b9f8-4f4d127c0d88-16756881711197ea4a-0": {
+          "type": "Areashop",
+          "settings": {
+            "shopname": "琉球's",
+            "rocalArea": "〒243-0432 神奈川県海老名市国分南1-12-1 グリーンハイツ102",
+            "phonenumber": "046-233-5775",
+            "arealink": "https:\/\/www.instagram.com\/ebinaryukyus\/"
+          }
+        }
+      },
+      "block_order": [
+        "template--16681995370747__f5475053-ed7b-46f7-b9f8-4f4d127c0d88-16756881711197ea4a-0"
+      ],
+      "settings": {
+        "Area": "神奈川県"
+      }
+    },
+    "cf38b78a-ab25-4409-98a5-38caa2ade42f": {
+      "type": "AreaShop-list",
+      "blocks": {
+        "template--16681995370747__cf38b78a-ab25-4409-98a5-38caa2ade42f-1675683951d2b8ce54-0": {
+          "type": "Areashop",
+          "settings": {
+            "shopname": "和酒BAR 37℃",
+            "rocalArea": "〒604-8222 京都府京都市中京区新町通四条上ル東入観音堂町47 道家商事ビル 2F",
+            "phonenumber": "075-205-1145",
+            "arealink": "https:\/\/www.instagram.com\/washu37\/"
+          }
+        }
+      },
+      "block_order": [
+        "template--16681995370747__cf38b78a-ab25-4409-98a5-38caa2ade42f-1675683951d2b8ce54-0"
+      ],
+      "settings": {
+        "Area": "京都府"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "ecb7b988-588f-4f14-9e1a-8b85c468c016",
+    "6a1d16bb-ac65-4e8f-b8f9-af65000b120f",
+    "29bcef8a-073d-499e-9283-0836df0f7e17",
+    "f5475053-ed7b-46f7-b9f8-4f4d127c0d88",
+    "cf38b78a-ab25-4409-98a5-38caa2ade42f"
+  ]
+}

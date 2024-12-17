@@ -1,0 +1,1496 @@
+{% comment %}swiper_8.4.7{% endcomment %}
+<link href="{{ 'swiper-bundle.min.css' | asset_url }}" rel="stylesheet" type="text/css" media="all">
+<script src="{{ 'swiper-bundle.min.js' | asset_url }}"></script>
+
+<!-- section start -->
+<div id="{{ section.id }}" class="section_{{ section.id }}">
+  <!-- section wrapper start -->
+  <div class="section_{{ section.id }}_wrapper">
+    {% if section.settings.header_enabled == 'true' %}
+      <!-- header start -->
+      <div class="header_{{ section.id }}">
+        {% if section.settings.header_image_enabled == 'true' %}
+          <div class="header_{{ section.id }}_image">
+            {% if section.settings.header_image %}
+              <img src="{{ section.settings.header_image | image_url: width: section.settings.header_image_width, height: section.settings.header_image_height, crop: 'center' }}">
+            {% endif %}
+          </div>
+        {% endif %}
+        {% if section.settings.header_text_enabled == 'true' %}
+          <div class="header_{{ section.id }}_text">
+            {{ section.settings.header_text }}
+          </div>
+        {% endif %}
+      </div>
+      <!-- header end -->
+    {% endif %}
+    {% if section.settings.main_enabled == 'true' %}
+      <!-- main start -->
+      <div class="main_{{ section.id }}">
+        <!-- Slider main container -->
+        <div class="swiper swiper_{{ section.id }}">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+            <!-- Slides -->
+            {% for block in section.blocks %}
+              <div class="swiper-slide">
+                <div class="main_item_wrapper">
+                  <div class="main_item_image">
+                    {% if block.settings.item_product == blank %}
+                      {{ 'image' | placeholder_svg_tag: 'main_item_image_none' }}
+                    {% else %}
+                      <img src="{{ block.settings.item_product | image_url: width: section.settings.main_item_image_width, height: section.settings.main_item_image__height, crop: 'center' }}">
+                    {% endif %}
+                  </div>
+                  <div class="main_item_title">
+                    {% if block.settings.item_product == blank %}
+                      タイトル
+                    {% else %}
+                      {{ block.settings.item_product.title }}
+                    {% endif %}
+                  </div>
+                  <div class="main_item_price">
+                    {% if block.settings.item_product == blank %}
+                      9,999,999（税込）
+                    {% else %}
+                      {{ block.settings.item_product.price | money }}
+                    {% endif %}
+                  </div>
+                  {% if section.settings.main_item_button_enabled == 'true' and block.settings.item_button == 'true' %}
+                    {% for variant in block.settings.item_product.variants %}
+                      {% if variant.id != '' %}
+                        <div class="main_item_button">
+                          <a href="{{ shop.url }}/cart/add?id={{ variant.id }}&quantity=1">
+                            <input type="button" value="{{ section.settings.main_item_input_button_text }}">
+                          </a>
+                        </div>
+                        {% break %}
+                      {% endif %}
+                    {% endfor %}
+                  {% endif %}
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+          {% if section.settings.main_swiper_slide_pagination_enabled == 'true' %}
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+          {% endif %}
+          {% if section.settings.main_swiper_slide_navigation_enabled == 'true' %}
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          {% endif %}
+          {% if section.settings.main_swiper_slide_scrollbar_enabled == 'true' %}
+            <!-- If we need scrollbar -->
+            <div class="swiper-scrollbar"></div>
+          {% endif %}
+        </div>
+      </div>
+      <!-- content end -->
+    {% endif %}
+    {% if section.settings.footer_enabled == 'true' %}
+      <!-- footer start -->
+      <div class="footer_{{ section.id }}">
+        {% if section.settings.footer_image_enabled == 'true' %}
+          <div class="footer_{{ section.id }}_image">
+            {% if section.settings.footer_image %}
+              <img src="{{ section.settings.footer_image | image_url: width: section.settings.footer_image_width, height: section.settings.footer_image_height, crop: 'center'  }}">
+            {% endif %}
+          </div>
+        {% endif %}
+
+        {% if section.settings.footer_text_enabled == 'true' %}
+          <div class="footer_{{ section.id }}_text">
+            {{ section.settings.footer_text }}
+          </div>
+        {% endif %}
+      </div>
+      <!-- footer end -->
+    {% endif %}
+  </div>
+  <!-- section wrapper end -->
+</div>
+<!-- section end -->
+
+{% schema %}
+  {
+  "name": "Product Collection",
+  "tag": "section",
+  "class": "product-collection",
+  "limit": 1,
+  "settings": [
+    { "type": "paragraph", "content": "━━━━━━━━━━━━━━━━━━━" },
+    { "type": "header", "content": "0.swiper" },
+    {
+      "type": "range", "id": "main_swiper_slide_quantity", "label": "1.スライドの表示数", "default": 4,
+      "info": "スライドの表示数の設定です。「1」～「8」の範囲で設定できます。ただし、SPサイズでは、強制的に「1」が設定された状態で表示されます。",
+      "min": 1, "max": 8, "step": 1, "unit": "個"
+    },
+    {
+      "type": "select", "id": "main_swiper_slide_pagination_enabled", "label": "2.スライドのページネーションの有効／無効", "default": "true",
+      "info": "有効：ページネーションを表示する。／無効：ページネーションを表示しない。",
+      "options": [
+        { "value": "true","label": "有効" },
+        { "value": "false", "label": "無効" }
+      ]
+    },
+    {
+      "type": "select", "id": "main_swiper_slide_navigation_enabled", "label": "3.スライドのナビゲーションの有効／無効", "default": "true",
+      "info": "有効：ナビゲーションを表示する。／無効：ナビゲーションを表示しない。",
+      "options": [
+        { "value": "true","label": "有効" },
+        { "value": "false", "label": "無効" }
+      ]
+    },
+    {
+      "type": "select", "id": "main_swiper_slide_scrollbar_enabled", "label": "4.スライドのスクロールバーの有効／無効", "default": "true",
+      "info": "有効：スクロールバーを表示する。／無効：スクロールバーを表示しない。",
+      "options": [
+        { "value": "true","label": "有効" },
+        { "value": "false", "label": "無効" }
+      ]
+    },
+    { "type": "paragraph", "content": "━━━━━━━━━━━━━━━━━━━" },
+    { "type": "header", "content": "1.section" },
+    { "type": "header", "content": "1-1.背景" },
+    {
+      "type": "color", "id": "section_background-color", "label": "1.背景色", "default": "rgba(0, 0, 0, 1)",
+      "info": "セクション全体の背景色を設定します。設定値(CSS「background-color」と同等値を設定できます。[Learn more](https://developer.mozilla.org/ja/docs/Web/CSS/background-color)"
+    },
+    {
+      "type": "image_picker", "id": "section_background-image", "label": "2.背景画像",
+      "info": "セクション全体の背景画像を設定します。設定値(CSS「background-image」と同等値を設定できます。[Learn more](https://developer.mozilla.org/ja/docs/Web/CSS/background-image)"
+    },
+    {
+      "type": "text", "id": "section_background-size", "label": "3.背景画像のサイズ", "default": "cover",
+      "info": "背景画像のサイズを設定します。(画像未選択時には機能しません。)設定値(CSS「background-size」と同等値を設定できます。[Learn more](https://developer.mozilla.org/ja/docs/Web/CSS/background-size)"
+    },
+    {
+      "type": "text", "id": "section_background-position", "label": "4.背景画像の位置", "default": "center",
+      "info": "背景画像の位置を設定します。(画像未選択時には機能しません。)設定値(CSS「background-position」と同等値を設定できます。[Learn more](https://developer.mozilla.org/ja/docs/Web/CSS/background-position)"
+    },
+    {
+      "type": "text", "id": "section_background-repeat", "label": "5.背景画像の繰り返し", "default": "no-repeat",
+      "info": "背景画像の繰り返しを設定します。(画像未選択時には機能しません。)設定値(CSS「background-repeat」と同等値を設定できます。[Learn more](https://developer.mozilla.org/ja/docs/Web/CSS/background-repeat)"
+    },
+    { "type": "paragraph", "content": "━━━━━━━━━━━━━━━━━━━" },
+    { "type": "header", "content": "2.section wrapper" },
+    { "type": "header", "content": "2-1.サイズ" },
+    {
+      "type": "text", "id": "section_wrapper_width", "label": "1.横幅", "default": "min(100%, 1080px)",
+      "info": "セクション内の共通の横幅を設定します。設定値(CSS「width」と同等値を設定できます。[Learn more](https://developer.mozilla.org/ja/docs/Web/CSS/width)"
+    },
+    { "type": "paragraph", "content": "━━━━━━━━━━━━━━━━━━━" },
+    { "type": "header", "content": "3.header" },
+    { "type": "header", "content": "3-1.コンテンツの表示／非表示" },
+    {
+      "type": "select", "id": "header_enabled", "label": "1.headerの有効／無効", "default": "true",
+      "info": "有効：表示する。／無効：表示しない。",
+      "options": [
+        { "value": "true", "label": "有効" },
+        { "value": "false", "label": "無効" }
+      ]
+    },
+    { "type": "header", "content": "3-2.サイズ" },
+    {
+      "type": "text", "id": "header_height", "label": "1.縦幅", "default": "100px",
+      "info": "ヘッダーの縦幅を設定します。設定値(CSS「height」と同等値を設定できます。[Learn more](https://developer.mozilla.org/ja/docs/Web/CSS/height)"
+    },
+    { "type": "header", "content": "3-3.背景" },
+    {
+      "type": "color", "id": "header_background-color", "label": "1.背景色", "default": "rgba(255, 255, 255, 0)",
+      "info": "ヘッダーの背景色を設定します。設定値(CSS「background-color」と同等値を設定できます。[Learn more](https://developer.mozilla.org/ja/docs/Web/CSS/background-color)"
+    },
+    {
+      "type": "image_picker", "id": "header_background-image", "label": "2.背景画像",
+      "info": "ヘッダーの背景画像を設定します。設定値(CSS「background-image」と同等値を設定できます。[Learn more](https://developer.mozilla.org/ja/docs/Web/CSS/background-image)"
+    },
+    {
+      "type": "text", "id": "header_background-size", "label": "3.背景画像のサイズ", "default": "cover",
+      "info": "ヘッダーの背景画像のサイズを設定します。(画像未選択時には機能しません。)設定値(CSS「background-size」と同等値を設定できます。[Learn more](https://developer.mozilla.org/ja/docs/Web/CSS/background-size)"
+    },
+    {
+      "type": "text", "id": "header_background-position", "label": "4.背景画像の位置", "default": "center",
+      "info": "ヘッダーの背景画像の位置を設定します。(画像未選択時には機能しません。)設定値(CSS「background-position」と同等値を設定できます。[Learn more](https://developer.mozilla.org/ja/docs/Web/CSS/background-position)"
+    },
+    {
+      "type": "text", "id": "header_background-repeat", "label": "5.背景画像の繰り返し", "default": "no-repeat",
+      "info": "ヘッダーの背景画像の繰り返しを設定します。(画像未選択時には機能しません。)設定値(CSS「background-repeat」と同等値を設定できます。[Learn more](https://developer.mozilla.org/ja/docs/Web/CSS/background-repeat)"
+    },
+    { "type": "paragraph", "content": "━━━━━━━━━━━━━━━━━━━" },
+    { "type": "header", "content": "4.header_image" },
+    { "type": "header", "content": "4-1.コンテンツの表示／非表示" },
+    {
+      "type": "select", "id": "header_image_enabled", "label": "1.headerの画像の有効／無効", "default": "true",
+      "info": "有効：表示する。／無効：表示しない。",
+      "options": [
+        { "value": "true", "label": "有効" },
+        { "value": "false", "label": "無効" }
+      ]
+    },
+    {
+      "type": "select", "id": "header_image_border_enabled", "label": "2.画像の境界の設定の有効／無効", "default": "true",
+      "info": "有効：境界を表示する。／無効：境界を表示しない。",
+      "options": [
+        { "value": "true","label": "有効" },
+        { "value": "false", "label": "無効" }
+      ]
+    },
+    { "type": "header", "content": "4-2.画像" },
+    {
+      "type": "image_picker", "id": "header_image", "label": "1.画像",
+      "info": "画像を設定します。"
+    },
+    { "type": "header", "content": "4-2.サイズ" },
+    {
+      "type": "text", "id": "header_image_width", "label": "1.横幅", "default": "200px",
+      "info": "テキストの横幅を設定します。設定値(CSS「width」と同等値を設定できます。[Learn more](https://developer.mozilla.org/ja/docs/Web/CSS/width)"
+    },
+    {
+      "type": "text", "id": "header_image_height", "label": "2.縦幅", "default": "50px",
+      "info": "テキストの縦幅を設定します。設定値(CSS「height」と同等値を設定できます。[Learn more](https://developer.mozilla.org/ja/docs/Web/CSS/height)"
+    },
+    { "type": "header", "content": "4-3.境界" },
+    {
+      "type": "text", "id": "header_image_border-width", "label": "1.画像の境界の幅", "default": "2px",
+      "info": "画像の境界の幅を設定します。設定値(CSS「border-width」と同等値を設定できます。[Learn more](https://developer.mozilla.org/ja/docs/Web/CSS/border-width)"
+    },
+    {
+      "type": "text", "id": "header_image_border-style", "label": "2.画像の境界のスタイル", "default": "solid",
+      "info": "画像の境界のスタイルを設定します。設定値(CSS「border-style」と同等値を設定できます。[Learn more](https://developer.mozilla.org/ja/docs/Web/CSS/border-style)"
+    },
+    {
+      "type": "text", "id": "header_image_border-color", "label": "3.画像の境界の色", "default": "rgba(255, 255, 255, 1)",
+      "info": "画像の境界の色を設定します。設定値(CSS「border-color」と同等値を設定できます。[Learn more](https://developer.mozilla.org/ja/docs/Web/CSS/border-color)"
+    },
+    { "type": "header", "content": "4-4.位置" },
+    {
+      "type": "select", "id": "header_image_margin_horizontal-position", "label": "1.画像の水平位置(margin側)", "default": "center",
+      "info": "画像の水平位置(margin側)を設定します。",
+      "options": [
+        { "value": "left","label": "左寄せ" },
+        { "value": "center","label": "中央寄せ" },
+        { "value": "right","label": "右寄せ" }
+      ]
+    },
+    {
+      "type": "select", "id": "header_image_margin_vertical-position", "label": "2.画像の垂直位置(margin側)", "default": "middle",
+      "info": "画像の垂直位置(margin側)を設定します。",
+      "options": [
+        { "value": "top","label": "上寄せ" },
+        { "value": "middle","label": "中央寄せ" },
+        { "value": "bottom","label": "下寄せ" }
+      ]
+    },
+    {
+      "type": "text", "id": "header_image_margin", "label": "3.マージン(境界の外側の余白)", "default": "0",
+      "info": "マージン(境界の外側の余白)を設定します。設定値(CSS「margin」と同等値を設定できます。[Learn more](https://developer.mozilla.org/ja/docs/Web/CSS/margin)"
+    },
+    {
+      "type": "text", "id": "header_image_padding", "label": "4.パディング(境界の内側の余白)", "default": "0",
+      "info": "パディング(境界の内側の余白)を設定します。設定値(CSS「padding」と同等値を設定できます。[Learn more](https://developer.mozilla.org/ja/docs/Web/CSS/padding)"
+    },
+    { "type": "paragraph", "content": "━━━━━━━━━━━━━━━━━━━" },
+    { "type": "header", "content": "5.header_text" },
+    { "type": "header", "content": "5-1.コンテンツの表示／非表示" },
+    {
+      "type": "select", "id": "header_text_enabled", "label": "1.headerの文字の有効／無効", "default": "true",
+      "info": "有効：表示する。／無効：表示しない。",
+      "options": [
+        { "value": "true", "label": "有効" },
+        { "value": "false", "label": "無効" }
+      ]
+    },
+    {
+      "type": "select", "id": "header_text_border_enabled", "label": "2.テキストの境界の設定の有効／無効", "default": "true",
+      "info": "有効：境界を表示する。／無効：境界を表示しない。",
+      "options": [
+        { "value": "true","label": "有効" },
+        { "value": "false", "label": "無効" }
+      ]
+    },
+    { "type": "header", "content": "5-2.テキスト" },
+    {
+      "type": "text", "id": "header_text", "label": "1.テキスト", "default": "テキスト",
+      "info": "テキストを設定します。"
+    },
+    { "type": "header", "content": "5-3.サイズ" },
+    {
+      "type": "text", "id": "header_text_width", "label": "1.横幅", "default": "200px",
+      "info": "テキストの横幅を設定します。設定値(CSS「width」と同等値を設定できます。[Learn more](https://developer.mozilla.org/ja/docs/Web/CSS/width)"
+    },
+    {
+      "type": "text", "id": "header_text_height", "label": "2.縦幅", "default": "50px",
+      "info": "テキストの縦幅を設定します。設定値(CSS「height」と同等値を設定できます。[Learn more](https://developer.mozilla.org/ja/docs/Web/CSS/height)"
+    },
+    { "type": "header", "content": "5-4.フォント" },
+    {
+      "type": "color", "id": "header_text_color", "label": "1.テキストの色", "default": "rgba(255, 255, 255, 1)",
+      "info": "テキストの色を設定します。"
+    },
+    {
+      "type": "color", "id": "header_text_background", "label": "2.テキストの背景色", "default": "rgba(0, 0, 0, 0)",
+      "info": "テキストの背景色を設定します。"
+    },
+    {
+      "type": "text", "id": "header_text_font-family", "label": "3.テキストのフォントファミリー", "default": "tsukushioldmincho, ms mincho, ヒラギノ明朝 pro w3, hiragino mincho pro, serif;",
+      "info": "テキストのフォントファミリーを設定します。設定値(CSS「font-family」と同等値を設定できます。[Learn more](https://developer.mozilla.org/ja/docs/Web/CSS/font-family)"
+    },
+    {
+      "type": "text", "id": "header_text_font-size", "label": "4.テキストのフォントサイズ", "default": "14px",
+      "info": "テキストのフォントサイズを設定します。設定値(CSS「font-size」と同等値を設定できます。[Learn more](https://developer.mozilla.org/ja/docs/Web/CSS/font-size)"
+    },
+    {
+      "type": "text", "id": "header_text_font-weight", "label": "5.テキストの太さ", "default": "bold",
+      "info": "テキストの太さを設定します。設定値(CSS「font-weight」と同等値を設定できます。[Learn more](https://developer.mozilla.org/ja/docs/Web/CSS/font-weight)"
+    },
+    { "type": "header", "content": "5-5.境界" },
+    {
+      "type": "text", "id": "header_text_border-width", "label": "1.テキストの境界の幅", "default": "2px",
+      "info": "テキストの境界の幅を設定します。設定値(CSS「border-width」と同等値を設定できます。[Learn more](https://developer.mozilla.org/ja/docs/Web/CSS/border-width)"
+    },
+    {
+      "type": "text", "id": "header_text_border-style", "label": "2.テキストの境界のスタイル", "default": "solid",
+      "info": "テキストの境界のスタイルを設定します。設定値(CSS「border-style」と同等値を設定できます。[Learn more](https://developer.mozilla.org/ja/docs/Web/CSS/border-style)"
+    },
+    {
+      "type": "text", "id": "header_text_border-color", "label": "3.テキストの境界の色", "default": "rgba(255, 255, 255, 1)",
+      "info": "テキストの境界の色を設定します。設定値(CSS「border-color」と同等値を設定できます。[Learn more](https://developer.mozilla.org/ja/docs/Web/CSS/border-color)"
+    },
+    { "type": "header", "content": "5-6.位置" },
+    {
+      "type": "select", "id": "header_text_margin_horizontal-position", "label": "1.テキストの水平位置(margin側)", "default": "center",
+      "info": "テキストの水平位置(margin側)を設定します。",
+      "options": [
+        { "value": "left","label": "左寄せ" },
+        { "value": "center","label": "中央寄せ" },
+        { "value": "right","label": "右寄せ" }
+      ]
+    },
+    {
+      "type": "select", "id": "header_text_margin_vertical-position", "label": "2.テキストの垂直位置(margin側)", "default": "middle",
+      "info": "テキストの垂直位置(margin側)を設定します。",
+      "options": [
+        { "value": "top","label": "上寄せ" },
+        { "value": "middle","label": "中央寄せ" },
+        { "value": "bottom","label": "下寄せ" }
+      ]
+    },
+    {
+      "type": "select", "id": "header_text_padding_horizontal-position", "label": "3.テキストの水平位置(padding側)", "default": "center",
+      "info": "テキストの水平位置(padding側)を設定します。設定値(CSS「align-items」と同等値を設定できます。[Learn more](https://developer.mozilla.org/ja/docs/Web/CSS/align-items)",
+      "options": [
+        { "value": "flex-start","label": "左寄せ" },
+        { "value": "center","label": "中央寄せ" },
+        { "value": "flex-end","label": "右寄せ" }
+      ]
+    },
+    {
+      "type": "select", "id": "header_text_padding_vertical-position", "label": "4.テキストの垂直位置(padding側)", "default": "center",
+      "info": "テキストの垂直位置(padding側)を設定します。設定値(CSS「justify-content」と同等値を設定できます。[Learn more](https://developer.mozilla.org/ja/docs/Web/CSS/justify-content)",
+      "options": [
+        { "value": "flex-start","label": "上寄せ" },
+        { "value": "center","label": "中央寄せ" },
+        { "value": "flex-end","label": "下寄せ" }
+      ]
+    },
+    {
+      "type": "text", "id": "header_text_margin", "label": "5.マージン(境界の外側の余白)", "default": "0",
+      "info": "マージン(境界の外側の余白)を設定します。設定値(CSS「margin」と同等値を設定できます。[Learn more](https://developer.mozilla.org/ja/docs/Web/CSS/margin)"
+    },
+    {
+      "type": "text", "id": "header_text_padding", "label": "6.パディング(境界の内側の余白)", "default": "0",
+      "info": "パディング(境界の内側の余白)を設定します。設定値(CSS「padding」と同等値を設定できます。[Learn more](https://developer.mozilla.org/ja/docs/Web/CSS/padding)"
+    },
+
+    { "type": "paragraph", "content": "━━━━━━━━━━━━━━━━━━━" },
+    { "type": "header", "content": "6.main" },
+    { "type": "header", "content": "6-1.コンテンツの表示／非表示" },
+    {
+      "type": "select", "id": "main_enabled", "label": "2.mainの有効／無効", "default": "true", "info": "有効：表示する。／無効：表示しない。",
+      "options": [
+        { "value": "true", "label": "有効" },
+        { "value": "false", "label": "無効" }
+      ]
+    },
+    { "type": "header", "content": "6-2.サイズ" },
+    {
+      "type": "text", "id": "main_height", "label": "1.縦幅", "default": "400px",
+      "info": "メインの縦幅を設定します。設定値(CSS「height」と同等値を設定できます。[Learn more](https://developer.mozilla.org/ja/docs/Web/CSS/height)"
+    },
+    { "type": "header", "content": "6-3.背景" },
+    {
+      "type": "color", "id": "main_background-color", "label": "1.背景色", "default": "rgba(0, 0, 0, 0)",
+      "info": "メインの背景色を設定します。設定値(CSS「background-color」と同等値を設定できます。[Learn more](https://developer.mozilla.org/ja/docs/Web/CSS/background-color)"
+    },
+    {
+      "type": "image_picker", "id": "main_background-image", "label": "2.背景画像",
+      "info": "メインの背景画像を設定します。設定値(CSS「background-image」と同等値を設定できます。[Learn more](https://developer.mozilla.org/ja/docs/Web/CSS/background-image)"
+    },
+    {
+      "type": "text", "id": "main_background-size", "label": "3.背景画像のサイズ", "default": "cover",
+      "info": "メインの背景画像のサイズを設定します。(画像未選択時には機能しません。)設定値(CSS「background-size」と同等値を設定できます。[Learn more](https://developer.mozilla.org/ja/docs/Web/CSS/background-size)"
+    },
+    {
+      "type": "text", "id": "main_background-position", "label": "4.メインの背景画像の位置", "default": "center",
+      "info": "ヘッダーの背景画像の位置を設定します。(画像未選択時には機能しません。)設定値(CSS「background-position」と同等値を設定できます。[Learn more](https://developer.mozilla.org/ja/docs/Web/CSS/background-position)"
+    },
+    {
+      "type": "text", "id": "main_background-repeat", "label": "5.メインの背景画像の繰り返し", "default": "no-repeat",
+      "info": "ヘッダーの背景画像の繰り返しを設定します。(画像未選択時には機能しません。)設定値(CSS「background-repeat」と同等値を設定できます。[Learn more](https://developer.mozilla.org/ja/docs/Web/CSS/background-repeat)"
+    },
+
+    { "type": "paragraph", "content": "━━━━━━━━━━━━━━━━━━━" },
+    { "type": "header", "content": "7.main_item" },
+    { "type": "header", "content": "7-1.サイズ" },
+    {
+      "type": "text", "id": "main_item_width", "label": "1.アイテムの横幅", "default": "250px",
+      "info": "画像の横幅を設定します。設定値(CSS「width」と同等値を設定できます。[Learn more](https://developer.mozilla.org/ja/docs/Web/CSS/width)"
+    },
+    { "type": "paragraph", "content": "━━━━━━━━━━━━━━━━━━━" },
+    { "type": "header", "content": "8.main_item_image" },
+    { "type": "header", "content": "8-1.コンテンツの表示／非表示" },
+    {
+      "type": "select", "id": "main_item_image_border_enabled", "label": "1.画像の境界の設定の有効／無効", "default": "true",
+      "info": "有効：境界を表示する。／無効：境界を表示しない。",
+      "options": [
+        { "value": "true","label": "有効" },
+        { "value": "false", "label": "無効" }
+      ]
+    },
+    { "type": "header", "content": "8-2.サイズ" },
+    {
+      "type": "text", "id": "main_item_image_height", "label": "1.画像の縦幅", "default": "250px",
+      "info": "画像の縦幅を設定します。設定値(CSS「height」と同等値を設定できます。[Learn more](https://developer.mozilla.org/ja/docs/Web/CSS/height)"
+    },
+    { "type": "header", "content": "8-3.境界" },
+    {
+      "type": "text", "id": "main_item_image_border-width", "label": "1.画像の境界の幅", "default": "1px",
+      "info": "画像の境界の幅を設定します。設定値(CSS「border-width」と同等値を設定できます。[Learn more](https://developer.mozilla.org/ja/docs/Web/CSS/border-width)"
+    },
+    {
+      "type": "text", "id": "main_item_image_border-style", "label": "2.画像の境界のスタイル", "default": "solid",
+      "info": "画像の境界のスタイルを設定します。設定値(CSS「border-style」と同等値を設定できます。[Learn more](https://developer.mozilla.org/ja/docs/Web/CSS/border-style)"
+    },
+    {
+      "type": "text", "id": "main_item_image_border-color", "label": "3.画像の境界の色", "default": "rgba(255, 255, 255, 1)",
+      "info": "画像の境界の色を設定します。設定値(CSS「border-color」と同等値を設定できます。[Learn more](https://developer.mozilla.org/ja/docs/Web/CSS/border-color)"
+    },
+    { "type": "paragraph", "content": "━━━━━━━━━━━━━━━━━━━" },
+    { "type": "header", "content": "9.main_item_title" },
+    { "type": "header", "content": "9-1.コンテンツの表示／非表示" },
+    {
+      "type": "select", "id": "main_item_title_border_enabled", "label": "1.テキスト(タイトル)の境界の設定の有効／無効", "default": "true",
+      "info": "有効：境界を表示する。／無効：境界を表示しない。",
+      "options": [
+        { "value": "true","label": "有効" },
+        { "value": "false", "label": "無効" }
+      ]
+    },
+    { "type": "header", "content": "9-2.サイズ" },
+    {
+      "type": "text", "id": "main_item_title_height", "label": "1.テキスト(タイトル)の縦幅", "default": "50px",
+      "info": "画像の縦幅を設定します。設定値(CSS「height」と同等値を設定できます。[Learn more](https://developer.mozilla.org/ja/docs/Web/CSS/height)"
+    },
+    { "type": "header", "content": "9-3.フォント" },
+    {
+      "type": "color", "id": "main_item_title_text_color", "label": "1.テキストの色", "default": "rgba(255, 255, 255, 1)",
+      "info": "テキストの色を設定します。"
+    },
+    {
+      "type": "text", "id": "main_item_title_text_font-family", "label": "2.テキストのフォントファミリー", "default": "tsukushioldmincho, ms mincho, ヒラギノ明朝 pro w3, hiragino mincho pro, serif;",
+      "info": "テキストのフォントファミリーを設定します。設定値(CSS「font-family」と同等値を設定できます。[Learn more](https://developer.mozilla.org/ja/docs/Web/CSS/font-family)"
+    },
+    {
+      "type": "text", "id": "main_item_title_text_font-size", "label": "3.テキストのフォントサイズ", "default": "15px",
+      "info": "テキストのフォントサイズを設定します。設定値(CSS「font-size」と同等値を設定できます。[Learn more](https://developer.mozilla.org/ja/docs/Web/CSS/font-size)"
+    },
+    {
+      "type": "text", "id": "main_item_title_text_font-weight", "label": "4.テキストの太さ", "default": "bold",
+      "info": "テキストの太さを設定します。設定値(CSS「font-weight」と同等値を設定できます。[Learn more](https://developer.mozilla.org/ja/docs/Web/CSS/font-weight)"
+    },
+    { "type": "header", "content": "9-4.境界" },
+    {
+      "type": "text", "id": "main_item_title_border-width", "label": "1.テキスト(タイトル)の境界の幅", "default": "1px",
+      "info": "テキスト(タイトル)の境界の幅を設定します。設定値(CSS「border-width」と同等値を設定できます。[Learn more](https://developer.mozilla.org/ja/docs/Web/CSS/border-width)"
+    },
+    {
+      "type": "text", "id": "main_item_title_border-style", "label": "2.テキスト(タイトル)の境界のスタイル", "default": "solid",
+      "info": "テキスト(タイトル)の境界のスタイルを設定します。設定値(CSS「border-style」と同等値を設定できます。[Learn more](https://developer.mozilla.org/ja/docs/Web/CSS/border-style)"
+    },
+    {
+      "type": "text", "id": "main_item_title_border-color", "label": "3.テキスト(タイトル)の境界の色", "default": "rgba(255, 255, 255, 1)",
+      "info": "テキスト(タイトル)の境界の色を設定します。設定値(CSS「border-color」と同等値を設定できます。[Learn more](https://developer.mozilla.org/ja/docs/Web/CSS/border-color)"
+    },
+    { "type": "header", "content": "9-5.位置" },
+    {
+      "type": "select", "id": "main_item_title_horizontal-position", "label": "1.テキスト(タイトル)の水平位置", "default": "flex-start",
+      "info": "テキスト(タイトル)の水平位置を設定します。設定値(CSS「align-items」と同等値を設定できます。[Learn more](https://developer.mozilla.org/ja/docs/Web/CSS/align-items)",
+      "options": [
+        { "value": "flex-start","label": "左寄せ" },
+        { "value": "center","label": "中央寄せ" },
+        { "value": "flex-end","label": "右寄せ" }
+      ]
+    },
+    {
+      "type": "select", "id": "main_item_title_vertical-position", "label": "2.テキスト(タイトル)の垂直位置", "default": "flex-start",
+      "info": "テキスト(タイトル)の垂直位置を設定します。設定値(CSS「justify-content」と同等値を設定できます。[Learn more](https://developer.mozilla.org/ja/docs/Web/CSS/justify-content)",
+      "options": [
+        { "value": "flex-start","label": "上寄せ" },
+        { "value": "center","label": "中央寄せ" },
+        { "value": "flex-end","label": "下寄せ" }
+      ]
+    },
+    { "type": "paragraph", "content": "━━━━━━━━━━━━━━━━━━━" },
+    { "type": "header", "content": "10.main_item_price" },
+    { "type": "header", "content": "10-1.コンテンツの表示／非表示" },
+    {
+      "type": "select", "id": "main_item_price_border_enabled", "label": "1.テキスト(価格)の境界の設定の有効／無効", "default": "true",
+      "info": "有効：境界を表示する。／無効：境界を表示しない。",
+      "options": [
+        { "value": "true","label": "有効" },
+        { "value": "false", "label": "無効" }
+      ]
+    },
+    { "type": "header", "content": "10-2.サイズ" },
+    {
+      "type": "text", "id": "main_item_price_height", "label": "1.テキスト(価格)の縦幅", "default": "20px",
+      "info": "テキスト(価格)の縦幅を設定します。設定値(CSS「height」と同等値を設定できます。[Learn more](https://developer.mozilla.org/ja/docs/Web/CSS/height)"
+    },
+    { "type": "header", "content": "10-3.フォント" },
+    {
+      "type": "color", "id": "main_item_price_text_color", "label": "1.テキストの色", "default": "rgba(255, 255, 255, 1)",
+      "info": "テキストの色を設定します。"
+    },
+    {
+      "type": "text", "id": "main_item_price_text_font-family", "label": "2.テキストのフォントファミリー", "default": "tsukushioldmincho, ms mincho, ヒラギノ明朝 pro w3, hiragino mincho pro, serif;",
+      "info": "テキストのフォントファミリーを設定します。設定値(CSS「font-family」と同等値を設定できます。[Learn more](https://developer.mozilla.org/ja/docs/Web/CSS/font-family)"
+    },
+    {
+      "type": "text", "id": "main_item_price_text_font-size", "label": "3.テキストのフォントサイズ", "default": "15px",
+      "info": "テキストのフォントサイズを設定します。設定値(CSS「font-size」と同等値を設定できます。[Learn more](https://developer.mozilla.org/ja/docs/Web/CSS/font-size)"
+    },
+    {
+      "type": "text", "id": "main_item_price_text_font-weight", "label": "4.テキストの太さ", "default": "bold",
+      "info": "テキストの太さを設定します。設定値(CSS「font-weight」と同等値を設定できます。[Learn more](https://developer.mozilla.org/ja/docs/Web/CSS/font-weight)"
+    },
+    { "type": "header", "content": "10-4.境界" },
+    {
+      "type": "text", "id": "main_item_price_border-width", "label": "1.テキスト(価格)の境界の幅", "default": "1px",
+      "info": "テキスト(価格)の境界の幅を設定します。設定値(CSS「border-width」と同等値を設定できます。[Learn more](https://developer.mozilla.org/ja/docs/Web/CSS/border-width)"
+    },
+    {
+      "type": "text", "id": "main_item_price_border-style", "label": "2.テキスト(価格)の境界のスタイル", "default": "solid",
+      "info": "テキスト(価格)の境界のスタイルを設定します。設定値(CSS「border-style」と同等値を設定できます。[Learn more](https://developer.mozilla.org/ja/docs/Web/CSS/border-style)"
+    },
+    {
+      "type": "text", "id": "main_item_price_border-color", "label": "3.テキスト(価格)の境界の色", "default": "rgba(255, 255, 255, 1)",
+      "info": "テキスト(価格)の境界の色を設定します。設定値(CSS「border-color」と同等値を設定できます。[Learn more](https://developer.mozilla.org/ja/docs/Web/CSS/border-color)"
+    },
+    { "type": "header", "content": "10-5.位置" },
+    {
+      "type": "select", "id": "main_item_price_horizontal-position", "label": "1.テキスト(価格)の水平位置", "default": "flex-end",
+      "info": "テキスト(価格)の水平位置を設定します。設定値(CSS「align-items」と同等値を設定できます。[Learn more](https://developer.mozilla.org/ja/docs/Web/CSS/align-items)",
+      "options": [
+        { "value": "flex-start","label": "左寄せ" },
+        { "value": "center","label": "中央寄せ" },
+        { "value": "flex-end","label": "右寄せ" }
+      ]
+    },
+    {
+      "type": "select", "id": "main_item_price_vertical-position", "label": "2.テキスト(価格)の垂直位置", "default": "center",
+      "info": "テキスト(価格)の垂直位置を設定します。設定値(CSS「justify-content」と同等値を設定できます。[Learn more](https://developer.mozilla.org/ja/docs/Web/CSS/justify-content)",
+      "options": [
+        { "value": "flex-start","label": "上寄せ" },
+        { "value": "center","label": "中央寄せ" },
+        { "value": "flex-end","label": "下寄せ" }
+      ]
+    },
+    { "type": "paragraph", "content": "━━━━━━━━━━━━━━━━━━━" },
+    { "type": "header", "content": "11.main_item_button" },
+    { "type": "header", "content": "11-1.コンテンツの表示／非表示" },
+    {
+      "type": "select", "id": "main_item_button_enabled", "label": "1.ボタンの有効／無効", "default": "true",
+      "info": "有効：ボタンを表示する。／無効：ボタンを表示しない。",
+      "options": [
+        { "value": "true","label": "有効" },
+        { "value": "false", "label": "無効" }
+      ]
+    },
+    {
+      "type": "select", "id": "main_item_button_border_enabled", "label": "2.ボタンが配置される要素の境界の設定の有効／無効", "default": "true",
+      "info": "有効：境界を表示する。／無効：境界を表示しない。",
+      "options": [
+        { "value": "true","label": "有効" },
+        { "value": "false", "label": "無効" }
+      ]
+    },
+    { "type": "header", "content": "11-2.サイズ" },
+    {
+      "type": "text", "id": "main_item_button_height", "label": "1.ボタンの縦幅", "default": "60px",
+      "info": "ボタンが配置される要素の縦幅を設定します。設定値(CSS「height」と同等値を設定できます。[Learn more](https://developer.mozilla.org/ja/docs/Web/CSS/height)"
+    },
+    { "type": "header", "content": "11-3.境界" },
+    {
+      "type": "text", "id": "main_item_button_border-width", "label": "1.ボタンが配置される要素の境界の幅", "default": "1px",
+      "info": "ボタンが配置される要素の境界の幅を設定します。設定値(CSS「border-width」と同等値を設定できます。[Learn more](https://developer.mozilla.org/ja/docs/Web/CSS/border-width)"
+    },
+    {
+      "type": "text", "id": "main_item_button_border-style", "label": "2.ボタンが配置される要素の境界のスタイル", "default": "solid",
+      "info": "ボタンが配置される要素の境界のスタイルを設定します。設定値(CSS「border-style」と同等値を設定できます。[Learn more](https://developer.mozilla.org/ja/docs/Web/CSS/border-style)"
+    },
+    {
+      "type": "text", "id": "main_item_button_border-color", "label": "3.ボタンが配置される要素の境界の色", "default": "rgba(255, 255, 255, 1)",
+      "info": "ボタンが配置される要素の境界の色を設定します。設定値(CSS「border-color」と同等値を設定できます。[Learn more](https://developer.mozilla.org/ja/docs/Web/CSS/border-color)"
+    },
+    { "type": "header", "content": "11-3.位置" },
+    {
+      "type": "select", "id": "main_item_button_horizontal-position", "label": "1.ボタンが配置される要素の中の水平位置", "default": "center",
+      "info": "ボタンが配置される要素の中の水平位置を設定します。設定値(CSS「align-items」と同等値を設定できます。[Learn more](https://developer.mozilla.org/ja/docs/Web/CSS/align-items)",
+      "options": [
+        { "value": "flex-start","label": "左寄せ" },
+        { "value": "center","label": "中央寄せ" },
+        { "value": "flex-end","label": "右寄せ" }
+      ]
+    },
+    {
+      "type": "select", "id": "main_item_button_vertical-position", "label": "2.ボタンが配置される要素の中の垂直位置", "default": "center",
+      "info": "ボタンが配置される要素の中の垂直位置を設定します。設定値(CSS「justify-content」と同等値を設定できます。[Learn more](https://developer.mozilla.org/ja/docs/Web/CSS/justify-content)",
+      "options": [
+        { "value": "flex-start","label": "上寄せ" },
+        { "value": "center","label": "中央寄せ" },
+        { "value": "flex-end","label": "下寄せ" }
+      ]
+    },
+    { "type": "paragraph", "content": "━━━━━━━━━━━━━━━━━━━" },
+    { "type": "header", "content": "12.main_item_input_button" },
+    { "type": "header", "content": "12-1.コンテンツの表示／非表示" },
+    {
+      "type": "select", "id": "main_item_input_button_border_enabled", "label": "4.ボタンの境界の設定の有効／無効", "default": "true",
+      "info": "有効：境界を表示する。／無効：境界を表示しない。",
+      "options": [
+        { "value": "true","label": "有効" },
+        { "value": "false", "label": "無効" }
+      ]
+    },
+    { "type": "header", "content": "12-2.ボタンに表示するテキスト" },
+    {
+      "type": "text", "id": "main_item_input_button_text", "label": "1.ボタンに表示するテキスト", "default": "カートに入れる",
+      "info": "ボタンに表示するテキストを設定します。"
+    },
+    { "type": "header", "content": "12-3.位置" },
+    {
+      "type": "text", "id": "main_item_input_button_text_width", "label": "1.ボタンの横幅", "default": "180px",
+      "info": "ボタンの横幅を設定します。設定値(CSS「width」と同等値を設定できます。[Learn more](https://developer.mozilla.org/ja/docs/Web/CSS/width)"
+    },
+    {
+      "type": "text", "id": "main_item_input_button_text_height", "label": "2.ボタンの縦幅", "default": "35px",
+      "info": "ボタンの縦幅を設定します。設定値(CSS「height」と同等値を設定できます。[Learn more](https://developer.mozilla.org/ja/docs/Web/CSS/height)"
+    },
+    { "type": "header", "content": "12-4.フォント" },
+    {
+      "type": "text", "id": "main_item_input_button_text_font-family", "label": "1.テキストのフォントファミリー", "default": "tsukushioldmincho, ms mincho, ヒラギノ明朝 pro w3, hiragino mincho pro, serif;",
+      "info": "テキストのフォントファミリーを設定します。設定値(CSS「font-family」と同等値を設定できます。[Learn more](https://developer.mozilla.org/ja/docs/Web/CSS/font-family)"
+    },
+    {
+      "type": "text", "id": "main_item_input_button_text_font-size", "label": "2.テキストのフォントサイズ", "default": "16px",
+      "info": "テキストのフォントサイズを設定します。設定値(CSS「font-size」と同等値を設定できます。[Learn more](https://developer.mozilla.org/ja/docs/Web/CSS/font-size)"
+    },
+    {
+      "type": "text", "id": "main_item_input_button_text_font-weight", "label": "3.テキストの太さ", "default": "bold",
+      "info": "テキストの太さを設定します。設定値(CSS「font-weight」と同等値を設定できます。[Learn more](https://developer.mozilla.org/ja/docs/Web/CSS/font-weight)"
+    },
+    { "type": "header", "content": "12-4.ボタンの色" },
+    {
+      "type": "color", "id": "main_item_input_button_before_color", "label": "1.通常時のボタンの色", "default": "#FFD814",
+      "info": "通常時のボタンの色を設定します。"
+    },
+    {
+      "type": "color", "id": "main_item_input_button_text_before_color", "label": "2.通常時のボタンの文字の色", "default": "#000000",
+      "info": "通常時のボタンの文字の色を設定します。"
+    },
+    {
+      "type": "color", "id": "main_item_input_button_after_color", "label": "3.オンマウス時のボタンの色", "default": "#F7CA00",
+      "info": "オンマウス時のボタンの色を設定します。"
+    },
+    {
+      "type": "color", "id": "main_item_input_button_text_after_color", "label": "4.オンマウス時のボタンの文字の色", "default": "#000000",
+      "info": "オンマウス時のボタンの文字の色を設定します。"
+    },
+    { "type": "paragraph", "content": "━━━━━━━━━━━━━━━━━━━" },
+    { "type": "header", "content": "13.footer" },
+    { "type": "header", "content": "13-1.コンテンツの表示／非表示" },
+    {
+      "type": "select", "id": "footer_enabled", "label": "1.footerの有効／無効", "default": "true",
+      "info": "有効：境界を表示する。／無効：境界を表示しない。",
+      "options": [
+        { "value": "true", "label": "有効" },
+        { "value": "false", "label": "無効" }
+      ]
+    },
+    { "type": "header", "content": "13-2.サイズ" },
+    {
+      "type": "text", "id": "footer_height", "label": "1.縦幅", "default": "100px",
+      "info": "フッターの縦幅を設定します。設定値(CSS「height」と同等値を設定できます。[Learn more](https://developer.mozilla.org/ja/docs/Web/CSS/height)"
+    },
+    { "type": "header", "content": "13-3.背景" },
+    {
+      "type": "color", "id": "footer_background-color", "label": "1.背景色", "default": "rgba(0, 0, 0, 0)",
+      "info": "フッターの背景色を設定します。設定値(CSS「background-color」と同等値を設定できます。[Learn more](https://developer.mozilla.org/ja/docs/Web/CSS/background-color)"
+    },
+    {
+      "type": "image_picker", "id": "footer_background-image", "label": "2.背景画像",
+      "info": "フッターの背景画像を設定します。設定値(CSS「background-image」と同等値を設定できます。[Learn more](https://developer.mozilla.org/ja/docs/Web/CSS/background-image)"
+    },
+    {
+      "type": "text", "id": "footer_background-size", "label": "3.背景画像のサイズ", "default": "cover",
+      "info": "フッターの背景画像のサイズを設定します。(画像未選択時には機能しません。)設定値(CSS「background-size」と同等値を設定できます。[Learn more](https://developer.mozilla.org/ja/docs/Web/CSS/background-size)"
+    },
+    {
+      "type": "text", "id": "footer_background-position", "label": "4.背景画像の位置", "default": "center",
+      "info": "フッターの背景画像の位置を設定します。(画像未選択時には機能しません。)設定値(CSS「background-position」と同等値を設定できます。[Learn more](https://developer.mozilla.org/ja/docs/Web/CSS/background-position)"
+    },
+    {
+      "type": "text", "id": "footer_background-repeat", "label": "5.背景画像の繰り返し", "default": "no-repeat",
+      "info": "フッターの背景画像の繰り返しを設定します。(画像未選択時には機能しません。)設定値(CSS「background-repeat」と同等値を設定できます。[Learn more](https://developer.mozilla.org/ja/docs/Web/CSS/background-repeat)"
+    },
+    { "type": "paragraph", "content": "━━━━━━━━━━━━━━━━━━━" },
+    { "type": "header", "content": "14.footer_image" },
+    { "type": "header", "content": "14-1.コンテンツの表示／非表示" },
+    {
+      "type": "select", "id": "footer_image_enabled", "label": "1.footerの画像の有効／無効", "default": "true",
+      "info": "有効：表示する。／無効：表示しない。",
+      "options": [
+        { "value": "true", "label": "有効" },
+        { "value": "false", "label": "無効" }
+      ]
+    },
+    {
+      "type": "select", "id": "footer_image_border_enabled", "label": "2.画像の境界の設定の有効／無効", "default": "true",
+      "info": "有効：境界を表示する。／無効：境界を表示しない。",
+      "options": [
+        { "value": "true","label": "有効" },
+        { "value": "false", "label": "無効" }
+      ]
+    },
+    { "type": "header", "content": "14-2.画像" },
+    {
+      "type": "image_picker", "id": "footer_image", "label": "1.画像",
+      "info": "画像を設定します。"
+    },
+    { "type": "header", "content": "14-3.サイズ" },
+    {
+      "type": "text", "id": "footer_image_width", "label": "1.横幅", "default": "200px",
+      "info": "テキストの横幅を設定します。設定値(CSS「width」と同等値を設定できます。[Learn more](https://developer.mozilla.org/ja/docs/Web/CSS/width)"
+    },
+    {
+      "type": "text", "id": "footer_image_height", "label": "2.縦幅", "default": "50px",
+      "info": "テキストの縦幅を設定します。設定値(CSS「height」と同等値を設定できます。[Learn more](https://developer.mozilla.org/ja/docs/Web/CSS/height)"
+    },
+    { "type": "header", "content": "14-4.境界" },
+    {
+      "type": "text", "id": "footer_image_border-width", "label": "1.画像の境界の幅", "default": "1px",
+      "info": "画像の境界の幅を設定します。設定値(CSS「border-width」と同等値を設定できます。[Learn more](https://developer.mozilla.org/ja/docs/Web/CSS/border-width)"
+    },
+    {
+      "type": "text", "id": "footer_image_border-style", "label": "2.画像の境界のスタイル", "default": "solid",
+      "info": "画像の境界のスタイルを設定します。設定値(CSS「border-style」と同等値を設定できます。[Learn more](https://developer.mozilla.org/ja/docs/Web/CSS/border-style)"
+    },
+    {
+      "type": "text", "id": "footer_image_border-color", "label": "3.画像の境界の色", "default": "rgba(255, 255, 255, 1)",
+      "info": "画像の境界の色を設定します。設定値(CSS「border-color」と同等値を設定できます。[Learn more](https://developer.mozilla.org/ja/docs/Web/CSS/border-color)"
+    },
+    { "type": "header", "content": "14-5.位置" },
+    {
+      "type": "select", "id": "footer_image_margin_horizontal-position", "label": "1.画像の水平位置(margin側)", "default": "center",
+      "info": "画像の水平位置(margin側)を設定します。",
+      "options": [
+        { "value": "left","label": "左寄せ" },
+        { "value": "center","label": "中央寄せ" },
+        { "value": "right","label": "右寄せ" }
+      ]
+    },
+    {
+      "type": "select", "id": "footer_image_margin_vertical-position", "label": "2.画像の垂直位置(margin側)", "default": "middle",
+      "info": "画像の垂直位置(margin側)を設定します。",
+      "options": [
+        { "value": "top","label": "上寄せ" },
+        { "value": "middle","label": "中央寄せ" },
+        { "value": "bottom","label": "下寄せ" }
+      ]
+    },
+    {
+      "type": "text", "id": "footer_image_margin", "label": "3.マージン(境界の外側の余白)", "default": "0",
+      "info": "マージン(境界の外側の余白)を設定します。設定値(CSS「margin」と同等値を設定できます。[Learn more](https://developer.mozilla.org/ja/docs/Web/CSS/margin)"
+    },
+    {
+      "type": "text", "id": "footer_image_padding", "label": "4.パディング(境界の内側の余白)", "default": "0",
+      "info": "パディング(境界の内側の余白)を設定します。設定値(CSS「padding」と同等値を設定できます。[Learn more](https://developer.mozilla.org/ja/docs/Web/CSS/padding)"
+    },
+    { "type": "paragraph", "content": "━━━━━━━━━━━━━━━━━━━" },
+    { "type": "header", "content": "15.footer_text" },
+    { "type": "header", "content": "15-1.コンテンツの表示／非表示" },
+    {
+      "type": "select", "id": "footer_text_enabled", "label": "1.footerの文字の有効／無効", "default": "true",
+      "info": "有効：表示する。／無効：表示しない。",
+      "options": [
+        { "value": "true", "label": "有効" },
+        { "value": "false", "label": "無効" }
+      ]
+    },
+    {
+      "type": "select", "id": "footer_text_border_enabled", "label": "2.テキストの境界の設定の有効／無効", "default": "true",
+      "info": "有効：境界を表示する。／無効：境界を表示しない。",
+      "options": [
+        { "value": "true","label": "有効" },
+        { "value": "false", "label": "無効" }
+      ]
+    },
+    { "type": "header", "content": "15-2.テキスト" },
+    {
+      "type": "text", "id": "footer_text", "label": "1.テキスト", "default": "テキスト",
+      "info": "テキストを設定します。"
+    },
+    { "type": "header", "content": "15-3.サイズ" },
+    {
+      "type": "text", "id": "footer_text_width", "label": "1.横幅", "default": "200px",
+      "info": "テキストの横幅を設定します。設定値(CSS「width」と同等値を設定できます。[Learn more](https://developer.mozilla.org/ja/docs/Web/CSS/width)"
+    },
+    {
+      "type": "text", "id": "footer_text_height", "label": "2.縦幅", "default": "50px",
+      "info": "テキストの縦幅を設定します。設定値(CSS「height」と同等値を設定できます。[Learn more](https://developer.mozilla.org/ja/docs/Web/CSS/height)"
+    },
+    { "type": "header", "content": "15-4.フォント" },
+    {
+      "type": "color", "id": "footer_text_color", "label": "1.テキストの色", "default": "rgba(255, 255, 255, 1)",
+      "info": "テキストの色を設定します。"
+    },
+    {
+      "type": "color", "id": "footer_text_background", "label": "2.テキストの背景色", "default": "rgba(0, 0, 0, 0)",
+      "info": "テキストの背景色を設定します。"
+    },
+    {
+      "type": "text", "id": "footer_text_font-family", "label": "3.テキストのフォントファミリー", "default": "tsukushioldmincho, ms mincho, ヒラギノ明朝 pro w3, hiragino mincho pro, serif;",
+      "info": "テキストのフォントファミリーを設定します。設定値(CSS「font-family」と同等値を設定できます。[Learn more](https://developer.mozilla.org/ja/docs/Web/CSS/font-family)"
+    },
+    {
+      "type": "text", "id": "footer_text_font-size", "label": "4.テキストのフォントサイズ", "default": "14px",
+      "info": "テキストのフォントサイズを設定します。設定値(CSS「font-size」と同等値を設定できます。[Learn more](https://developer.mozilla.org/ja/docs/Web/CSS/font-size)"
+    },
+    {
+      "type": "text", "id": "footer_text_font-weight", "label": "5.テキストの太さ", "default": "bold",
+      "info": "テキストの太さを設定します。設定値(CSS「font-weight」と同等値を設定できます。[Learn more](https://developer.mozilla.org/ja/docs/Web/CSS/font-weight)"
+    },
+    { "type": "header", "content": "15-5.境界" },
+    {
+      "type": "text", "id": "footer_text_border-width", "label": "1.テキストの境界の幅", "default": "2px",
+      "info": "テキストの境界の幅を設定します。設定値(CSS「border-width」と同等値を設定できます。[Learn more](https://developer.mozilla.org/ja/docs/Web/CSS/border-width)"
+    },
+    {
+      "type": "text", "id": "footer_text_border-style", "label": "2.テキストの境界のスタイル", "default": "solid",
+      "info": "テキストの境界のスタイルを設定します。設定値(CSS「border-style」と同等値を設定できます。[Learn more](https://developer.mozilla.org/ja/docs/Web/CSS/border-style)"
+    },
+    {
+      "type": "text", "id": "footer_text_border-color", "label": "3.テキストの境界の色", "default": "rgba(255, 255, 255, 1)",
+      "info": "テキストの境界の色を設定します。設定値(CSS「border-color」と同等値を設定できます。[Learn more](https://developer.mozilla.org/ja/docs/Web/CSS/border-color)"
+    },
+    { "type": "header", "content": "16.位置" },
+    {
+      "type": "select", "id": "footer_text_margin_horizontal-position", "label": "1.テキストの水平位置(margin側)", "default": "center",
+      "info": "テキストの水平位置(margin側)を設定します。",
+      "options": [
+        { "value": "left","label": "左寄せ" },
+        { "value": "center","label": "中央寄せ" },
+        { "value": "right","label": "右寄せ" }
+      ]
+    },
+    {
+      "type": "select", "id": "footer_text_margin_vertical-position", "label": "2.テキストの垂直位置(margin側)", "default": "middle",
+      "info": "テキストの垂直位置(margin側)を設定します。",
+      "options": [
+        { "value": "top","label": "上寄せ" },
+        { "value": "middle","label": "中央寄せ" },
+        { "value": "bottom","label": "下寄せ" }
+      ]
+    },
+    {
+      "type": "select", "id": "footer_text_padding_horizontal-position", "label": "3.テキストの水平位置(padding側)", "default": "center",
+      "info": "テキストの水平位置(padding側)を設定します。設定値(CSS「align-items」と同等値を設定できます。[Learn more](https://developer.mozilla.org/ja/docs/Web/CSS/align-items)",
+      "options": [
+        { "value": "flex-start","label": "左寄せ" },
+        { "value": "center","label": "中央寄せ" },
+        { "value": "flex-end","label": "右寄せ" }
+      ]
+    },
+    {
+      "type": "select", "id": "footer_text_padding_vertical-position", "label": "4.テキストの垂直位置(padding側)", "default": "center",
+      "info": "テキストの垂直位置(padding側)を設定します。設定値(CSS「justify-content」と同等値を設定できます。[Learn more](https://developer.mozilla.org/ja/docs/Web/CSS/justify-content)",
+      "options": [
+        { "value": "flex-start","label": "上寄せ" },
+        { "value": "center","label": "中央寄せ" },
+        { "value": "flex-end","label": "下寄せ" }
+      ]
+    },
+    {
+      "type": "text", "id": "footer_text_margin", "label": "5.マージン(境界の外側の余白)", "default": "0",
+      "info": "マージン(境界の外側の余白)を設定します。設定値(CSS「margin」と同等値を設定できます。[Learn more](https://developer.mozilla.org/ja/docs/Web/CSS/margin)"
+    },
+    {
+      "type": "text", "id": "footer_text_padding", "label": "6.パディング(境界の内側の余白)", "default": "0",
+      "info": "パディング(境界の内側の余白)を設定します。設定値(CSS「padding」と同等値を設定できます。[Learn more](https://developer.mozilla.org/ja/docs/Web/CSS/padding)"
+    },
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Item",
+      "limit": 8,
+      "settings": [
+        {
+          "type": "product",
+          "id": "item_product",
+          "label": "商品"
+        },
+        {
+          "type": "select",
+          "id": "item_button",
+          "label": "ボタンの有効/無効",
+          "default": "true",
+          "options": [
+            { "value": "true","label": "有効" },
+            { "value": "false", "label": "無効" }
+          ]
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Collection",
+      "blocks": [
+        {
+          "type": "item"
+        },
+        {
+          "type": "item"
+        },
+        {
+          "type": "item"
+        },
+        {
+          "type": "item"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+<style>
+    /* ----- Section Start ------------------------------------------------- */
+    .section_{{ section.id }} {
+      width: 100%;
+      height: auto;
+      margin: 0;
+      padding: 0;
+      background-color: {{ section.settings.section_background-color }};
+  {% if section.settings.section_background-image %}
+      background-image: url({{ section.settings.section_background-image | image_url }});
+      background-size: {{ section.settings.section_background-size }};
+      background-position: {{ section.settings.section_background-position }};
+      background-repeat: {{ section.settings.section_background-repeat }};
+  {% endif %}
+      text-align: center;
+      box-sizing: border-box;
+      -webkit-box-sizing: border-box;    /* Chrome Opera Safari */
+      -moz-box-sizing: border-box;       /* Firefox */
+      -ms-box-sizing: border-box;        /* IE/Edge */
+    }
+    /* ----- Section End --------------------------------------------------- */
+
+    /* ----- Section Wrapper Start ----------------------------------------- */
+    .section_{{ section.id }}_wrapper {
+      width: {{ section.settings.section_wrapper_width }};
+      height: calc(0 + {% if section.settings.header_enabled != '' %}{{ section.settings.header_height }}{% else %}0{% endif %} + {% if section.settings.main_enabled != '' %}{{ section.settings.main_height }}{% else %}0{% endif %} + {% if section.settings.footer_enabled != '' %}{{ section.settings.footer_height }}{% else %}0{% endif %});
+      margin: auto;
+      padding: auto;
+      text-align: center;
+      box-sizing: border-box;
+      -webkit-box-sizing: border-box;    /* Chrome Opera Safari */
+      -moz-box-sizing: border-box;       /* Firefox */
+      -ms-box-sizing: border-box;        /* IE/Edge */
+    }
+    /* ----- Section End --------------------------------------------------- */
+
+  {% if section.settings.header_enabled == 'true' %}
+    /* ----- Header Start -------------------------------------------------- */
+    .header_{{ section.id }} {
+      position: relative;
+      width: 100%;
+      height: {{ section.settings.header_height }};
+      margin: 0;
+      padding: 0;
+      background-color: {{ section.settings.header_background-color }};
+    {% if section.settings.header_background-image %}
+      background-image: url({{ section.settings.header_background-image | image_url: height: section.settings.header_height }});
+      background-size: {{ section.settings.header_background-size }};
+      background-position: {{ section.settings.header_background-position }};
+      background-repeat: {{ section.settings.header_background-repeat }};
+    {% endif %}
+      box-sizing: border-box;
+      -webkit-box-sizing: border-box;    /* Chrome Opera Safari */
+      -moz-box-sizing: border-box;       /* Firefox */
+      -ms-box-sizing: border-box;        /* IE/Edge */
+    }
+    {% if section.settings.header_image_enabled == 'true' %}
+    .header_{{ section.id }}_image {
+      position: absolute;
+      width: {{ section.settings.header_image_width }};
+      height: {{ section.settings.header_image_height }};
+
+      {% if section.settings.header_image_border_enabled == 'true' %}
+      border-width: {{ section.settings.header_image_border-width }};
+      border-style: {{ section.settings.header_image_border-style }};
+      border-color: {{ section.settings.header_image_border-color }};
+      {% endif %}
+
+      {% if section.settings.header_image_margin_vertical-position == 'top' %}
+      top: 0;
+      {% endif %}
+      {% if section.settings.header_image_margin_vertical-position == 'middle' %}
+      top: 50%;
+      {% endif %}
+      {% if section.settings.header_image_margin_vertical-position == 'bottom' %}
+      bottom: 0;
+      {% endif %}
+      {% if section.settings.header_image_margin_horizontal-position == 'left' %}
+      left: 0;
+      {% endif %}
+      {% if section.settings.header_image_margin_horizontal-position == 'center' %}
+      left: 50%;
+      {% endif %}
+      {% if section.settings.header_image_margin_horizontal-position == 'right' %}
+      right: 0;
+      {% endif %}
+      {% if section.settings.header_image_margin_vertical-position == 'middle' %}
+        {% if section.settings.header_image_margin_horizontal-position == 'center' %}
+      transform: translate(-50%, -50%);
+      -webkit-transform: translate(-50%, -50%);
+      -moz-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+        {% else %}
+      transform: translate(0, -50%);
+      -webkit-transform: translate(0, -50%);
+      -moz-transform: translate(0, -50%);
+      -ms-transform: translate(0, -50%);
+        {% endif %}
+      {% else %}
+        {% if section.settings.header_image_margin_horizontal-position == 'center' %}
+      transform: translate(-50%, 0);
+      -webkit-transform: translate(-50%, 0);
+      -moz-transform: translate(-50%, 0);
+      -ms-transform: translate(-50%, 0);
+        {% endif %}
+      {% endif %}
+      margin: {{ section.settings.header_image_margin }};
+      padding: {{ section.settings.header_image_padding }};
+    }
+    {% endif %}
+
+    {% if section.settings.header_text_enabled == 'true' %}
+    .header_{{ section.id }}_text {
+      position: absolute;
+      width: {{ section.settings.header_text_width }};
+      height: {{ section.settings.header_text_height }};
+
+      color: {{ section.settings.header_text_color }};
+      background: {{ section.settings.header_text_background }};
+      font-family: {{ section.settings.header_text_font-family }};
+      font-size: {{ section.settings.header_text_font-size }};
+      font-weight: {{ section.settings.header_text_font-weight }};
+
+      {% if section.settings.header_text_border_enabled == 'true' %}
+      border-width: {{ section.settings.header_text_border-width }};
+      border-style: {{ section.settings.header_text_border-style }};
+      border-color: {{ section.settings.header_text_border-color }};
+      {% endif %}
+
+      {% if section.settings.header_text_margin_vertical-position == 'top' %}
+      top: 0;
+      {% endif %}
+      {% if section.settings.header_text_margin_vertical-position == 'middle' %}
+      top: 50%;
+      {% endif %}
+      {% if section.settings.header_text_margin_vertical-position == 'bottom' %}
+      bottom: 0;
+      {% endif %}
+      {% if section.settings.header_text_margin_horizontal-position == 'left' %}
+      left: 0;
+      {% endif %}
+      {% if section.settings.header_text_margin_horizontal-position == 'center' %}
+      left: 50%;
+      {% endif %}
+      {% if section.settings.header_text_margin_horizontal-position == 'right' %}
+      right: 0;
+      {% endif %}
+      {% if section.settings.header_text_margin_vertical-position == 'middle' %}
+        {% if section.settings.header_text_margin_horizontal-position == 'center' %}
+      transform: translate(-50%, -50%);
+      -webkit-transform: translate(-50%, -50%);
+      -moz-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+        {% else %}
+      transform: translate(0, -50%);
+      -webkit-transform: translate(0, -50%);
+      -moz-transform: translate(0, -50%);
+      -ms-transform: translate(0, -50%);
+        {% endif %}
+      {% else %}
+        {% if section.settings.header_text_margin_horizontal-position == 'center' %}
+      transform: translate(-50%, 0);
+      -webkit-transform: translate(-50%, 0);
+      -moz-transform: translate(-50%, 0);
+      -ms-transform: translate(-50%, 0);
+        {% endif %}
+      {% endif %}
+
+      display: flex;
+      justify-content: {{ section.settings.header_text_padding_horizontal-position }};
+      align-items: {{ section.settings.header_text_padding_vertical-position }};
+
+      margin: {{ section.settings.header_text_margin }};
+      padding: {{ section.settings.header_text_padding }};
+    }
+    {% endif %}
+    /* ----- Header End ---------------------------------------------------- */
+  {% endif %}
+
+  {% if section.settings.main_enabled == 'true' %}
+    /* ----- Main Start ---------------------------------------------------- */
+    .main_{{ section.id }} {
+      width: 100%;
+      height: {{ section.settings.main_height }};
+      margin: 0;
+      padding: 0;
+      background-color: {{ section.settings.main_background-color }};
+    {% if section.settings.main_background-image %}
+      background-image: url({{ section.settings.main_background-image | image_url: height: section.settings.main_height }});
+      background-size: {{ section.settings.main_background-size }};
+      background-position: {{ section.settings.main_background-position }};
+      background-repeat: {{ section.settings.main_background-repeat }};
+    {% endif %}
+      box-sizing: border-box;
+      -webkit-box-sizing: border-box;    /* Chrome Opera Safari */
+      -moz-box-sizing: border-box;       /* Firefox */
+      -ms-box-sizing: border-box;        /* IE/Edge */
+    }
+
+    /* ----- Swiper -------------------------------------------------------- */
+    .swiper_{{ section.id }} {
+      width: 100%;
+      height: {{ section.settings.main_height }};
+    }
+    .swiper-button-prev {
+      background-color: transparent;
+    }
+    .swiper-button-next {
+      background-color: transparent;
+    }
+
+    .main_item_wrapper {
+      width: {{ section.settings.main_item_width }};
+      height: calc(0 + {% if section.settings.main_item_image_height != '' %}{{ section.settings.main_item_image_height }}{% else %}0{% endif %} + {% if section.settings.main_item_title_height != '' %}{{ section.settings.main_item_title_height }}{% else %}0{% endif %} + {% if section.settings.main_item_price_height != '' %}{{ section.settings.main_item_price_height }}{% else %}0{% endif %} + {% if section.settings.main_item_button_height != '' %}{{ section.settings.main_item_button_height }}{% else %}0{% endif %});
+      margin: 10px auto;
+      padding: 0 auto;
+
+    }
+    .main_item_image_none {
+      width: calc({{ section.settings.main_item_width }} - 6px);
+      height: calc({{ section.settings.main_item_image_height }} - 6px);
+      background: rgba(0,0,0,0.5);
+      object-fit: cover;
+    }
+    .main_item_image {
+      width: {{ section.settings.main_item_width }};
+      height: {{ section.settings.main_item_image_height }};
+    {% if section.settings.main_item_image_border_enabled == 'true' %}
+      border-width: {{ section.settings.main_item_image_border-width }};
+      border-style: {{ section.settings.main_item_image_border-style }};
+      border-color: {{ section.settings.main_item_image_border-color }};
+    {% endif %}
+      margin: 0;
+      padding: 2px;
+    }
+    .main_item_title {
+      width: {{ section.settings.main_item_width }};
+      height: {{ section.settings.main_item_title_height }};
+      font-family: {{ section.settings.main_item_title_text_font-family }};
+      font-size: {{ section.settings.main_item_title_text_font-size }};
+      font-weight: {{ section.settings.main_item_title_text_font-weight }};
+    {% if section.settings.main_item_title_border_enabled == 'true' %}
+      border-width: {{ section.settings.main_item_title_border-width }};
+      border-style: {{ section.settings.main_item_title_border-style }};
+      border-color: {{ section.settings.main_item_title_border-color }};
+    {% endif %}
+      margin: 0;
+      padding: 4px;
+
+      display: flex;
+      justify-content: {{ section.settings.main_item_title_horizontal-position }};
+      text-align: {% if section.settings.main_item_title_horizontal-position == 'flex-start' %}left{% endif %}{% if section.settings.main_item_title_horizontal-position == 'center' %}center{% endif %}{% if section.settings.main_item_title_horizontal-position == 'flex-end' %}right{% endif %};
+      align-items: {{ section.settings.main_item_title_vertical-position }};
+    }
+
+    .main_item_price {
+      width: {{ section.settings.main_item_width }};
+      height: {{ section.settings.main_item_price_height }};
+      font-family: {{ section.settings.main_item_price_text_font-family }};
+      font-size: {{ section.settings.main_item_price_text_font-size }};
+      font-weight: {{ section.settings.main_item_price_text_font-weight }};
+    {% if section.settings.main_item_price_border_enabled == 'true' %}
+      border-width: {{ section.settings.main_item_price_border-width }};
+      border-style: {{ section.settings.main_item_price_border-style }};
+      border-color: {{ section.settings.main_item_price_border-color }};
+    {% endif %}
+      margin: 0;
+      padding: 4px;
+
+      display: flex;
+      justify-content: {{ section.settings.main_item_price_horizontal-position }};
+      text-align: {% if section.settings.main_item_price_horizontal-position == 'flex-start'%}left{% endif %}{% if section.settings.main_item_price_horizontal-position == 'center'%}center{% endif %}{% if section.settings.main_item_price_horizontal-position == 'flex-end'%}right{% endif %};
+      align-items: {{ section.settings.main_item_price_vertical-position }};
+    }
+
+    .main_item_button {
+      width: {{ section.settings.main_item_width }};
+      height: {{ section.settings.main_item_button_height }};
+      font-family: {{ section.settings.main_item_button_font-family }};
+      font-size: {{ section.settings.main_item_button_font-size }};
+      font-weight: {{ section.settings.main_item_button_font-weight }};
+    {% if section.settings.main_item_button_border_enabled == 'true' %}
+      border-width: {{ section.settings.main_item_button_border-width }};
+      border-style: {{ section.settings.main_item_button_border-style }};
+      border-color: {{ section.settings.main_item_button_border-color }};
+    {% endif %}
+      margin: 0;
+      padding: 2px;
+
+      display: flex;
+      justify-content: {{ section.settings.main_item_button_horizontal-position }};
+      text-align: {% if section.settings.main_item_button_horizontal-position == 'flex-start'%}left{% endif %}{% if section.settings.main_item_button_horizontal-position == 'center'%}center{% endif %}{% if section.settings.main_item_button_horizontal-position == 'flex-end'%}right{% endif %};
+      align-items: {{ section.settings.main_item_button_vertical-position }};
+    }
+    .main_item_button > a,
+    .main_item_button > a:hover {
+      border: 0px;
+      text-decoration: none;
+    }
+    .main_item_button > a > input[type="button"] {
+      width: {{ section.settings.main_item_input_button_text_width }};
+      height: {{ section.settings.main_item_input_button_text_height }};
+      font-family: {{ section.settings.main_item_input_button_text_font-family }};
+      font-size: {{ section.settings.main_item_input_button_text_font-size }};
+      font-weight: {{ section.settings.main_item_input_button_text_font-weight }};
+      margin: 0;
+      padding: 0;
+      border: 0px;
+      border-radius: 6px;
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      align-items: center;
+      transition: background-color 0.1s, color 0.1s;
+      color: {{ section.settings.main_item_input_button_text_before_color }};
+      background-color: {{ section.settings.main_item_input_button_before_color }};
+    }
+    .main_item_button > a > input[type="button"]:hover {
+      color: {{ section.settings.main_item_input_button_text_after_color }};
+      background-color: {{ section.settings.main_item_input_button_after_color }};
+    }
+   /* ----- Main End ------------------------------------------------------ */
+  {% endif %}
+
+  {% if section.settings.footer_enabled == 'true' %}
+    /* ----- Footer Start -------------------------------------------------- */
+    .footer_{{ section.id }} {
+      position: relative;
+      width: 100%;
+      height: {{ section.settings.footer_height }};
+      margin: 0;
+      padding: 0;
+      background-color: {{ section.settings.footer_background-color }};
+    {% if section.settings.footer_background-image %}
+      background-image: url({{ section.settings.footer_background-image | image_url: height: section.settings.footer_height }});
+      background-size: {{ section.settings.footer_background-size }};
+      background-position: {{ section.settings.footer_background-position }};
+      background-repeat: {{ section.settings.footer_background-repeat }};
+    {% endif %}
+      box-sizing: border-box;
+      -webkit-box-sizing: border-box;    /* Chrome Opera Safari */
+      -moz-box-sizing: border-box;       /* Firefox */
+      -ms-box-sizing: border-box;        /* IE/Edge */
+    }
+    {% if section.settings.footer_image_enabled == 'true' %}
+    .footer_{{ section.id }}_image {
+      position: absolute;
+      width: {{ section.settings.footer_image_width }};
+      height: {{ section.settings.footer_image_height }};
+
+      {% if section.settings.footer_image_border_enabled == 'true' %}
+      border-width: {{ section.settings.footer_image_border-width }};
+      border-style: {{ section.settings.footer_image_border-style }};
+      border-color: {{ section.settings.footer_image_border-color }};
+      {% endif %}
+
+      {% if section.settings.footer_image_margin_vertical-position == 'top' %}
+      top: 0;
+      {% endif %}
+      {% if section.settings.footer_image_margin_vertical-position == 'middle' %}
+      top: 50%;
+      {% endif %}
+      {% if section.settings.footer_image_margin_vertical-position == 'bottom' %}
+      bottom: 0;
+      {% endif %}
+      {% if section.settings.footer_image_margin_horizontal-position == 'left' %}
+      left: 0;
+      {% endif %}
+      {% if section.settings.footer_image_margin_horizontal-position == 'center' %}
+      left: 50%;
+      {% endif %}
+      {% if section.settings.footer_image_margin_horizontal-position == 'right' %}
+      right: 0;
+      {% endif %}
+      {% if section.settings.footer_image_margin_vertical-position == 'middle' %}
+        {% if section.settings.footer_image_margin_horizontal-position == 'center' %}
+      transform: translate(-50%, -50%);
+      -webkit-transform: translate(-50%, -50%);
+      -moz-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+        {% else %}
+      transform: translate(0, -50%);
+      -webkit-transform: translate(0, -50%);
+      -moz-transform: translate(0, -50%);
+      -ms-transform: translate(0, -50%);
+        {% endif %}
+      {% else %}
+        {% if section.settings.footer_image_margin_horizontal-position == 'center' %}
+      transform: translate(-50%, 0);
+      -webkit-transform: translate(-50%, 0);
+      -moz-transform: translate(-50%, 0);
+      -ms-transform: translate(-50%, 0);
+        {% endif %}
+      {% endif %}
+
+      margin: {{ section.settings.footer_image_margin }};
+      padding: {{ section.settings.footer_image_padding }};
+    }
+    {% endif %}
+    {% if section.settings.footer_text_enabled == 'true' %}
+    .footer_{{ section.id }}_text {
+      position: absolute;
+      width: {{ section.settings.footer_text_width }};
+      height: {{ section.settings.footer_text_height }};
+
+      color: {{ section.settings.footer_text_color }};
+      background: {{ section.settings.footer_text_background }};
+      font-family: {{ section.settings.footer_text_font-family }};
+      font-size: {{ section.settings.footer_text_font-size }};
+      font-weight: {{ section.settings.footer_text_font-weight }};
+
+      {% if section.settings.footer_text_border_enabled == 'true' %}
+      border-width: {{ section.settings.footer_text_border-width }};
+      border-style: {{ section.settings.footer_text_border-style }};
+      border-color: {{ section.settings.footer_text_border-color }};
+      {% endif %}
+
+      {% if section.settings.footer_text_margin_vertical-position == 'top' %}
+      top: 0;
+      {% endif %}
+      {% if section.settings.footer_text_margin_vertical-position == 'middle' %}
+      top: 50%;
+      {% endif %}
+      {% if section.settings.footer_text_margin_vertical-position == 'bottom' %}
+      bottom: 0;
+      {% endif %}
+      {% if section.settings.footer_text_margin_horizontal-position == 'left' %}
+      left: 0;
+      {% endif %}
+      {% if section.settings.footer_text_margin_horizontal-position == 'center' %}
+      left: 50%;
+      {% endif %}
+      {% if section.settings.footer_text_margin_horizontal-position == 'right' %}
+      right: 0;
+      {% endif %}
+      {% if section.settings.footer_text_margin_vertical-position == 'middle' %}
+        {% if section.settings.footer_text_margin_horizontal-position == 'center' %}
+      transform: translate(-50%, -50%);
+      -webkit-transform: translate(-50%, -50%);
+      -moz-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+        {% else %}
+      transform: translate(0, -50%);
+      -webkit-transform: translate(0, -50%);
+      -moz-transform: translate(0, -50%);
+      -ms-transform: translate(0, -50%);
+        {% endif %}
+      {% else %}
+        {% if section.settings.footer_text_margin_horizontal-position == 'center' %}
+      transform: translate(-50%, 0);
+      -webkit-transform: translate(-50%, 0);
+      -moz-transform: translate(-50%, 0);
+      -ms-transform: translate(-50%, 0);
+        {% endif %}
+      {% endif %}
+
+      display: flex;
+      justify-content: {{ section.settings.footer_text_padding_horizontal-position }};
+      align-items: {{ section.settings.footer_text_padding_vertical-position }};
+
+      margin: {{ section.settings.footer_text_margin }};
+      padding: {{ section.settings.footer_text_padding }};
+    }
+    {% endif %}
+    /* ----- Footer End ---------------------------------------------------- */
+  {% endif %}
+</style>
+
+<script>
+  (function () {
+    const option = {
+      slidesPerView: 1,
+      breakpoints: {
+        // スライドの表示枚数：768px以上の場合
+        768: {
+          slidesPerView: {{ section.settings.main_swiper_slide_quantity }}
+        }
+      },
+      spaceBetween: 0,
+      {% if section.settings.main_swiper_slide_navigation_enabled == 'true' %}
+      // ナビゲーション
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev'
+      },
+      {% endif %}
+      {% if section.settings.main_swiper_slide_pagination_enabled == 'true' %}
+      // ページネーション
+      pagination: {
+        el: '.swiper-pagination',
+        type: 'bullets',
+        clickable: true
+      },
+      {% endif %}
+      {% if section.settings.main_swiper_slide_scrollbar_enabled == 'true' %}
+      // スクロールバー
+      scrollbar: {
+        el: '.swiper-scrollbar',
+        draggable: true
+      }
+      {% endif %}
+    };
+
+    // swiper生成
+    const swiper = new Swiper(".swiper_{{ section.id }}", option);
+  })();
+</script>

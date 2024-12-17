@@ -1,0 +1,21 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-article",
+      "custom_css": [
+        "h1 {padding-top: 50px; font-size: 35px; text-align: left;}",
+        "h2 {padding-top: 50px; text-align: left;}",
+        "p {font-size: 18px;}"
+      ],
+      "settings": {
+        "featured_image": "narrow",
+        "blog_show_author": false,
+        "blog_show_date": false,
+        "blog_show_social": true
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

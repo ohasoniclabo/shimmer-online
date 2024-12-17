@@ -1,0 +1,16 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-article-product",
+      "settings": {
+        "featured_image": "nomal",
+        "blog_show_author": false,
+        "blog_show_date": false,
+        "blog_show_social": true
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

@@ -1,0 +1,1114 @@
+h2 {
+    color: #000000;
+}
+
+.itemname {
+  line-height: 1.2;
+}
+
+/****
+*
+* HARUSAME TOPPAGE 2023/06/29 hyuga kawazoe
+*
+****/
+
+@media (min-width: 1201px) {
+
+    body {
+        background-color: #FFFFFF;
+        font-family: 'Shippori Mincho', serif;
+    }
+
+    .topimage img {
+        width: 100%;
+    }
+
+    .catchcopycontent {
+        display: flex;
+        flex-direction: row-reverse;
+        margin: auto;
+        width: 80%;
+        padding-top: 100px;
+        align-items: center;
+    }
+
+    .catchcopymain {
+        font-size: 36px;
+        line-height: 50px;
+        flex-basis: 25%;
+        writing-mode: vertical-rl;
+        max-height: 500px;
+        display: flex;
+        align-items: center;
+    }
+
+    .catchcopytext {
+        flex-basis: 50%;
+        max-height: 300px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .catchcopytextbox {
+        writing-mode: vertical-rl;
+        max-height: 300px;
+        margin-left: 50px;
+    }
+
+    .catchcopyimage {
+        flex-basis: 25%;
+    }
+
+    .buttoncontent {
+        display: flex;
+        justify-content: center;
+        padding-bottom: 50px;
+    }
+
+    .catchcopybutton {
+        background: #BF9E74 0% 0% no-repeat padding-box;
+        border: 1px solid #BF9E74;
+        width: 524px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: black;
+    }
+
+    .hrusamebybutton {
+        background: #000000 0% 0% no-repeat padding-box;
+        border: 1px solid #BF9E74;
+        width: 100%;
+        height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #BF9E74;
+    }
+
+    .catchcopybutton svg {
+        fill: #000000;
+    }
+
+    .itembutton {
+        margin-right: 16px;
+    }
+
+    .kijibutton {
+        margin-left: 16px;
+    }
+
+    .catchcopybuttontext {
+        margin-right: 10px;
+    }
+
+    .harusamehistorytopcontent {
+        padding-bottom: 150px;
+        width: 100%;
+        margin: 0;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .harusamehistorybottomcontent {
+        padding-bottom: 150px;
+        width: 100%;
+        margin: 0;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .harusamehistorybottomcontent::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: #000000;
+        border-left: 100vw solid transparent;
+        z-index: -1;
+    }
+
+
+
+    .harusamehistorytopcontent::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: #000000;
+        border-bottom: 10vw solid #ffffff;
+        border-left: 100vw solid transparent;
+        z-index: -1;
+    }
+
+    .harusamehistorymiddlecontentwhite {
+        padding-bottom: 150px;
+        width: 100%;
+        margin: 0;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .harusamehistorymiddlecontentwhite::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: #FFFFFF;
+        border-bottom: 10vw solid #000000;
+        border-left: 100vw solid transparent;
+        z-index: -1;
+    }
+
+    .harusamehistorycontentmiddleblack {
+        padding-bottom: 150px;
+        width: 100%;
+        margin: 0;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .harusamehistorycontentmiddleblack::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: #000000;
+        border-bottom: 10vw solid #ffffff;
+        border-left: 100vw solid transparent;
+        z-index: -1;
+    }
+
+    .harusamehistorytop {
+        font-size: 102px;
+        line-height: 1.1em;
+        margin: 60px 40px 40px 40px;
+        color: #BF9E74;
+        font-family: 'Cormorant', serif;
+    }
+
+    .harusamekijiarea {
+        margin: 40px 105px 70px 105px;
+        color: #FFFFFF;
+    }
+
+    .harusamekijiareamiddlewhite {
+        margin: 40px 105px 70px 105px;
+        color: #000000;
+    }
+
+    .harusamekijititle {
+        margin-right: 100px;
+        padding-top: 10px;
+        max-width: 800px;
+    }
+
+    .kijiNo,
+    .itemname {
+        font-size: 53px;
+        margin: 24px 0px;
+    }
+
+    .kijititle {
+        font-size: 30px;
+        line-height: 1.5;
+    }
+
+    .pricearea {
+        font-size: 30px;
+        line-height: 1.5;
+        margin-top: 30px;
+    }
+
+    .kijicontent {
+        font-size: 18px;
+        margin-top: 50px;
+    }
+
+    .kijilink,
+    .kijilinkwhite {
+        margin-top: 40px;
+        text-align: right;
+    }
+
+    .kijilink svg {
+        fill: #FFFFFF;
+    }
+
+    .kijilinkwhite svg {
+        fill: #000000;
+    }
+
+    .kijiimage img {
+        max-height: 350px;
+        max-width: 350px;
+    }
+
+    .harusamekijiarea,
+    .harusamekijiareamiddlewhite {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .harusamekijititlesp {
+        display: none;
+    }
+
+    .pcdisplay {
+        display: block;
+    }
+
+    .spdisplay {
+        display: none;
+    }
+
+}
+
+@media (max-width: 1200px) {
+
+    body {
+        background-color: #FFFFFF;
+        font-family: 'Shippori Mincho', serif;
+    }
+
+    .topimage img {
+        width: 100%;
+    }
+
+    .catchcopycontent {
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        width: 80%;
+        padding-top: 100px;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .catchcopymain {
+        font-size: 36px;
+        line-height: 50px;
+        writing-mode: vertical-rl;
+        max-height: 500px;
+        display: flex;
+        align-items: center;
+    }
+
+    .catchcopytext {
+        display: flex;
+        justify-content: center;
+        order: 3;
+        flex-direction: column;
+        max-width: 500px;
+        margin-top: 50px;
+    }
+
+    .catchcopytextbox {
+        margin-bottom: 40px;
+    }
+
+    .catchcopyimage {
+        flex-basis: 25%;
+        order: 2;
+    }
+
+    .catchcopyimage img {
+        height: auto;
+        max-height: 500px;
+    }
+
+    .buttoncontent {
+
+        display: flex;
+        padding-bottom: 50px;
+        flex-direction: column;
+        align-items: center;
+
+    }
+
+    .catchcopybutton {
+        background: #BF9E74 0% 0% no-repeat padding-box;
+        border: 1px solid #BF9E74;
+        width: 524px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: black;
+    }
+
+    .hrusamebybutton {
+        background: #000000 0% 0% no-repeat padding-box;
+        border: 1px solid #BF9E74;
+        width: 100%;
+        height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #BF9E74;
+    }
+
+    .catchcopybutton svg {
+        fill: #000000;
+    }
+
+    .itembutton {
+        margin-bottom: 30px;
+    }
+
+    .catchcopybuttontext {
+        margin-right: 10px;
+    }
+
+    .harusamehistorytopcontent {
+        padding-bottom: 150px;
+        width: 100%;
+        margin: 0;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .harusamehistorybottomcontent {
+        padding-bottom: 150px;
+        width: 100%;
+        margin: 0;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .harusamehistorybottomcontent::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: #000000;
+        border-left: 100vw solid transparent;
+        z-index: -1;
+    }
+
+
+
+    .harusamehistorytopcontent::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: #000000;
+        border-bottom: 10vw solid #ffffff;
+        border-left: 100vw solid transparent;
+        z-index: -1;
+    }
+
+    .harusamehistorymiddlecontentwhite {
+        padding-bottom: 150px;
+        width: 100%;
+        margin: 0;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .harusamehistorymiddlecontentwhite::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: #FFFFFF;
+        border-bottom: 10vw solid #000000;
+        border-left: 100vw solid transparent;
+        z-index: -1;
+    }
+
+    .harusamehistorycontentmiddleblack {
+        padding-bottom: 150px;
+        width: 100%;
+        margin: 0;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .harusamehistorycontentmiddleblack::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: #000000;
+        border-bottom: 10vw solid #ffffff;
+        border-left: 100vw solid transparent;
+        z-index: -1;
+    }
+
+    .harusamehistorytop {
+        font-size: 102px;
+        line-height: 1.1em;
+        margin: 60px 40px 40px 40px;
+        color: #BF9E74;
+        font-family: 'Cormorant', serif;
+    }
+
+    .harusamekijiarea {
+        margin: 40px 105px 70px 105px;
+        color: #FFFFFF;
+    }
+
+    .harusamekijiareamiddlewhite {
+        margin: 40px 105px 70px 105px;
+        color: #000000;
+    }
+
+    .harusamekijititle {
+        margin-right: 100px;
+        padding-top: 10px;
+        max-width: 800px;
+    }
+
+    .kijiNo,
+    .itemname {
+        font-size: 40px;
+        margin: 24px 0px;
+    }
+
+    .kijititle {
+        font-size: 30px;
+        line-height: 1.5;
+    }
+
+    .pricearea {
+        font-size: 30px;
+        line-height: 1.5;
+        margin-top: 30px;
+    }
+
+    .kijicontent {
+        font-size: 18px;
+        margin-top: 50px;
+    }
+
+    .kijilink,
+    .kijilinkwhite {
+        margin-top: 40px;
+        text-align: right;
+    }
+
+    .kijilink svg {
+        fill: #FFFFFF;
+    }
+
+    .kijilinkwhite svg {
+        fill: #000000;
+    }
+
+    .kijiimage img {
+        max-height: 350px;
+        max-width: 350px;
+    }
+
+    .harusamekijiarea,
+    .harusamekijiareamiddlewhite {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .harusamekijititlesp {
+        display: none;
+    }
+
+    .pcdisplay {
+        display: block;
+    }
+
+    .spdisplay {
+        display: none;
+    }
+
+}
+
+@media (max-width: 900px) {
+
+    body {
+        background-color: #FFFFFF;
+        font-family: 'Shippori Mincho', serif;
+    }
+
+    .topimage img {
+        width: 100%;
+    }
+
+    .catchcopycontent {
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        width: 80%;
+        padding-top: 100px;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .catchcopymain {
+        font-size: 36px;
+        line-height: 50px;
+        writing-mode: vertical-rl;
+        max-height: 500px;
+        display: flex;
+        align-items: center;
+    }
+
+    .catchcopytext {
+        display: flex;
+        justify-content: center;
+        order: 3;
+        flex-direction: column;
+        max-width: 500px;
+        margin-top: 50px;
+    }
+
+    .catchcopytextbox {
+        margin-bottom: 40px;
+    }
+
+    .catchcopyimage {
+        flex-basis: 25%;
+        order: 2;
+    }
+
+    .catchcopyimage img {
+        height: auto;
+        max-height: 500px;
+    }
+
+    .buttoncontent {
+
+        display: flex;
+        padding-bottom: 50px;
+        flex-direction: column;
+        align-items: center;
+
+    }
+
+    .catchcopybutton {
+        background: #BF9E74 0% 0% no-repeat padding-box;
+        border: 1px solid #BF9E74;
+        width: 524px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: black;
+    }
+
+    .hrusamebybutton {
+        background: #000000 0% 0% no-repeat padding-box;
+        border: 1px solid #BF9E74;
+        width: 100%;
+        height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #BF9E74;
+    }
+
+    .catchcopybutton svg {
+        fill: #000000;
+    }
+
+    .itembutton {
+        margin-bottom: 30px;
+    }
+
+    .catchcopybuttontext {
+        margin-right: 10px;
+    }
+
+    .harusamehistorytopcontent {
+        padding-bottom: 150px;
+        width: 100%;
+        margin: 0;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .harusamehistorybottomcontent {
+        padding-bottom: 150px;
+        width: 100%;
+        margin: 0;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .harusamehistorybottomcontent::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: #000000;
+        border-left: 100vw solid transparent;
+        z-index: -1;
+    }
+
+
+
+    .harusamehistorytopcontent::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: #000000;
+        border-bottom: 10vw solid #ffffff;
+        border-left: 100vw solid transparent;
+        z-index: -1;
+    }
+
+    .harusamehistorymiddlecontentwhite {
+        padding-bottom: 150px;
+        width: 100%;
+        margin: 0;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .harusamehistorymiddlecontentwhite::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: #FFFFFF;
+        border-bottom: 10vw solid #000000;
+        border-left: 100vw solid transparent;
+        z-index: -1;
+    }
+
+    .harusamehistorycontentmiddleblack {
+        padding-bottom: 150px;
+        width: 100%;
+        margin: 0;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .harusamehistorycontentmiddleblack::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: #000000;
+        border-bottom: 10vw solid #ffffff;
+        border-left: 100vw solid transparent;
+        z-index: -1;
+    }
+
+    .harusamehistorytop {
+        font-size: 80px;
+        line-height: 1.1em;
+        margin: 60px 40px 40px 40px;
+        color: #BF9E74;
+        font-family: 'Cormorant', serif;
+    }
+
+    .harusamekijiarea {
+        margin: 40px 60px 70px;
+        color: #FFFFFF;
+    }
+
+    .harusamekijiareamiddlewhite {
+        margin: 40px 105px 70px 105px;
+        color: #000000;
+    }
+
+    .harusamekijititle {
+        padding-top: 60px;
+        max-width: 800px;
+        margin-right: 0px;
+        order: 2;
+    }
+
+    .kijiNo {
+        font-size: 53px;
+        margin: 24px 0px;
+    }
+
+    .itemname {
+        display: none;
+    }
+
+    .kijititle {
+        font-size: 30px;
+        line-height: 1.5;
+    }
+
+    .pricearea {
+        font-size: 30px;
+        line-height: 1.5;
+        margin-top: 30px;
+        display: none;
+    }
+
+    .kijicontent {
+        font-size: 18px;
+        margin-top: 50px;
+    }
+
+    .kijilink,
+    .kijilinkwhite {
+        margin-top: 40px;
+        text-align: right;
+    }
+
+    .kijilink svg {
+        fill: #FFFFFF;
+    }
+
+    .kijilinkwhite svg {
+        fill: #000000;
+    }
+
+    .kijiimage img {
+        max-height: 450px;
+        max-width: 450px;
+    }
+
+    .harusamekijiarea,
+    .harusamekijiareamiddlewhite {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .harusamekijititlesp {
+        display: block;
+        display: block;
+        font-size: 40px;
+        margin-right: auto;
+    }
+
+    .itemarea {
+        margin: 40px 45px 70px !important;
+    }
+
+    .kijiNoSP {
+        margin: 30px 0px;
+    }
+
+    .priceareaSP {
+        margin-bottom: 30px;
+    }
+
+    .pcdisplay {
+        display: block;
+    }
+
+    .spdisplay {
+        display: none;
+    }
+
+}
+
+@media (max-width: 500px) {
+
+    body {
+        background-color: #FFFFFF;
+        font-family: 'Shippori Mincho', serif;
+    }
+
+    .topimage img {
+        width: 100%;
+    }
+
+    .catchcopycontent {
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        width: 80%;
+        padding-top: 100px;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .catchcopymain {
+
+        font-size: 25px;
+        line-height: 50px;
+        writing-mode: vertical-rl;
+        max-height: 420px;
+        display: flex;
+        align-items: center;
+    }
+
+    .catchcopytext {
+        display: flex;
+        justify-content: center;
+        order: 3;
+        flex-direction: column;
+        max-width: 500px;
+        margin-top: 50px;
+    }
+
+    .catchcopytextbox {
+        margin-bottom: 40px;
+    }
+
+    .catchcopyimage {
+        flex-basis: 25%;
+        order: 2;
+    }
+
+    .catchcopyimage img {
+        height: auto;
+        max-height: 500px;
+    }
+
+    .buttoncontent {
+
+        display: flex;
+        padding-bottom: 50px;
+        flex-direction: column;
+        align-items: center;
+
+    }
+
+    .catchcopybutton {
+        background: #BF9E74 0% 0% no-repeat padding-box;
+        border: 1px solid #BF9E74;
+        width: 380px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: black;
+    }
+
+    .hrusamebybutton {
+        background: #000000 0% 0% no-repeat padding-box;
+        border: 1px solid #BF9E74;
+        width: 100%;
+        height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #BF9E74;
+    }
+
+    .catchcopybutton svg {
+        fill: #000000;
+    }
+
+    .itembutton {
+        margin-bottom: 30px;
+    }
+
+    .catchcopybuttontext {
+        margin-right: 10px;
+    }
+
+    .harusamehistorytopcontent {
+        padding-bottom: 0px;
+        width: 100%;
+        margin: 0;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .harusamehistorybottomcontent {
+        padding-bottom: 0px;
+        width: 100%;
+        margin: 0;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .harusamehistorybottomcontent::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: #000000;
+        border-left: 100vw solid transparent;
+        z-index: -1;
+    }
+
+
+
+    .harusamehistorytopcontent::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: #000000;
+        border-bottom: 10vw solid #ffffff;
+        border-left: 100vw solid transparent;
+        z-index: -1;
+    }
+
+    .harusamehistorymiddlecontentwhite {
+        padding-bottom: 0px;
+        width: 100%;
+        margin: 0;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .harusamehistorymiddlecontentwhite::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: #FFFFFF;
+        border-bottom: 10vw solid #000000;
+        border-left: 100vw solid transparent;
+        z-index: -1;
+    }
+
+    .harusamehistorycontentmiddleblack {
+        padding-bottom: 0px;
+        width: 100%;
+        margin: 0;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .harusamehistorycontentmiddleblack::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: #000000;
+        border-bottom: 10vw solid #ffffff;
+        border-left: 100vw solid transparent;
+        z-index: -1;
+    }
+
+    .harusamehistorytop {
+        font-size: 50px;
+        line-height: 1.1em;
+        margin: 60px 40px 40px 40px;
+        color: #BF9E74;
+        font-family: 'Cormorant', serif;
+    }
+
+    .harusamekijiarea {
+        margin: 40px 42px 105px;
+        color: #FFFFFF;
+    }
+
+    .harusamekijiareamiddlewhite {
+        margin: 40px 42px 105px;
+        color: #000000;
+    }
+
+    .harusamekijititle {
+        padding-top: 0px;
+        max-width: 800px;
+        margin-right: 0px;
+        order: 2;
+    }
+
+    .kijiNo {
+        font-size: 22px;
+        margin: 24px 0px;
+    }
+
+    .itemname {
+        display: none;
+        ;
+    }
+
+    .kijititle {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    .pricearea {
+        font-size: 30px;
+        line-height: 1.5;
+        margin-top: 30px;
+    }
+
+    .kijicontent {
+        font-size: 14px;
+        margin-top: 50px;
+    }
+
+    .kijilink,
+    .kijilinkwhite {
+        margin-top: 40px;
+        text-align: right;
+    }
+
+    .kijilink svg {
+        fill: #FFFFFF;
+    }
+
+    .kijilinkwhite svg {
+        fill: #000000;
+    }
+
+    .kijiimage img {
+        max-height: 400px;
+        max-width: 400px;
+    }
+
+    .harusamekijiarea,
+    .harusamekijiareamiddlewhite {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .harusamekijititlesp {
+        display: block;
+    }
+
+    .kijiNoSP {
+        font-size: 24px;
+        margin: 10px 0px;
+    }
+
+    .priceareaSP {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+
+    .priceareaSP > .taxsiplay {
+        font-size: 14px !important;
+        
+    }
+
+    .pcdisplay {
+        display: none;
+    }
+
+    .spdisplay {
+        display: block;
+    }
+
+}

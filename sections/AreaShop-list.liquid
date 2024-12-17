@@ -1,0 +1,215 @@
+
+  <div class="lpdistillerycontena">
+      <div class="lpdistilleryheading">
+        <span style="visibility: hidden;" class="lpdistillerytitle">DRINK</span>
+      </div>
+      <div class="Areashopcontent">
+        <div class="Areaname">
+          {{ section.settings.Area }}
+        </div>
+        <div class="shoplist">
+          {% for block in section.blocks %}
+            <div class="shopcontena">
+              <div class="shopname">{{ block.settings.shopname }}</div>
+              <div class="shopinfo">
+                {{ block.settings.rocalArea }}<br>
+                {{ block.settings.phonenumber }}<br>
+                <a href="{{ block.settings.arealink }}">{{ block.settings.arealink }}</a>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+  </div>
+
+<style>
+
+  @media(min-width:1300px) {
+    
+    .Areashopcontent {
+      display: flex;
+      border-top: solid 1px black;
+      width: calc(100vw - 322px);
+      padding-top: 40px;
+      padding-bottom: 40px;
+      padding-left: 82px;
+    }
+
+    .Areaname {
+      font-size:18px;
+      padding-right:77px;
+    }
+
+    .shopname {
+      font-size:18px;
+      padding-bottom:14px;
+    }
+
+    .shopcontena {
+      margin-bottom:56px;
+    }
+
+    .shopinfo {
+      line-height:30px;
+    }
+
+    
+  }
+
+  @media(max-width:1299px) {
+
+    .Areashopcontent {
+      display: flex;
+      border-top: solid 1px black;
+      width: calc(100vw - 215px);
+      padding-top: 40px;
+      padding-bottom: 40px;
+      padding-left: 82px;
+    }
+
+    .Areaname {
+      font-size:18px;
+      padding-right:77px;
+    }
+
+    .shopname {
+      font-size:18px;
+      padding-bottom:14px;
+    }
+
+    .shopcontena {
+      margin-bottom:56px;
+    }
+
+    .shopinfo {
+      line-height:30px;
+    }
+  }
+
+  @media(max-width:799px) {
+
+    .Areashopcontent {
+      display: flex;
+      border-top: none;
+      padding-top: 0px;
+      padding-bottom: 0px;
+      padding-left: 50px;
+      flex-direction: column;
+      width:90%;
+    }
+
+    .Areaname {
+      font-size:18px;
+      padding-right:77px;
+      padding-bottom:40px;
+      margin-top: -25px;
+    }
+
+    .shopname {
+      font-size:18px;
+      padding-bottom:14px;
+    }
+
+    .shopcontena {
+      margin-bottom:56px;
+    }
+
+    .shopinfo {
+      line-height:30px;
+    }
+  }
+
+  @media(max-width:500px) {
+
+    .Areashopcontent {
+      width:90%;
+      display: flex;
+      border-top: none;
+      padding-top: 0px;
+      padding-bottom: 0px;
+      padding-left: 20px;
+      flex-direction: column;
+    }
+
+    .Areaname {
+      font-size:18px;
+      padding-right:0px;
+      padding-bottom:20px;
+      margin-top: -25px;
+    }
+
+    .shopname {
+      font-size:16px;
+      padding-bottom:14px;
+    }
+
+    .shopcontena {
+      margin-bottom:35px;
+    }
+
+    .shopinfo {
+      line-height:30px;
+    }
+  }
+
+  
+</style>
+
+{% schema %}
+  {
+    "name": "取扱店舗",
+    "class": "section-collection-list",
+    "max_blocks": 20,
+    "settings": [
+      {
+        "type": "text",
+        "id": "Area",
+        "label": "都道府県",
+        "default": "東京都"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "Areashop",
+        "name": "Areashop",
+        "settings": [
+        {
+          "type": "text",
+          "id": "shopname",
+          "label": "店舗名",
+          "default": "テストテスト"
+        },
+        {
+          "type": "text",
+          "id": "rocalArea",
+          "label": "住所",
+          "default": "テストテスト"
+        },
+        {
+          "type": "text",
+          "id": "phonenumber",
+          "label": "電話番号",
+          "default": "000-0000-0000"
+        },
+        {
+          "type": "text",
+          "id": "arealink",
+          "label": "店舗URL",
+          "default": "https://shop.com"
+        }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "取扱店舗",
+        "settings": {},
+        "blocks": [
+            { "type": "Areashop" },
+            { "type": "Areashop" },
+            { "type": "Areashop" }
+        ]
+      }
+    ]
+  }
+{% endschema %}

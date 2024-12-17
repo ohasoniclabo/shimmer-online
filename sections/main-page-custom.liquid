@@ -1,0 +1,1559 @@
+
+    {{ page.content }}
+
+
+
+    <style>
+
+      　html { scroll-behavior: smooth;}
+      
+        @media(min-width:1300px) {
+
+            .noteprofile,
+            .notename {
+                font-size: 20px;
+            }
+
+            .lpproductheading {
+                margin-left: 90.75px;
+                margin-top: 42.5px;
+                margin-right: 43px;
+            }
+
+            .lpstoryheading {
+                padding-left: 90.75px;
+                padding-top: 42.5px;
+                border-right: solid 1px black;
+                width: 322px;
+            }
+
+            .lpvoiceheading {
+                padding-left: 90.75px;
+                padding-top: 42.5px;
+                border-right: solid 1px black;
+                width: 322px;
+            }
+
+            .lpnoteheading {
+                padding-left: 90.75px;
+                padding-top: 42.5px;
+                border-right: solid 1px black;
+                width: 322px;
+            }
+
+            .lpcommentheading {
+                padding-left: 90.75px;
+                padding-top: 42.5px;
+                border-right: solid 1px black;
+                width: 322px;
+            }
+
+            .lpdistilleryheading {
+                padding-left: 90.75px;
+                padding-top: 42.5px;
+                border-right: solid 1px black;
+                width: 322px;
+            }
+
+            .lpproducttitle {
+                font-size: 36px;
+            }
+
+            .lpstorytitle {
+                font-size: 36px;
+            }
+
+            .lpvoicetitle {
+                font-size: 36px;
+            }
+
+            .lpcommenttitle {
+                font-size: 36px;
+            }
+
+            .lpdistillerytitle {
+                font-size: 36px;
+            }
+
+            .lpnotetitle {
+                font-size: 36px;
+            }
+
+            .gazou {
+                width: 1200px;
+                height: 800px;
+            }
+
+            .productbrand {
+                font-size: 36px;
+                margin-bottom: 25px;
+            }
+
+            .toparea {
+                display: flex;
+                align-items: center;
+            }
+
+            .squeaimage {
+                max-width: 330px;
+                height: 330px;
+            }
+
+            .mainproductinfo {
+                display: flex;
+                flex-direction: column;
+                padding-top: 50px;
+                border-left: solid 1px black;
+                width: 60%;
+                border-right: solid 1px black;
+            }
+
+            .productmaintitle {
+                margin-left: 42px;
+            }
+
+            .subproductinfo {
+                width: 50%;
+                padding: 50px;
+                margin: auto;
+            }
+
+            .storycontent {
+                width: 55%;
+                margin: 0 auto;
+                padding-top: 40px;
+                display: flex;
+                flex-direction: column;
+                padding-bottom: 40px;
+            }
+
+            .voicecontent {
+                display: flex;
+                width: 70%;
+                margin: 0 auto;
+                padding-top: 40px;
+                padding-bottom: 40px;
+            }
+
+            .notecontent {
+                width: 70%;
+                margin: 0 auto;
+                padding-top: 40px;
+            }
+
+            .subbox {
+                display: flex;
+                padding-bottom: 90px;
+            }
+
+            .commentcontent {
+                display: flex;
+                width: 70%;
+                margin: 0 auto;
+                padding-top: 40px;
+                padding-bottom: 40px;
+            }
+
+            .commentbr {
+                display: block;
+            }
+
+            .voicetext {
+                padding-left: 40px;
+            }
+
+            .notetext {
+                padding-left: 40px;
+            }
+
+            .commenttext {
+                padding-left: 40px;
+            }
+
+            .distillerycontent {
+                display: flex;
+                width: 70%;
+                margin: 0 auto;
+                padding-top: 40px;
+                padding-bottom: 40px;
+            }
+
+            .distillerytext {
+                padding-left: 40px;
+                padding-bottom: 40px;
+            }
+
+            .productname,
+            .productsellday {
+                font-size: 18px;
+            }
+
+            .productprice {
+                margin: 10px 0;
+                font-size: 18px;
+            }
+
+            .producttitle {
+                font-size: 22px;
+                margin-bottom: 16px;
+                padding-left: 50px;
+            }
+
+            .brandname {
+                font-size: 18px;
+                margin-bottom: 18px;
+                padding-left: 50px;
+            }
+
+            .alc,
+            .capacity {
+                font-size: 16px;
+                padding-left: 50px;
+            }
+
+            .catchcopy {
+                padding: 40px 0;
+                font-size: 24px;
+            }
+
+            .storytext {
+                font-size: 16px;
+                padding: 20px 0;
+            }
+
+            .distilleryaddres {
+                font-size: 18px;
+                line-height: 40px;
+                padding-left: 40px;
+            }
+
+            .voicetext,
+            .commenttext,
+            .distillerytext {
+                font-size: 16px;
+            }
+
+            .subproductinfo2 {
+                display: none;
+            }
+
+        }
+
+        @media(max-width:1299px) {
+
+            .lpproductheading {
+                margin-left: 40.75px;
+                margin-top: 42.5px;
+                margin-right: 48px;
+            }
+
+            .lpstoryheading {
+                padding-left: 40.75px;
+                padding-top: 42.5px;
+                width: 215px;
+                border-right: solid 1px black;
+            }
+
+            .lpvoiceheading {
+                padding-left: 40.75px;
+                padding-top: 42.5px;
+                width: 215px;
+                border-right: solid 1px black;
+            }
+
+            .lpcommentheading {
+                padding-left: 40.75px;
+                padding-top: 42.5px;
+                width: 215px;
+                border-right: solid 1px black;
+            }
+
+            .lpdistilleryheading {
+                padding-left: 40.75px;
+                padding-top: 42.5px;
+                width: 215px;
+                border-right: solid 1px black;
+            }
+
+            .lpnoteheading {
+                padding-left: 40.75px;
+                padding-top: 42.5px;
+                width: 215px;
+                border-right: solid 1px black;
+            }
+
+            .lpproducttitle {
+                font-size: 24px;
+            }
+
+            .lpstorytitle {
+                font-size: 24px;
+            }
+
+            .lpvoicetitle {
+                font-size: 24px;
+            }
+
+            .lpcommenttitle {
+                font-size: 24px;
+            }
+
+            .lpdistillerytitle {
+                font-size: 24px;
+            }
+
+            .lpnotetitle {
+                font-size: 24px;
+            }
+
+            .gazou {
+                width: 900px;
+                height: 600px;
+            }
+
+            .productbrand {
+                font-size: 24px;
+                margin-bottom: 25px;
+            }
+
+            .toparea {
+                display: flex;
+                align-items: center;
+            }
+
+            .squeaimage {
+                max-width: 330px;
+                height: 330px;
+            }
+
+            .mainproductinfo {
+                display: flex;
+                flex-direction: column;
+                padding-top: 50px;
+                border-left: solid 1px black;
+                width: 60%;
+                border-right: solid 1px black;
+            }
+
+            .productmaintitle {
+                margin-left: 42px;
+            }
+
+            .subproductinfo {
+                width: 50%;
+                padding: 50px;
+                margin: auto;
+            }
+
+            .storycontent {
+                width: 55%;
+                margin: 0 auto;
+                padding-top: 40px;
+                display: flex;
+                flex-direction: column;
+                padding-bottom: 40px;
+            }
+
+            .voicecontent {
+                display: flex;
+                width: 70%;
+                margin: 0 auto;
+                padding-top: 40px;
+                padding-bottom: 40px;
+            }
+
+            .notecontent {
+                width: 70%;
+                margin: 0 auto;
+                padding-top: 40px;
+            }
+
+            .subbox {
+                display: flex;
+                padding-bottom: 90px;
+            }
+
+            .commentcontent {
+                display: flex;
+                width: 70%;
+                margin: 0 auto;
+                padding-top: 40px;
+                padding-bottom: 40px;
+            }
+
+            .commentbr {
+                display: block;
+            }
+
+            .voicetext {
+                padding-left: 40px;
+            }
+
+            .commenttext {
+                padding-left: 40px;
+            }
+
+            .notetext {
+                padding-left: 40px;
+            }
+
+            .distillerycontent {
+                display: flex;
+                width: 70%;
+                margin: 0 auto;
+                padding-top: 40px;
+                padding-bottom: 40px;
+            }
+
+            .distillerytext {
+                padding-left: 40px;
+                padding-bottom: 40px;
+            }
+
+            .productname,
+            .productsellday {
+                font-size: 18px;
+            }
+
+            .productprice {
+                margin: 10px 0;
+                font-size: 18px;
+            }
+
+            .producttitle {
+                font-size: 22px;
+                margin-bottom: 16px;
+                padding-left: 50px;
+            }
+
+            .brandname {
+                font-size: 18px;
+                margin-bottom: 18px;
+                padding-left: 50px;
+            }
+
+            .alc,
+            .capacity {
+                font-size: 16px;
+                padding-left: 50px;
+            }
+
+            .catchcopy {
+                padding: 20px 0;
+                font-size: 24px;
+            }
+
+            .storytext {
+                font-size: 16px;
+                padding: 20px 0;
+            }
+
+            .distilleryaddres {
+                font-size: 18px;
+                line-height: 40px;
+                padding-left: 40px;
+            }
+
+            .voicetext,
+            .commenttext,
+            .distillerytext,
+            .notetext {
+                font-size: 16px;
+            }
+
+            .subproductinfo2 {
+                display: none;
+            }
+
+        }
+
+        @media(max-width:1099px) {
+
+            .lpproductheading {
+                margin-left: 40.75px;
+                margin-top: 42.5px;
+            }
+
+            .lpstoryheading {
+                padding-left: 40.75px;
+                padding-top: 42.5px;
+                border-right: solid 1px black;
+            }
+
+            .lpvoiceheading {
+                padding-left: 40.75px;
+                padding-top: 42.5px;
+                border-right: solid 1px black;
+            }
+
+            .lpcommentheading {
+                padding-left: 40.75px;
+                padding-top: 42.5px;
+                border-right: solid 1px black;
+            }
+
+            .lpdistilleryheading {
+                padding-left: 40.75px;
+                padding-top: 42.5px;
+                border-right: solid 1px black;
+            }
+
+            .lpproducttitle {
+                font-size: 24px;
+            }
+
+            .lpstorytitle {
+                font-size: 24px;
+            }
+
+            .lpvoicetitle {
+                font-size: 24px;
+            }
+
+            .lpcommenttitle {
+                font-size: 24px;
+            }
+
+            .lpdistillerytitle {
+                font-size: 24px;
+            }
+
+            .gazou {
+                width: 100vw;
+                height: auto;
+            }
+
+            .productbrand {
+                font-size: 24px;
+                margin-bottom: 10px;
+            }
+
+            .toparea {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .productmaintitle {
+                margin: 15px 0;
+            }
+
+            .squeaimage {
+                max-width: 210px;
+                height: 210px;
+            }
+
+            .mainproductinfo {
+                display: flex;
+                flex-direction: column;
+                padding-top: 50px;
+                border-left: solid 1px black;
+                width: 60%;
+                border-right: solid 1px black;
+            }
+
+            .productmaintitle {
+                margin-left: 42px;
+            }
+
+            .subproductinfo {
+                width: 50%;
+                padding: 50px;
+                margin: auto;
+            }
+
+            .storycontent {
+                width: 55%;
+                margin: 0 auto;
+                padding-top: 40px;
+                display: flex;
+                flex-direction: column;
+                padding-bottom: 40px;
+            }
+
+            .voicecontent {
+                display: flex;
+                width: 70%;
+                margin: 0 auto;
+                padding-top: 40px;
+                padding-bottom: 40px;
+            }
+
+            .commentcontent {
+                display: flex;
+                width: 70%;
+                margin: 0 auto;
+                padding-top: 40px;
+                padding-bottom: 40px;
+            }
+
+            .commentbr {
+                display: block;
+            }
+
+            .voicetext {
+                padding-left: 40px;
+            }
+
+            .notetext {
+                padding-left: 40px;
+            }
+
+            .commenttext {
+                padding-left: 40px;
+            }
+
+            .distillerycontent {
+                display: flex;
+                width: 70%;
+                margin: 0 auto;
+                padding-top: 40px;
+                padding-bottom: 40px;
+            }
+
+            .distillerytext {
+                padding-left: 40px;
+                padding-bottom: 40px;
+            }
+
+            .productname,
+            .productsellday {
+                font-size: 18px;
+            }
+
+            .productprice {
+                margin: 10px 0;
+                font-size: 18px;
+            }
+
+            .producttitle {
+                font-size: 22px;
+                margin-bottom: 16px;
+                padding-left: 50px;
+            }
+
+            .brandname {
+                font-size: 18px;
+                margin-bottom: 18px;
+                padding-left: 50px;
+            }
+
+            .alc,
+            .capacity {
+                font-size: 16px;
+                padding-left: 50px;
+            }
+
+            .catchcopy {
+                padding: 20px 0;
+                font-size: 20px;
+            }
+
+            .storytext {
+                font-size: 16px;
+                padding: 20px 0;
+            }
+
+            .distilleryaddres {
+                font-size: 18px;
+                line-height: 40px;
+                padding-left: 40px;
+            }
+
+            .voicetext,
+            .commenttext,
+            .distillerytext,
+            .notetext {
+                font-size: 16px;
+            }
+
+            .subproductinfo2 {
+                display: none;
+            }
+
+
+
+        }
+
+        @media(max-width:799px) {
+
+            .lpproductheading {
+                margin-left: 50px;
+                margin-top: 42.5px;
+            }
+
+            .lpstoryheading {
+                padding-left: 50px;
+                padding-top: 42.5px;
+                border-right: none;
+            }
+
+            .lpvoiceheading {
+                padding-left: 50px;
+                padding-top: 42.5px;
+                border-right: none;
+            }
+
+            .lpnoteheading {
+                padding-left: 50px;
+                padding-top: 42.5px;
+                border-right: none;
+            }
+
+            .lpcommentheading {
+                padding-left: 50px;
+                padding-top: 42.5px;
+                border-right: none;
+            }
+
+            .lpdistilleryheading {
+                padding-left: 50px;
+                padding-top: 42.5px;
+                border-right: none;
+            }
+
+            .lpproducttitle {
+                font-size: 24px;
+            }
+
+            .lpstorytitle {
+                font-size: 24px;
+            }
+
+            .lpvoicetitle {
+                font-size: 24px;
+            }
+
+            .lpcommenttitle {
+                font-size: 24px;
+            }
+
+            .lpdistillerytitle {
+                font-size: 24px;
+            }
+
+            .lpnotetitle {
+                font-size: 24px;
+            }
+
+            .gazou {
+                width: 100vw;
+                height: 400px;
+            }
+
+            .productbrand {
+                font-size: 24px;
+                margin-bottom: 10px;
+            }
+
+            .toparea {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .productmaintitle {
+                margin: 15px 0;
+            }
+
+            .squeaimage {
+                max-width: 210px;
+                height: 210px;
+            }
+
+            .lpproductcontena {
+                display: flex;
+                border-bottom: solid 1px black;
+                flex-direction: column;
+            }
+
+            .mainproductinfo {
+                display: flex;
+                flex-direction: column;
+                padding-top: 50px;
+                width: 100%;
+                border-left: none;
+                border-right: none;
+            }
+
+            .productmaintitle {
+                margin-left: 50px;
+            }
+
+            .maincompany {
+                border-bottom: solid 1px black;
+            }
+
+            .subproductinfo {
+                width: 100%;
+                padding: 50px;
+                margin: none;
+            }
+
+            .lpstorycontena {
+                display: flex;
+                border-bottom: solid 1px black;
+                flex-direction: column;
+            }
+
+            .storycontent {
+                display: flex;
+                flex-direction: column;
+                padding-bottom: 40px;
+                padding-right: 50px;
+                padding-left: 50px;
+                width: 90%;
+            }
+
+            .lpvoicecontena {
+                display: flex;
+                border-bottom: solid 1px black;
+                flex-direction: column;
+            }
+
+            .lpnotecontena {
+                display: flex;
+                border-bottom: solid 1px black;
+                flex-direction: column;
+            }
+
+            .voicecontent {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                margin: 0;
+                padding-top: 40px;
+                padding-bottom: 40px;
+                align-items: center;
+            }
+
+            .notecontent {
+                width: 100%;
+                margin: 0;
+                padding-top: 40px;
+                padding-bottom: 40px;
+                align-items: center;
+            }
+
+
+            .subbox {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+                margin: 0;
+                padding-top: 50px;
+                padding-bottom: 50px;
+            }
+
+            .voicetext {
+                padding-left: 50px;
+                padding-right: 50px;
+                padding-top: 20px;
+            }
+
+            .notetext {
+                padding-left: 50px;
+                padding-right: 50px;
+                padding-top: 20px;
+            }
+
+            .lpcommentcontena {
+                display: flex;
+                border-bottom: solid 1px black;
+                flex-direction: column;
+            }
+
+            .commentcontent {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+                margin: 0;
+                padding-top: 50px;
+                padding-bottom: 50px;
+            }
+
+            .commenttext {
+                padding-left: 50px;
+                padding-right: 50px;
+                padding-top: 20px;
+            }
+
+            .commentbr {
+                display: none;
+            }
+
+            .lpdistillerycontena {
+                display: flex;
+                border-bottom: solid 1px black;
+                flex-direction: column;
+            }
+
+            .distillerycontent {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+                margin: 0;
+                padding-top: 50px;
+                padding-bottom: 50px;
+            }
+
+            .distillerytext {
+                padding-left: 50px;
+                padding-right: 50px;
+                padding-top: 20px;
+            }
+
+            .productname,
+            .productsellday {
+                font-size: 18px;
+            }
+
+            .productprice {
+                margin: 10px 0;
+                font-size: 18px;
+            }
+
+            .producttitle {
+                font-size: 22px;
+                margin-bottom: 16px;
+                padding-left: 50px;
+            }
+
+            .brandname {
+                font-size: 18px;
+                margin-bottom: 18px;
+                padding-left: 50px;
+            }
+
+            .alc,
+            .capacity {
+                font-size: 16px;
+                padding-left: 50px;
+            }
+
+            .catchcopy {
+                padding: 20px 0;
+                font-size: 20px;
+            }
+
+            .storytext {
+                font-size: 16px;
+                padding: 20px 0;
+            }
+
+            .distilleryaddres {
+                font-size: 18px;
+                line-height: 40px;
+                padding-left: 50px;
+                margin-top: 20px;
+            }
+
+            .voicetext,
+            .commenttext,
+            .distillerytext,
+            .notetext {
+                font-size: 16px;
+            }
+
+            .subproductinfo2 {
+                display: none;
+            }
+
+
+        }
+
+        @media(max-width:500px) {
+
+            .lpproductheading {
+                margin-left: 50px;
+                margin-top: 42.5px;
+            }
+
+            .lpstoryheading {
+                padding-left: 50px;
+                padding-top: 42.5px;
+                border-right: none;
+            }
+
+            .lpvoiceheading {
+                padding-left: 50px;
+                padding-top: 42.5px;
+                border-right: none;
+            }
+
+            .lpnoteheading {
+                padding-left: 50px;
+                padding-top: 42.5px;
+                border-right: none;
+            }
+
+            .lpcommentheading {
+                padding-left: 50px;
+                padding-top: 42.5px;
+                border-right: none;
+            }
+
+            .lpdistilleryheading {
+                padding-left: 50px;
+                padding-top: 42.5px;
+                border-right: none;
+            }
+
+            .lpproducttitle {
+                font-size: 18px;
+            }
+
+            .lpstorytitle {
+                font-size: 18px;
+            }
+
+            .lpvoicetitle {
+                font-size: 18px;
+            }
+
+            .lpcommenttitle {
+                font-size: 18px;
+            }
+
+            .lpdistillerytitle {
+                font-size: 18px;
+            }
+
+            .lpnotetitle {
+                font-size: 18px;
+            }
+
+            .gazou {
+                width: 100vw;
+                height: auto;
+            }
+
+            .productbrand {
+                font-size: 20px;
+                margin-bottom: 10px;
+            }
+
+            .toparea {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .productmaintitle {
+                margin: 15px 0;
+            }
+
+            .squeaimage {
+                max-width: 210px;
+                height: 210px;
+            }
+
+            .lpproductcontena {
+                display: flex;
+                border-bottom: solid 1px black;
+                flex-direction: column;
+            }
+
+            .mainproductinfo {
+                display: flex;
+                flex-direction: column;
+                padding-top: 24px;
+                width: 100%;
+                border-left: none;
+                border-right: none;
+            }
+
+            .productmaintitle {
+                margin-left: 50px;
+            }
+
+            .maincompany {
+                border-bottom: solid 1px black;
+            }
+
+            .subproductinfo {
+                width: 100%;
+                padding: 50px;
+                margin: none;
+            }
+
+            .lpstorycontena {
+                display: flex;
+                border-bottom: solid 1px black;
+                flex-direction: column;
+            }
+
+            .lpnotecontena {
+                display: flex;
+                border-bottom: solid 1px black;
+                flex-direction: column;
+            }
+
+            .storycontent {
+                display: flex;
+                flex-direction: column;
+                padding-bottom: 40px;
+                padding-right: 50px;
+                padding-left: 50px;
+                padding-top: 0px;
+                width: 100%;
+            }
+
+            .notecontent {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                margin: 0;
+                padding-top: 40px;
+                padding-bottom: 40px;
+                align-items: center;
+            }
+
+            .subbox {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+                margin: 0;
+                padding-top: 40px;
+                padding-bottom: 40px;
+            }
+
+            .lpvoicecontena {
+                display: flex;
+                border-bottom: solid 1px black;
+                flex-direction: column;
+            }
+
+            .voicecontent {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                margin: 0;
+                padding-top: 40px;
+                padding-bottom: 40px;
+                align-items: center;
+            }
+
+            .voicetext {
+                padding-left: 50px;
+                padding-right: 50px;
+                padding-top: 20px;
+            }
+
+            .notetext {
+                padding-left: 50px;
+                padding-right: 50px;
+                padding-top: 20px;
+            }
+
+            .lpcommentcontena {
+                display: flex;
+                border-bottom: solid 1px black;
+                flex-direction: column;
+            }
+
+            .commentcontent {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+                margin: 0;
+                padding-top: 50px;
+                padding-bottom: 50px;
+            }
+
+            .commenttext {
+                padding-left: 50px;
+                padding-right: 50px;
+                padding-top: 20px;
+            }
+
+            .commentbr {
+                display: none;
+            }
+
+            .lpdistillerycontena {
+                display: flex;
+                border-bottom: solid 1px black;
+                flex-direction: column;
+            }
+
+            .distillerycontent {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+                margin: 0;
+                padding-top: 50px;
+                padding-bottom: 50px;
+            }
+
+            .distillerytext {
+                padding-left: 50px;
+                padding-right: 50px;
+                padding-top: 20px;
+            }
+
+            .productname,
+            .productsellday {
+                font-size: 14px;
+            }
+
+            .productprice {
+                margin: 10px 0;
+                font-size: 14px;
+            }
+
+            .producttitle {
+                font-size: 18px;
+                margin-bottom: 10px;
+                padding-left: 50px;
+            }
+
+            .brandname {
+                font-size: 14px;
+                margin-bottom: 10px;
+                padding-left: 50px;
+            }
+
+            .alc,
+            .capacity {
+                font-size: 14px;
+                padding-left: 50px;
+            }
+
+            .catchcopy {
+                padding: 15px 0;
+                font-size: 16px;
+            }
+
+            .storytext {
+                font-size: 14px;
+                padding: 20px 0;
+            }
+
+            .voicetext,
+            .commenttext,
+            .distillerytext,
+            .notetext {
+                font-size: 14px;
+            }
+
+            .distilleryaddres {
+                font-size: 16px;
+                line-height: 32px;
+                padding-left: 50px;
+                margin-top: 40px;
+            }
+
+            .subproductinfo2 {
+                display: none;
+            }
+
+
+        }
+
+        @media(max-width:430px) {
+            .subproductinfo {
+                display: none;
+            }
+
+            .subproductinfo2 {
+                display: block;
+                width: 100%;
+                padding: 50px;
+                margin: none;
+            }
+
+        }
+
+
+
+        .toparea {
+            border-bottom: solid 1px black;
+        }
+
+        .lpproductcontena {
+            display: flex;
+            border-bottom: solid 1px black;
+        }
+
+        .capacity {
+            padding-bottom: 40px;
+        }
+
+        .nametitle {
+            border-bottom: solid 1px black;
+        }
+
+        .maincompany {
+            padding-left: 50px;
+            padding-top: 40px;
+            padding-bottom: 40px;
+        }
+
+        .lpstorycontena {
+            display: flex;
+            border-bottom: solid 1px black;
+        }
+
+        .contentimage {
+            /*width:100%;*/
+            max-height: 458px;
+            text-align: center !important;
+        }
+
+        .lpvoicecontena {
+            display: flex;
+            border-bottom: solid 1px black;
+        }
+
+        .lpnotecontena {
+            display: flex;
+            border-bottom: solid 1px black;
+        }
+
+        .lpcommentcontena {
+            display: flex;
+            border-bottom: solid 1px black;
+        }
+
+        .lpdistillerycontena {
+            display: flex;
+            border-bottom: solid 1px black;
+        }
+
+        .distillerytextbox {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .mainbox {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .youtube {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+        }
+
+        .youtube iframe {
+            width: 100%;
+            height: 100%;
+        }
+
+        .lpaddcartbutton {
+            background-color: #f4f4f4;
+            color: black;
+            width: 170px;
+            height: 50px;
+            margin-top: 15px;
+            transition: .3s;
+            outline: 1px solid;
+            outline-color: #333;
+            outline-offset: 0px;
+            display: inline-block;
+            border: 2px solid;
+            padding: 0;
+        }
+
+        .lpaddcartbutton:hover {
+            animation: light .8s infinite;
+            background-color: #f4f4f4;
+        }
+
+        @keyframes light {
+            100% {
+                outline-color: transparent;
+                outline-offset: 12px;
+            }
+        }
+    </style>
+    <style>
+        .mainimage {
+            height: 200px;
+            max-width: 140%;
+        }
+
+        @media(max-width:1304px) {
+            .topheader {
+                align-items: center;
+                flex-direction: column;
+            }
+        }
+
+
+
+        @media(max-width:1462px) {
+
+            tr,
+            td {
+                display: block;
+            }
+        }
+
+
+        @media(max-width:1304px) {
+            .info {
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: center;
+            }
+
+            .blogtitle {
+                margin-left: 0px;
+                margin-top: 20px;
+            }
+
+
+            .blogname {
+                margin-top: 30px;
+            }
+        }
+
+        @media(min-width:1305px) {
+            .info {
+                align-items: center;
+            }
+        }
+
+
+        @media(max-width:900px) {
+            .info1 {
+                flex-direction: column;
+            }
+        }
+
+        @media(max-width:608px) {
+            .table {
+                flex-direction: column;
+                align-items: center;
+            }
+
+        }
+
+        .table {
+            display: flex;
+            justify-content: center;
+        }
+
+        .card {
+            padding: 30px 30px 30px 30px;
+        }
+
+        .info {
+            margin-left: 80px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .name,
+        .brand,
+        .price {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            margin-right: 100px;
+        }
+
+        .info1 {
+            display: flex;
+
+        }
+
+        
+
+    </style>
+    <script>
+      $(function(){
+$(".lpaddcartbutton").click(function() {
+var speed = 500; // スクロール速度(ミリ秒)
+var href = "#itemareas";
+var target = $(href == "#" || href == "" ? 'html' : href);
+var position = target.offset().top;
+$('html').animate({scrollTop:position}, speed, 'swing');
+return false;
+});
+});
+        function movplay(move) {
+            var obj = document.getElementById(move);
+            var n = obj.paused;
+            if (n) {
+                obj.play();
+            }
+            else {
+                obj.pause();
+            }
+        }
+
+        $(function () {
+            if ($('.card').length == 0) {
+                return;
+            }
+
+            $('.card').each(function () {
+
+                const card = $(this);
+
+                const url = $(this).data('url');
+                const data_url = url.replace('https://shimmer.okinawa/', ''); //一応、replace
+                let html = '';
+
+                $.ajax({
+                    type: 'GET',
+                    url: window.Shopify.routes.root + data_url,
+                    dataType: 'json'
+                }).done(function (json, status, xhr) {
+
+                    let target = json.product;
+                    let description = target.body_html;
+
+                    let price = target.variants[0].price;
+
+                    html = `
+      <div class="table">
+  <div class="prductimage">
+    <a href="${url}"><img class="mainimage" src="${target.image.src}"> </a>
+  </div>
+  <div class="info">
+    <div class="info1">
+    <div class="name">
+      <p style="margin-bottom: 0px; color: gray; text-align: left;">商品名</p>
+      <a style="margin-top: 5px; text-align: center;"  href="${url}">${target.title}</a>
+    </div>
+    <div class="brand">
+      <p style="margin-bottom: 0px; color: gray; text-align: left;white-space: nowrap;">ブランド</p>
+      <a style="margin-top: 5px; text-align: center;"  href="${url}">${target.vendor}</a>
+    </div>
+    <div class="price">
+      <p style="margin-bottom: 0px; color: gray; text-align: left;">価格</p>
+      <a style="margin-top: 5px; text-align: center;"  href="${url}">¥${price}</a>
+    </div>
+    </div>
+    <button class="lpaddcartbutton info2" onclick="location.href='${url}'">
+            <span class="">商品購入はこちら</span>
+    </button>
+    
+`;
+                    $(card).append(html);
+
+                }).fail(function (json) {
+                    // console.error('失敗しました。')
+                });
+
+
+            });
+        });
+
+    </script>
+
+{% schema %}
+{
+  "name": "Page"
+}
+{% endschema %}
