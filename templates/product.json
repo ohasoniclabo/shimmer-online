@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -60,11 +69,11 @@
           "type": "richtext",
           "disabled": true,
           "settings": {
-            "text": "<p>2024\/8\/9(金)～2024\/8\/16までのご注文について配送遅延が生じる場合がございます。詳しくはこちら↓<a href=\"https:\/\/shimmer.okinawa\/blogs\/pr\/summer2024_information\" target=\"_blank\" title=\"https:\/\/shimmer.okinawa\/blogs\/pr\/summer2024_information\">「夏季期間の配送遅延について」<\/a><\/p>"
+            "text": "<p>2024/8/9(金)～2024/8/16までのご注文について配送遅延が生じる場合がございます。詳しくはこちら↓<a href=\"https://shimmer.okinawa/blogs/pr/summer2024_information\" target=\"_blank\" title=\"https://shimmer.okinawa/blogs/pr/summer2024_information\">「夏季期間の配送遅延について」</a></p>"
           }
         },
         "fuji3_wishlist_add_btn_cUWYqw": {
-          "type": "shopify:\/\/apps\/mf-wishlist\/blocks\/add-btn\/d1baf985-85f5-4ef5-b595-4e973811d187",
+          "type": "shopify://apps/mf-wishlist/blocks/add-btn/d1baf985-85f5-4ef5-b595-4e973811d187",
           "settings": {}
         },
         "buy_buttons": {

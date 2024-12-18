@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -5,7 +14,7 @@
       "custom_css": [],
       "settings": {
         "picup_block": true,
-        "picup_block_img": "shopify:\/\/shop_images\/kagan-kv-picup-01.webp",
+        "picup_block_img": "shopify://shop_images/kagan-kv-picup-01.webp",
         "picup_block_text": "第一弾は沖縄産たんかんを利用したクラフトスピリッツ2025年春頃リリース予定",
         "products-list_block": false,
         "products-list_block_collection": "all"

@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "a23eb069-d026-4f57-9ed2-7b13b66a5e56": {
@@ -6,11 +15,11 @@
         "image_GmBNir": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/12f42dbeef95b037a170f7bea76db942.jpg",
-            "mobile_image": "shopify:\/\/shop_images\/684c1dc2aaa599c8543ed3cab5dfbfd6.jpg",
+            "image": "shopify://shop_images/12f42dbeef95b037a170f7bea76db942.jpg",
+            "mobile_image": "shopify://shop_images/684c1dc2aaa599c8543ed3cab5dfbfd6.jpg",
             "desktop_image_position": "center center",
             "mobile_image_position": "center center",
-            "slide_link": "shopify:\/\/blogs\/introduction\/okinawaichiba",
+            "slide_link": "shopify://blogs/introduction/okinawaichiba",
             "subheading": "",
             "title": "",
             "title_size": 60,
@@ -24,16 +33,16 @@
         "image_66yLzf": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/shimmer21_1040_585.png",
-            "mobile_image": "shopify:\/\/shop_images\/shimmer21_SNS_square.png",
+            "image": "shopify://shop_images/shimmer21_1040_585.png",
+            "mobile_image": "shopify://shop_images/shimmer21_SNS_square.png",
             "desktop_image_position": "center center",
             "mobile_image_position": "center center",
-            "slide_link": "shopify:\/\/pages\/shimmerpj-21",
+            "slide_link": "shopify://pages/shimmerpj-21",
             "subheading": "shimmer#21",
             "title": "粟盛",
             "title_size": 60,
             "heading_h1": false,
-            "text": "<p>羽地産ひとめぼれ37.5%・岩手県産粟31.7%・仲村渠産羽地赤穂30.8%<\/p>",
+            "text": "<p>羽地産ひとめぼれ37.5%・岩手県産粟31.7%・仲村渠産羽地赤穂30.8%</p>",
             "enlarge_text": true,
             "button_label": "詳しくはこちら",
             "overlay_position": "position--hcenter position--vcenter"
@@ -42,16 +51,16 @@
         "image_9JjqqB": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/shimmer20-1200-628-sns2_449240bc-2654-4110-ae4b-3e813aa8c27d.png",
-            "mobile_image": "shopify:\/\/shop_images\/shimmer20-square-2.png",
+            "image": "shopify://shop_images/shimmer20-1200-628-sns2_449240bc-2654-4110-ae4b-3e813aa8c27d.png",
+            "mobile_image": "shopify://shop_images/shimmer20-square-2.png",
             "desktop_image_position": "center center",
             "mobile_image_position": "center center",
-            "slide_link": "shopify:\/\/pages\/shimmerpj-20",
+            "slide_link": "shopify://pages/shimmerpj-20",
             "subheading": "shimmer#20",
             "title": "八重泉原酒6年樽熟成",
             "title_size": 60,
             "heading_h1": false,
-            "text": "<p>Islay Cask Finish<\/p>",
+            "text": "<p>Islay Cask Finish</p>",
             "enlarge_text": true,
             "button_label": "詳しくはこちら",
             "overlay_position": "position--hcenter position--vcenter"
@@ -60,16 +69,16 @@
         "image_tkAxYJ": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/shimmer19_wide_1.png",
-            "mobile_image": "shopify:\/\/shop_images\/shimmer19_square_be735749-d1fe-45f7-9838-1b37f92f2c75.png",
+            "image": "shopify://shop_images/shimmer19_wide_1.png",
+            "mobile_image": "shopify://shop_images/shimmer19_square_be735749-d1fe-45f7-9838-1b37f92f2c75.png",
             "desktop_image_position": "center center",
             "mobile_image_position": "center center",
-            "slide_link": "shopify:\/\/pages\/shimmerpj-19",
+            "slide_link": "shopify://pages/shimmerpj-19",
             "subheading": "shimmer#19",
             "title": "萬座原酒",
             "title_size": 60,
             "heading_h1": false,
-            "text": "<p>南島1号酵母保安濾過仕上<\/p>",
+            "text": "<p>南島1号酵母保安濾過仕上</p>",
             "enlarge_text": true,
             "button_label": "詳しくはこちら",
             "overlay_position": "position--hcenter position--vcenter"
@@ -78,16 +87,16 @@
         "image_QCY9Kj": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/shimmer18_1200_628_SNS_2.png",
-            "mobile_image": "shopify:\/\/shop_images\/shimmer18_SNS_square.png",
+            "image": "shopify://shop_images/shimmer18_1200_628_SNS_2.png",
+            "mobile_image": "shopify://shop_images/shimmer18_SNS_square.png",
             "desktop_image_position": "center center",
             "mobile_image_position": "center center",
-            "slide_link": "shopify:\/\/pages\/shimmerpj-18",
+            "slide_link": "shopify://pages/shimmerpj-18",
             "subheading": "shimmer#18",
             "title": "松藤",
             "title_size": 60,
             "heading_h1": false,
-            "text": "<p>黒麹菌イヌイ株泡盛1号酵母仕込原酒<\/p>",
+            "text": "<p>黒麹菌イヌイ株泡盛1号酵母仕込原酒</p>",
             "enlarge_text": true,
             "button_label": "詳しくはこちら",
             "overlay_position": "position--hcenter position--vcenter"
@@ -121,10 +130,10 @@
         "title": "年末年始休業および配送に関するお知らせ",
         "title_size": 30,
         "heading_h1": false,
-        "text": "",
+        "text": "<h3><strong>配送業務休業期間：2024/12/28～2025/1/5</strong></h3>",
         "image_width": 180,
         "button_label": "詳しくはこちら",
-        "button_link": "https:\/\/shimmer.okinawa\/blogs\/pr\/2024yearend",
+        "button_link": "https://shimmer.okinawa/blogs/pr/2024yearend",
         "button_style": "secondary",
         "text_alignment": "center",
         "enlarge_text": false,
@@ -142,10 +151,10 @@
         "title": "『Amazon pay決済』サービス終了について",
         "title_size": 30,
         "heading_h1": false,
-        "text": "<h4><strong>2025年1月6日(月)<\/strong>をもちまして『Amazon pay』の取り扱いを終了させていただくこととなりました。<\/h4>",
+        "text": "<h4><strong>2025年1月6日(月)</strong>をもちまして『Amazon pay』の取り扱いを終了させていただくこととなりました。</h4>",
         "image_width": 180,
         "button_label": "詳しくはこちら",
-        "button_link": "https:\/\/shimmer.okinawa\/blogs\/pr\/amazonpay",
+        "button_link": "https://shimmer.okinawa/blogs/pr/amazonpay",
         "button_style": "secondary",
         "text_alignment": "center",
         "enlarge_text": false,
@@ -177,8 +186,8 @@
         "6fa9e1ec-b2ce-4fad-9727-5b9e2457cb3d": {
           "type": "BunnerList",
           "settings": {
-            "image": "shopify:\/\/shop_images\/com_E1.jpg",
-            "link": "shopify:\/\/collections\/okinawa-hokubu",
+            "image": "shopify://shop_images/com_E1.jpg",
+            "link": "shopify://collections/okinawa-hokubu",
             "toptitle": "本島北部の泡盛",
             "subtitle": "自然豊かな土地が多く残る本島北部"
           }
@@ -186,8 +195,8 @@
         "2d123ce8-49d7-474e-bdf6-7e22b38bc86d": {
           "type": "BunnerList",
           "settings": {
-            "image": "shopify:\/\/shop_images\/com_F1.jpg",
-            "link": "shopify:\/\/collections\/okinawa-chubu",
+            "image": "shopify://shop_images/com_F1.jpg",
+            "link": "shopify://collections/okinawa-chubu",
             "toptitle": "本島中部の泡盛",
             "subtitle": "文化が交わる交差点"
           }
@@ -195,8 +204,8 @@
         "8f33be87-e8b4-4c58-a92c-f0ee8321296b": {
           "type": "BunnerList",
           "settings": {
-            "image": "shopify:\/\/shop_images\/com_G1.jpg",
-            "link": "shopify:\/\/collections\/okinawa-nanbu",
+            "image": "shopify://shop_images/com_G1.jpg",
+            "link": "shopify://collections/okinawa-nanbu",
             "toptitle": "本島南部の泡盛",
             "subtitle": "古都、首里で造られる泡盛"
           }
@@ -204,8 +213,8 @@
         "16625954895c9f48f4-0": {
           "type": "BunnerList",
           "settings": {
-            "image": "shopify:\/\/shop_images\/a5010540a89dd61ae94f881737bb5eef.jpg",
-            "link": "shopify:\/\/collections\/miyako",
+            "image": "shopify://shop_images/a5010540a89dd61ae94f881737bb5eef.jpg",
+            "link": "shopify://collections/miyako",
             "toptitle": "宮古島の泡盛",
             "subtitle": "オトーリ文化を知ってるかい？"
           }
@@ -213,8 +222,8 @@
         "16625954895c9f48f4-1": {
           "type": "BunnerList",
           "settings": {
-            "image": "shopify:\/\/shop_images\/com_A1.jpg",
-            "link": "shopify:\/\/collections\/ishigaki-hateruma",
+            "image": "shopify://shop_images/com_A1.jpg",
+            "link": "shopify://collections/ishigaki-hateruma",
             "toptitle": "石垣島の泡盛",
             "subtitle": "地釜式蒸留の風味"
           }
@@ -222,8 +231,8 @@
         "16625954895c9f48f4-2": {
           "type": "BunnerList",
           "settings": {
-            "image": "shopify:\/\/shop_images\/com_B1.jpg",
-            "link": "shopify:\/\/collections\/izena-iheya",
+            "image": "shopify://shop_images/com_B1.jpg",
+            "link": "shopify://collections/izena-iheya",
             "toptitle": "伊平屋・伊是名島の泡盛",
             "subtitle": "格式高い王家ゆかりの島"
           }
@@ -231,8 +240,8 @@
         "f52be881-e1d5-4046-8fda-481ef5ca7fd9": {
           "type": "BunnerList",
           "settings": {
-            "image": "shopify:\/\/shop_images\/com_C1.jpg",
-            "link": "shopify:\/\/collections\/kumezima",
+            "image": "shopify://shop_images/com_C1.jpg",
+            "link": "shopify://collections/kumezima",
             "toptitle": "久米島の泡盛",
             "subtitle": "離島のクリアな銘水"
           }
@@ -240,8 +249,8 @@
         "8891a600-d0d9-4f77-985c-c83fcd915fd2": {
           "type": "BunnerList",
           "settings": {
-            "image": "shopify:\/\/shop_images\/com_D1.jpg",
-            "link": "shopify:\/\/collections\/与那国島の酒造所",
+            "image": "shopify://shop_images/com_D1.jpg",
+            "link": "shopify://collections/与那国島の酒造所",
             "toptitle": "与那国島の泡盛",
             "subtitle": "唯一花酒製造が認められた島"
           }
@@ -274,42 +283,42 @@
           "type": "collection",
           "settings": {
             "collection": "beer",
-            "image": "shopify:\/\/shop_images\/01.jpg"
+            "image": "shopify://shop_images/01.jpg"
           }
         },
         "1659072765a7cc1d89-1": {
           "type": "collection",
           "settings": {
             "collection": "awamori",
-            "image": "shopify:\/\/shop_images\/02.jpg"
+            "image": "shopify://shop_images/02.jpg"
           }
         },
         "1659072765a7cc1d89-2": {
           "type": "collection",
           "settings": {
             "collection": "whisly",
-            "image": "shopify:\/\/shop_images\/03.jpg"
+            "image": "shopify://shop_images/03.jpg"
           }
         },
         "ab911af9-a2d1-400d-a0f0-f73a4de9ef9c": {
           "type": "collection",
           "settings": {
             "collection": "spirits",
-            "image": "shopify:\/\/shop_images\/04.jpg"
+            "image": "shopify://shop_images/04.jpg"
           }
         },
         "7184c720-9fb7-4b79-9af8-587e1fb5e295": {
           "type": "collection",
           "settings": {
             "collection": "liqueur-list",
-            "image": "shopify:\/\/shop_images\/05.jpg"
+            "image": "shopify://shop_images/05.jpg"
           }
         },
         "3445a4fe-a36b-4b34-ba61-98980106a1a1": {
           "type": "collection",
           "settings": {
             "collection": "other-1",
-            "image": "shopify:\/\/shop_images\/06.jpg"
+            "image": "shopify://shop_images/06.jpg"
           }
         }
       },
@@ -366,8 +375,8 @@
         "6b968616-d2da-4d01-a44b-9b799663e486": {
           "type": "BunnerList",
           "settings": {
-            "image": "shopify:\/\/shop_images\/ab1c2b7669c74a1f86a23938ca0dc2eb.png",
-            "link": "shopify:\/\/collections\/first-kamimura",
+            "image": "shopify://shop_images/ab1c2b7669c74a1f86a23938ca0dc2eb.png",
+            "link": "shopify://collections/first-kamimura",
             "toptitle": "はじめての神村酒造",
             "subtitle": ""
           }
@@ -375,8 +384,8 @@
         "ffa510d7-cd98-4fea-9d49-9b24ad9598d4": {
           "type": "BunnerList",
           "settings": {
-            "image": "shopify:\/\/shop_images\/FIRST_STEP_1.jpg",
-            "link": "shopify:\/\/collections\/first-shikina",
+            "image": "shopify://shop_images/FIRST_STEP_1.jpg",
+            "link": "shopify://collections/first-shikina",
             "toptitle": "はじめての識名酒造",
             "subtitle": ""
           }
@@ -384,8 +393,8 @@
         "67ee6c2f-c0c1-43ef-8d11-b070be3b55c9": {
           "type": "BunnerList",
           "settings": {
-            "image": "shopify:\/\/shop_images\/091401_9aa08a62-524d-4d27-a887-494cb3b576b6.png",
-            "link": "shopify:\/\/collections\/first-sakimoto",
+            "image": "shopify://shop_images/091401_9aa08a62-524d-4d27-a887-494cb3b576b6.png",
+            "link": "shopify://collections/first-sakimoto",
             "toptitle": "はじめての崎元酒造所",
             "subtitle": ""
           }
@@ -393,8 +402,8 @@
         "9a458bf2-3b8c-4ec2-aa11-88ff9544b535": {
           "type": "BunnerList",
           "settings": {
-            "image": "shopify:\/\/shop_images\/FIRST_STEP_cf19c497-43f9-42bc-b32c-d4419cd93ded.png",
-            "link": "shopify:\/\/collections\/first-kin",
+            "image": "shopify://shop_images/FIRST_STEP_cf19c497-43f9-42bc-b32c-d4419cd93ded.png",
+            "link": "shopify://collections/first-kin",
             "toptitle": "はじめての金武酒造",
             "subtitle": ""
           }
@@ -402,8 +411,8 @@
         "c1bbdb08-7119-489c-851f-d6002e5599fa": {
           "type": "BunnerList",
           "settings": {
-            "image": "shopify:\/\/shop_images\/FIRST_STEP_d85eba57-c8b3-411e-97f1-8f702168509c.png",
-            "link": "shopify:\/\/collections\/first-onna",
+            "image": "shopify://shop_images/FIRST_STEP_d85eba57-c8b3-411e-97f1-8f702168509c.png",
+            "link": "shopify://collections/first-onna",
             "toptitle": "はじめての恩納酒造所",
             "subtitle": ""
           }
@@ -411,8 +420,8 @@
         "3fbba983-e868-4832-8f73-fd61bd49339e": {
           "type": "BunnerList",
           "settings": {
-            "image": "shopify:\/\/shop_images\/firststep.png",
-            "link": "shopify:\/\/collections\/first-kikunotsuyu",
+            "image": "shopify://shop_images/firststep.png",
+            "link": "shopify://collections/first-kikunotsuyu",
             "toptitle": "はじめての菊之露酒造",
             "subtitle": ""
           }
@@ -420,8 +429,8 @@
         "5f640694-a44d-4e88-8de2-14f17ad28ed2": {
           "type": "BunnerList",
           "settings": {
-            "image": "shopify:\/\/shop_images\/IMG_7254_a9637b4b-a822-4947-ac91-e56e4093ecab.png",
-            "link": "shopify:\/\/collections\/first-izena",
+            "image": "shopify://shop_images/IMG_7254_a9637b4b-a822-4947-ac91-e56e4093ecab.png",
+            "link": "shopify://collections/first-izena",
             "toptitle": "はじめての伊是名酒造所",
             "subtitle": ""
           }
@@ -429,8 +438,8 @@
         "0f76dde6-6d08-40ad-b85d-6b26b9cd74cc": {
           "type": "BunnerList",
           "settings": {
-            "image": "shopify:\/\/shop_images\/FIRST_STEP_0c1f3391-499a-4bf9-8347-abcef69ead28.jpg",
-            "link": "shopify:\/\/collections\/first-kumekume",
+            "image": "shopify://shop_images/FIRST_STEP_0c1f3391-499a-4bf9-8347-abcef69ead28.jpg",
+            "link": "shopify://collections/first-kumekume",
             "toptitle": "はじめての久米島の久米仙",
             "subtitle": ""
           }
@@ -438,8 +447,8 @@
         "420f2102-64f7-4411-8174-24477c88f7da": {
           "type": "BunnerList",
           "settings": {
-            "image": "shopify:\/\/shop_images\/1407_20220908091727_85f472a3-1078-4237-b380-78790c740865.png",
-            "link": "shopify:\/\/collections\/first-masahiro",
+            "image": "shopify://shop_images/1407_20220908091727_85f472a3-1078-4237-b380-78790c740865.png",
+            "link": "shopify://collections/first-masahiro",
             "toptitle": "はじめてのまさひろ酒造",
             "subtitle": ""
           }
@@ -447,8 +456,8 @@
         "template--16160799752443__70d02709-5f13-4f11-bcc6-aa55d9c54901-16692631785dc2e689-0": {
           "type": "BunnerList",
           "settings": {
-            "image": "shopify:\/\/shop_images\/bf162fd069bbf2f91d9b41a3edd31058.png",
-            "link": "shopify:\/\/collections\/first-nakama",
+            "image": "shopify://shop_images/bf162fd069bbf2f91d9b41a3edd31058.png",
+            "link": "shopify://collections/first-nakama",
             "toptitle": "はじめての仲間酒造",
             "subtitle": ""
           }
@@ -456,8 +465,8 @@
         "template--16160799752443__70d02709-5f13-4f11-bcc6-aa55d9c54901-16692631785dc2e689-1": {
           "type": "BunnerList",
           "settings": {
-            "image": "shopify:\/\/shop_images\/kobundo_f4898639-cf51-4151-ac3f-441c30be4537.png",
-            "link": "shopify:\/\/collections\/はじめての米島酒造",
+            "image": "shopify://shop_images/kobundo_f4898639-cf51-4151-ac3f-441c30be4537.png",
+            "link": "shopify://collections/はじめての米島酒造",
             "toptitle": "はじめての米島酒造",
             "subtitle": ""
           }
@@ -465,8 +474,8 @@
         "template--16160799752443__70d02709-5f13-4f11-bcc6-aa55d9c54901-16692631785dc2e689-2": {
           "type": "BunnerList",
           "settings": {
-            "image": "shopify:\/\/shop_images\/1433_20220928163635.png",
-            "link": "shopify:\/\/collections\/first-tsukayama",
+            "image": "shopify://shop_images/1433_20220928163635.png",
+            "link": "shopify://collections/first-tsukayama",
             "toptitle": "はじめての津嘉山酒造所",
             "subtitle": ""
           }
@@ -474,8 +483,8 @@
         "ffd6216f-83fc-481f-bb9b-000cbf23e460": {
           "type": "BunnerList",
           "settings": {
-            "image": "shopify:\/\/shop_images\/2_00e6ba29-601c-40f7-87f3-941b83d2db0e.jpg",
-            "link": "shopify:\/\/collections\/fist-ikema",
+            "image": "shopify://shop_images/2_00e6ba29-601c-40f7-87f3-941b83d2db0e.jpg",
+            "link": "shopify://collections/fist-ikema",
             "toptitle": "はじめての池間酒造",
             "subtitle": ""
           }
@@ -512,8 +521,8 @@
         "1662595580338714fb-0": {
           "type": "BunnerListRectangle",
           "settings": {
-            "image": "shopify:\/\/shop_images\/sutoreito_001.png",
-            "link": "shopify:\/\/blogs\/playlist\/reccomend_straight",
+            "image": "shopify://shop_images/sutoreito_001.png",
+            "link": "shopify://blogs/playlist/reccomend_straight",
             "toptitle": "ストレートでオススメの泡盛",
             "subtitle": "味わい深い。",
             "undertitle": ""
@@ -522,8 +531,8 @@
         "1662595580338714fb-1": {
           "type": "BunnerListRectangle",
           "settings": {
-            "image": "shopify:\/\/shop_images\/rock_001.png",
-            "link": "shopify:\/\/blogs\/playlist\/recommend_rock",
+            "image": "shopify://shop_images/rock_001.png",
+            "link": "shopify://blogs/playlist/recommend_rock",
             "toptitle": "ロックでオススメの泡盛",
             "subtitle": "ひんやり香り高い！",
             "undertitle": ""
@@ -532,8 +541,8 @@
         "1662595580338714fb-2": {
           "type": "BunnerListRectangle",
           "settings": {
-            "image": "shopify:\/\/shop_images\/mizuwari_001.png",
-            "link": "shopify:\/\/blogs\/playlist\/recommend_mixedwater",
+            "image": "shopify://shop_images/mizuwari_001.png",
+            "link": "shopify://blogs/playlist/recommend_mixedwater",
             "toptitle": "水割りでオススメの泡盛",
             "subtitle": "すっきりのみやすい！",
             "undertitle": ""
@@ -542,8 +551,8 @@
         "7fc0581b-8e24-48ee-aeb0-6ab11b2c500b": {
           "type": "BunnerListRectangle",
           "settings": {
-            "image": "shopify:\/\/shop_images\/tansan_001.png",
-            "link": "shopify:\/\/blogs\/playlist\/recommend_tansan",
+            "image": "shopify://shop_images/tansan_001.png",
+            "link": "shopify://blogs/playlist/recommend_tansan",
             "toptitle": "炭酸割りでオススメの泡盛",
             "subtitle": "シュワシュワはじける！",
             "undertitle": ""
@@ -552,8 +561,8 @@
         "c7b21745-5c79-4dc1-adc7-49273705bb48": {
           "type": "BunnerListRectangle",
           "settings": {
-            "image": "shopify:\/\/shop_images\/oyuwari_001.png",
-            "link": "shopify:\/\/blogs\/playlist\/recommend_oyu",
+            "image": "shopify://shop_images/oyuwari_001.png",
+            "link": "shopify://blogs/playlist/recommend_oyu",
             "toptitle": "お湯割りでオススメの泡盛",
             "subtitle": "ほかほかほっこり。",
             "undertitle": ""
@@ -583,8 +592,8 @@
         "055a4a2e-4aa4-4ef6-9522-71ae533743d2": {
           "type": "BunnerListRectangle",
           "settings": {
-            "image": "shopify:\/\/shop_images\/634302723e117374b023bdf17860827a_89cc72b7-f105-4178-85be-34b082e8ea41.png",
-            "link": "shopify:\/\/blogs\/playlist\/okinawa-sango-beer-ipa-black-ale編",
+            "image": "shopify://shop_images/634302723e117374b023bdf17860827a_89cc72b7-f105-4178-85be-34b082e8ea41.png",
+            "link": "shopify://blogs/playlist/okinawa-sango-beer-ipa-black-ale編",
             "toptitle": "仕事終わりの一杯に沖縄のお酒",
             "subtitle": "南都酒造所　OKINAWA SANGO BEER",
             "undertitle": ""
@@ -593,8 +602,8 @@
         "e95db004-d739-4c4d-a39c-e05db14c6dd3": {
           "type": "BunnerListRectangle",
           "settings": {
-            "image": "shopify:\/\/shop_images\/16bed668de3af112164ca9cc8ed3e351_4a1762c1-ba31-42f0-a316-a4c0c787f85c.jpg",
-            "link": "shopify:\/\/blogs\/playlist\/situginosusume",
+            "image": "shopify://shop_images/16bed668de3af112164ca9cc8ed3e351_4a1762c1-ba31-42f0-a316-a4c0c787f85c.jpg",
+            "link": "shopify://blogs/playlist/situginosusume",
             "toptitle": "仕次ぎのススメ",
             "subtitle": "自分好みの泡盛を創る",
             "undertitle": ""
@@ -603,8 +612,8 @@
         "16625951227d48cdb3-2": {
           "type": "BunnerListRectangle",
           "settings": {
-            "image": "shopify:\/\/shop_images\/3.png",
-            "link": "shopify:\/\/collections\/teiban-3go",
+            "image": "shopify://shop_images/3.png",
+            "link": "shopify://collections/teiban-3go",
             "toptitle": "定番の3合瓶",
             "subtitle": "泡盛の独自規格なんです",
             "undertitle": ""
@@ -613,8 +622,8 @@
         "16625951227d48cdb3-0": {
           "type": "BunnerListRectangle",
           "settings": {
-            "image": "shopify:\/\/shop_images\/banner-beige_63d3eff6-73c9-4c9d-80dd-56dd6c2efbb1.jpg",
-            "link": "shopify:\/\/blogs\/playlist\/kamechozo",
+            "image": "shopify://shop_images/banner-beige_63d3eff6-73c9-4c9d-80dd-56dd6c2efbb1.jpg",
+            "link": "shopify://blogs/playlist/kamechozo",
             "toptitle": "甕貯蔵泡盛の魅力",
             "subtitle": "甕貯蔵の面白さ",
             "undertitle": ""
