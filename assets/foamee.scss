@@ -1,0 +1,663 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@100..900&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/destyle.css@4.0.0/destyle.min.css");
+
+// ブレイクポイント (SPファースト)
+$breakpoints-sp: (
+    tab: 'screen and (min-width: 600px)',
+    pc: 'screen and (min-width: 1025px)',
+);
+// ブレイクポイント (PCファースト)
+$breakpoints-pc: (
+    tab: 'screen and (max-width: 1024px)',
+    sp: 'screen and (max-width: 599px)',
+);
+
+// px vw 変換 [PC]
+@function pxPc($inputPx) {
+    $designWidth: 1728; // PCデザインアートボード幅
+    $outputVw: calc(round(calc($inputPx / $designWidth) * 100 * 1000) / 1000);
+    //@return #{$outputVw}vw;
+    @return min(#{$outputVw}vw, #{$inputPx}px);
+}
+// px vw 変換 [TAB]
+@function pxTab($inputPx) {
+    $designWidth: 768; // TABデザインアートボード幅
+    $outputVw: calc(round(calc($inputPx / $designWidth) * 100 * 1000) / 1000);
+    //@return #{$outputVw}vw;
+    @return min(#{$outputVw}vw, #{$inputPx}px);
+}
+// px vw 変換 [SP]
+@function pxSp($inputPx) {
+    $designWidth: 400; // SPデザインアートボード幅
+    $outputVw: calc(round(calc($inputPx / $designWidth) * 100 * 1000) / 1000);
+    @return #{$outputVw}vw;
+    //@return min(#{$outputVw}vw, #{$inputPx}px);
+}
+
+// フォントサイズ [PC]
+@function fsPxPc($fontPx) {
+    $designWidth: 1728; // PCデザインアートボード幅
+    $fontVw: calc(round(calc($fontPx / $designWidth) * 100 * 1000) / 1000);
+    //@return #{$fontVw}vw;
+    @return min(#{$fontVw}vw, #{$fontPx}px);
+}
+// フォントサイズ [TAB]
+@function fsPxTab($fontPx) {
+    $designWidth: 768; // TABデザインアートボード幅
+    $fontVw: calc(round(calc($fontPx / $designWidth) * 100 * 1000) / 1000);
+    //@return #{$fontVw}vw;
+    @return min(#{$fontVw}vw, #{$fontPx}px);
+}
+// フォントサイズ [SP]
+@function fsPxSp($fontPx) {
+    $designWidth: 400; // SPデザインアートボード幅
+    $fontVw: calc(round(calc($fontPx / $designWidth) * 100 * 1000) / 1000);
+    @return #{$fontVw}vw;
+    //@return min(#{$fontVw}vw, #{$fontPx}px);
+}
+
+// メディアクエリ (SPファースト)
+@mixin mq-sp($bp-sp) {
+    @media #{map-get($breakpoints-sp, $bp-sp)} {
+        @content;
+    }
+}
+// メディアクエリ (PCファースト)
+@mixin mq-pc($bp-pc) {
+    @media #{map-get($breakpoints-pc, $bp-pc)} {
+        @content;
+    }
+}
+
+
+
+
+
+#lp-foamee {
+    font-size: fsPxPc(16);;
+    font-family: "M PLUS 1", serif;
+    font-weight: 500;
+    line-height: 1.56;
+    color: #231F20;
+    letter-spacing: 1.12px;
+}
+
+
+
+/* キービジュアル
+-------------------------------------------------- */
+.l-kv {
+    position: relative;
+}
+.l-kv__in {
+    display: flex;
+    justify-content: space-between;
+    height: pxPc(920);
+}
+.l-kv__in__content {
+    width: pxPc(630);
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding-right: pxPc(10);
+    background-color: #F2E85E;
+
+    .e-logo {
+        width: pxPc(265);
+    }
+
+    .e-text {
+        font-size: fsPxPc(32);
+        font-weight: 900;
+    }
+
+    .e-img {
+        width: pxPc(440);
+        margin-top: pxPc(20);
+    }
+}
+.l-kv__in__img {
+    flex: 1;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+.l-kv__deco {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    img {
+        width: 100%;
+    }
+}
+
+
+
+/* セクション 01
+-------------------------------------------------- */
+.section-01 {
+    background-color: #F2EEB6;
+    padding: 150px 0 90px;
+}
+.section-01__in {
+    max-width: pxPc(1135);
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    gap: 0 pxPc(56);
+}
+.section-01__in__img {
+    width: pxPc(400);
+}
+.section-01__in__content {
+    flex: 1;
+    padding-top: pxPc(110);
+
+    .e-heading {
+
+        h2 {
+            display: flex;
+            align-items: center;
+            gap: 0 pxPc(10);
+
+            span {
+                font-size: fsPxPc(22);
+                font-weight: 700;
+            }
+
+            &::after {
+                content: '';
+                border-top: 2px solid #594F4F;
+            }
+        }
+
+        div {
+            display: inline-block;
+            font-size: fsPxPc(12);
+            line-height: 1;
+            background-color: #594F4F;
+            color: #F2EEB6;
+            padding: pxPc(4);
+        }
+    }
+
+    .e-text {
+        margin-top: pxPc(40);
+    }
+}
+.section-01__button {
+    text-align: center;
+    margin-top: pxPc(80);
+
+    a {
+        background-color: #FFF000;
+        color: #231F20;
+        border-radius: 100px;
+        width: pxPc(434);
+        height: pxPc(90);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0 pxPc(6);
+        font-size: fsPxPc(24);
+
+        img {
+            width: pxPc(23);
+        }
+    }
+}
+
+
+
+/* セクション 02
+-------------------------------------------------- */
+.section-02 {
+    background-color: #594F4F;
+    padding: pxPc(210) 0 pxPc(160);
+}
+.section-02__in {
+    max-width: pxPc(1135);
+
+    .e-heading-01 {
+        font-size: fsPxPc(86);
+        color: #ffffff;
+        margin-bottom: pxPc(120);
+    }
+
+    .e-heading-02 {
+
+        h3 {
+            display: flex;
+            align-items: center;
+            gap: 0 pxPc(10);
+
+            span {
+                font-size: fsPxPc(22);
+                font-weight: 700;
+                color: #ffffff;
+            }
+
+            &::after {
+                content: '';
+                border-top: 2px solid #ffffff;
+            }
+        }
+
+        div {
+            display: inline-block;
+            font-size: fsPxPc(12);
+            line-height: 1;
+            background-color: #ffffff;
+            color: #594F4F;
+            padding: pxPc(4);
+        }
+    }
+
+    .e-howto {
+        margin-top: pxPc(40);
+        padding: 0 pxPc(20);
+        display: flex;
+        justify-content: space-between;
+
+        > dl {
+            width: pxPc(330);
+            position: relative;
+
+            .e-text {
+                color: #ffffff;
+                margin-top: pxPc(70);
+            }
+
+            .e-number {
+                position: absolute;
+                right: pxPc(-16);
+                top: pxPc(390);
+                font-size: fsPxPc(40);
+                font-weight: 400;
+                background-color: #F2EEB6;
+                border-radius: 100px;
+                width: pxPc(85);
+                height: pxPc(85);
+            }
+        }
+    }
+}
+.section-02__button {
+    text-align: center;
+    margin-top: pxPc(80);
+
+    a {
+        background-color: #FFF000;
+        color: #231F20;
+        border-radius: 100px;
+        width: pxPc(434);
+        height: pxPc(90);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0 pxPc(6);
+        font-size: fsPxPc(24);
+
+        img {
+            width: pxPc(23);
+        }
+    }
+}
+
+
+
+/* セクション 03
+-------------------------------------------------- */
+.section-03 {
+    background-color: #F2EEB6;
+    background-image: url(./foamee-section-03-bg-02.webp);
+    background-size: pxPc(1458) auto;
+    background-position: center bottom pxPc(40);
+    padding-bottom: pxPc(980);
+}
+.section-03__heading-01 {
+    background-image: url(./foamee-section-03-bg-01.webp);
+    background-size: cover;
+    height: pxPc(617);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    h2 {
+        color: #ffffff;
+        font-size: fsPxPc(86);
+    }
+}
+.section-03__heading-02 {
+    text-align: center;
+    margin: pxPc(60) 0 pxPc(40);
+
+    h3 {
+        color: #ffffff;
+        font-size: fsPxPc(32);
+    }
+}
+.section-03__in {
+    max-width: pxPc(1130);
+}
+.section-03__recipe {
+    margin-top: pxPc(-90);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: pxPc(37);
+
+    > div {
+        border-radius: pxPc(20);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .e-content {
+            flex: 1;
+            padding: pxPc(36) pxPc(24);
+
+            .m-name-en {
+                font-size: fsPxPc(26);
+                font-weight: 600;
+            }
+
+            .m-name-ja {
+                font-size: fsPxPc(12);
+                line-height: 1;
+                background-color: #231F20;
+                border-radius: pxPc(4);
+                padding: pxPc(4) pxPc(6);
+            }
+
+            .m-material {
+
+                li {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    gap: 0 pxPc(16);
+
+                    .s-item {
+                        background-image: url(./foamee-cmn-icon-02.svg);
+                        background-size: pxPc(25) auto;
+                        padding-left: pxPc(34);
+                        font-size: fsPxPc(14);
+                    }
+
+                    .s-amount {
+                        font-size: fsPxPc(14);
+                        display: flex;
+                        align-items: center;
+                        gap: 0 pxPc(8);
+
+                        &::before {
+                            content: '';
+                            border-top: 1px solid #231F20;
+                            flex: 1;
+                        }
+                    }
+                }
+            }
+        }
+
+        .e-img {
+            height: pxPc(280);
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+}
+.section-03__text {
+    font-size: fsPxPc(13);
+    font-weight: 400;
+    text-align: center;
+    margin-top: pxPc(16);
+}
+.section-03__creator {
+    display: flex;
+    border-radius: pxPc(20);
+    width: pxPc(880);
+    margin-left: auto;
+    margin-right: auto;
+
+    .e-content {
+        flex: 1;
+        background-color: #ffffff;
+        padding: pxPc(70) pxPc(40);
+
+        .m-name-en {
+            font-size: fsPxPc(22);
+            font-weight: 700;
+        }
+
+        .m-name-ja {
+            font-size: fsPxPc(12);
+            line-height: 1;
+            background-color: #231F20;
+            border-radius: pxPc(4);
+            padding: pxPc(4) pxPc(6);
+        }
+
+        .m-text {
+            margin-top: pxPc(44);
+
+            + .m-text {
+                margin-top: pxPc(20);
+            }
+        }
+    }
+
+    .e-img {
+        width: pxPc(400);
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+.section-03__button {
+    text-align: center;
+    margin-top: pxPc(80);
+
+    a {
+        background-color: #FFF000;
+        color: #231F20;
+        border-radius: 100px;
+        width: pxPc(434);
+        height: pxPc(90);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0 pxPc(6);
+        font-size: fsPxPc(24);
+
+        img {
+            width: pxPc(23);
+        }
+    }
+}
+
+
+
+/* セクション 04
+-------------------------------------------------- */
+.section-04 {
+    background-color: #F2EEB6;
+}
+.section-04__in {
+    width: pxPc(1335);
+    margin: 0 auto;
+    padding: pxPc(54) pxPc(170) pxPc(170);
+    background-color: #F2E85E;
+}
+.section-04__heading {
+    text-align: center;
+    color: #ffffff;
+    font-size: fsPxPc(86);
+}
+.section-04__faq {
+    margin-top: pxPc(50);
+
+    > dl {
+        background-color: #ffffff;
+        border-radius: pxPc(12);
+        padding: pxPc(30) pxPc(58) pxPc(58);
+
+        > dt {
+            font-size: fsPxPc(20);
+            background-image: url(./foamee-cmn-icon-03.svg);
+            background-position: right top;
+
+            span {
+                font-size: fsPxPc(56);
+                color: #F2E85E;
+                font-weight: 400;
+                margin-right: pxPc(30);
+            }
+        }
+
+        > dd {
+            font-size: fsPxPc();
+        }
+    }
+}
+
+
+
+/* セクション 05
+-------------------------------------------------- */
+.section-05 {
+    background-color: #F2EEB6;
+    padding: pxPc(90) 0 pxPc(230);
+}
+.section-05__in {
+    width: pxPc(1335);
+    margin: 0 auto;
+}
+.section-05__heading {
+
+    h2 {
+        font-size: fsPxPc(32);
+        font-weight: 700;
+    }
+}
+.section-05__content {
+    padding: pxPc(120) pxPc(230) pxPc(120) pxPc(260);
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    gap: 0 pxPc(60);
+
+    .e-img {
+        width: pxPc(446);
+    }
+
+    .e-content {
+        flex: 1;
+        padding-top: pxPc(70);
+
+        .m-name {
+            border-top: 2px solid #000000;
+            border-bottom: 2px solid #000000;
+            padding: pxPc(10) 0;
+            font-weight: 700;
+
+            dt {
+                font-size: fsPxPc(24);
+            }
+
+            dd {
+                font-size: fsPxPc(20);
+
+                span {
+                    font-size: fsPxPc(14);
+                }
+            }
+        }
+
+        .m-text {
+            margin-top: pxPc(25);
+        }
+
+        .m-button {
+            margin-top: pxPc(50);
+
+            .s-button-01 {
+
+                a {
+                    width: 100%;
+                    height: pxPc(57);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 100px;
+                    border: 1px solid #FFF000;
+                    background-color: #ffffff;
+                }
+            }
+
+            .s-button-02 {
+
+                a {
+                    width: 100%;
+                    height: pxPc(57);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 100px;
+                    background-color: #FFF000;
+                }
+            }
+        }
+    }
+}
+
+
+
+/* セクション 06
+-------------------------------------------------- */
+.section-06 {
+    background-image: url(./foamee-section-06-bg-01.webp);
+    background-size: cover;
+    padding: pxPc(210) 0 pxPc(150);
+}
+.section-06__in {
+    text-align: center;
+}
+.section-06__heading {
+
+    h2 {
+        font-size: fsPxPc(32);
+        font-weight: 700;
+    }
+}
+.section-06__text {
+    margin-top: pxPc(40);
+}
+.section-06__button {
+
+    a {
+        width: pxPc(340);
+        height: pxPc(57);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 100px;
+        background-color: #231F20;
+        color: #F2E85E;
+    }
+}
