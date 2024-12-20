@@ -80,6 +80,22 @@ $breakpoints-pc: (
     line-height: 1.56;
     color: #231F20;
     letter-spacing: 1.12px;
+
+    h1, h2, h3, h4, h5, h6 {
+        font-family: "M PLUS 1", serif;
+        text-align: left;
+    }
+
+    a {
+
+        &:hover {
+            border-bottom: none;
+        }
+    }
+
+    * {
+        background-repeat: no-repeat;
+    }
 }
 
 
@@ -101,14 +117,16 @@ $breakpoints-pc: (
     justify-content: flex-end;
     padding-right: pxPc(10);
     background-color: #F2E85E;
+    text-align: center;
 
     .e-logo {
         width: pxPc(265);
+        margin: 0 auto;
     }
 
     .e-text {
         font-size: fsPxPc(32);
-        font-weight: 900;
+        font-weight: 800;
     }
 
     .e-img {
@@ -165,6 +183,7 @@ $breakpoints-pc: (
             display: flex;
             align-items: center;
             gap: 0 pxPc(10);
+            color: #594F4F;
 
             span {
                 font-size: fsPxPc(22);
@@ -173,6 +192,7 @@ $breakpoints-pc: (
 
             &::after {
                 content: '';
+                flex: 1;
                 border-top: 2px solid #594F4F;
             }
         }
@@ -183,7 +203,8 @@ $breakpoints-pc: (
             line-height: 1;
             background-color: #594F4F;
             color: #F2EEB6;
-            padding: pxPc(4);
+            padding: pxPc(4) pxPc(8);
+            border-radius: pxPc(4);
         }
     }
 
@@ -192,7 +213,6 @@ $breakpoints-pc: (
     }
 }
 .section-01__button {
-    text-align: center;
     margin-top: pxPc(80);
 
     a {
@@ -206,6 +226,7 @@ $breakpoints-pc: (
         align-items: center;
         gap: 0 pxPc(6);
         font-size: fsPxPc(24);
+        margin: 0 auto;
 
         img {
             width: pxPc(23);
@@ -223,11 +244,16 @@ $breakpoints-pc: (
 }
 .section-02__in {
     max-width: pxPc(1135);
+    margin: 0 auto;
 
     .e-heading-01 {
-        font-size: fsPxPc(86);
-        color: #ffffff;
         margin-bottom: pxPc(120);
+
+        h2 {
+            font-size: fsPxPc(86);
+            color: #ffffff;
+            text-align: center !important;
+        }
     }
 
     .e-heading-02 {
@@ -244,6 +270,7 @@ $breakpoints-pc: (
             }
 
             &::after {
+                flex: 1;
                 content: '';
                 border-top: 2px solid #ffffff;
             }
@@ -255,7 +282,8 @@ $breakpoints-pc: (
             line-height: 1;
             background-color: #ffffff;
             color: #594F4F;
-            padding: pxPc(4);
+            padding: pxPc(4) pxPc(8);
+            border-radius: pxPc(4);
         }
     }
 
@@ -284,12 +312,32 @@ $breakpoints-pc: (
                 border-radius: 100px;
                 width: pxPc(85);
                 height: pxPc(85);
+                display: flex;
+                justify-content: center;
+                align-items: center;
             }
         }
     }
 }
+.section-02__video {
+    max-width: pxPc(880);
+    margin: pxPc(180) auto 0;
+
+    .section-02__video__in {
+        position: relative;
+        width: 100%;
+        padding-top: 56.25%;
+
+        iframe {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100% !important;
+            height: 100% !important;
+        }
+    }
+}
 .section-02__button {
-    text-align: center;
     margin-top: pxPc(80);
 
     a {
@@ -303,6 +351,7 @@ $breakpoints-pc: (
         align-items: center;
         gap: 0 pxPc(6);
         font-size: fsPxPc(24);
+        margin: 0 auto;
 
         img {
             width: pxPc(23);
@@ -336,16 +385,18 @@ $breakpoints-pc: (
     }
 }
 .section-03__heading-02 {
-    text-align: center;
     margin: pxPc(60) 0 pxPc(40);
 
     h3 {
-        color: #ffffff;
+        color: #231F20;
         font-size: fsPxPc(32);
+        text-align: center !important;
+        font-weight: 700;
     }
 }
 .section-03__in {
     max-width: pxPc(1130);
+    margin: 0 auto;
 }
 .section-03__recipe {
     margin-top: pxPc(-90);
@@ -359,6 +410,7 @@ $breakpoints-pc: (
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        background-color: #ffffff;
 
         .e-content {
             flex: 1;
@@ -367,6 +419,7 @@ $breakpoints-pc: (
             .m-name-en {
                 font-size: fsPxPc(26);
                 font-weight: 600;
+                color: #231F20;
             }
 
             .m-name-ja {
@@ -375,9 +428,12 @@ $breakpoints-pc: (
                 background-color: #231F20;
                 border-radius: pxPc(4);
                 padding: pxPc(4) pxPc(6);
+                display: inline-block;
+                color: #ffffff;
             }
 
             .m-material {
+                margin-top: pxPc(24);
 
                 li {
                     display: flex;
@@ -385,14 +441,20 @@ $breakpoints-pc: (
                     align-items: center;
                     gap: 0 pxPc(16);
 
+                    + li {
+                        margin-top: pxPc(10);
+                    }
+
                     .s-item {
                         background-image: url(./foamee-cmn-icon-02.svg);
                         background-size: pxPc(25) auto;
                         padding-left: pxPc(34);
                         font-size: fsPxPc(14);
+                        padding-top: pxPc(3);
                     }
 
                     .s-amount {
+                        flex: 1;
                         font-size: fsPxPc(14);
                         display: flex;
                         align-items: center;
@@ -428,6 +490,7 @@ $breakpoints-pc: (
 .section-03__creator {
     display: flex;
     border-radius: pxPc(20);
+    overflow: hidden;
     width: pxPc(880);
     margin-left: auto;
     margin-right: auto;
@@ -440,14 +503,17 @@ $breakpoints-pc: (
         .m-name-en {
             font-size: fsPxPc(22);
             font-weight: 700;
+            color: #231F20;
         }
 
         .m-name-ja {
+            display: inline-block;
             font-size: fsPxPc(12);
             line-height: 1;
             background-color: #231F20;
             border-radius: pxPc(4);
-            padding: pxPc(4) pxPc(6);
+            padding: pxPc(4) pxPc(8);
+            color: #ffffff;
         }
 
         .m-text {
@@ -470,7 +536,6 @@ $breakpoints-pc: (
     }
 }
 .section-03__button {
-    text-align: center;
     margin-top: pxPc(80);
 
     a {
@@ -484,6 +549,7 @@ $breakpoints-pc: (
         align-items: center;
         gap: 0 pxPc(6);
         font-size: fsPxPc(24);
+        margin: 0 auto;
 
         img {
             width: pxPc(23);
@@ -506,8 +572,12 @@ $breakpoints-pc: (
 }
 .section-04__heading {
     text-align: center;
-    color: #ffffff;
-    font-size: fsPxPc(86);
+
+    h2 {
+        color: #ffffff;
+        font-size: fsPxPc(86);
+        text-align: center !important;
+    }
 }
 .section-04__faq {
     margin-top: pxPc(50);
@@ -515,23 +585,39 @@ $breakpoints-pc: (
     > dl {
         background-color: #ffffff;
         border-radius: pxPc(12);
-        padding: pxPc(30) pxPc(58) pxPc(58);
+        padding: pxPc(30) pxPc(58);
+
+        + dl {
+            margin-top: pxPc(34);
+        }
 
         > dt {
             font-size: fsPxPc(20);
             background-image: url(./foamee-cmn-icon-03.svg);
-            background-position: right top;
+            background-position: right top pxPc(16);
+            background-size: pxPc(28) auto;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
 
             span {
                 font-size: fsPxPc(56);
                 color: #F2E85E;
                 font-weight: 400;
                 margin-right: pxPc(30);
+                line-height: 1;
+                margin-top: pxPc(-8);
+            }
+
+            &.active {
+                background-image: url(./foamee-cmn-icon-04.svg);
             }
         }
 
         > dd {
-            font-size: fsPxPc();
+            display: none;
+            margin-top: pxPc(20);
+            padding-bottom: pxPc(28);
         }
     }
 }
@@ -549,10 +635,13 @@ $breakpoints-pc: (
     margin: 0 auto;
 }
 .section-05__heading {
+    margin-bottom: pxPc(80);
 
     h2 {
         font-size: fsPxPc(32);
         font-weight: 700;
+        text-align: center !important;
+        color: #231F20;
     }
 }
 .section-05__content {
@@ -611,6 +700,7 @@ $breakpoints-pc: (
             }
 
             .s-button-02 {
+                margin-top: pxPc(20);
 
                 a {
                     width: 100%;
@@ -643,6 +733,8 @@ $breakpoints-pc: (
     h2 {
         font-size: fsPxPc(32);
         font-weight: 700;
+        text-align: center !important;
+        color: #594F4F;
     }
 }
 .section-06__text {
@@ -659,5 +751,6 @@ $breakpoints-pc: (
         border-radius: 100px;
         background-color: #231F20;
         color: #F2E85E;
+        margin: pxPc(50) auto 0;
     }
 }
