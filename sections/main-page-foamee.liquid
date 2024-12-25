@@ -11,10 +11,11 @@
             <div class="l-kv__in__content">
             <div>
                 <h1 class="e-logo"><img src="{{ 'foamee-kv-logo-01.webp' | asset_url }}" alt="Foamee"></h1>
-                <p class="e-text">
+                {{ section.settings.kv_copy }}
+                {% comment %} <p>
                     安心の天然素材で<br>
                     クリーミーな泡立ちを
-                </p>
+                </p> {% endcomment %}
                 <img class="e-img" src="{{ 'foamee-kv-img-01.webp' | asset_url }}" alt="Foamee 商品写真">
             </div>
             </div>
@@ -34,14 +35,15 @@
                     <h2><span>About Foamee</span></h2>
                     <div>Foameeについて</div>
                 </div>
-                <p class="e-text">
+                {{ section.settings.about_text }}
+                {% comment %} <p>
                     Foameeは、天然素材100%で作られた、カクテル用の泡を簡単に作れる革新的なアイテムです。卵白を使わずに、軽やかでなめらかな泡を瞬時に作ることができ、プロのバーテンダーやホームパーティーを格上げしたい方に最適です。<br>
                     Foameeがあれば、家でもプロ顔負けのカクテルが楽しめます。手軽に、そして美しく泡立つFoameeで、特別な一杯を演出してみませんか？
-                </p>
+                </p> {% endcomment %}
             </div>
-            <div class="section-01__in__img"><img src="{{ 'foamee-section-01-img-01.webp' | asset_url }}" alt="Foamee カクテル用の泡イメージ"></div>
+            <div class="section-01__in__img"><img src="{{ section.settings.about_img | img_url: 'master' }}" alt="Foamee カクテル用の泡イメージ"></div>
         </div>
-        <div class="section-01__button"><a href="#shopNnow">購入はこちら<img src="{{ 'foamee-cmn-icon-01.svg' | asset_url }}" alt=""></a></div>
+        <div class="section-01__button"><a href="{{ section.settings.about_url }}">購入はこちら<img src="{{ 'foamee-cmn-icon-01.svg' | asset_url }}" alt=""></a></div>
     </section>
 
 
@@ -49,14 +51,16 @@
     <section class="section-02">
         <div class="section-02__in">
             <div class="e-heading-01">
-                <h2>Createbetterfoam</h2>
+                {{ section.settings.createbetterfoam_heading }}
+                {% comment %} <h2>Createbetterfoam</h2> {% endcomment %}
             </div>
             <div class="e-heading-02">
                 <h3><span>How to</span></h3>
                 <div>Foameeの使い方</div>
             </div>
 
-            <div class="e-howto-wrap">
+            {{ section.settings.createbetterfoam_howto }}
+            {% comment %} <div class="e-howto-wrap">
                 <div class="e-howto">
                     <dl>
                         <dt class="e-img"><img src="{{ 'foamee-section-02-img-01.webp' | asset_url }}" alt="Foameeの使い方 イメージ1"></dt>
@@ -80,15 +84,16 @@
                         <dd class="e-number">3</dd>
                     </dl>
                 </div>
-            </div>
+            </div> {% endcomment %}
 
             <div class="section-02__video">
                 <div class="section-02__video__in">
-                    <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/Av0KnnBJ4QM?si=JXMrvUtqnSfVpRRA&rel=0&loop=1&playlist=Av0KnnBJ4QM&controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/{{ section.settings.createbetterfoam_video.id }}?si=JXMrvUtqnSfVpRRA&rel=0&loop=1&playlist={{ section.settings.createbetterfoam_video.id }}&controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    {% comment %} <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/Av0KnnBJ4QM?si=JXMrvUtqnSfVpRRA&rel=0&loop=1&playlist=Av0KnnBJ4QM&controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> {% endcomment %}
                 </div>
             </div>
 
-            <div class="section-02__button"><a href="#shopNnow">購入はこちら<img src="{{ 'foamee-cmn-icon-01.svg' | asset_url }}" alt=""></a></div>
+            <div class="section-02__button"><a href="{{ section.settings.createbetterfoam_url }}">購入はこちら<img src="{{ 'foamee-cmn-icon-01.svg' | asset_url }}" alt=""></a></div>
         </div>
     </section>
 
@@ -96,10 +101,12 @@
 
     <section class="section-03">
         <div class="section-03__heading-01">
-            <h2>Recipe</h2>
+            {{ section.settings.recipe_heading }}
+            {% comment %} <h2>Recipe</h2> {% endcomment %}
         </div>
         <div class="section-03__in">
-            <div class="section-03__recipe__wrap">
+            {{ section.settings.recipe_recipe }}
+            {% comment %} <div class="section-03__recipe__wrap">
                 <div class="section-03__recipe">
                     <div>
                         <div class="e-content">
@@ -192,12 +199,14 @@
                     </div>
                 </div>
             </div>
-            <p class="section-03__text">※foameeの使用量はカクテルレシピによって変わります</p>
+            <p class="section-03__text">※foameeの使用量はカクテルレシピによって変わります</p> {% endcomment %}
 
             <div class="section-03__heading-02">
-                <h3>Recipe Creator</h3>
+                {{ section.settings.recipe-reator_heading }}
+                {% comment %} <h3>Recipe Creator</h3> {% endcomment %}
             </div>
-            <div class="section-03__creator">
+            {{ section.settings.recipe-reator_content }}
+            {% comment %} <div class="section-03__creator">
                 <div class="e-content">
                     <h3 class="m-name-en">hiroyuki nishizaki</h3>
                     <div class="m-name-ja">西崎 宏幸</div>
@@ -221,9 +230,9 @@
                         <img src="{{ 'foamee-section-03-img-04.webp' | asset_url }}" alt="Recipe Creator hiroyuki nishizaki 西崎 宏幸">
                     </picture>
                 </div>
-            </div>
+            </div> {% endcomment %}
 
-            <div class="section-03__button"><a href="#shopNnow">購入はこちら<img src="{{ 'foamee-cmn-icon-01.svg' | asset_url }}" alt=""></a></div>
+            <div class="section-03__button"><a href="{{ section.settings.recipe-reator_url }}">購入はこちら<img src="{{ 'foamee-cmn-icon-01.svg' | asset_url }}" alt=""></a></div>
         </div>
     </section>
 
@@ -232,10 +241,12 @@
     <section class="section-04">
         <div class="section-04__in">
             <div class="section-04__heading">
-                <h2>Faq</h2>
+                {{ section.settings.faq_heading }}
+                {% comment %} <h2>Faq</h2> {% endcomment %}
             </div>
 
-            <div class="section-04__faq">
+            {{ section.settings.faq_content }}
+            {% comment %} <div class="section-04__faq">
                 <dl>
                     <dt class="e-q"><span>Q</span>Foameeとは何ですか？</dt>
                     <dd class="e-a">
@@ -274,7 +285,7 @@
                         開封後は冷蔵保存で6ヶ月以内にご利用ください。
                     </dd>
                 </dl>
-            </div>
+            </div> {% endcomment %}
 
             <script>
                 document.addEventListener('DOMContentLoaded', function() {
@@ -306,11 +317,27 @@
     <section class="section-05" id="shopNnow">
         <div class="section-05__in">
             <div class="section-05__heading">
-                <h2>Shop now</h2>
+                {{ section.settings.shop-now_heading }}
+                {% comment %} <h2>Shop now</h2> {% endcomment %}
             </div>
 
             <div class="section-05__content">
-                <div class="e-img"><img src="{{ 'foamee-section-05-img-01.webp' | asset_url }}" alt="Foamee 商品写真"></div>
+                {% assign product = section.settings.shop-now_product %}
+                <div class="e-img"><img src="{{ product.featured_image | img_url: 'master' }}" alt="Foamee 商品写真"></div>
+                <div class="e-content">
+                    <dl class="m-name">
+                        <dt>{{ product.title }}</dt>
+                        <dd>{{ product.price | money }}<span>（税込）</span></dd>
+                    </dl>
+                    <p class="m-text">
+                        {{ product.description }}
+                    </p>
+                    <ul class="m-button">
+                        <li class="s-button-01"><a href="{{ section.settings.shop-now_url-01 }}">商品ページを見る</a></li>
+                        <li class="s-button-02"><a href="{{ section.settings.shop-now_url-02 }}">カートに入れる</a></li>
+                    </ul>
+                </div>
+                {% comment %} <div class="e-img"><img src="{{ 'foamee-section-05-img-01.webp' | asset_url }}" alt="Foamee 商品写真"></div>
                 <div class="e-content">
                     <dl class="m-name">
                         <dt>Foamee</dt>
@@ -323,7 +350,7 @@
                         <li class="s-button-01"><a href="">商品ページを見る</a></li>
                         <li class="s-button-02"><a href="">カートに入れる</a></li>
                     </ul>
-                </div>
+                </div> {% endcomment %}
             </div>
         </div>
     </section>
@@ -333,14 +360,16 @@
     <section class="section-06">
         <div class="section-06__in">
             <div class="section-06__heading">
-                <h2>Contact</h2>
+                {{ section.settings.contact_heading }}
+                {% comment %} <h2>Contact</h2> {% endcomment %}
             </div>
-            <p class="section-06__text">
+            {{ section.settings.contact_text }}
+            {% comment %} <p class="section-06__text">
                 この製品に関する詳細情報やお取り扱いについての<br class="sp">ご相談をご希望の場合は、<br>
                 お気軽にお問い合わせください。<br>
                 専門スタッフが丁寧に対応いたします。
-            </p>
-            <div class="section-06__button"><a href="">この商品へのお問い合わせ</a></div>
+            </p> {% endcomment %}
+            <div class="section-06__button"><a href="{{ section.settings.contact_url }}">この商品へのお問い合わせ</a></div>
         </div>
     </section>
 
@@ -353,6 +382,141 @@
 {% schema %}
 {
   "name": "foamee",
-  "settings": [],
+  "settings": [
+    {
+        "type": "richtext",
+        "id": "kv_copy",
+        "label": "KV キャッチコピー",
+        "default": "<p>キャッチコピー</p>",
+        "info": "改行：Shift 押しながら Enter"
+    },
+    {
+        "type": "richtext",
+        "id": "about_text",
+        "label": "About テキスト",
+        "default": "<p>テキスト</p>",
+        "info": "改行：Shift 押しながら Enter"
+    },
+    {
+        "type": "image_picker",
+        "id": "about_img",
+        "label": "About 画像を選択"
+    },
+    {
+        "type": "url",
+        "id": "about_url",
+        "label": "About 購入はこちら URL"
+    },
+    {
+        "type": "richtext",
+        "id": "createbetterfoam_heading",
+        "label": "Create better foam 見出し",
+        "default": "<h2>見出し</h2>",
+        "info": "改行：Shift 押しながら Enter"
+    },
+    {
+        "type": "liquid",
+        "id": "createbetterfoam_howto",
+        "label": "Create better foam How to コンテンツ",
+        "info": "Liquidコード含むHTML"
+    },
+    {
+        "type": "video_url",
+        "id": "createbetterfoam_video",
+        "label": "Create better foam YouTube動画URL",
+        "accept": [
+          "youtube"
+        ]
+    },
+    {
+        "type": "url",
+        "id": "createbetterfoam_url",
+        "label": "Create better foam 購入はこちら URL"
+    },
+    {
+        "type": "richtext",
+        "id": "recipe_heading",
+        "label": "Recipe 見出し",
+        "default": "<h2>見出し</h2>",
+        "info": "改行：Shift 押しながら Enter"
+    },
+    {
+        "type": "liquid",
+        "id": "recipe_recipe",
+        "label": "Recipe レシピコンテンツ",
+        "info": "Liquidコード含むHTML"
+    },
+    {
+        "type": "richtext",
+        "id": "recipe-reator_heading",
+        "label": "Recipe Creator 見出し",
+        "default": "<h3>見出し</h3>",
+        "info": "改行：Shift 押しながら Enter"
+    },
+    {
+        "type": "liquid",
+        "id": "recipe-reator_content",
+        "label": "Recipe Creator プロフィール",
+        "info": "Liquidコード含むHTML"
+    },
+    {
+        "type": "url",
+        "id": "recipe-reator_url",
+        "label": "Recipe Creator 購入はこちら URL"
+    },
+    {
+        "type": "richtext",
+        "id": "faq_heading",
+        "label": "Faq 見出し",
+        "default": "<h2>見出し</h2>",
+        "info": "改行：Shift 押しながら Enter"
+    },
+    {
+        "type": "liquid",
+        "id": "faq_content",
+        "label": "Faq コンテンツ",
+        "info": "Liquidコード含むHTML"
+    },
+    {
+        "type": "richtext",
+        "id": "shop-now_heading",
+        "label": "Shop now 見出し",
+        "default": "<h2>見出し</h2>",
+        "info": "改行：Shift 押しながら Enter"
+    },
+    {
+        "type": "product",
+        "id": "shop-now_product",
+        "label": "Shop now 商品を選択"
+    },
+    {
+        "type": "url",
+        "id": "shop-now_url-01",
+        "label": "Shop now 商品ページを見る URL"
+    },
+    {
+        "type": "url",
+        "id": "shop-now_url-02",
+        "label": "Shop now カートに入れる URL"
+    },
+    {
+        "type": "richtext",
+        "id": "contact_heading",
+        "label": "Contact 見出し",
+        "default": "<h2>見出し</h2>",
+        "info": "改行：Shift 押しながら Enter"
+    },
+    {
+        "type": "liquid",
+        "id": "contact_text",
+        "label": "Contact テキスト",
+        "info": "Liquidコード含むHTML"
+    },
+    {
+        "type": "url",
+        "id": "contact_url",
+        "label": "Contact お問い合わせ URL"
+    }
+  ],
 }
 {% endschema %}
