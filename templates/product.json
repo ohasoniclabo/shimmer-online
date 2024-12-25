@@ -59,17 +59,15 @@
         },
         "text_AejLU8": {
           "type": "text",
-          "disabled": true,
           "settings": {
-            "text": "夏季期間の配送遅延について",
+            "text": "年末年始休業期間について",
             "text_style": "bold"
           }
         },
         "richtext_tNiyFL": {
           "type": "richtext",
-          "disabled": true,
           "settings": {
-            "text": "<p>2024/8/9(金)～2024/8/16までのご注文について配送遅延が生じる場合がございます。詳しくはこちら↓<a href=\"https://shimmer.okinawa/blogs/pr/summer2024_information\" target=\"_blank\" title=\"https://shimmer.okinawa/blogs/pr/summer2024_information\">「夏季期間の配送遅延について」</a></p>"
+            "text": "<p>2024/12/27(金)～2025/1/5(日)までのご注文については1/6(月)より順次出荷いたします。詳しくはこちら↓【<a href=\"https://shimmer.okinawa/blogs/pr/2024yearend\" target=\"_blank\" title=\"2024年度年末年始休業について\"><strong>年末年始休業および配送に関するお知らせ</strong></a>】</p>"
           }
         },
         "fuji3_wishlist_add_btn_cUWYqw": {
