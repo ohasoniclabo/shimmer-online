@@ -47,7 +47,7 @@
   width: min(15.336vw, 265px);
   margin: 0 auto;
 }
-.l-kv__in__content .e-text {
+.l-kv__in__content p {
   font-size: min(1.852vw, 32px);
   font-weight: 800;
 }
@@ -88,7 +88,7 @@
   .l-kv__in__content .e-logo {
     width: 47.25vw;
   }
-  .l-kv__in__content .e-text {
+  .l-kv__in__content p {
     font-size: 5.75vw;
   }
   .l-kv__in__content .e-img {
@@ -154,7 +154,7 @@
   padding: min(0.231vw, 4px) min(0.463vw, 8px);
   border-radius: min(0.231vw, 4px);
 }
-.section-01__in__content .e-text {
+.section-01__in__content p {
   margin-top: min(2.315vw, 40px);
 }
 
@@ -212,7 +212,7 @@
     border-radius: 1vw;
     margin-top: 1vw;
   }
-  .section-01__in__content .e-text {
+  .section-01__in__content p {
     margin-top: 5vw;
     font-size: 3.5vw;
   }
