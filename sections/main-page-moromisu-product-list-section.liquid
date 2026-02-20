@@ -1,0 +1,269 @@
+{%- comment -%}
+  moromisu.css は main-page-moromisu.liquid で読み込んでいます
+{%- endcomment -%}
+{% liquid
+  assign set_sale_button_color = section.settings.set_sale_button_color | default: '#30861e'
+  assign set_sale_text_color = section.settings.set_sale_text_color | default: '#ffffff'
+  assign set_sale_button_color_normalized = set_sale_button_color | remove: ' '
+  assign set_sale_is_transparent_bg = false
+  assign set_sale_border_color = set_sale_button_color
+  assign set_sale_circle_fill = 'white'
+  assign set_sale_circle_stroke_color = 'transparent'
+  assign set_sale_arrow_color = set_sale_button_color
+  assign set_sale_hover_text_color = set_sale_button_color
+  assign set_sale_hover_button_color = 'white'
+  assign set_sale_hover_arrow_color = set_sale_hover_text_color
+
+  if set_sale_button_color_normalized == 'rgba(0,0,0,0)' or set_sale_button_color == 'transparent' or set_sale_button_color == '#00000000'
+    assign set_sale_is_transparent_bg = true
+    assign set_sale_border_color = set_sale_text_color
+    assign set_sale_circle_fill = 'transparent'
+    assign set_sale_circle_stroke_color = set_sale_text_color
+    assign set_sale_arrow_color = set_sale_text_color
+    assign set_sale_hover_text_color = 'white'
+    assign set_sale_hover_button_color = set_sale_text_color
+    assign set_sale_hover_arrow_color = set_sale_hover_text_color
+  endif
+
+  assign subscription_sale_button_color = section.settings.subscription_sale_button_color | default: '#e07a2f'
+  assign subscription_sale_text_color = section.settings.subscription_sale_text_color | default: '#ffffff'
+  assign subscription_sale_button_color_normalized = subscription_sale_button_color | remove: ' '
+  assign subscription_sale_is_transparent_bg = false
+  assign subscription_sale_border_color = subscription_sale_button_color
+  assign subscription_sale_circle_fill = 'white'
+  assign subscription_sale_circle_stroke_color = 'transparent'
+  assign subscription_sale_arrow_color = subscription_sale_button_color
+  assign subscription_sale_hover_text_color = subscription_sale_button_color
+  assign subscription_sale_hover_button_color = 'white'
+  assign subscription_sale_hover_arrow_color = subscription_sale_hover_text_color
+
+  if subscription_sale_button_color_normalized == 'rgba(0,0,0,0)' or subscription_sale_button_color == 'transparent' or subscription_sale_button_color == '#00000000'
+    assign subscription_sale_is_transparent_bg = true
+    assign subscription_sale_border_color = subscription_sale_text_color
+    assign subscription_sale_circle_fill = 'transparent'
+    assign subscription_sale_circle_stroke_color = subscription_sale_text_color
+    assign subscription_sale_arrow_color = subscription_sale_text_color
+    assign subscription_sale_hover_text_color = 'white'
+    assign subscription_sale_hover_button_color = subscription_sale_text_color
+    assign subscription_sale_hover_arrow_color = subscription_sale_hover_text_color
+  endif
+%}
+<style>
+  #shopify-section-{{ section.id }} .c-product-list {
+    {% if section.settings.add_background_color %}
+      background: url('{{ 'moromisu-bg.png' | asset_url }}') repeat center center;
+    {% else %}
+      background: url('{{ 'moromisu-material-bg-body.png' | asset_url }}') repeat center center;
+    {% endif %}
+  }
+
+  #shopify-section-{{ section.id }} .c-product-list__cta--set-sale {
+    --cta-bg: {{ set_sale_button_color }};
+    --cta-border: {{ set_sale_border_color }};
+    --cta-text: {{ set_sale_text_color }};
+    --cta-circle-fill: {{ set_sale_circle_fill }};
+    --cta-circle-stroke: {{ set_sale_circle_stroke_color }};
+    --cta-arrow: {{ set_sale_arrow_color }};
+    --cta-hover-bg: {{ set_sale_hover_button_color }};
+    --cta-hover-text: {{ set_sale_hover_text_color }};
+    --cta-hover-arrow: {{ set_sale_hover_arrow_color }};
+  }
+
+  #shopify-section-{{ section.id }} .c-product-list__cta--subscription-sale {
+    --cta-bg: {{ subscription_sale_button_color }};
+    --cta-border: {{ subscription_sale_border_color }};
+    --cta-text: {{ subscription_sale_text_color }};
+    --cta-circle-fill: {{ subscription_sale_circle_fill }};
+    --cta-circle-stroke: {{ subscription_sale_circle_stroke_color }};
+    --cta-arrow: {{ subscription_sale_arrow_color }};
+    --cta-hover-bg: {{ subscription_sale_hover_button_color }};
+    --cta-hover-text: {{ subscription_sale_hover_text_color }};
+    --cta-hover-arrow: {{ subscription_sale_hover_arrow_color }};
+  }
+
+  #shopify-section-{{ section.id }} .c-product-list__cta {
+    background-color: var(--cta-bg);
+    border: 1px solid var(--cta-border);
+    color: var(--cta-text);
+    --cta-current-arrow: var(--cta-arrow);
+  }
+
+  #shopify-section-{{ section.id }} .c-product-list__cta .c-product-list__cta-icon circle {
+    fill: var(--cta-circle-fill);
+    stroke: var(--cta-circle-stroke);
+  }
+
+  #shopify-section-{{ section.id }} .c-product-list__cta .c-product-list__cta-icon path {
+    fill: var(--cta-current-arrow);
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    #shopify-section-{{ section.id }} .c-product-list__cta:hover {
+      background-color: var(--cta-hover-bg);
+      color: var(--cta-hover-text);
+      --cta-current-arrow: var(--cta-hover-arrow);
+    }
+  }
+</style>
+
+<section class="c-product-list">
+  <div class="c-product-list__inner">
+    <div class="c-product-list__body">
+      {% if section.settings.products != blank %}
+        <ul class="c-product-list__cards">
+          {% for product in section.settings.products %}
+            {% liquid
+              assign current_variant = product.selected_or_first_available_variant
+              assign is_on_sale = false
+
+              if current_variant != blank and current_variant.compare_at_price > current_variant.price
+                assign is_on_sale = true
+              endif
+            %}
+            <li class="c-product-list__card">
+              <div class="c-product-list__card-img">
+                <a href="{{ product.url }}" class="c-product-list__card-image-link" aria-label="{{ product.title | escape }}">
+                  {% if product.featured_image != blank %}
+                    {{ product.featured_image | image_url: width: 900 | image_tag: loading: 'lazy', alt: product.title }}
+                  {% endif %}
+                </a>
+              </div>
+
+              <div class="c-product-list__card-info">
+                <p class="c-product-list__card-name">
+                  <a href="{{ product.url }}" class="c-product-list__card-name-link">{{ product.title }}</a>
+                </p>
+                <p class="c-product-list__card-brand">{{ product.vendor }}</p>
+                {% if current_variant != blank %}
+                  <p class="c-product-list__card-price">
+                    {% if is_on_sale %}
+                      <span class="c-product-list__card-price-old">¥{{ current_variant.compare_at_price | money_without_currency }}</span>
+                    {% endif %}
+                    <span class="c-product-list__card-price-num">¥{{ current_variant.price | money_without_currency }}</span>
+                    <span class="c-product-list__card-price-tax">（税込）</span>
+                  </p>
+                {% endif %}
+              </div>
+
+              <div class="c-product-list__card-btns">
+                <a href="{{ product.url }}" class="c-product-list__card-btn c-product-list__card-btn--outline">商品詳細へ</a>
+                {% if current_variant != blank and current_variant.available %}
+                  <a href="{{ routes.cart_add_url }}?id={{ current_variant.id }}&quantity=1" class="c-product-list__card-btn c-product-list__card-btn--fill">カートへ入れる</a>
+                {% else %}
+                  <span class="c-product-list__card-btn c-product-list__card-btn--fill is-disabled" aria-disabled="true">在庫なし</span>
+                {% endif %}
+              </div>
+            </li>
+          {% endfor %}
+        </ul>
+      {% else %}
+        <p class="c-product-list__empty">商品準備中です</p>
+      {% endif %}
+
+      {% if section.settings.set_sale_url != blank or section.settings.subscription_sale_url != blank %}
+        <div class="c-product-list__ctas">
+          {% if section.settings.set_sale_url != blank %}
+            <a href="{{ section.settings.set_sale_url }}" class="c-product-list__cta c-product-list__cta--set-sale{% if set_sale_is_transparent_bg %} is-transparent-bg{% endif %}">
+              <span class="c-product-list__cta-label">{{ section.settings.set_sale_text }}</span>
+              <span class="c-product-list__cta-icon" aria-hidden="true">
+                <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="15" cy="15" r="14.5" fill="var(--cta-circle-fill)" stroke="var(--cta-circle-stroke)"/>
+                  <path d="M16.4697 11.5302C16.396 11.4615 16.3369 11.3787 16.2959 11.2867C16.2549 11.1947 16.2329 11.0954 16.2311 10.9947C16.2293 10.894 16.2478 10.7939 16.2856 10.7006C16.3233 10.6072 16.3794 10.5223 16.4506 10.4511C16.5219 10.3799 16.6067 10.3238 16.7001 10.286C16.7935 10.2483 16.8935 10.2298 16.9942 10.2316C17.0949 10.2333 17.1942 10.2554 17.2862 10.2964C17.3782 10.3374 17.461 10.3965 17.5297 10.4702L21.5297 14.4702C21.6701 14.6108 21.749 14.8014 21.749 15.0002C21.749 15.1989 21.6701 15.3895 21.5297 15.5302L17.5297 19.5302C17.461 19.6038 17.3782 19.6629 17.2862 19.7039C17.1942 19.7449 17.0949 19.767 16.9942 19.7687C16.8935 19.7705 16.7935 19.752 16.7001 19.7143C16.6067 19.6766 16.5219 19.6204 16.4506 19.5492C16.3794 19.478 16.3233 19.3931 16.2856 19.2998C16.2478 19.2064 16.2293 19.1063 16.2311 19.0056C16.2329 18.9049 16.2549 18.8056 16.2959 18.7136C16.3369 18.6216 16.396 18.5388 16.4697 18.4702L19.1897 15.7502H9.49968C9.30077 15.7502 9.11001 15.6711 8.96935 15.5305C8.8287 15.3898 8.74968 15.1991 8.74968 15.0002C8.74968 14.8012 8.8287 14.6105 8.96935 14.4698C9.11001 14.3292 9.30077 14.2502 9.49968 14.2502H19.1897L16.4697 11.5302Z" fill="var(--cta-current-arrow)"/>
+                </svg>
+
+              </span>
+            </a>
+          {% endif %}
+          {% if section.settings.subscription_sale_url != blank %}
+            <a href="{{ section.settings.subscription_sale_url }}" class="c-product-list__cta c-product-list__cta--subscription-sale{% if subscription_sale_is_transparent_bg %} is-transparent-bg{% endif %}">
+              <span class="c-product-list__cta-label">{{ section.settings.subscription_sale_text }}</span>
+              <span class="c-product-list__cta-icon" aria-hidden="true">
+                <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="15" cy="15" r="14.5" fill="var(--cta-circle-fill)" stroke="var(--cta-circle-stroke)"/>
+                  <path d="M16.4697 11.5302C16.396 11.4615 16.3369 11.3787 16.2959 11.2867C16.2549 11.1947 16.2329 11.0954 16.2311 10.9947C16.2293 10.894 16.2478 10.7939 16.2856 10.7006C16.3233 10.6072 16.3794 10.5223 16.4506 10.4511C16.5219 10.3799 16.6067 10.3238 16.7001 10.286C16.7935 10.2483 16.8935 10.2298 16.9942 10.2316C17.0949 10.2333 17.1942 10.2554 17.2862 10.2964C17.3782 10.3374 17.461 10.3965 17.5297 10.4702L21.5297 14.4702C21.6701 14.6108 21.749 14.8014 21.749 15.0002C21.749 15.1989 21.6701 15.3895 21.5297 15.5302L17.5297 19.5302C17.461 19.6038 17.3782 19.6629 17.2862 19.7039C17.1942 19.7449 17.0949 19.767 16.9942 19.7687C16.8935 19.7705 16.7935 19.752 16.7001 19.7143C16.6067 19.6766 16.5219 19.6204 16.4506 19.5492C16.3794 19.478 16.3233 19.3931 16.2856 19.2998C16.2478 19.2064 16.2293 19.1063 16.2311 19.0056C16.2329 18.9049 16.2549 18.8056 16.2959 18.7136C16.3369 18.6216 16.396 18.5388 16.4697 18.4702L19.1897 15.7502H9.49968C9.30077 15.7502 9.11001 15.6711 8.96935 15.5305C8.8287 15.3898 8.74968 15.1991 8.74968 15.0002C8.74968 14.8012 8.8287 14.6105 8.96935 14.4698C9.11001 14.3292 9.30077 14.2502 9.49968 14.2502H19.1897L16.4697 11.5302Z" fill="var(--cta-current-arrow)"/>
+                </svg>
+              </span>
+            </a>
+          {% endif %}
+        </div>
+      {% endif %}
+    </div>
+
+    <div class="c-product-list__heading">
+      <span>商品情報</span>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Moromisu Product List",
+  "class": "shopify-section--main-page-moromisu",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "もろみ酢LPページでの利用を想定しています"
+    },
+    {
+      "type": "product_list",
+      "id": "products",
+      "label": "表示商品"
+    },
+    {
+      "type": "url",
+      "id": "set_sale_url",
+      "label": "お得なセット販売リンク"
+    },
+    {
+      "type": "text",
+      "id": "set_sale_text",
+      "label": "お得なセット販売ボタン文言"
+    },
+    {
+      "type": "color",
+      "id": "set_sale_text_color",
+      "label": "お得なセット販売テキストカラー",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "set_sale_button_color",
+      "label": "お得なセット販売ボタンカラー",
+      "default": "#30861e"
+    },
+    {
+      "type": "url",
+      "id": "subscription_sale_url",
+      "label": "お得な定期販売リンク"
+    },
+    {
+      "type": "text",
+      "id": "subscription_sale_text",
+      "label": "お得な定期販売ボタン文言"
+    },
+    {
+      "type": "color",
+      "id": "subscription_sale_text_color",
+      "label": "お得な定期販売テキストカラー",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "subscription_sale_button_color",
+      "label": "お得な定期販売ボタンカラー",
+      "default": "#e07a2f"
+    },
+    {
+      "type": "checkbox",
+      "id": "add_background_color",
+      "label": "背景色を追加",
+      "default": false
+    }
+  ],
+  "presets": [
+    {
+      "name": "Moromisu Product List"
+    }
+  ]
+}
+{% endschema %}

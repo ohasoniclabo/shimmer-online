@@ -1,0 +1,219 @@
+{%- comment -%}
+  moromisu.css は main-page-moromisu.liquid で読み込んでいます
+{%- endcomment -%}
+<section class="c-manufacturing">
+  <div class="c-manufacturing__inner">
+    <div class="c-manufacturing__top">
+      <div class="c-manufacturing__desc">
+        泡盛づくりの伝統を尊重しながらも現代の衛生基準に沿って製造されています。<br>
+        品質管理と伝統が両立した、安心できる製造プロセスです。<br>
+        ※酒造所によって、製造工程の詳細や手順は異なります。
+      </div>
+      <div class="c-manufacturing__vtitle">製造工程</div>
+    </div>
+
+    <div class="c-manufacturing__cards">
+      <div class="c-manufacturing__card">
+        <div class="c-manufacturing__step">
+          <span class="c-manufacturing__step-label">STEP</span>
+          <span class="c-manufacturing__step-num">01</span>
+        </div>
+        <div class="c-manufacturing__card-img">
+          {% if section.settings.step_01_image != blank %}
+            {{ section.settings.step_01_image | image_url: width: 1000 | image_tag: loading: 'lazy', class: 'c-manufacturing__card-img-placeholder' }}
+          {% endif %}
+        </div>
+        <h3 class="c-manufacturing__card-title">もろみ粕（蒸留粕）</h3>
+        <p class="c-manufacturing__card-desc">
+          もろみ酢づくりのはじまりは、泡盛を蒸留した後に残る「もろみ粕」。<br>
+          もろみ粕にはお米由来の栄養が豊富に含まれており、後の工程につながる大切な素材となります。
+        </p>
+      </div>
+
+      <div class="c-manufacturing__card">
+        <div class="c-manufacturing__step">
+          <span class="c-manufacturing__step-label">STEP</span>
+          <span class="c-manufacturing__step-num">02</span>
+        </div>
+        <div class="c-manufacturing__card-img">
+          {% if section.settings.step_02_image != blank %}
+            {{ section.settings.step_02_image | image_url: width: 1000 | image_tag: loading: 'lazy', class: 'c-manufacturing__card-img-placeholder' }}
+          {% endif %}
+        </div>
+        <h3 class="c-manufacturing__card-title">原料のチェック</h3>
+        <p class="c-manufacturing__card-desc">
+          蒸留直後の熱々のもろみ粕をすぐに工場へ運び込み、色・香り・酸味といった原料の状態を確認します。<br>
+          品質の良い原料だけを次の工程へ進めていきます。
+        </p>
+      </div>
+
+      <div class="c-manufacturing__card">
+        <div class="c-manufacturing__step">
+          <span class="c-manufacturing__step-label">STEP</span>
+          <span class="c-manufacturing__step-num">03</span>
+        </div>
+        <div class="c-manufacturing__card-img">
+          {% if section.settings.step_03_image != blank %}
+            {{ section.settings.step_03_image | image_url: width: 1000 | image_tag: loading: 'lazy', class: 'c-manufacturing__card-img-placeholder' }}
+          {% endif %}
+        </div>
+        <h3 class="c-manufacturing__card-title">圧搾処理</h3>
+        <p class="c-manufacturing__card-desc">
+          チェック済みのもろみ粕は、搾り機にかけて丁寧に絞られます。この段階で液体が抽出され、もろみ酢としてのベースが形成されます。
+        </p>
+      </div>
+
+      <div class="c-manufacturing__card">
+        <div class="c-manufacturing__step">
+          <span class="c-manufacturing__step-label">STEP</span>
+          <span class="c-manufacturing__step-num">04</span>
+        </div>
+        <div class="c-manufacturing__card-img">
+          {% if section.settings.step_04_image != blank %}
+            {{ section.settings.step_04_image | image_url: width: 1000 | image_tag: loading: 'lazy', class: 'c-manufacturing__card-img-placeholder' }}
+          {% endif %}
+        </div>
+        <h3 class="c-manufacturing__card-title">調合・ろ過</h3>
+        <p class="c-manufacturing__card-desc">
+          搾りたてのもろみ酢は、そのままのストレートタイプに仕上げる場合もありますが、さらに沖縄県産の黒糖などを加えてまろやかさや風味を調整することもあります。
+        </p>
+      </div>
+
+      <div class="c-manufacturing__card">
+        <div class="c-manufacturing__step">
+          <span class="c-manufacturing__step-label">STEP</span>
+          <span class="c-manufacturing__step-num">05</span>
+        </div>
+        <div class="c-manufacturing__card-img">
+          {% if section.settings.step_05_image != blank %}
+            {{ section.settings.step_05_image | image_url: width: 1000 | image_tag: loading: 'lazy', class: 'c-manufacturing__card-img-placeholder' }}
+          {% endif %}
+        </div>
+        <h3 class="c-manufacturing__card-title">洗瓶・瓶詰め</h3>
+        <p class="c-manufacturing__card-desc">
+          まず瓶は機械でしっかり洗浄され、その後、高温で加熱殺菌したもろみ酢を充填。異物混入がないか1本1本しっかりとチェックしていきます。
+        </p>
+      </div>
+
+      <div class="c-manufacturing__card">
+        <div class="c-manufacturing__step">
+          <span class="c-manufacturing__step-label">STEP</span>
+          <span class="c-manufacturing__step-num">06</span>
+        </div>
+        <div class="c-manufacturing__card-img">
+          {% if section.settings.step_06_image != blank %}
+            {{ section.settings.step_06_image | image_url: width: 1000 | image_tag: loading: 'lazy', class: 'c-manufacturing__card-img-placeholder' }}
+          {% endif %}
+        </div>
+        <h3 class="c-manufacturing__card-title">転倒殺菌</h3>
+        <p class="c-manufacturing__card-desc">
+          再度、80℃以上で約30秒間、瓶を回転させながら瓶内のすみずみまで殺菌を行います。これにより中身を衛生的に保ち、安全性を高めています。
+        </p>
+      </div>
+
+      <div class="c-manufacturing__card">
+        <div class="c-manufacturing__step">
+          <span class="c-manufacturing__step-label">STEP</span>
+          <span class="c-manufacturing__step-num">07</span>
+        </div>
+        <div class="c-manufacturing__card-img">
+          {% if section.settings.step_07_image != blank %}
+            {{ section.settings.step_07_image | image_url: width: 1000 | image_tag: loading: 'lazy', class: 'c-manufacturing__card-img-placeholder' }}
+          {% endif %}
+        </div>
+        <h3 class="c-manufacturing__card-title">商品の完成</h3>
+        <p class="c-manufacturing__card-desc">
+          賞味期限を記載した商品ラベルを貼り付けると、もろみ酢が完成します。<br>
+          通常、1～2年程度の品質保持ができるように設定されています。
+        </p>
+      </div>
+
+      <div class="c-manufacturing__card">
+        <div class="c-manufacturing__step">
+          <span class="c-manufacturing__step-label">STEP</span>
+          <span class="c-manufacturing__step-num">08</span>
+        </div>
+        <div class="c-manufacturing__card-img">
+          {% if section.settings.step_08_image != blank %}
+            {{ section.settings.step_08_image | image_url: width: 1000 | image_tag: loading: 'lazy', class: 'c-manufacturing__card-img-placeholder' }}
+          {% endif %}
+        </div>
+        <h3 class="c-manufacturing__card-title">品質管理</h3>
+        <p class="c-manufacturing__card-desc">
+          仕上がった製品は、一般細菌・大腸菌群・カビ・酵母などの検査を社内で実施。安全な商品だけが出荷されるよう、品質管理を徹底しています。
+        </p>
+      </div>
+
+      <div class="c-manufacturing__card">
+        <div class="c-manufacturing__product">
+          {% if section.settings.product_01_image != blank %}
+            {{ section.settings.product_01_image | image_url: width: 500 | image_tag: loading: 'lazy', class: 'c-manufacturing__product-placeholder' }}
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Moromisu Manufacturing",
+  "class": "shopify-section--main-page-moromisu",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "もろみ酢LPページでの利用を想定しています"
+    },
+    {
+      "type": "image_picker",
+      "id": "step_01_image",
+      "label": "STEP 01 画像"
+    },
+    {
+      "type": "image_picker",
+      "id": "step_02_image",
+      "label": "STEP 02 画像"
+    },
+    {
+      "type": "image_picker",
+      "id": "step_03_image",
+      "label": "STEP 03 画像"
+    },
+    {
+      "type": "image_picker",
+      "id": "step_04_image",
+      "label": "STEP 04 画像"
+    },
+    {
+      "type": "image_picker",
+      "id": "step_05_image",
+      "label": "STEP 05 画像"
+    },
+    {
+      "type": "image_picker",
+      "id": "step_06_image",
+      "label": "STEP 06 画像"
+    },
+    {
+      "type": "image_picker",
+      "id": "step_07_image",
+      "label": "STEP 07 画像"
+    },
+    {
+      "type": "image_picker",
+      "id": "step_08_image",
+      "label": "STEP 08 画像"
+    },
+    {
+      "type": "image_picker",
+      "id": "product_01_image",
+      "label": "製品画像"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Moromisu Manufacturing"
+    }
+  ]
+}
+{% endschema %}

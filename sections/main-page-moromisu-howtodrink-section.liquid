@@ -1,0 +1,203 @@
+{%- comment -%}
+  moromisu.css は main-page-moromisu.liquid で読み込んでいます
+{%- endcomment -%}
+<style>
+  .c-howtodrink {
+    background: url('{{ 'moromisu-material-bg-body.png' | asset_url }}') repeat center center;
+  }
+</style>
+
+<section class="c-howtodrink">
+  {%- if section.settings.main_image_pc != blank or section.settings.main_image_sp != blank -%}
+    <picture class="c-howtodrink__main-image">
+      {% if section.settings.main_image_sp != blank %}
+        <source srcset="{{ section.settings.main_image_sp | image_url: width: 390 }}" media="(max-width: 599px)">
+      {% endif %}
+      {% if section.settings.main_image_pc != blank %}
+        <source srcset="{{ section.settings.main_image_pc | image_url: width: 1440 }}" media="(min-width: 600px)">
+      {% endif %}
+      {% if section.settings.main_image_sp != blank %}
+        {{ section.settings.main_image_sp | image_url: width: 390 | image_tag: loading: 'lazy' }}
+      {% elsif section.settings.main_image_pc != blank %}
+        {{ section.settings.main_image_pc | image_url: width: 1440 | image_tag: loading: 'lazy' }}
+      {% endif %}
+    </picture>
+  {%- endif -%}
+  <div class="c-howtodrink__inner">
+    <div class="c-howtodrink__top">
+      <div class="c-howtodrink__vtitle">
+        <div class="c-howtodrink__vtitle-col">おすすめの</div>
+        <div class="c-howtodrink__vtitle-col">飲み方</div>
+      </div>
+      <div class="c-howtodrink__info">
+        <div class="c-howtodrink__info-title">1日の目安量は約30ml</div>
+        <p class="c-howtodrink__info-desc">
+          1回または2回に分け、無理のないペースで続けることをおすすめします。<br>
+          もろみ酢はそのままでもおいしいですが、 飲み慣れていない方は少なめから試したり、<br class="only-pc">
+          水や炭酸水で薄めると、すっきりと飲みやすくなります。
+        </p>
+      </div>
+    </div>
+
+    <div class="c-howtodrink__subtitle">
+      <span>基本の</span><span class="c-howtodrink__subtitle--accent">飲み方</span>
+    </div>
+    <p class="c-howtodrink__subdesc">
+      もろみ酢はそのままでもおいしいですが、<br>
+      日々の生活に無理なく取り入れられる飲み方がいくつもあります。
+    </p>
+
+    <div class="c-howtodrink__cards">
+      <div class="c-howtodrink__card">
+        <div class="c-howtodrink__card-img">
+          {% if section.settings.basic_image_1 != blank %}
+            {{ section.settings.basic_image_1 | image_url: width: 900 | image_tag: loading: 'lazy' }}
+          {% endif %}
+        </div>
+        <h3 class="c-howtodrink__card-title">ストレート</h3>
+        <p class="c-howtodrink__card-desc">素材のやさしい風味が楽しめる、もろみ酢本来の飲み方。まずはそのまま味わってみてください。</p>
+      </div>
+
+      <div class="c-howtodrink__card">
+        <div class="c-howtodrink__card-img">
+          {% if section.settings.basic_image_2 != blank %}
+            {{ section.settings.basic_image_2 | image_url: width: 900 | image_tag: loading: 'lazy' }}
+          {% endif %}
+        </div>
+        <h3 class="c-howtodrink__card-title">お湯割り</h3>
+        <p class="c-howtodrink__card-desc">温めることで口あたりがやわらぎ、より飲みやすく。肌寒い日やくつろぎたい時間におすすめです。</p>
+      </div>
+
+      <div class="c-howtodrink__card">
+        <div class="c-howtodrink__card-img">
+          {% if section.settings.basic_image_3 != blank %}
+            {{ section.settings.basic_image_3 | image_url: width: 900 | image_tag: loading: 'lazy' }}
+          {% endif %}
+        </div>
+        <h3 class="c-howtodrink__card-title">炭酸割り</h3>
+        <p class="c-howtodrink__card-desc">炭酸の爽快感で、すっきりとした飲み心地に。暑い季節には氷を加えてさっぱり楽しめます。</p>
+      </div>
+    </div>
+
+    <div class="c-howtodrink__separator">
+      <span class="c-howtodrink__dot"></span>
+      <span class="c-howtodrink__dot"></span>
+      <span class="c-howtodrink__dot"></span>
+      <span class="c-howtodrink__dot"></span>
+      <span class="c-howtodrink__dot"></span>
+      <span class="c-howtodrink__dot"></span>
+      <span class="c-howtodrink__dot"></span>
+      <span class="c-howtodrink__dot"></span>
+      <span class="c-howtodrink__dot"></span>
+      <span class="c-howtodrink__dot"></span>
+      <span class="c-howtodrink__dot"></span>
+      <span class="c-howtodrink__dot"></span>
+      <span class="c-howtodrink__dot"></span>
+      <span class="c-howtodrink__dot"></span>
+      <span class="c-howtodrink__dot"></span>
+      <span class="c-howtodrink__dot"></span>
+      <span class="c-howtodrink__dot"></span>
+      <span class="c-howtodrink__dot"></span>
+      <span class="c-howtodrink__dot"></span>
+      <span class="c-howtodrink__dot"></span>
+      <span class="c-howtodrink__dot"></span>
+      <span class="c-howtodrink__dot"></span>
+      <span class="c-howtodrink__dot"></span>
+      <span class="c-howtodrink__dot"></span>
+    </div>
+
+    <div class="c-howtodrink__subtitle">
+      <span class="c-howtodrink__subtitle--accent">アレンジ</span><span>編</span>
+    </div>
+
+    <div class="c-howtodrink__cards" style="margin-top: 40px;">
+      <div class="c-howtodrink__card">
+        <div class="c-howtodrink__card-img">
+          {% if section.settings.arrange_image_1 != blank %}
+            {{ section.settings.arrange_image_1 | image_url: width: 900 | image_tag: loading: 'lazy' }}
+          {% endif %}
+        </div>
+        <h3 class="c-howtodrink__card-title">ヨーグルトにかけて</h3>
+        <p class="c-howtodrink__card-desc">ヨーグルトにかけるだけで、ほどよい酸味が加わり食べやすくなり、朝食やおやつに手軽に取り入れられます。</p>
+      </div>
+
+      <div class="c-howtodrink__card">
+        <div class="c-howtodrink__card-img">
+          {% if section.settings.arrange_image_2 != blank %}
+            {{ section.settings.arrange_image_2 | image_url: width: 900 | image_tag: loading: 'lazy' }}
+          {% endif %}
+        </div>
+        <h3 class="c-howtodrink__card-title">ドレッシングとして</h3>
+        <p class="c-howtodrink__card-desc">オイルや醤油と合わせるだけで、さっぱりしたドレッシングに。サラダにかけて手軽に楽しめます。</p>
+      </div>
+
+      <div class="c-howtodrink__card">
+        <div class="c-howtodrink__card-img">
+          {% if section.settings.arrange_image_3 != blank %}
+            {{ section.settings.arrange_image_3 | image_url: width: 900 | image_tag: loading: 'lazy' }}
+          {% endif %}
+        </div>
+        <h3 class="c-howtodrink__card-title">酢豚に</h3>
+        <p class="c-howtodrink__card-desc">いつもの酢の代わりにもろみ酢を使うことで、酸味がやさしく、コクのある味わいに仕上がります。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Moromisu How To Drink",
+  "class": "shopify-section--main-page-moromisu",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "もろみ酢LPページでの利用を想定しています"
+    },
+    {
+      "type": "image_picker",
+      "id": "main_image_pc",
+      "label": "メイン画像（PC）"
+    },
+    {
+      "type": "image_picker",
+      "id": "main_image_sp",
+      "label": "メイン画像（SP）"
+    },
+    {
+      "type": "image_picker",
+      "id": "basic_image_1",
+      "label": "基本の飲み方 画像1"
+    },
+    {
+      "type": "image_picker",
+      "id": "basic_image_2",
+      "label": "基本の飲み方 画像2"
+    },
+    {
+      "type": "image_picker",
+      "id": "basic_image_3",
+      "label": "基本の飲み方 画像3"
+    },
+    {
+      "type": "image_picker",
+      "id": "arrange_image_1",
+      "label": "アレンジ 画像1"
+    },
+    {
+      "type": "image_picker",
+      "id": "arrange_image_2",
+      "label": "アレンジ 画像2"
+    },
+    {
+      "type": "image_picker",
+      "id": "arrange_image_3",
+      "label": "アレンジ 画像3"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Moromisu How To Drink"
+    }
+  ]
+}
+{% endschema %}

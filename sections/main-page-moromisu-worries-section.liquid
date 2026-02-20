@@ -1,0 +1,128 @@
+{%- comment -%}
+  moromisu.css は main-page-moromisu.liquid で読み込んでいます
+{%- endcomment -%}
+<style>
+  .c-worries {
+    background: url('{{ 'moromisu-worries-bg-pc.png' | asset_url }}') no-repeat top center;
+    background-size: 110%;
+  }
+
+
+  @media screen and (min-width: 1499px) {
+    .c-worries {
+      background-size: 1400px;
+      background-position: center 3vw;
+    }
+  }
+
+  @media screen and (max-width: 599px) {
+    .c-worries {
+      background: url('{{ 'moromisu-worries-bg-sp.png' | asset_url }}') no-repeat top center;
+      background-size: contain;
+    }
+  }
+</style>
+
+<section class="c-worries">
+  {% comment %} <div class="c-worries__bg-shape"></div> {% endcomment %}
+
+  <div class="c-worries__inner">
+    <div class="c-worries__heading-area">
+      <span class="c-worries__q">Q</span>
+      <div class="c-worries__heading-text-wrap">
+        <div class="c-worries__heading-dots">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <h2 class="c-worries__heading-title">こんなお悩みありませんか？</h2>
+      </div>
+    </div>
+
+    <div class="c-worries__bubbles-area">
+      <div class="c-worries__bubble c-worries__bubble--1">
+        <img class="c-worries__bubble-icon c-worries__bubble-icon--pc" src="{{ 'c-bubble-pc-1.svg' | asset_url }}" alt="" loading="lazy" width="289" height="178">
+        <img class="c-worries__bubble-icon c-worries__bubble-icon--sp" src="{{ 'c-bubble-pc-1.svg' | asset_url }}" alt="" loading="lazy" width="96" height="77">
+        <div class="c-worries__bubble-text">
+          忙しい日々の中でも<br>
+          手軽に体をいたわる<br>
+          習慣を持ちたい
+        </div>
+      </div>
+
+      <div class="c-worries__bubble c-worries__bubble--2">
+        <img class="c-worries__bubble-icon c-worries__bubble-icon--pc" src="{{ 'c-bubble-pc-2.svg' | asset_url }}" alt="" loading="lazy" width="289" height="178">
+        <img class="c-worries__bubble-icon c-worries__bubble-icon--sp" src="{{ 'c-bubble-pc-2.svg' | asset_url }}" alt="" loading="lazy" width="96" height="77">
+        <div class="c-worries__bubble-text">
+          毎日の食事を通して<br>
+          内側から美しさを<br>
+          保ちたい
+        </div>
+      </div>
+
+      <div class="c-worries__bubble c-worries__bubble--3">
+        <img class="c-worries__bubble-icon c-worries__bubble-icon--pc" src="{{ 'c-bubble-pc-3.svg' | asset_url }}" alt="" loading="lazy" width="289" height="178">
+        <img class="c-worries__bubble-icon c-worries__bubble-icon--sp" src="{{ 'c-bubble-pc-3.svg' | asset_url }}" alt="" loading="lazy" width="96" height="77">
+        <div class="c-worries__bubble-text">
+          年齢とともに変わる<br>
+          体調の中でも<br>
+          アクティブに<br>
+          過ごしたい！
+        </div>
+      </div>
+
+      <div class="c-worries__bubble c-worries__bubble--4">
+        <img class="c-worries__bubble-icon c-worries__bubble-icon--pc" src="{{ 'c-bubble-pc-4.svg' | asset_url }}" alt="" loading="lazy" width="289" height="178">
+        <img class="c-worries__bubble-icon c-worries__bubble-icon--sp" src="{{ 'c-bubble-pc-4.svg' | asset_url }}" alt="" loading="lazy" width="96" height="77">
+        <div class="c-worries__bubble-text">
+          発酵食品がいいとは<br>
+          聞くけれど<br>
+          毎日続けるのは大変
+        </div>
+      </div>
+    </div>
+
+    <div class="c-worries__recommend">
+      <div class="c-worries__recommend-img">
+        {% if section.settings.recommend_image != blank %}
+          {{ section.settings.recommend_image | image_url: width: 800 | image_tag: loading: 'lazy' }}
+        {% endif %}
+      </div>
+
+      <div class="c-worries__recommend-body">
+        <p class="c-worries__recommend-lead">そんなあなたに・・・</p>
+        <div class="c-worries__recommend-title">
+          <span class="c-worries__recommend-moromi">もろみ酢</span>
+          <span class="c-worries__recommend-suffix">がおすすめです</span>
+        </div>
+        <p class="c-worries__recommend-desc">
+          忙しい毎日の中で、健康もキレイもあきらめたくないと<br>
+          感じている方にこそ知ってほしい習慣があります。
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Moromisu Worries",
+  "class": "shopify-section--main-page-moromisu",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "もろみ酢LPページでの利用を想定しています"
+    },
+    {
+      "type": "image_picker",
+      "id": "recommend_image",
+      "label": "おすすめ画像"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Moromisu Worries"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,189 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page-moromisu",
+      "settings": {}
+    },
+    "main_page_moromisu_key_visual_EwCXc7": {
+      "type": "main-page-moromisu-key-visual",
+      "name": "Moromisu Key Visual",
+      "settings": {
+        "kv_image_pc": "shopify://shop_images/moromisu-kv-pc.png",
+        "kv_image_sp": "shopify://shop_images/moromisu-kv-sp.png"
+      }
+    },
+    "worries": {
+      "type": "main-page-moromisu-worries-section",
+      "settings": {
+        "recommend_image": "shopify://shop_images/1_ac6af670-8aa2-4840-b340-384e6423e276.png"
+      }
+    },
+    "moromi": {
+      "type": "main-page-moromisu-moromi-section",
+      "settings": {
+        "background_image": "shopify://shop_images/bg-1.png"
+      }
+    },
+    "main_page_moromisu_product_list_section_aJnYmY": {
+      "type": "main-page-moromisu-product-list-section",
+      "name": "Moromisu Product List",
+      "settings": {
+        "products": [
+          "matsufuji-kuro-moromisu",
+          "matsufuji-beni-moromisu",
+          "ishikawa-ikiikihyakunensu-720"
+        ],
+        "set_sale_url": "shopify://collections/moromi-set",
+        "set_sale_text": "お得なセット販売はこちら",
+        "set_sale_text_color": "#ffffff",
+        "set_sale_button_color": "#30861e",
+        "subscription_sale_url": "shopify://collections/sub-moromisu",
+        "subscription_sale_text": "もっとお得な定期販売はこちら",
+        "subscription_sale_text_color": "#ffffff",
+        "subscription_sale_button_color": "#e07a2f",
+        "add_background_color": true
+      }
+    },
+    "three_reasons": {
+      "type": "main-page-moromisu-three-reasons-section",
+      "settings": {
+        "pc_image": "shopify://shop_images/three-reasons-pc.png",
+        "mobile_image": "shopify://shop_images/three-reasons-sp.png"
+      }
+    },
+    "raw_materials": {
+      "type": "main-page-moromisu-raw-materials-section",
+      "settings": {
+        "rice_image": "shopify://shop_images/raw-material-1.png",
+        "koji_image": "shopify://shop_images/raw-material-2.png",
+        "yeast_image": "shopify://shop_images/raw-material-3.png"
+      }
+    },
+    "main_page_moromisu_manufacturing_section_ehRp8q": {
+      "type": "main-page-moromisu-manufacturing-section",
+      "name": "Moromisu Manufacturing",
+      "settings": {
+        "step_01_image": "shopify://shop_images/manufacturing-1.png",
+        "step_02_image": "shopify://shop_images/manufacturing-2_4e6237a5-f058-4df7-9cd1-4cb986afc15d.png",
+        "step_03_image": "shopify://shop_images/manufacturing-3_c56a2e64-e68d-4a16-afe9-9594325f1d5a.png",
+        "step_04_image": "shopify://shop_images/manufacturing-4.png",
+        "step_05_image": "shopify://shop_images/manufacturing-5.png",
+        "step_06_image": "shopify://shop_images/manufacturing-6.png",
+        "step_07_image": "shopify://shop_images/manufacturing-7.png",
+        "step_08_image": "shopify://shop_images/manufacturing-8_297e88ad-d8e0-460b-ae47-3cb06cbb5e4e.png",
+        "product_01_image": "shopify://shop_images/manufacturing-9.png"
+      }
+    },
+    "ingredient": {
+      "type": "main-page-moromisu-ingredient-section",
+      "settings": {
+        "glass_image_pc": "shopify://shop_images/2_7c2b804d-e82f-4b39-8432-de34b15b7957.png",
+        "glass_image_sp": "shopify://shop_images/2_7c2b804d-e82f-4b39-8432-de34b15b7957.png"
+      }
+    },
+    "howtodrink": {
+      "type": "main-page-moromisu-howtodrink-section",
+      "settings": {
+        "main_image_pc": "shopify://shop_images/moromisu-banner-pc.png",
+        "main_image_sp": "shopify://shop_images/moromisu-banner-sp.png",
+        "basic_image_1": "shopify://shop_images/drink_1.png",
+        "basic_image_2": "shopify://shop_images/drink_2.png",
+        "basic_image_3": "shopify://shop_images/drink_3.png",
+        "arrange_image_1": "shopify://shop_images/arrange_1.png",
+        "arrange_image_2": "shopify://shop_images/arrange_2.png",
+        "arrange_image_3": "shopify://shop_images/arrange_3.png"
+      }
+    },
+    "main_page_moromisu_product_list_section_BV7WxK": {
+      "type": "main-page-moromisu-product-list-section",
+      "name": "Moromisu Product List",
+      "settings": {
+        "products": [
+          "ryukyumoromi-null-900",
+          "mizuho-moromisu-kokuto",
+          "matsufuji-moromisu-muto"
+        ],
+        "set_sale_url": "shopify://collections/moromisu",
+        "set_sale_text": "もろみ酢全商品はこちら",
+        "set_sale_text_color": "#8b5a2b",
+        "set_sale_button_color": "rgba(0,0,0,0)",
+        "subscription_sale_url": "",
+        "subscription_sale_text": "",
+        "subscription_sale_text_color": "#ffffff",
+        "subscription_sale_button_color": "#e07a2f",
+        "add_background_color": true
+      }
+    },
+    "faq": {
+      "type": "main-page-moromisu-faq-section",
+      "settings": {}
+    },
+    "column": {
+      "type": "main-page-moromisu-column-section",
+      "settings": {
+        "card_1_image": "shopify://shop_images/moromisu-column-1.png",
+        "card_1_link": "shopify://blogs/introduction/moromisu-how-to-drink-blog",
+        "card_2_image": "shopify://shop_images/moromisu-column-2.png",
+        "card_2_link": "shopify://blogs/introduction/moromisu-kurosu-difference-blog"
+      }
+    },
+    "main_page_moromisu_product_list_section_AHXyma": {
+      "type": "main-page-moromisu-product-list-section",
+      "name": "Moromisu Product List",
+      "settings": {
+        "products": [
+          "ishikawa-moromisu-kokuto",
+          "masahiro-moromisu-budo",
+          "herios-moromisu-kokuto-720"
+        ],
+        "set_sale_url": "shopify://collections/moromisu",
+        "set_sale_text": "もろみ酢全商品はこちら",
+        "set_sale_text_color": "#8b5a2b",
+        "set_sale_button_color": "rgba(0,0,0,0)",
+        "subscription_sale_url": "",
+        "subscription_sale_text": "",
+        "subscription_sale_text_color": "#ffffff",
+        "subscription_sale_button_color": "#e07a2f",
+        "add_background_color": false
+      }
+    },
+    "main_page_moromisu_contact_section_nFRArj": {
+      "type": "main-page-moromisu-contact-section",
+      "name": "Moromisu Contact",
+      "settings": {
+        "background_image_pc": "shopify://shop_images/moromisu-contact-pc.png",
+        "background_image_sp": "shopify://shop_images/moromisu-contact-sp.png",
+        "title": "お問い合わせ",
+        "description": "<p>この製品に関する詳細情報やお取り扱いについての<br/>ご相談をご希望の場合は、<br/>お気軽にお問い合わせください。<br/>専門スタッフが丁寧に対応いたします。</p>",
+        "button_label": "この商品へのお問い合わせ",
+        "button_url": "shopify://pages/contact"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "main_page_moromisu_key_visual_EwCXc7",
+    "worries",
+    "moromi",
+    "main_page_moromisu_product_list_section_aJnYmY",
+    "three_reasons",
+    "raw_materials",
+    "main_page_moromisu_manufacturing_section_ehRp8q",
+    "ingredient",
+    "howtodrink",
+    "main_page_moromisu_product_list_section_BV7WxK",
+    "faq",
+    "column",
+    "main_page_moromisu_product_list_section_AHXyma",
+    "main_page_moromisu_contact_section_nFRArj"
+  ]
+}

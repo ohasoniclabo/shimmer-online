@@ -1,0 +1,116 @@
+{%- comment -%}
+  moromisu.css は main-page-moromisu.liquid で読み込んでいます
+{%- endcomment -%}
+<style>
+  .c-reasons__inner {
+    background: url('{{ 'moromisu-three-reason-bg.png' | asset_url }}') repeat center center;
+  }
+</style>
+
+<section class="c-reasons">
+  <div class="c-reasons__inner">
+    <div class="c-reasons__heading">
+      <div class="c-reasons__heading-line1">毎日に、無理なく。</div>
+      <div class="c-reasons__heading-line2">
+        <span>続けやすい</span>
+        <span class="c-reasons__heading-num">3</span>
+        <span>つの理由</span>
+      </div>
+    </div>
+
+    <div class="c-reasons__sp-hero">
+      <div class="c-reasons__hero-image">
+        <picture>
+          {% if section.settings.mobile_image != blank %}
+            <source media="(max-width: 767px)" srcset="{{ section.settings.mobile_image | image_url: width: 1200 }}">
+          {% endif %}
+          {% if section.settings.pc_image != blank %}
+            {{ section.settings.pc_image | image_url: width: 1800 | image_tag: loading: 'lazy' }}
+          {% elsif section.settings.mobile_image != blank %}
+            {{ section.settings.mobile_image | image_url: width: 1200 | image_tag: loading: 'lazy' }}
+          {% endif %}
+        </picture>
+      </div>
+    </div>
+
+    <div class="c-reasons__content">
+      <div class="c-reasons__layout">
+        <div class="c-reasons__list">
+          <div class="c-reasons__item">
+            <div class="c-reasons__item-header">
+              <div class="c-reasons__item-number">1</div>
+              <h3 class="c-reasons__item-title">まろやかで飲みやすい味わい</h3>
+            </div>
+            <div class="c-reasons__item-desc">
+              <p>"酢"と名がついていますが、酢酸が主成分である食酢や黒酢とは異なり、もろみ酢の主成分はクエン酸とアミノ酸。<br>他の酢と比べて匂いやツンとくる酸味が少なく、まろやかな風味が特長です。毎日飲んでも負担になりにくく、「続けること」そのものがストレスになりません。</p>
+            </div>
+          </div>
+
+          <div class="c-reasons__item">
+            <div class="c-reasons__item-header">
+              <div class="c-reasons__item-number">2</div>
+              <h3 class="c-reasons__item-title">食事にプラスするだけの手軽さ</h3>
+            </div>
+            <div class="c-reasons__item-desc">
+              <p>特別な準備は不要。朝食や食後、リラックスタイムなど、いつもの生活に一杯加えるだけ。忙しい日々でも、無理なく取り入れられ、習慣にしやすいのが魅力です。</p>
+            </div>
+          </div>
+
+          <div class="c-reasons__item">
+            <div class="c-reasons__item-header">
+              <div class="c-reasons__item-number">3</div>
+              <h3 class="c-reasons__item-title">体にうれしい成分を一度に摂れる</h3>
+            </div>
+            <div class="c-reasons__item-desc">
+              <p>お米・黒麹・酵母の発酵によって、体内で合成できない「必須アミノ酸」9種類を含む18種類以上のアミノ酸や、クエン酸などの栄養を豊富に含有。</p>
+              <p>「いろいろ気にせず、これ一本」というシンプルさが、継続につながります。</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="c-reasons__images">
+          <div class="c-reasons__hero-image">
+            <picture>
+              {% if section.settings.mobile_image != blank %}
+                <source media="(max-width: 767px)" srcset="{{ section.settings.mobile_image | image_url: width: 1200 }}">
+              {% endif %}
+              {% if section.settings.pc_image != blank %}
+                {{ section.settings.pc_image | image_url: width: 1800 | image_tag: loading: 'lazy' }}
+              {% elsif section.settings.mobile_image != blank %}
+                {{ section.settings.mobile_image | image_url: width: 1200 | image_tag: loading: 'lazy' }}
+              {% endif %}
+            </picture>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Moromisu Three Reasons",
+  "class": "shopify-section--main-page-moromisu",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "もろみ酢LPページでの利用を想定しています"
+    },
+    {
+      "type": "image_picker",
+      "id": "pc_image",
+      "label": "PC画像"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "Mobile画像"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Moromisu Three Reasons"
+    }
+  ]
+}
+{% endschema %}

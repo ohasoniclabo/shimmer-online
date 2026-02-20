@@ -1,0 +1,111 @@
+{%- comment -%}
+  moromisu.css は main-page-moromisu.liquid で読み込んでいます
+{%- endcomment -%}
+{% liquid
+  assign background_image_pc = section.settings.background_image_pc
+  assign background_image_sp = section.settings.background_image_sp
+  assign title_text = section.settings.title
+  assign button_label = section.settings.button_label
+  assign aspect_ratio_pc = '1440 / 585'
+  assign aspect_ratio_sp = '390 / 445'
+
+  if background_image_pc != blank
+    assign aspect_ratio_pc = background_image_pc.width | append: ' / ' | append: background_image_pc.height
+  endif
+
+  if background_image_sp != blank
+    assign aspect_ratio_sp = background_image_sp.width | append: ' / ' | append: background_image_sp.height
+  elsif background_image_pc != blank
+    assign aspect_ratio_sp = aspect_ratio_pc
+  endif
+%}
+
+<style>
+  #shopify-section-{{ section.id }} .c-contact {
+    --c-contact-aspect-pc: {{ aspect_ratio_pc }};
+    --c-contact-aspect-sp: {{ aspect_ratio_sp }};
+  }
+
+  {% if background_image_pc != blank %}
+    #shopify-section-{{ section.id }} .c-contact__bg {
+      background-image: url('{{ background_image_pc | image_url: width: 2200 }}');
+    }
+  {% endif %}
+
+  {% if background_image_sp != blank %}
+    @media screen and (max-width: 599px) {
+      #shopify-section-{{ section.id }} .c-contact__bg {
+        background-image: url('{{ background_image_sp | image_url: width: 1000 }}');
+      }
+    }
+  {% endif %}
+</style>
+
+<section class="c-contact">
+  <div class="c-contact__bg" role="img" aria-label="{{ title_text | escape }}"></div>
+  <div class="c-contact__content">
+    {% if title_text != blank %}
+      <h2 class="c-contact__title">{{ title_text }}</h2>
+    {% endif %}
+    {% if section.settings.description != blank %}
+      <div class="c-contact__desc">
+        {{ section.settings.description }}
+      </div>
+    {% endif %}
+
+    {% if button_label != blank %}
+      <a href="{{ section.settings.button_url }}" class="c-contact__btn">{{ button_label }}</a>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Moromisu Contact", 
+  "class": "shopify-section--main-page-moromisu",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "もろみ酢LPページでの利用を想定しています"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image_pc",
+      "label": "背景画像（PC）"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image_sp",
+      "label": "背景画像（SP）"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "タイトル",
+      "default": "お問い合わせ"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "説明文",
+      "default": "<p>この製品に関する詳細情報やお取り扱いについてのご相談をご希望の場合は、お気軽にお問い合わせください。専門スタッフが丁寧に対応いたします。</p>"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "ボタン文言",
+      "default": "この商品へのお問い合わせ"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "ボタンリンク"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Moromisu Contact"
+    }
+  ]
+}
+{% endschema %}

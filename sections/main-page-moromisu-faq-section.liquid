@@ -1,0 +1,128 @@
+{%- comment -%}
+  moromisu.css は main-page-moromisu.liquid で読み込んでいます
+{%- endcomment -%}
+<style>
+  .c-faq {
+    background: url('{{ 'moromisu-material-bg-body.png' | asset_url }}') repeat center center;
+  }
+</style>
+<section class="c-faq">
+  <div class="c-faq__inner">
+    <div class="c-faq__titles">
+      <div class="c-faq__vtitle-col">ご質問</div>
+      <div class="c-faq__vtitle-col">よくある</div>
+    </div>
+
+    <div class="c-faq__list">
+      <div class="c-faq__item is-open">
+        <button type="button" class="c-faq__question" aria-expanded="true">
+          <span class="c-faq__question-left">
+            <span class="c-faq__q-label">Q</span>
+            <span class="c-faq__q-text">どのぐらいの量をいつ飲めばよいですか？</span>
+          </span>
+          <span class="c-faq__toggle"></span>
+        </button>
+        <div class="c-faq__answer">
+          <div class="c-faq__answer-inner">
+            <span class="c-faq__a-label">A</span>
+            <p class="c-faq__a-text">
+              一日の摂取目安量は30ml程度です。疲れが気になる日や運動をした日などは、やや多めに（60ml程度）お飲みください。<br>
+              飲むタイミングは、一日を元気にスタートするために朝飲む方もいらっしゃいますし、疲れを取るために運動後や夕食後に飲む方もいらっしゃいます。お客様のライフスタイルや体調に合わせてお飲みください。
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="c-faq__item">
+        <button type="button" class="c-faq__question" aria-expanded="false">
+          <span class="c-faq__question-left">
+            <span class="c-faq__q-label">Q</span>
+            <span class="c-faq__q-text">一般的なお酢との違いは何ですか？</span>
+          </span>
+          <span class="c-faq__toggle"></span>
+        </button>
+        <div class="c-faq__answer">
+          <div class="c-faq__answer-inner">
+            <span class="c-faq__a-label">A</span>
+            <p class="c-faq__a-text">
+              製法も味わいも異なります。一般的に“お酢“と呼ばれるものは「食酢」と「その他（食酢以外）」に分類されます。「食酢」には穀物酢（米酢など）や果実酢（リンゴ酢など）がありますが、もろみ酢は「その他（食酢以外）」に分類されます。<br>
+              食酢は「酢酸菌」によってつくられる酢酸のツンとくる酸っぱさが特徴ですが、もろみ酢は「黒麹菌」でお米を発酵させてつくられるもので、柑橘系と同じクエン酸のすっきりと飲みやすい酸味が特徴です。
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="c-faq__item">
+        <button type="button" class="c-faq__question" aria-expanded="false">
+          <span class="c-faq__question-left">
+            <span class="c-faq__q-label">Q</span>
+            <span class="c-faq__q-text">アルコールは入っていますか？</span>
+          </span>
+          <span class="c-faq__toggle"></span>
+        </button>
+        <div class="c-faq__answer">
+          <div class="c-faq__answer-inner">
+            <span class="c-faq__a-label">A</span>
+            <p class="c-faq__a-text">
+              もろみ酢はノンアルコールですので、お子様からご年配の方まで安心してお飲みいただけます（食品区分：清涼飲料水）。<br>
+              発酵により生成されたアルコール分は蒸留の工程で取り除かれ、蒸留機の中に残った栄養たっぷりのもろみ粕（方言でカシジェー）が、もろみ酢のもととして使用されます。
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="c-faq__item">
+        <button type="button" class="c-faq__question" aria-expanded="false">
+          <span class="c-faq__question-left">
+            <span class="c-faq__q-label">Q</span>
+            <span class="c-faq__q-text">どのように保管したらよいですか？</span>
+          </span>
+          <span class="c-faq__toggle"></span>
+        </button>
+        <div class="c-faq__answer">
+          <div class="c-faq__answer-inner">
+            <span class="c-faq__a-label">A</span>
+            <p class="c-faq__a-text">
+              未開封の状態では、直射日光を避け、常温で保存してください。<br>
+              保存料を使用しておりませんので、開封後は必ず冷蔵庫に保管し、一か月以内にお召し上がりください。
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  (() => {
+    const root = document.currentScript.previousElementSibling;
+    if (!root) return;
+
+    root.querySelectorAll('.c-faq__question').forEach((button) => {
+      button.addEventListener('click', () => {
+        const item = button.closest('.c-faq__item');
+        if (!item) return;
+        const isOpen = item.classList.toggle('is-open');
+        button.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+    });
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Moromisu FAQ",
+  "class": "shopify-section--main-page-moromisu",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "もろみ酢LPページでの利用を想定しています"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Moromisu FAQ"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,118 @@
+{%- comment -%}
+  moromisu.css は main-page-moromisu.liquid で読み込んでいます
+{%- endcomment -%}
+<section class="c-raw-materials">
+  <div class="c-raw-materials__inner">
+    <div class="c-raw-materials__top">
+      <div class="c-raw-materials__heading">
+        <div class="c-raw-materials__heading-col">原料と製法</div>
+        <div class="c-raw-materials__heading-col">シンプルな</div>
+      </div>
+
+      <div class="c-raw-materials__cards-area">
+        <svg class="c-raw-materials__lines c-raw-materials__lines--pc" viewBox="0 0 927 860" fill="none">
+          <line x1="300" y1="280" x2="140" y2="420"></line>
+          <line x1="630" y1="280" x2="780" y2="420"></line>
+          <line x1="310" y1="600" x2="617" y2="600"></line>
+        </svg>
+
+        <svg class="c-raw-materials__lines c-raw-materials__lines--sp" viewBox="0 0 342 620" fill="none">
+          <line x1="90" y1="265" x2="40" y2="360"></line>
+          <line x1="250" y1="265" x2="300" y2="360"></line>
+          <line x1="150" y1="460" x2="195" y2="460"></line>
+        </svg>
+
+        <div class="c-raw-materials__card c-raw-materials__card--rice">
+          <div class="c-raw-materials__card-img">
+            {% if section.settings.rice_image != blank %}
+              {{ section.settings.rice_image | image_url: width: 900 | image_tag: loading: 'lazy' }}
+            {% endif %}
+          </div>
+          <h3 class="c-raw-materials__card-title">お米</h3>
+          <p class="c-raw-materials__card-text">
+            発酵のもととなる原料。<br>
+            発酵によってアミノ酸が生まれます。
+          </p>
+        </div>
+
+        <div class="c-raw-materials__card c-raw-materials__card--koji">
+          <div class="c-raw-materials__card-img">
+            {% if section.settings.koji_image != blank %}
+              {{ section.settings.koji_image | image_url: width: 900 | image_tag: loading: 'lazy' }}
+            {% endif %}
+          </div>
+          <h3 class="c-raw-materials__card-title">黒麹</h3>
+          <p class="c-raw-materials__card-text">
+            沖縄の発酵文化に欠かせない麹菌。<br>
+            多量のクエン酸を生みます。
+          </p>
+        </div>
+
+        <div class="c-raw-materials__card c-raw-materials__card--yeast">
+          <div class="c-raw-materials__card-img">
+            {% if section.settings.yeast_image != blank %}
+              {{ section.settings.yeast_image | image_url: width: 900 | image_tag: loading: 'lazy' }}
+            {% endif %}
+          </div>
+          <h3 class="c-raw-materials__card-title">酵母</h3>
+          <p class="c-raw-materials__card-text">
+            発酵を進める微生物。<br>
+            味わいと栄養のバランスを整えます。
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <p class="c-raw-materials__desc">
+もろみ酢の原材料はお米、黒麹、酵母の3つのみ。<br class="only-pc">
+このシンプルな原材料をもとに、沖縄の温暖な気候の中でこそ発揮される微生物のちからによって、<br class="only-pc">
+もろみ酢の深い味わいとさまざまな健康成分が生み出されます。
+    </p>
+
+    <div class="c-raw-materials__dots-line c-raw-materials__dots-line--pc">
+      <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span>
+    </div>
+
+    <div class="c-raw-materials__dots-line--sp">
+      <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Moromisu Raw Materials",
+  "class": "shopify-section--main-page-moromisu",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "もろみ酢LPページでの利用を想定しています"
+    },
+    {
+      "type": "image_picker",
+      "id": "rice_image",
+      "label": "お米画像"
+    },
+    {
+      "type": "image_picker",
+      "id": "koji_image",
+      "label": "黒麹画像"
+    },
+    {
+      "type": "image_picker",
+      "id": "yeast_image",
+      "label": "酵母画像"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Moromisu Raw Materials"
+    }
+  ]
+}
+{% endschema %}

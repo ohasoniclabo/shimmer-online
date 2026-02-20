@@ -1,0 +1,61 @@
+{%- comment -%}
+  moromisu.css は main-page-moromisu.liquid で読み込んでいます
+{%- endcomment -%}
+<section class="c-moromi-section">
+  <div class="c-moromi-section__bg">
+    {% if section.settings.background_image != blank %}
+      {{ section.settings.background_image | image_url: width: 2200 | image_tag: loading: 'lazy' }}
+    {% endif %}
+  </div>
+
+  <div class="c-moromi-section__inner">
+    <div class="c-moromi-section__heading">
+      <h2 class="c-moromi-section__heading-line">1日30mlのもろみ酢で</h2>
+      <p class="c-moromi-section__heading-line">イキイキ輝く充実した毎日へ。</p>
+    </div>
+
+    <div class="c-moromi-section__body c-moromi-section__body--pc">
+      <div class="c-moromi-section__text-block">
+        沖縄で受け継がれてきた発酵の知恵から生まれた、もろみ酢。<br>泡盛の製造工程で生まれる蒸留後の<span class="accent">もろみ粕を絞ってろ過した清涼飲料水</span>です。
+      </div>
+      <div class="c-moromi-section__text-block">
+        お米を黒麹と酵母でじっくり発酵させ、<br><span class="accent">アミノ酸やクエン酸を豊富に含む</span>発酵飲料に仕上げました。<br>毎日続けるものだからこそ、<span class="accent">続けやすい美味しさ</span>にもこだわっています。
+      </div>
+      <div class="c-moromi-section__text-block">
+        食事の一部として自然に取り入れられ、<br>発酵食品が初めての方にも飲みやすい味わい。<br>忙しい日々の中でも、体をいたわる習慣を。<br><span class="accent">元気に過ごしたい方</span>の毎日を、内側からやさしく支えます。
+      </div>
+    </div>
+
+    <div class="c-moromi-section__body--sp">
+      <p>沖縄で受け継がれてきた発酵の知恵から生まれた、もろみ酢。</p>
+      <p>泡盛の製造工程で生まれる蒸留後の<span class="accent">もろみ粕を絞ってろ過した清涼飲料水</span>です。</p>
+      <p>お米を黒麹と酵母でじっくり発酵させ、<span class="accent">アミノ酸やクエン酸を豊富に含む</span>発酵飲料に仕上げました。</p>
+      <p>毎日続けるものだからこそ、<span class="accent">続けやすい美味しさ</span>にもこだわっています。</p>
+      <p>食事の一部として自然に取り入れられ、発酵食品が初めての方にも飲みやすい味わい。忙しい日々の中でも、体をいたわる習慣を。</p>
+      <p><span class="accent">元気に過ごしたい方</span>の毎日を、内側からやさしく支えます。</p>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Moromisu Intro",
+  "class": "shopify-section--main-page-moromisu",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "もろみ酢LPページでの利用を想定しています"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "背景画像"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Moromisu Intro"
+    }
+  ]
+}
+{% endschema %}

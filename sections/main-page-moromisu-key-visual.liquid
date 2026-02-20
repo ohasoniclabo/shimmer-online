@@ -1,0 +1,83 @@
+{%- comment -%}
+  moromisu.css は main-page-moromisu.liquid で読み込んでいます
+{%- endcomment -%}
+<section class="c-fv">
+  <div class="c-fv__inner">
+    <!-- KV Image -->
+    <picture class="c-fv__kv">
+      {% if section.settings.kv_image_sp != blank %}
+        <source srcset="{{ section.settings.kv_image_sp | image_url: width: 720 }}" media="(max-width: 599px)">
+      {% endif %}
+      {% if section.settings.kv_image_pc != blank %}
+        <source srcset="{{ section.settings.kv_image_pc | image_url: width: 1640 }}" media="(min-width: 600px)">
+      {% endif %}
+      {% if section.settings.kv_image_sp != blank %}
+        {{ section.settings.kv_image_sp | image_url: width: 720 | image_tag: loading: 'lazy' }}
+      {% elsif section.settings.kv_image_pc != blank %}
+        {{ section.settings.kv_image_pc | image_url: width: 1640 | image_tag: loading: 'lazy' }}
+      {% endif %}
+    </picture>
+
+    <!-- Vertical speech text (reading right-to-left) -->
+    <ul class="c-fv__speech" aria-label="説明文">
+      <li class="c-fv__speech-col"><p>健康サポートドリンクです！</p></li>
+      <li class="c-fv__speech-col"><p>美容を意識する方にもおすすめの</p></li>
+      <li class="c-fv__speech-col"><p>すっきりとした毎日を心がけたい方、</p></li>
+      <li class="c-fv__speech-col"><p>日々の健康管理はもちろん、</p></li>
+      <li class="c-fv__speech-col"><p>クエン酸やアミノ酸が豊富で、</p></li>
+      <li class="c-fv__speech-col"><p>醸造過程から生まれたもろみ酢。</p></li>
+      <li class="c-fv__speech-col"><p>琉球王朝時代から伝わる泡盛の</p></li>
+    </ul>
+
+    <!-- Title (vertical text) -->
+    <div class="c-fv__title" aria-label="見出し">
+      <div class="c-fv__title-col c-fv__title-col--main">もろみ酢</div>
+      <div class="c-fv__title-col c-fv__title-col--sub">発酵飲料</div>
+      <div class="c-fv__title-col c-fv__title-col--sub">沖縄うまれの</div>
+    </div>
+  </div>
+</section>
+
+<script>
+  (() => {
+    const section = document.currentScript?.closest('#shopify-section-{{ section.id }}');
+    const root = section?.querySelector('.c-fv');
+    if (!root) return;
+
+    const ua = window.navigator.userAgent;
+    const isIOS = /iPad|iPhone|iPod/.test(ua);
+
+    console.log(isIOS);
+    if (isIOS) {
+      root.classList.add('is-ios');
+    }
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Moromisu Key Visual",
+  "class": "shopify-section--main-page-moromisu",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "もろみ酢LPページでの利用を想定しています"
+    },
+    {
+      "type": "image_picker",
+      "id": "kv_image_pc",
+      "label": "KV画像（PC）"
+    },
+    {
+      "type": "image_picker",
+      "id": "kv_image_sp",
+      "label": "KV画像（SP）"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Moromisu Key Visual"
+    }
+  ]
+}
+{% endschema %}

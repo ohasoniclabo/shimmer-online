@@ -1,0 +1,124 @@
+{%- comment -%}
+  moromisu.css は main-page-moromisu.liquid で読み込んでいます
+{%- endcomment -%}
+<style>
+  .c-ingredient {
+    background: url('{{ 'moromisu-material-bg-body.png' | asset_url }}') repeat center center;
+  }
+</style>
+
+<img src="{{ 'moromisu-material-bg-top.png' | asset_url }}" alt="" class="c-ingredient__bg-top" width="100%" height="100%">
+<section class="c-ingredient">
+
+  <div class="c-ingredient__inner">
+    <div class="c-ingredient__header">
+      <h2 class="c-ingredient__title">もろみ酢に含まれる<b>成分</b>とその<b>魅力</b></h2>
+      <p class="c-ingredient__desc">クエン酸をはじめ、必須アミノ酸を含む多様なアミノ酸、ミネラルやGABA（ギャバ）など、<br class="br-pc">発酵の力によって引き出された健康維持に役立つ栄養成分がたくさん含まれています。</p>
+    </div>
+
+    <div class="c-ingredient__layout">
+      <div class="c-ingredient__row-top">
+        <div class="c-ingredient__card">
+          <h3 class="c-ingredient__card-title">クエン酸</h3>
+          <div class="c-ingredient__card-line"></div>
+          <p class="c-ingredient__card-text">黒麹菌の発酵により大量に生成されるもろみ酢の代表的な成分。疲労回復を助け、すっきりした毎日へ導きます。</p>
+        </div>
+      </div>
+
+      <div class="c-ingredient__row-mid">
+        <div class="c-ingredient__card">
+          <h3 class="c-ingredient__card-title">アミノ酸</h3>
+          <div class="c-ingredient__card-line"></div>
+          <p class="c-ingredient__card-text">体づくりの基本となる栄養素。18種類以上のアミノ酸を含み、毎日の健康維持や元気な生活に役立ちます。</p>
+        </div>
+
+        <div class="c-ingredient__glass-wrap">
+          <div class="c-ingredient__glass">
+            {% if section.settings.glass_image_pc != blank %}
+              {{ section.settings.glass_image_pc | image_url: width: 1200 | image_tag: loading: 'lazy' }}
+            {% endif %}
+          </div>
+        </div>
+
+        <div class="c-ingredient__card">
+          <h3 class="c-ingredient__card-title">GABA</h3>
+          <div class="c-ingredient__card-line"></div>
+          <p class="c-ingredient__card-text">発酵の過程で生まれるアミノ酸の一種。リラックス効果が期待され、気持ちを穏やかに整えます。</p>
+        </div>
+      </div>
+
+      <div class="c-ingredient__row-bottom">
+        <div class="c-ingredient__card">
+          <h3 class="c-ingredient__card-title">ミネラル</h3>
+          <div class="c-ingredient__card-line"></div>
+          <p class="c-ingredient__card-text">カリウム、マグネシウム、鉄分など体の調子を整える成分。クエン酸との相乗効果で吸収率がアップします。</p>
+        </div>
+
+        <div class="c-ingredient__card">
+          <h3 class="c-ingredient__card-title">ビタミン類</h3>
+          <div class="c-ingredient__card-line"></div>
+          <p class="c-ingredient__card-text">健康維持に必要な栄養素。体の働きを助け、毎日の栄養バランスを整えます。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="c-ingredient__glass-sp">
+      <div class="c-ingredient__glass-sp-img">
+        {% if section.settings.glass_image_sp != blank %}
+          {{ section.settings.glass_image_sp | image_url: width: 1000 | image_tag: loading: 'lazy' }}
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="c-ingredient__cards-sp">
+      <div class="c-ingredient__card-sp">
+        <h3 class="c-ingredient__card-sp-title">クエン酸</h3>
+        <p class="c-ingredient__card-sp-text">黒麹菌の発酵により大量に生成されるもろみ酢の代表的な成分。疲労回復を助け、すっきりした毎日へ導きます。</p>
+      </div>
+      <div class="c-ingredient__card-sp">
+        <h3 class="c-ingredient__card-sp-title">GABA</h3>
+        <p class="c-ingredient__card-sp-text">発酵の過程で生まれるアミノ酸の一種。リラックス効果が期待され、気持ちを穏やかに整えます。</p>
+      </div>
+      <div class="c-ingredient__card-sp">
+        <h3 class="c-ingredient__card-sp-title">ビタミン類</h3>
+        <p class="c-ingredient__card-sp-text">健康維持に必要な栄養素。体の働きを助け、毎日の栄養バランスを整えます。</p>
+      </div>
+      <div class="c-ingredient__card-sp">
+        <h3 class="c-ingredient__card-sp-title">ミネラル</h3>
+        <p class="c-ingredient__card-sp-text">カリウム、マグネシウム、鉄分など体の調子を整える成分。クエン酸との相乗効果で吸収率がアップします。</p>
+      </div>
+      <div class="c-ingredient__card-sp">
+        <h3 class="c-ingredient__card-sp-title">アミノ酸</h3>
+        <p class="c-ingredient__card-sp-text">体づくりの基本となる栄養素。18種類以上のアミノ酸を含み、毎日の健康維持や元気な生活に役立ちます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Moromisu Ingredient",
+  "class": "shopify-section--main-page-moromisu",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "もろみ酢LPページでの利用を想定しています"
+    },
+    {
+      "type": "image_picker",
+      "id": "glass_image_pc",
+      "label": "グラス画像（PC）"
+    },
+    {
+      "type": "image_picker",
+      "id": "glass_image_sp",
+      "label": "グラス画像（SP）"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Moromisu Ingredient"
+    }
+  ]
+}
+{% endschema %}
